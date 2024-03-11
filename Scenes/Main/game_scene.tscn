@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dapn7yvhrb4ec"]
+
+[ext_resource type="PackedScene" uid="uid://c2mes8qqface8" path="res://Scenes/Players/happy_bird.tscn" id="1_wnxrt"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="HappyBird" parent="." instance=ExtResource("1_wnxrt")]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ska0lf23d60"
-path="res://.godot/imported/Tropical Parrots.png-e7be8386c31588572575e6be3d04d834.ctex"
+uid="uid://c4w6jfslx53rk"
+path="res://.godot/imported/SuunarrTest.jpg-3b04ef647861b79fb9051cf0e4f77610.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BirdSprites/Tropical Parrots.png"
-dest_files=["res://.godot/imported/Tropical Parrots.png-e7be8386c31588572575e6be3d04d834.ctex"]
+source_file="res://Assets/SplashScreen/SuunarrTest.jpg"
+dest_files=["res://.godot/imported/SuunarrTest.jpg-3b04ef647861b79fb9051cf0e4f77610.ctex"]
 
 [params]
 
