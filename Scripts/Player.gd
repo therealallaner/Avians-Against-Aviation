@@ -1,15 +1,22 @@
 extends Player
 
 
-const JUMP_VELOCITY = -500.0
+const jumpVelocity = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	velocity.y += gravity * delta
+	if Global.gameMenu:
+		if !Global.mouseHovering:
+			if Input.is_action_just_pressed("Jump"):
+				Global.Start_Game()
+	
+	else:
+		velocity.y += gravity * delta
 
-	if Input.is_action_just_pressed("Jump"):
-		velocity.y = JUMP_VELOCITY
+	if !Global.mouseHovering:
+		if Input.is_action_just_pressed("Jump"):
+			velocity.y = jumpVelocity
 		
 		
 	if velocity.y > 0:

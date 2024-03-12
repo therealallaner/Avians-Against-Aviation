@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dapn7yvhrb4ec"]
+[gd_scene load_steps=4 format=3 uid="uid://dapn7yvhrb4ec"]
 
+[ext_resource type="Script" path="res://Scripts/game_scene.gd" id="1_lk65h"]
 [ext_resource type="PackedScene" uid="uid://c2mes8qqface8" path="res://Scenes/Players/happy_bird.tscn" id="1_wnxrt"]
+[ext_resource type="PackedScene" uid="uid://d32354pptrddv" path="res://Scenes/Menus/menus.tscn" id="2_iisvx"]
 
 [node name="GameScene" type="Node2D"]
+script = ExtResource("1_lk65h")
 
 [node name="HappyBird" parent="." instance=ExtResource("1_wnxrt")]
+
+[node name="Menus" parent="." instance=ExtResource("2_iisvx")]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,7 +11,7 @@ var defaultPos = Vector2(384,540)
 
 
 func _ready():
-	Change_Bird(greenParrot)
+	Change_Bird(tropicalParrot)
 	
 	
 func Change_Bird(bird):
