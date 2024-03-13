@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var variations = [blackProp,pinkProp,redProp,yellowProp]
 
 var xSpeed = 300
-var ySpeed = 50
+var ySpeed = randf_range(-60.0,60.0)
 
 func _ready():
 	var planeSkin = Global.Random_List(variations)
@@ -28,6 +28,9 @@ func _physics_process(delta):
 
 
 func _on_wobbly_timer_timeout():
-	ySpeed = randf_range(20.0,60.0)
-	ySpeed *= -1
-	$wobblyTimer.wait_time = randf_range(.5,3.0)
+	ySpeed = randf_range(-60.0,60.0)
+	$wobblyTimer.wait_time = randf_range(.25,2.0)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()

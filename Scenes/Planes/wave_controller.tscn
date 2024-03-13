@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://db0d57vohl7et"]
+
+[ext_resource type="Script" path="res://Scripts/wave_controller.gd" id="1_45rjs"]
+[ext_resource type="PackedScene" uid="uid://jn5gkucvyv4s" path="res://Scenes/Planes/prop_plane_controller.tscn" id="1_dxihx"]
+
+[node name="WaveController" type="Node"]
+script = ExtResource("1_45rjs")
+
+[node name="PropPlaneController" parent="." instance=ExtResource("1_dxihx")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

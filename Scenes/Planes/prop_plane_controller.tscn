@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jn5gkucvyv4s"]
+
+[ext_resource type="Script" path="res://Scripts/prop_plane_controller.gd" id="1_fi6qo"]
+
+[node name="PropPlaneController" type="Node"]
+script = ExtResource("1_fi6qo")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

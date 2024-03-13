@@ -10,6 +10,7 @@ func Start_Game():
 	
 	gameMenu = false
 	gameScene.mainMenu.hide()
+	gameScene.waveController.Next_Wave()
 	
 
 func Game_Over():
@@ -17,6 +18,7 @@ func Game_Over():
 	get_tree().reload_current_scene()
 	gameMenu = true
 	gameScene.mainMenu.show()
+	gameScene.waveController.wave = 0
 
 
 func Random_List(list):

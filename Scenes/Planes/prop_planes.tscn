@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1jd63qw1koyf"]
+[gd_scene load_steps=7 format=3 uid="uid://b1jd63qw1koyf"]
 
 [ext_resource type="Script" path="res://prop_plane.gd" id="1_awkmc"]
 [ext_resource type="Texture2D" uid="uid://do0e04siawpem" path="res://Assets/plane_pack/planes/plane_1/plane_1_blue.png" id="2_a03b3"]
@@ -6,8 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://d27wa8gbb7uit" path="res://Assets/plane_pack/planes/plane_1/plane_1_red.png" id="4_qvgsh"]
 [ext_resource type="Texture2D" uid="uid://dtp5a2ed4df3r" path="res://Assets/plane_pack/planes/plane_1/plane_1_yellow.png" id="5_1xurs"]
 
-[node name="PropPlane" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2t2nk"]
+radius = 185.0
+height = 690.0
+
+[node name="PropPlane" type="CharacterBody2D" groups=["Plane"]]
 scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_awkmc")
 blackProp = ExtResource("2_a03b3")
 pinkProp = ExtResource("3_0g01n")
@@ -21,4 +27,13 @@ flip_h = true
 [node name="wobblyTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(20, 30)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2t2nk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(345, 45)
+
 [connection signal="timeout" from="wobblyTimer" to="." method="_on_wobbly_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

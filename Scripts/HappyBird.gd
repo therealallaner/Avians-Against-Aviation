@@ -9,3 +9,9 @@ func _ready():
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	Global.Game_Over()
+
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Plane"):
+		Global.Game_Over()
