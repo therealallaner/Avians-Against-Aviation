@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b1jd63qw1koyf"]
 
-[ext_resource type="Script" path="res://prop_plane.gd" id="1_awkmc"]
+[ext_resource type="Script" path="res://Scripts/prop_plane.gd" id="1_cjbr6"]
 [ext_resource type="Texture2D" uid="uid://do0e04siawpem" path="res://Assets/plane_pack/planes/plane_1/plane_1_blue.png" id="2_a03b3"]
 [ext_resource type="Texture2D" uid="uid://cj0s6amupuub8" path="res://Assets/plane_pack/planes/plane_1/plane_1_pink.png" id="3_0g01n"]
 [ext_resource type="Texture2D" uid="uid://d27wa8gbb7uit" path="res://Assets/plane_pack/planes/plane_1/plane_1_red.png" id="4_qvgsh"]
@@ -12,9 +12,9 @@ height = 690.0
 
 [node name="PropPlane" type="CharacterBody2D" groups=["Plane"]]
 scale = Vector2(0.2, 0.2)
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("1_awkmc")
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_cjbr6")
 blackProp = ExtResource("2_a03b3")
 pinkProp = ExtResource("3_0g01n")
 redProp = ExtResource("4_qvgsh")

@@ -2,16 +2,16 @@ extends CharacterBody2D
 class_name Player
 
 
-@onready var tropicalParrot = preload("res://Scenes/Players/Sprites/tropical_parrot.tscn")
-@onready var greenParrot = preload("res://Scenes/Players/Sprites/green_parrot.tscn")
+@onready var blackBird1 = preload("res://Scenes/Players/Sprites/black_bird_1.tscn")
+@onready var greenBird1 = preload("res://Scenes/Players/Sprites/green_bird_1.tscn")
 
-@onready var currentBird = tropicalParrot
+@onready var currentBird = blackBird1
 
 var defaultPos = Vector2(384,540)
 
 
 func _ready():
-	Change_Bird(tropicalParrot)
+	Change_Bird(greenBird1)
 	
 	
 func Change_Bird(bird):

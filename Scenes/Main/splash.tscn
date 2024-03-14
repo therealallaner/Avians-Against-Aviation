@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cn1vllbynsmu0"]
 
-[ext_resource type="Script" path="res://Splash.gd" id="1_nm00f"]
+[ext_resource type="Script" path="res://Scripts/Splash.gd" id="1_icvs8"]
 [ext_resource type="Texture2D" uid="uid://bqlt46g18ml1j" path="res://Assets/SplashScreen/WechuwTest.jpg" id="2_m7bfa"]
 
 [sub_resource type="Animation" id="Animation_fpaob"]
@@ -66,7 +66,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nm00f")
+script = ExtResource("1_icvs8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.02, 1.02)
