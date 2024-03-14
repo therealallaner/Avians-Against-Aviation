@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://1xft1g1kipgj"]
+
+[ext_resource type="Script" path="res://Scripts/jet_plane.gd" id="1_cdrfb"]
+[ext_resource type="Texture2D" uid="uid://cv7u2css3numy" path="res://Assets/plane_pack/planes/plane_2/plane_2_blue.png" id="1_lr4jg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rk2pg"]
+radius = 116.667
+height = 866.667
+
+[node name="JetPlane" type="CharacterBody2D" groups=["Plane"]]
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_cdrfb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lr4jg")
+flip_h = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40, 50)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rk2pg")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

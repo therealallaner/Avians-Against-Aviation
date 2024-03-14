@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dl1opuykfkvqs"]
+
+[node name="NShape" type="Node2D"]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-90, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(-60, -60)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(0, -90)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(60, -60)
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+position = Vector2(90, 0)

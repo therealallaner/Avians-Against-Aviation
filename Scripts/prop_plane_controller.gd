@@ -35,6 +35,12 @@ func _on_timer_timeout():
 			Plane_Spawn()
 			if randf() < .2:
 				Plane_Spawn()
+			elif wave > 6:
+				if randf() < .5:
+					Plane_Spawn()
+					if wave > 9:
+						if randf() < .5:
+							Plane_Spawn()
 			
 	else:
 		Stop_Props()

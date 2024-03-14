@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://btpp5cbpv4u8"]
+
+[ext_resource type="Script" path="res://Scripts/jet_controller.gd" id="1_6amlo"]
+
+[node name="JetController" type="Node"]
+script = ExtResource("1_6amlo")
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(2000, 90)
+
+[node name="Marker2D2" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(2000, 270)
+
+[node name="Marker2D3" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(2000, 450)
+
+[node name="Marker2D4" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(2000, 630)
+
+[node name="Marker2D5" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(2000, 810)
+
+[node name="Marker2D6" type="Marker2D" parent="." groups=["Spawner"]]
+position = Vector2(2000, 990)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjnt4fuf7q4pu"]
+
+[ext_resource type="Script" path="res://Scripts/MosquitoController.gd" id="1_u6l70"]
+[ext_resource type="PackedScene" uid="uid://dl1opuykfkvqs" path="res://Scenes/Mosquitos/n_shape.tscn" id="2_4h57r"]
+[ext_resource type="PackedScene" uid="uid://8sq75e1dhq65" path="res://Scenes/Mosquitos/u_shape.tscn" id="3_rfih2"]
+
+[node name="MosquitoController" type="Node"]
+script = ExtResource("1_u6l70")
+
+[node name="Shapes" type="Node" parent="."]
+
+[node name="NShape" parent="Shapes" instance=ExtResource("2_4h57r")]
+
+[node name="UShape" parent="Shapes" instance=ExtResource("3_rfih2")]

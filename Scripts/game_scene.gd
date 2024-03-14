@@ -6,4 +6,4 @@ extends Node2D
 
 var score = 0
 var scoreMultiplier = 1
-
+var mossiesEaten = 0

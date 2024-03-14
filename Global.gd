@@ -3,7 +3,8 @@ extends Node
 
 var gameMenu = true
 var mouseHovering = false
-
+var highScore = 0
+var mossiesInStock = 0
 
 func Start_Game():
 	var gameScene = get_tree().root.get_node("GameScene")
@@ -11,6 +12,7 @@ func Start_Game():
 	gameMenu = false
 	gameScene.mainMenu.hide()
 	gameScene.waveController.Next_Wave()
+	gameScene.waveController.mossyTimer.start()
 	
 
 func Game_Over():
@@ -19,6 +21,7 @@ func Game_Over():
 	gameMenu = true
 	gameScene.mainMenu.show()
 	gameScene.waveController.wave = 0
+	gameScene.waveController.mossyTimer.stop()
 
 
 func Random_List(list):
