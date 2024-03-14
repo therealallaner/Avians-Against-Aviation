@@ -22,7 +22,7 @@ func Plane_Spawn():
 	add_child(instance)
 	instance.position = Vector2(2000,randf_range(50,1030))
 	if wave > 10:
-		instance.xSpeed = randf_range(300,450)
+		instance.xSpeed = randf_range(350,450)
 	elif wave > 20:
 		instance.xSpeed = randf_range(400,600)
 

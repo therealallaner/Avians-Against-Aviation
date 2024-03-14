@@ -4,10 +4,14 @@ extends Control
 @onready var birds = $VBoxContainer/Birds
 @onready var stats = $VBoxContainer/HBoxContainer/Stats
 @onready var quitMenu = $QuitMenu
+@onready var start = $Start
+@onready var showTimer = $Start/ShowTimer
+@onready var hideTimer = $Start/HideTimer
 
 
 func _ready():
 	quitMenu.hide()
+	hideTimer.start()
 	
 	
 func _process(delta):
@@ -59,3 +63,13 @@ func _on_quit_mouse_entered():
 
 func _on_quit_mouse_exited():
 	Global.mouseHovering = false
+
+
+func _on_show_timer_timeout():
+	start.show()
+	hideTimer.start()
+
+
+func _on_hide_timer_timeout():
+	start.hide()
+	showTimer.start()
