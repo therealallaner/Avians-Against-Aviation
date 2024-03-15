@@ -17,11 +17,16 @@ func Start_Game():
 
 func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")
-	get_tree().reload_current_scene()
-	gameMenu = true
-	gameScene.mainMenu.show()
+	
+	mossiesInStock += gameScene.mossiesEaten
+	if gameScene.score > highScore:
+		highScore = gameScene.score
+		
+	gameScene.gameOver.Set_Game_Over_Screen()
+	gameScene.gameOver.show()
 	gameScene.waveController.wave = 0
 	gameScene.waveController.mossyTimer.stop()
+	Engine.time_scale = .15
 
 
 func Random_List(list):

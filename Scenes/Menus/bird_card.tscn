@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bakkpbtagnqag"]
+
+[ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="1_e07oo"]
+[ext_resource type="Script" path="res://Scripts/bird_card.gd" id="2_jle7d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2xew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lrl8"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yttpi"]
+bg_color = Color(0.752941, 0.662745, 0, 1)
+
+[node name="BirdCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_e07oo")
+script = ExtResource("2_jle7d")
+birdColor = "Blue"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 118.0
+offset_bottom = 136.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Bird"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h2xew")
+text = "50/100"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_6lrl8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yttpi")
+step = 1.0
+value = 50.0
+rounded = true
+show_percentage = false
