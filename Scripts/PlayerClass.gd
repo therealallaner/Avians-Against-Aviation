@@ -8,6 +8,8 @@ class_name Player
 @onready var pinkBird1 = preload("res://Scenes/Players/Sprites/pink_bird_1.tscn")
 @onready var redBird1 = preload("res://Scenes/Players/Sprites/red_bird_1.tscn")
 
+@onready var blackBird2 = preload("res://Scenes/Players/Sprites/black_bird_2.tscn")
+
 @onready var currentBird = blackBird1
 
 var defaultPos = Vector2(384,540)
