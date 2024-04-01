@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5u1hjbp7bn4s"]
 
 [ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="1_xslha"]
-[ext_resource type="PackedScene" uid="uid://bakkpbtagnqag" path="res://Scenes/Menus/bird_card.tscn" id="2_gec6v"]
-[ext_resource type="PackedScene" uid="uid://bfpuhrokdl0m6" path="res://Scenes/Players/Sprites/black_bird_1.tscn" id="2_gt7jt"]
-[ext_resource type="PackedScene" uid="uid://c02qoobx6xabh" path="res://Scenes/Players/Sprites/black_bird_2.tscn" id="4_xss10"]
-[ext_resource type="PackedScene" uid="uid://babi7iv3xtih8" path="res://Scenes/Players/Sprites/black_bird_3.tscn" id="5_tf88s"]
+[ext_resource type="Script" path="res://Scenes/Menus/aviary.gd" id="2_2dda0"]
+[ext_resource type="PackedScene" uid="uid://bakkpbtagnqag" path="res://Scenes/Menus/bird_card.tscn" id="2_3uh0k"]
+[ext_resource type="PackedScene" uid="uid://c02qoobx6xabh" path="res://Scenes/Players/Sprites/black_bird_2.tscn" id="3_plegv"]
+[ext_resource type="PackedScene" uid="uid://babi7iv3xtih8" path="res://Scenes/Players/Sprites/black_bird_3.tscn" id="4_axmj2"]
 
 [node name="Aviary" type="Control"]
 layout_mode = 3
@@ -14,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xslha")
+script = ExtResource("2_2dda0")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -39,281 +40,32 @@ theme_override_constants/margin_bottom = 15
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="TheAviary" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 text = "The Aviary"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 15)
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_constants/separation = 150
+alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(250, 0)
+[node name="BirdCard" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
-text = "Mosquitos
-0"
-alignment = 2
+blackBird = ExtResource("3_plegv")
 
-[node name="BlackBird1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" instance=ExtResource("2_gt7jt")]
-position = Vector2(59, 90)
+[node name="BlackBird1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/SpriteContainer" index="0"]
+position = Vector2(55, 38)
 
-[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(75, 0)
+[node name="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="4"]
+selected = 1
+
+[node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
-size_flags_horizontal = 3
+blackBird = ExtResource("4_axmj2")
 
-[node name="BirdCard" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(175, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Black"
-
-[node name="Spacer2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Green"
-
-[node name="Spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Pink"
-
-[node name="Spacer4" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Red"
-
-[node name="Spacer5" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Yellow"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
-layout_mode = 2
-text = "Mosquitos
-0"
-alignment = 2
-
-[node name="BlackBird2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer" instance=ExtResource("4_xss10")]
-position = Vector2(59, 90)
-
-[node name="Spacer6" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(175, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Black"
-
-[node name="Spacer7" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Green"
-
-[node name="Spacer8" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Pink"
-
-[node name="Spacer9" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Red"
-
-[node name="Spacer10" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Yellow"
-
-[node name="Spacer11" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard6" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-
-[node name="Spacer12" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard7" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Purple"
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer"]
-layout_mode = 2
-text = "Mosquitos
-0"
-alignment = 2
-
-[node name="BlackBird3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer" instance=ExtResource("5_tf88s")]
-position = Vector2(59, 95)
-
-[node name="Spacer7" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(175, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Black"
-
-[node name="Spacer13" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Green"
-
-[node name="Spacer14" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Pink"
-
-[node name="Spacer15" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Red"
-
-[node name="Spacer16" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Yellow"
-
-[node name="Spacer17" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard6" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-
-[node name="Spacer18" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="BirdCard7" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_gec6v")]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 1
-birdColor = "Purple"
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[editable path="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BirdCard2"]
+[editable path="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BirdCard3"]

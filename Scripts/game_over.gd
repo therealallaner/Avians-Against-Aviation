@@ -8,10 +8,16 @@ extends Control
 	
 	
 func Set_Game_Over_Screen():
+	var mossies = gameScene.bird1Mossies
+	if gameScene.player.currentBird in gameScene.player.bird2:
+		mossies = gameScene.bird2Mossies
+	if gameScene.player.currentBird in gameScene.player.bird3:
+		mossies = gameScene.bird3Mossies
+		
 	gameOver.text = "Good Job!
 	Your score was " + str(gameScene.score) + "
 	and you collected 
-	" + str(gameScene.mossiesEaten) + " mosquitos!"
+	" + str(mossies) + " mosquitos!"
 
 
 func _on_button_2_pressed():

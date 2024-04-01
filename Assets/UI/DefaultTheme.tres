@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://d12goax56bwxn"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://d12goax56bwxn"]
 
 [ext_resource type="FontFile" uid="uid://u28xhhe35i0q" path="res://Assets/UI/Fonts/Hey Comic.ttf" id="1_3sqsp"]
 
@@ -65,6 +65,25 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ermst"]
+bg_color = Color(0.752941, 0.662745, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_infdg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [resource]
 default_font = ExtResource("1_3sqsp")
 default_font_size = 50
@@ -83,3 +102,9 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 10
 Label/styles/normal = SubResource("StyleBoxFlat_ntebg")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_5pcn4")
+PopupMenu/font_sizes/font_separator_size = 25
+PopupMenu/font_sizes/font_size = 20
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_ermst")
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxFlat_ermst")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxFlat_ermst")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_infdg")

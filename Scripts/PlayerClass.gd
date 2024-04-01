@@ -10,13 +10,19 @@ class_name Player
 
 @onready var blackBird2 = preload("res://Scenes/Players/Sprites/black_bird_2.tscn")
 
+@onready var blackBird3 = preload("res://Scenes/Players/Sprites/black_bird_3.tscn")
+
 @onready var currentBird = blackBird1
+
+@onready var bird1 = [blackBird1,greenBird1,yellowBird1,pinkBird1,redBird1]
+@onready var bird2 = [blackBird2]
+@onready var bird3 = []
 
 var defaultPos = Vector2(384,540)
 
 
 func _ready():
-	Change_Bird(redBird1)
+	Change_Bird(blackBird3)
 	
 	
 func Change_Bird(bird):

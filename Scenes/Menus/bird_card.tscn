@@ -1,66 +1,151 @@
-[gd_scene load_steps=6 format=3 uid="uid://bakkpbtagnqag"]
+[gd_scene load_steps=12 format=3 uid="uid://bakkpbtagnqag"]
 
 [ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="1_e07oo"]
 [ext_resource type="Script" path="res://Scripts/bird_card.gd" id="2_jle7d"]
+[ext_resource type="PackedScene" uid="uid://bfpuhrokdl0m6" path="res://Scenes/Players/Sprites/black_bird_1.tscn" id="3_dkf2q"]
+[ext_resource type="PackedScene" uid="uid://d1rupj28yxc28" path="res://Scenes/Players/Sprites/green_bird_1.tscn" id="4_ewsol"]
+[ext_resource type="PackedScene" uid="uid://bh44eil2rws31" path="res://Scenes/Players/Sprites/pink_bird_1.tscn" id="5_dt1bi"]
+[ext_resource type="PackedScene" uid="uid://ojgxktn5ttpy" path="res://Scenes/Players/Sprites/red_bird_1.tscn" id="6_8anry"]
+[ext_resource type="PackedScene" uid="uid://cgk24fuh2ypnf" path="res://Scenes/Players/Sprites/yellow_bird_1.tscn" id="7_hi8of"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2xew"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bly7q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lrl8"]
-content_margin_top = 2.0
-content_margin_bottom = 2.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4eco"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yttpi"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rr8h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ermst"]
 bg_color = Color(0.752941, 0.662745, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="BirdCard" type="Control"]
+custom_minimum_size = Vector2(187, 328)
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_e07oo")
 script = ExtResource("2_jle7d")
-birdColor = "Blue"
+blackBird = ExtResource("3_dkf2q")
+greenBird = ExtResource("4_ewsol")
+pinkBird = ExtResource("5_dt1bi")
+redBird = ExtResource("6_8anry")
+yellowBird = ExtResource("7_hi8of")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bly7q")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4eco")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3"]
+layout_mode = 2
 theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer"]
 layout_mode = 2
-offset_left = 25.0
-offset_top = 15.0
-offset_right = 118.0
-offset_bottom = 136.0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-text = "Bird"
+text = "Bird 1"
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxEmpty_h2xew")
-text = "50/100"
-horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/background = SubResource("StyleBoxFlat_6lrl8")
-theme_override_styles/fill = SubResource("StyleBoxFlat_yttpi")
-step = 1.0
-value = 50.0
-rounded = true
-show_percentage = false
+size_flags_horizontal = 8
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1rr8h")
+text = "Mosquitos"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1rr8h")
+text = "52/100"
+horizontal_alignment = 2
+
+[node name="SpriteContainer" type="Container" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BlackBird1" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/SpriteContainer" instance=ExtResource("3_dkf2q")]
+position = Vector2(55, 28)
+
+[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ermst")
+alignment = 1
+item_count = 6
+selected = 2
+popup/item_0/text = "Color"
+popup/item_0/id = 0
+popup/item_0/separator = true
+popup/item_1/text = "Black"
+popup/item_1/id = 1
+popup/item_2/text = "Green"
+popup/item_2/id = 2
+popup/item_3/text = "Pink"
+popup/item_3/id = 3
+popup/item_4/text = "Red"
+popup/item_4/id = 4
+popup/item_5/text = "Yellow"
+popup/item_5/id = 5
+
+[connection signal="item_selected" from="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

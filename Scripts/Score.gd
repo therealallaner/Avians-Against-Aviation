@@ -7,9 +7,16 @@ extends Control
 
 func _ready():
 	scoreLabel.text = "Score: " + str(gameScene.score)
-	mossyLabel.text = "Mosquitos: " + str(gameScene.mossiesEaten)
+	var mossies = gameScene.bird1Mossies
+	mossyLabel.text = "Mosquitos: " + str(mossies)
 	
 
 func _process(delta):
 	scoreLabel.text = "Score: " + str(gameScene.score)
-	mossyLabel.text = "Mosquitos: " + str(gameScene.mossiesEaten)
+	var mossies = gameScene.bird1Mossies
+	if gameScene.player.currentBird in gameScene.player.bird2:
+		mossies = gameScene.bird2Mossies
+	if gameScene.player.currentBird in gameScene.player.bird3:
+		mossies = gameScene.bird3Mossies
+	
+	mossyLabel.text = "Mosquitos: " + str(mossies)
