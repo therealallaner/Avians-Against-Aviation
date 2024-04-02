@@ -1,7 +1,11 @@
 extends Control
 
+
+
+@onready var parent = get_parent()
+@onready var aviaryMenu = parent.get_node("Aviary")
 @onready var options = $VBoxContainer/Options
-@onready var birds = $VBoxContainer/Birds
+@onready var aviary = $VBoxContainer/Aviary
 @onready var stats = $VBoxContainer/HBoxContainer/Stats
 @onready var quitMenu = $QuitMenu
 @onready var start = $Start
@@ -20,8 +24,6 @@ func _process(delta):
 
 
 
-
-
 func _on_quit_pressed():
 	quitMenu.show()
 
@@ -31,6 +33,10 @@ func _on_yes_pressed():
 
 func _on_no_pressed():
 	quitMenu.hide()
+	
+	
+func _on_aviary_pressed():
+	parent.Menu_Open(parent.mainMenu,aviaryMenu)
 
 
 func _on_options_mouse_entered():
@@ -73,3 +79,5 @@ func _on_show_timer_timeout():
 func _on_hide_timer_timeout():
 	start.hide()
 	showTimer.start()
+
+

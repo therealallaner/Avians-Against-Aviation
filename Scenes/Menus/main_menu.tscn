@@ -33,9 +33,9 @@ grow_vertical = 2
 layout_mode = 2
 text = "Options"
 
-[node name="Birds" type="Button" parent="VBoxContainer"]
+[node name="Aviary" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Birds"
+text = "Aviary"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -131,8 +131,9 @@ one_shot = true
 
 [connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/Options" to="." method="_on_options_mouse_exited"]
-[connection signal="mouse_entered" from="VBoxContainer/Birds" to="." method="_on_birds_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/Birds" to="." method="_on_birds_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/Aviary" to="." method="_on_birds_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Aviary" to="." method="_on_birds_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Aviary" to="." method="_on_aviary_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Stats" to="." method="_on_stats_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/Stats" to="." method="_on_stats_mouse_exited"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]

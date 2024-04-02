@@ -1,6 +1,7 @@
 extends Node
 
 
+
 var gameMenu = true
 var mouseHovering = false
 var highScore = 0
@@ -8,10 +9,18 @@ var mossiesInStock1 = 0
 var mossiesInStock2 = 0
 var mossiesInStock3 = 0
 
+var currentBird
+var currentBird1
+var currentBird2
+var currentBird3
+
+
+
 func Start_Game():
 	var gameScene = get_tree().root.get_node("GameScene")
 	
 	gameMenu = false
+	gameScene.player.visibility.show()
 	gameScene.mainMenu.hide()
 	gameScene.waveController.Next_Wave()
 	gameScene.waveController.mossyTimer.start()
@@ -26,6 +35,7 @@ func Game_Over():
 	if gameScene.score > highScore:
 		highScore = gameScene.score
 		
+	gameScene.player.visibility.hide()
 	gameScene.gameOver.Set_Game_Over_Screen()
 	gameScene.gameOver.show()
 	gameScene.waveController.wave = 0

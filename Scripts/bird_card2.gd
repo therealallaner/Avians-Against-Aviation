@@ -38,7 +38,6 @@ func Change_Sprite(i):
 		var instance = blackBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird1 = "blackBird1"
 	elif i == 2:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -48,7 +47,6 @@ func Change_Sprite(i):
 		var instance = greenBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird1 = "greenBird1"
 	elif i == 3:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -58,7 +56,6 @@ func Change_Sprite(i):
 		var instance = pinkBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird1 = "pinkBird1"
 	elif i == 4:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -68,7 +65,6 @@ func Change_Sprite(i):
 		var instance = redBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird1 = "redBird1"
 	elif i == 5:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -78,7 +74,6 @@ func Change_Sprite(i):
 		var instance = yellowBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird1 = "yellowBird1"
 
 
 func _on_option_button_item_selected(index):
