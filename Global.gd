@@ -67,9 +67,12 @@ func Game_Over():
 	gameScene.gameOver.show()
 	gameScene.waveController.wave = 0
 	gameScene.waveController.mossyTimer.stop()
-	gameScene.saver.Save_Game()
+	Save_Game()
 	Engine.time_scale = .15
 	
-
+func Save_Game():
+	var gameScene = get_tree().root.get_node("GameScene")
+	gameScene.saver.Save_Game()
+	
 func Random_List(list):
 	return list[randi() % list.size()]

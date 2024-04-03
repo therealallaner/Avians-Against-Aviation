@@ -17,7 +17,7 @@ extends Control
 var test = "Test"
 
 func _ready():
-	mossiesLabel.text = str(Global.mossiesInStock3) + "/100"
+	mossiesLabel.text = str(Global.mossiesInStock3) + "/625"
 
 func Change_Sprite(i):
 	print(i)

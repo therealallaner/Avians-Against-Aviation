@@ -68,24 +68,27 @@ func Check_Unlocked(x):
 				Global.mossiesInStock1 -= 100
 				birdCard1.mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
 				select1.text = "Select"
+				Global.Save_Game()
 		else:
 			return true
 	elif x == 2:
 		if select2.text == "Buy":
-			if Global.mossiesInStock2 >= 100:
+			if Global.mossiesInStock2 >= 250:
 				Global.birdUnlocks2[Global.currentBird2] = true
-				Global.mossiesInStock2 -= 100
-				birdCard2.mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
+				Global.mossiesInStock2 -= 250
+				birdCard2.mossiesLabel.text = str(Global.mossiesInStock1) + "/250"
 				select2.text = "Select"
+				Global.Save_Game()
 		else:
 			return true
 	elif x == 3:
 		if select3.text == "Buy":
-			if Global.mossiesInStock3 >= 100:
+			if Global.mossiesInStock3 >= 625:
 				Global.birdUnlocks3[Global.currentBird3] = true
-				Global.mossiesInStock3 -= 100
-				birdCard3.mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
+				Global.mossiesInStock3 -= 625
+				birdCard3.mossiesLabel.text = str(Global.mossiesInStock1) + "/625"
 				select3.text = "Select"
+				Global.Save_Game()
 		else:
 			return true
 	
