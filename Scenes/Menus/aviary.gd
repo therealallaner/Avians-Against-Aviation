@@ -27,29 +27,67 @@ func _process(delta):
 
 func Bird_Select(x):
 	if x == 1:
-		currentBird = currentBird1
-		select1.text = "Selected"
-		select2.text = "Select"
-		select3.text = "Select"
-		Global.currentBird = Global.currentBird1
-		player.Change_Bird(player.birddict[Global.currentBird])
+		if Check_Unlocked(x):
+			currentBird = currentBird1
+			select1.text = "Selected"
+			if Global.birdUnlocks2[Global.currentBird2]:
+				select2.text = "Select"
+			if Global.birdUnlocks3[Global.currentBird3]:
+				select3.text = "Select"
+			Global.currentBird = Global.currentBird1
+			player.Change_Bird(player.birddict[Global.currentBird])
 		
 	elif x == 2:
-		currentBird = currentBird2
-		select1.text = "Select"
-		select2.text = "Selected"
-		select3.text = "Select"
-		Global.currentBird = Global.currentBird2
-		player.Change_Bird(player.birddict[Global.currentBird])
+		if Check_Unlocked(x):
+			currentBird = currentBird2
+			if Global.birdUnlocks1[Global.currentBird1]:
+				select1.text = "Select"
+			select2.text = "Selected"
+			if Global.birdUnlocks3[Global.currentBird3]:
+				select3.text = "Select"
+			Global.currentBird = Global.currentBird2
+			player.Change_Bird(player.birddict[Global.currentBird])
 		
 	elif x == 3:
-		currentBird = currentBird3
-		select1.text = "Select"
-		select2.text = "Select"
-		select3.text = "Selected"
-		Global.currentBird = Global.currentBird3
-		player.Change_Bird(player.birddict[Global.currentBird])
+		if Check_Unlocked(x):
+			currentBird = currentBird3
+			if Global.birdUnlocks1[Global.currentBird1]:
+				select1.text = "Select"
+			if Global.birdUnlocks2[Global.currentBird2]:
+				select2.text = "Select"
+			select3.text = "Selected"
+			Global.currentBird = Global.currentBird3
+			player.Change_Bird(player.birddict[Global.currentBird])
 	
+	
+func Check_Unlocked(x):
+	if x == 1:
+		if select1.text == "Buy":
+			if Global.mossiesInStock1 >= 100:
+				Global.birdUnlocks1[Global.currentBird1] = true
+				Global.mossiesInStock1 -= 100
+				birdCard1.mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
+				select1.text = "Select"
+		else:
+			return true
+	elif x == 2:
+		if select2.text == "Buy":
+			if Global.mossiesInStock2 >= 100:
+				Global.birdUnlocks2[Global.currentBird2] = true
+				Global.mossiesInStock2 -= 100
+				birdCard2.mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
+				select2.text = "Select"
+		else:
+			return true
+	elif x == 3:
+		if select3.text == "Buy":
+			if Global.mossiesInStock3 >= 100:
+				Global.birdUnlocks3[Global.currentBird3] = true
+				Global.mossiesInStock3 -= 100
+				birdCard3.mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
+				select3.text = "Select"
+		else:
+			return true
 	
 func _on_select_1_pressed():
 	Bird_Select(1)

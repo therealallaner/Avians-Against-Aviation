@@ -14,6 +14,32 @@ var currentBird1
 var currentBird2
 var currentBird3
 
+var birdUnlocks1 = {
+	"blackBird1": true,
+	"greenBird1": false,
+	"redBird1": false,
+	"pinkBird1": false,
+	"yellowBird1": false
+}
+var birdUnlocks2 = {
+	"blackBird2": true,
+	"greenBird2": false,
+	"redBird2": false,
+	"pinkBird2": false,
+	"yellowBird2": false,
+	"blueBird2": false,
+	"purpleBird2": false
+}
+
+var birdUnlocks3 = {
+	"blackBird3": true,
+	"greenBird3": false,
+	"redBird3": false,
+	"pinkBird3": false,
+	"yellowBird3": false,
+	"blueBird3": false,
+	"purpleBird3": false
+}
 
 
 func Start_Game():

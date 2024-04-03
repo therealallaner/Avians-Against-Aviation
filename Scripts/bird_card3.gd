@@ -3,7 +3,7 @@ extends Control
 @onready var options = $PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/OptionButton
 @onready var spriteContainer = $PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/SpriteContainer
 @onready var mossiesLabel = $PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/VBoxContainer/Label2
-@onready var aviary = get_parent().get_parent().get_parent().get_parent().get_parent()
+@onready var aviary = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
 
 
 @export var blackBird: PackedScene
@@ -30,7 +30,7 @@ func Change_Sprite(i):
 		var instance = blackBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird3 = "blackBird3"
+		Check_Unlocked("blackBird3")
 	elif i == 2:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -40,7 +40,7 @@ func Change_Sprite(i):
 		var instance = greenBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird3 = "greenBird3"
+		Check_Unlocked("greenBird3")
 	elif i == 3:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -50,7 +50,7 @@ func Change_Sprite(i):
 		var instance = pinkBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird3 = "pinkBird3"
+		Check_Unlocked("pinkBird3")
 	elif i == 4:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -60,7 +60,7 @@ func Change_Sprite(i):
 		var instance = redBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird3 = "redBird3"
+		Check_Unlocked("redBird3")
 	elif i == 5:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -70,7 +70,7 @@ func Change_Sprite(i):
 		var instance = yellowBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird3 = "yellowBird3"
+		Check_Unlocked("yellowBird3")
 	elif i == 6:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -80,7 +80,7 @@ func Change_Sprite(i):
 		var instance = blueBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird3 = "blueBird3"
+		Check_Unlocked("blueBird3")
 	elif i == 7:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -90,8 +90,15 @@ func Change_Sprite(i):
 		var instance = purpleBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
-		Global.currentBird3 = "purpleBird3"
+		Check_Unlocked("purpleBird3")
 
+
+func Check_Unlocked(s):
+	if !Global.birdUnlocks3[s]:
+		aviary.select3.text = "Buy"
+	else:
+		aviary.select3.text = "Select"
+	Global.currentBird3 = s
 
 func _on_option_button_item_selected(index):
 	Change_Sprite(index)
