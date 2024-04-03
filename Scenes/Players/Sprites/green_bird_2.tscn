@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh44eil2rws31"]
+[gd_scene load_steps=7 format=3 uid="uid://ckfjj73rf43oo"]
 
-[ext_resource type="Texture2D" uid="uid://b4xynmn57e7c1" path="res://Assets/BirdSprites/Bird1/spritesheets/__pink_flying_bird_1_flying.png" id="1_mfbfa"]
-[ext_resource type="Script" path="res://Scripts/HappyBird.gd" id="2_t0tyu"]
+[ext_resource type="Texture2D" uid="uid://lr3kw0u77bon" path="res://Assets/BirdSprites/Bird2/spritesheets/__green_flying_bird_2_flying.png" id="1_pu6v4"]
+[ext_resource type="Script" path="res://Scripts/HappyBird.gd" id="2_62d4l"]
 
 [sub_resource type="Animation" id="Animation_xqdg0"]
 resource_name = "Fly"
-length = 1.2
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -14,10 +14,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_g4o8b"]
@@ -45,13 +45,14 @@ _data = {
 radius = 69.0139
 height = 281.586
 
-[node name="PinkBird1" type="Sprite2D" groups=["Bird"]]
+[node name="GreenBird2" type="Sprite2D" groups=["Bird"]]
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_mfbfa")
+texture = ExtResource("1_pu6v4")
 flip_h = true
 hframes = 4
-vframes = 3
-script = ExtResource("2_t0tyu")
+vframes = 2
+frame = 1
+script = ExtResource("2_62d4l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -68,7 +69,7 @@ rotation = 1.4748
 shape = SubResource("CapsuleShape2D_4bdnc")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(150, 250)
+position = Vector2(30, 6.66669)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
