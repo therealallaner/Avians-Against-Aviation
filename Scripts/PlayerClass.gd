@@ -60,18 +60,19 @@ var defaultPos = Vector2(384,540)
 
 
 func _ready():
-	if Global.currentBird:
-		print(Global.currentBird)
-		currentBird = birddict[Global.currentBird]
-	else:
-		currentBird = birddict["blackBird1"]
+	Check_Global()
 		
 	Change_Bird(currentBird)
 	for c in get_children():
 		if c.is_in_group("Bird"):
 			visibility = c.visibility
 	
-	
+func Check_Global():
+	if Global.currentBird:
+		print(Global.currentBird)
+		currentBird = birddict[Global.currentBird]
+	else:
+		currentBird = birddict["blackBird1"]
 	
 func Change_Bird(bird):
 	for c in get_children():
@@ -82,3 +83,4 @@ func Change_Bird(bird):
 	self.global_position = defaultPos
 	instance.Anim_Controller(instance.animPlayer)
 	visibility = instance.visibility
+	Check_Global()

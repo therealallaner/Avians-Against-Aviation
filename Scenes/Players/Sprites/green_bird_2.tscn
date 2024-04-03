@@ -45,7 +45,7 @@ _data = {
 radius = 69.0139
 height = 281.586
 
-[node name="GreenBird2" type="Sprite2D" groups=["Bird"]]
+[node name="GreenBird2" type="Sprite2D" groups=["Bird", "Bird2"]]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_pu6v4")
 flip_h = true
