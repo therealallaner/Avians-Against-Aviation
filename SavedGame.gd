@@ -1,0 +1,17 @@
+class_name SavedGame
+extends Resource
+
+
+@export var highScore: int
+@export var mossiesInStock1: int
+@export var mossiesInStock2: int
+@export var mossiesInStock3: int
+
+@export var currentBird: String
+@export var currentBird1: String
+@export var currentBird2: String
+@export var currentBird3: String
+
+@export var birdUnlocks1: Dictionary
+@export var birdUnlocks2: Dictionary
+@export var birdUnlocks3: Dictionary

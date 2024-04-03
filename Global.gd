@@ -9,10 +9,10 @@ var mossiesInStock1 = 0
 var mossiesInStock2 = 0
 var mossiesInStock3 = 0
 
-var currentBird
-var currentBird1
-var currentBird2
-var currentBird3
+var currentBird = "blackBird1"
+var currentBird1 = "blackBird1"
+var currentBird2 = "blackBird2"
+var currentBird3 = "blackBird3"
 
 var birdUnlocks1 = {
 	"blackBird1": true,
@@ -56,6 +56,7 @@ func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")
 	
 	mossiesInStock1 += gameScene.bird1Mossies
+	print("Saved Mossies")
 	mossiesInStock2 += gameScene.bird2Mossies
 	mossiesInStock3 += gameScene.bird3Mossies
 	if gameScene.score > highScore:
@@ -66,8 +67,9 @@ func Game_Over():
 	gameScene.gameOver.show()
 	gameScene.waveController.wave = 0
 	gameScene.waveController.mossyTimer.stop()
+	gameScene.saver.Save_Game()
 	Engine.time_scale = .15
-
+	
 
 func Random_List(list):
 	return list[randi() % list.size()]

@@ -4,6 +4,7 @@ extends Node2D
 @onready var waveController = $WaveController
 @onready var player = $HappyBird
 @onready var gameOver = $Menus/GameOver
+@onready var saver = $Saver
 
 var test = "Test"
 
