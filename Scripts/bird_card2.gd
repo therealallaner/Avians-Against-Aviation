@@ -17,15 +17,7 @@ extends Control
 var test = "Test"
 
 func _ready():
-	mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
-#	var pos:Vector2
-#	var children = spriteContainer.get_children()
-#	for c in children:
-#		pos = c.position
-#		c.queue_free()
-#	var instance = blackBird.instantiate()
-#	spriteContainer.add_child(instance)
-#	instance.position = pos
+	mossiesLabel.text = str(Global.mossiesInStock2) + "/100"
 
 func Change_Sprite(i):
 	print(i)
@@ -38,6 +30,7 @@ func Change_Sprite(i):
 		var instance = blackBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
+		Global.currentBird2 = "blackBird2"
 	elif i == 2:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -47,6 +40,7 @@ func Change_Sprite(i):
 		var instance = greenBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
+		Global.currentBird2 = "greenBird2"
 	elif i == 3:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -56,6 +50,7 @@ func Change_Sprite(i):
 		var instance = pinkBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
+		Global.currentBird2 = "pinkBird2"
 	elif i == 4:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -65,6 +60,7 @@ func Change_Sprite(i):
 		var instance = redBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
+		Global.currentBird2 = "redBird2"
 	elif i == 5:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
@@ -74,6 +70,27 @@ func Change_Sprite(i):
 		var instance = yellowBird.instantiate()
 		spriteContainer.add_child(instance)
 		instance.position = pos
+		Global.currentBird2 = "yellowBird2"
+	elif i == 6:
+		var pos:Vector2
+		var children = spriteContainer.get_children()
+		for c in children:
+			pos = c.position
+			c.queue_free()
+		var instance = blueBird.instantiate()
+		spriteContainer.add_child(instance)
+		instance.position = pos
+		Global.currentBird2 = "blueBird2"
+	elif i == 7:
+		var pos:Vector2
+		var children = spriteContainer.get_children()
+		for c in children:
+			pos = c.position
+			c.queue_free()
+		var instance = purpleBird.instantiate()
+		spriteContainer.add_child(instance)
+		instance.position = pos
+		Global.currentBird2 = "purpleBird2"
 
 
 func _on_option_button_item_selected(index):

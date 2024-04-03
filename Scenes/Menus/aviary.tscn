@@ -1,10 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5u1hjbp7bn4s"]
+[gd_scene load_steps=20 format=3 uid="uid://b5u1hjbp7bn4s"]
 
 [ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="1_xslha"]
 [ext_resource type="Script" path="res://Scenes/Menus/aviary.gd" id="2_2dda0"]
 [ext_resource type="PackedScene" uid="uid://bakkpbtagnqag" path="res://Scenes/Menus/bird_card.tscn" id="2_3uh0k"]
 [ext_resource type="PackedScene" uid="uid://c02qoobx6xabh" path="res://Scenes/Players/Sprites/black_bird_2.tscn" id="3_plegv"]
 [ext_resource type="PackedScene" uid="uid://babi7iv3xtih8" path="res://Scenes/Players/Sprites/black_bird_3.tscn" id="4_axmj2"]
+[ext_resource type="Script" path="res://Scripts/bird_card2.gd" id="4_c1dld"]
+[ext_resource type="PackedScene" uid="uid://ckfjj73rf43oo" path="res://Scenes/Players/Sprites/green_bird_2.tscn" id="6_7xxu8"]
+[ext_resource type="PackedScene" uid="uid://wihvgsh20nue" path="res://Scenes/Players/Sprites/pink_bird_2.tscn" id="7_l1wmq"]
+[ext_resource type="PackedScene" uid="uid://fq7e25jia6li" path="res://Scenes/Players/Sprites/red_bird_2.tscn" id="8_vibo5"]
+[ext_resource type="PackedScene" uid="uid://b86yvplrteruo" path="res://Scenes/Players/Sprites/yellow_bird_2.tscn" id="9_14rck"]
+[ext_resource type="PackedScene" uid="uid://bl01apun6qnjd" path="res://Scenes/Players/Sprites/blue_bird_2.tscn" id="10_3iaxp"]
+[ext_resource type="PackedScene" uid="uid://bbcbyv4srpb34" path="res://Scenes/Players/Sprites/purple_bird_2.tscn" id="11_gqgwe"]
+[ext_resource type="Script" path="res://Scripts/bird_card3.gd" id="12_8ewsl"]
+[ext_resource type="PackedScene" uid="uid://cdbt4l2sxwpni" path="res://Scenes/Players/Sprites/green_bird_3.tscn" id="14_52id7"]
+[ext_resource type="PackedScene" uid="uid://dq6b6411i2wmc" path="res://Scenes/Players/Sprites/pink_bird_3.tscn" id="15_c0jqc"]
+[ext_resource type="PackedScene" uid="uid://cc2dvvwvqcvqw" path="res://Scenes/Players/Sprites/red_bird_3.tscn" id="16_6uj78"]
+[ext_resource type="PackedScene" uid="uid://bctyk81dcxpeq" path="res://Scenes/Players/Sprites/yellow_bird_3.tscn" id="17_fpjo8"]
+[ext_resource type="PackedScene" uid="uid://csbgvnxgxrg74" path="res://Scenes/Players/Sprites/blue_bird_3.tscn" id="18_3ax66"]
+[ext_resource type="PackedScene" uid="uid://dk8o64gbsml2p" path="res://Scenes/Players/Sprites/purple_bird_3.tscn" id="19_ne48y"]
 
 [node name="Aviary" type="Control"]
 layout_mode = 3
@@ -67,10 +81,27 @@ layout_mode = 2
 
 [node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
+script = ExtResource("4_c1dld")
 blackBird = ExtResource("3_plegv")
+greenBird = ExtResource("6_7xxu8")
+pinkBird = ExtResource("7_l1wmq")
+redBird = ExtResource("8_vibo5")
+yellowBird = ExtResource("9_14rck")
+blueBird = ExtResource("10_3iaxp")
+purpleBird = ExtResource("11_gqgwe")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="0"]
+text = "Bird 2"
 
 [node name="BlackBird1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/SpriteContainer" index="0"]
 position = Vector2(55, 38)
+
+[node name="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="4"]
+item_count = 8
+popup/item_6/text = "Blue"
+popup/item_6/id = 6
+popup/item_7/text = "Purple"
+popup/item_7/id = 7
 
 [node name="Select2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -83,7 +114,24 @@ layout_mode = 2
 
 [node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
+script = ExtResource("12_8ewsl")
 blackBird = ExtResource("4_axmj2")
+greenBird = ExtResource("14_52id7")
+pinkBird = ExtResource("15_c0jqc")
+redBird = ExtResource("16_6uj78")
+yellowBird = ExtResource("17_fpjo8")
+blueBird = ExtResource("18_3ax66")
+purpleBird = ExtResource("19_ne48y")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BirdCard3/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="0"]
+text = "Bird 3"
+
+[node name="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BirdCard3/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="4"]
+item_count = 8
+popup/item_6/text = "Blue"
+popup/item_6/id = 6
+popup/item_7/text = "Purple"
+popup/item_7/id = 7
 
 [node name="Select3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2

@@ -11,21 +11,11 @@ extends Control
 @export var pinkBird: PackedScene
 @export var redBird: PackedScene
 @export var yellowBird: PackedScene
-@export var blueBird: PackedScene
-@export var purpleBird: PackedScene
 
 var test = "Test"
 
 func _ready():
 	mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
-#	var pos:Vector2
-#	var children = spriteContainer.get_children()
-#	for c in children:
-#		pos = c.position
-#		c.queue_free()
-#	var instance = blackBird.instantiate()
-#	spriteContainer.add_child(instance)
-#	instance.position = pos
 
 func Change_Sprite(i):
 	print(i)

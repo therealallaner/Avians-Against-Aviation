@@ -143,7 +143,6 @@ popup/item_2/text = "Green"
 popup/item_2/id = 2
 popup/item_3/text = "Pink"
 popup/item_3/id = 3
-popup/item_3/disabled = true
 popup/item_4/text = "Red"
 popup/item_4/id = 4
 popup/item_5/text = "Yellow"
