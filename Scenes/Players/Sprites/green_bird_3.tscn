@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdbt4l2sxwpni"]
+
+[ext_resource type="Texture2D" uid="uid://cfg3kom2ex5w4" path="res://Assets/BirdSprites/Bird3/spritesheet/__green_flying_bird_3_flying.png" id="1_uk0xi"]
+[ext_resource type="Script" path="res://Scripts/HappyBird.gd" id="2_4pt8y"]
+
+[sub_resource type="Animation" id="Animation_xqdg0"]
+resource_name = "Fly"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_g4o8b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_23o0a"]
+_data = {
+"Fly": SubResource("Animation_xqdg0"),
+"RESET": SubResource("Animation_g4o8b")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bdnc"]
+radius = 69.0139
+height = 462.871
+
+[node name="BlackBird3" type="Sprite2D" groups=["Bird"]]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_uk0xi")
+flip_h = true
+hframes = 4
+vframes = 2
+frame = 6
+script = ExtResource("2_4pt8y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_23o0a")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-73.3333, 13.3333)
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(106.667, 3.33334)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4bdnc")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(30, 6.66669)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

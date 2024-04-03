@@ -9,20 +9,20 @@ class_name Player
 @onready var redBird1 = preload("res://Scenes/Players/Sprites/red_bird_1.tscn")
 
 @onready var blackBird2 = preload("res://Scenes/Players/Sprites/black_bird_2.tscn")
-@onready var greenBird2
-@onready var yellowBird2
-@onready var pinkBird2
-@onready var redBird2
-@onready var blueBird2
-@onready var purpleBird2
+@onready var greenBird2 = preload("res://Scenes/Players/Sprites/green_bird_2.tscn")
+@onready var yellowBird2 = preload("res://Scenes/Players/Sprites/yellow_bird_2.tscn")
+@onready var pinkBird2 = preload("res://Scenes/Players/Sprites/pink_bird_2.tscn")
+@onready var redBird2 = preload("res://Scenes/Players/Sprites/red_bird_2.tscn")
+@onready var blueBird2 = preload("res://Scenes/Players/Sprites/blue_bird_2.tscn")
+@onready var purpleBird2 = preload("res://Scenes/Players/Sprites/purple_bird_2.tscn")
 
 @onready var blackBird3 = preload("res://Scenes/Players/Sprites/black_bird_3.tscn")
-@onready var greenBird3
-@onready var yellowBird3
-@onready var pinkBird3
-@onready var redBird3
-@onready var blueBird3
-@onready var purpleBird3
+@onready var greenBird3 = preload("res://Scenes/Players/Sprites/green_bird_3.tscn")
+@onready var yellowBird3 = preload("res://Scenes/Players/Sprites/yellow_bird_3.tscn")
+@onready var pinkBird3 = preload("res://Scenes/Players/Sprites/pink_bird_3.tscn")
+@onready var redBird3 = preload("res://Scenes/Players/Sprites/red_bird_3.tscn")
+@onready var blueBird3 = preload("res://Scenes/Players/Sprites/blue_bird_3.tscn")
+@onready var purpleBird3 = preload("res://Scenes/Players/Sprites/purple_bird_3.tscn")
 
 @onready var currentBird = redBird1
 
