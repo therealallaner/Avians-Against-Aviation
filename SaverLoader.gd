@@ -2,6 +2,8 @@ class_name SaverLoader
 extends Node
 
 
+
+
 func Save_Game():
 	
 	var savedGame:SavedGame = SavedGame.new()
@@ -25,6 +27,10 @@ func Save_Game():
 	for s in Global.birdUnlocks3:
 		if Global.birdUnlocks3[s]:
 			savedGame.birdUnlocks3[s] = Global.birdUnlocks3[s]
+			
+			
+	savedGame.masterVolume = Global.masterVolume
+	savedGame.musicVolume = Global.musicVolume
 	
 	ResourceSaver.save(savedGame, "user://savegame.tres")
 	
@@ -64,3 +70,6 @@ func Load_Game():
 #@export var birdUnlocks1: Dictionary
 #@export var birdUnlocks2: Dictionary
 #@export var birdUnlocks3: Dictionary
+
+		Global.masterVolume = savedGame.masterVolume
+		Global.musicVolume = savedGame.musicVolume

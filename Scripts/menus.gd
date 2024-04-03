@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var mainMenu = $MainMenu
 @onready var gameOver = $GameOver
 @onready var aviary = $Aviary
+@onready var options = $Options
 
 var isInMenu = false
 var menuTransitionTime := 0.25

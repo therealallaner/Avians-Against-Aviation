@@ -4,6 +4,7 @@ extends Control
 
 @onready var parent = get_parent()
 @onready var aviaryMenu = parent.get_node("Aviary")
+@onready var optionsMenu = parent.get_node("Options")
 @onready var options = $VBoxContainer/Options
 @onready var aviary = $VBoxContainer/Aviary
 @onready var stats = $VBoxContainer/HBoxContainer/Stats
@@ -37,6 +38,11 @@ func _on_no_pressed():
 	
 func _on_aviary_pressed():
 	parent.Menu_Open(parent.mainMenu,aviaryMenu)
+	
+	
+func _on_options_pressed():
+	parent.Menu_Open(parent.mainMenu,optionsMenu)
+
 
 
 func _on_options_mouse_entered():
@@ -79,5 +85,6 @@ func _on_show_timer_timeout():
 func _on_hide_timer_timeout():
 	start.hide()
 	showTimer.start()
+
 
 

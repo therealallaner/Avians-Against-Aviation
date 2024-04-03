@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d32354pptrddv"]
+[gd_scene load_steps=7 format=3 uid="uid://d32354pptrddv"]
 
 [ext_resource type="PackedScene" uid="uid://ypshs4jgwspk" path="res://Scenes/Menus/main_menu.tscn" id="1_bodm1"]
 [ext_resource type="Script" path="res://Scripts/menus.gd" id="1_qffpw"]
 [ext_resource type="PackedScene" uid="uid://d4a86qeqkvi6u" path="res://Scenes/Menus/score.tscn" id="2_adb5m"]
 [ext_resource type="PackedScene" uid="uid://by5143k4ej610" path="res://Scenes/Menus/game_over.tscn" id="3_cqr5x"]
 [ext_resource type="PackedScene" uid="uid://b5u1hjbp7bn4s" path="res://Scenes/Menus/aviary.tscn" id="4_sin3k"]
+[ext_resource type="PackedScene" uid="uid://xv3qe250yr3p" path="res://Scenes/Menus/options.tscn" id="6_4ww83"]
 
 [node name="Menus" type="CanvasLayer"]
 script = ExtResource("1_qffpw")
@@ -17,5 +18,9 @@ script = ExtResource("1_qffpw")
 visible = false
 
 [node name="Aviary" parent="." instance=ExtResource("4_sin3k")]
+offset_left = 1920.0
+offset_right = 1920.0
+
+[node name="Options" parent="." instance=ExtResource("6_4ww83")]
 offset_left = 1920.0
 offset_right = 1920.0
