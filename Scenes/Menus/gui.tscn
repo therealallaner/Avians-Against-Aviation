@@ -22,5 +22,12 @@ rotation = -1.5708
 value = 50.0
 
 [node name="BossHP" parent="." instance=ExtResource("2_02i71")]
-visible = false
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -600.0
+offset_right = 600.0
+offset_bottom = 35.0
+grow_horizontal = 2
+value = 50.0

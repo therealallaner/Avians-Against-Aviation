@@ -16,3 +16,7 @@ func _process(delta):
 func Update_Player_HP():
 	var playerHPCurr = gameScene.player.HP
 	playerHP.value = playerHPCurr
+
+func Update_Boss_HP(hp):
+	var bossHPCurr = hp
+	bossHP.value = bossHPCurr

@@ -19,4 +19,3 @@ var bird3Mossies = 0
 func _ready():
 	Engine.time_scale = 1
 	gameOver.hide()
-	print(test)

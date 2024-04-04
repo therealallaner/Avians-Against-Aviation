@@ -69,7 +69,6 @@ func _ready():
 	
 func Check_Global():
 	if Global.currentBird:
-		print(Global.currentBird)
 		currentBird = birddict[Global.currentBird]
 	else:
 		currentBird = birddict["blackBird1"]

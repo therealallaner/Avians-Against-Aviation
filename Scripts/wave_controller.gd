@@ -7,12 +7,21 @@ extends Node
 @onready var jetTimer = $JetTimer
 @onready var mossyController = $MosquitoController
 @onready var mossyTimer = $MossyTimer
+@onready var bossController = $BossController
 
 var wave = 0
+var bossHPX = 1
 
 var jetWaves = [4,6,8,10,12,13,14,15,16]
+var bossWaves = []
 
 
+func _ready():
+	for x in range(snapped(randf_range(5,10),1)):
+		var w = snapped(randf_range(5,40),1)
+		if w not in bossWaves:
+			bossWaves.append(int(w))
+			
 func Wave_Difficulty():
 	if wave < 5:
 		return randf_range(4,7)
@@ -27,12 +36,17 @@ func Wave_Difficulty():
 		
 func Next_Wave():
 	wave += 1
-	var propPlaneDifficulty = Wave_Difficulty()
-	propPlaneController.Spawn_Props(propPlaneDifficulty)
-	if wave in jetWaves:
-		jetController.Plane_Spawn()
-		if randf() < .25:
-			jetTimer.start()
+	if wave in bossWaves:
+		pass
+		bossController.Spawn_Boss(bossHPX)
+		bossWaves.erase(wave)
+	else:
+		var propPlaneDifficulty = Wave_Difficulty()
+		propPlaneController.Spawn_Props(propPlaneDifficulty)
+		if wave in jetWaves:
+			jetController.Plane_Spawn()
+			if randf() < .25:
+				jetTimer.start()
 
 
 func _on_timer_timeout():

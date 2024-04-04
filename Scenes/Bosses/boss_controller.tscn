@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2q62urerre4j"]
+
+[ext_resource type="Script" path="res://Scripts/boss_controller.gd" id="1_rsj14"]
+
+[node name="BossController" type="Node"]
+script = ExtResource("1_rsj14")

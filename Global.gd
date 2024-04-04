@@ -5,6 +5,7 @@ extends Node
 var gameMenu = true
 var mouseHovering = false
 var highScore = 0
+var currentDamage = 1
 var masterVolume: float = 1.0
 var musicVolume: float = 1.0
 var mossiesInStock1 = 0
@@ -43,6 +44,13 @@ var birdUnlocks3 = {
 	"purpleBird3": false
 }
 
+var playerStats = {
+	"HighScore": 0,
+	"LifetimeScore": 0,
+	"LifetimeMossies": 0,
+	"CritChance": .01,
+}
+
 
 func Start_Game():
 	var gameScene = get_tree().root.get_node("GameScene")
@@ -58,7 +66,6 @@ func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")
 	
 	mossiesInStock1 += gameScene.bird1Mossies
-	print("Saved Mossies")
 	mossiesInStock2 += gameScene.bird2Mossies
 	mossiesInStock3 += gameScene.bird3Mossies
 	if gameScene.score > highScore:
@@ -71,6 +78,16 @@ func Game_Over():
 	gameScene.waveController.mossyTimer.stop()
 	Save_Game()
 	Engine.time_scale = .15
+	
+func Deal_Damage(b):
+	var gameScene = get_tree().root.get_node("GameScene")
+	var damage = currentDamage
+	var x = randf()
+	if x <= playerStats["CritChance"]:
+		damage = currentDamage*2
+	b.HP -= damage
+	var hp = b.HP
+	gameScene.GUI.Update_Boss_HP(hp)
 	
 func Save_Game():
 	var gameScene = get_tree().root.get_node("GameScene")

@@ -18,7 +18,6 @@ func _ready():
 	mossiesLabel.text = str(Global.mossiesInStock1) + "/100"
 
 func Change_Sprite(i):
-	print(i)
 	if i == 1:
 		var pos:Vector2
 		var children = spriteContainer.get_children()
