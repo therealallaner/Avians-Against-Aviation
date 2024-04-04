@@ -13,7 +13,7 @@ var wave = 0
 var bossHPX = 1
 
 var jetWaves = [4,6,8,10,12,13,14,15,16]
-var bossWaves = []
+var bossWaves = [1]
 
 
 func _ready():
@@ -35,6 +35,7 @@ func Wave_Difficulty():
 		return randf_range(14,25)
 		
 func Next_Wave():
+	print(wave)
 	wave += 1
 	if wave in bossWaves:
 		pass

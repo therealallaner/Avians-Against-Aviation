@@ -1,15 +1,25 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1jqnj4rhvl2k"]
+[gd_scene load_steps=31 format=3 uid="uid://d1jqnj4rhvl2k"]
 
 [ext_resource type="Script" path="res://MosquitoBoss.gd" id="1_hm6h2"]
+[ext_resource type="Texture2D" uid="uid://bcryuvht3qfqw" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_000.png" id="2_bpdth"]
 [ext_resource type="Texture2D" uid="uid://bcd3wcjquau62" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_000.png" id="2_cvthe"]
 [ext_resource type="Texture2D" uid="uid://gqn7pqeovwak" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_001.png" id="3_6htd8"]
+[ext_resource type="Texture2D" uid="uid://dng2pbiio0ryx" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_001.png" id="3_xnsl0"]
 [ext_resource type="Texture2D" uid="uid://bscq4unrbb2qk" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_002.png" id="4_efxjs"]
+[ext_resource type="Texture2D" uid="uid://buyn3qcowosfu" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_002.png" id="4_j1y43"]
+[ext_resource type="Texture2D" uid="uid://oqt18x32pg6r" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_003.png" id="5_87uxl"]
 [ext_resource type="Texture2D" uid="uid://d21660iewg8d2" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_003.png" id="5_mw2pb"]
+[ext_resource type="Texture2D" uid="uid://dcmogiexqg58e" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_004.png" id="6_2j8f0"]
 [ext_resource type="Texture2D" uid="uid://vgug2be7ffr4" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_004.png" id="6_2ppym"]
 [ext_resource type="Texture2D" uid="uid://dadn1yj3selov" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_005.png" id="7_bo4ae"]
+[ext_resource type="Texture2D" uid="uid://dvsurthiqonp6" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_005.png" id="7_sikdj"]
 [ext_resource type="Texture2D" uid="uid://bftgfomnv11df" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_006.png" id="8_0eeh7"]
+[ext_resource type="Texture2D" uid="uid://csoyifclaf3x3" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_006.png" id="8_plclc"]
 [ext_resource type="Texture2D" uid="uid://cj51bxlwreox5" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_007.png" id="9_6lnuv"]
+[ext_resource type="Texture2D" uid="uid://d1qj7u6f6mgw7" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_007.png" id="9_s330x"]
 [ext_resource type="Texture2D" uid="uid://bbchxpecc83cm" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_008.png" id="10_cpbo3"]
+[ext_resource type="Texture2D" uid="uid://nwggy5kr0782" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_008.png" id="10_qw8vu"]
+[ext_resource type="Texture2D" uid="uid://dfv24tn0u5x4w" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_009.png" id="11_fhdtj"]
 [ext_resource type="Texture2D" uid="uid://dpe21x2j67taf" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_009.png" id="11_rt5rh"]
 [ext_resource type="Texture2D" uid="uid://ov31r6ovto5b" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_010.png" id="12_mkp4e"]
 [ext_resource type="Texture2D" uid="uid://db3ntkmeqjj17" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_011.png" id="13_sf4xp"]
@@ -17,9 +27,45 @@
 [ext_resource type="Texture2D" uid="uid://pmhntia1k2j1" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_013.png" id="15_lev3n"]
 [ext_resource type="Texture2D" uid="uid://wbmaoe5r0uuv" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_014.png" id="16_efq0y"]
 [ext_resource type="Texture2D" uid="uid://dpvosjg82irfe" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_015.png" id="17_quap7"]
+[ext_resource type="PackedScene" uid="uid://cjcbvtuk7lsi4" path="res://Scenes/Mosquitos/swarm_shape_1.tscn" id="28_wj8hs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgcwg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bpdth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xnsl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j1y43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_87uxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2j8f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sikdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_plclc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s330x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qw8vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fhdtj")
+}],
+"loop": false,
+"name": &"dying",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_cvthe")
@@ -84,8 +130,9 @@ script = ExtResource("1_hm6h2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgcwg")
-animation = &"flying"
-frame_progress = 0.151033
+animation = &"dying"
+frame = 9
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -93,6 +140,10 @@ frame_progress = 0.151033
 position = Vector2(54.6667, 32)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_beso0")
+
+[node name="Shapes" type="Node" parent="."]
+
+[node name="SwarmShape1" parent="Shapes" instance=ExtResource("28_wj8hs")]
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

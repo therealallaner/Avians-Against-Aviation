@@ -61,6 +61,7 @@ func Start_Game():
 	gameScene.waveController.Next_Wave()
 	gameScene.waveController.mossyTimer.start()
 	gameScene.GUI.show()
+	gameScene.get_node("Menus/Aviary").hide()
 
 func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")

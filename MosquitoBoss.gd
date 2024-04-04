@@ -1,20 +1,28 @@
 extends CharacterBody2D
 
-
+@onready var sprite = $AnimatedSprite2D
+@onready var swarms = $Shapes.get_children()
+@onready var poisonMossy = preload("res://Scenes/Mosquitos/poison_mosquito.tscn")
 
 var HP = 20
 var isHovering = false
-var speed = 100
+var spawnSpeed = 100
+var idleSpeed = 350
+var idleTimes = 1
+var swarmSpeed = 200
+var swarmTimes = 1
 var target: Vector2
 var states = {
 	"Spawning": true,
 	"Attacking": false,
 	"Swarming": false,
 	"Idling": false,
-	"Dying": false
+	"Dying": false,
+	"Dead": false
 }
 
-
+func _ready():
+	sprite.play("flying")
 
 func _process(delta):
 	if !states["Spawning"]:
@@ -23,13 +31,24 @@ func _process(delta):
 				Global.Deal_Damage(self)
 				
 	if HP <= 0:
-		for s in states:
-			states[s] = false
-		states["Dying"] = true
+		if !states["Dead"]:
+			for s in states:
+				states[s] = false
+			states["Dying"] = true
 		
+
 	if states["Dying"]:
-		get_parent().waveController.Next_Wave()
-		queue_free()
+		sprite.play("dying")
+		states["Dying"] = false
+		states["Dead"] = true
+			
+	if states["Dead"]:
+		print(sprite.is_playing())
+		if !sprite.is_playing():
+			get_parent().waveController.Next_Wave()
+			get_parent().bossHPBar.hide()
+			queue_free()
+			
 
 func _physics_process(delta):
 	if states["Spawning"]:
@@ -39,27 +58,97 @@ func _physics_process(delta):
 			states["Spawning"] = false
 			states["Idling"] = true
 			target = Vector2(position.x,randf_range(50,1000))
+			idleTimes = snapped(randf_range(1,5),1)
 			return
-		velocity = newPos * speed
+		velocity = newPos * spawnSpeed
 		
 	if states["Idling"]:
 		var newPos = (target-position).normalized()
 		var distance = (target - position).length()
 		if distance < 10:
+			idleTimes -= 1
+			if idleTimes <= 0:
+				states["Idling"] = false
+				swarmTimes = snapped(randf_range(1,5),1)
+				Randomize_Next_State(1)
+				return
 			target = Vector2(position.x,randf_range(50,1000))
 #			states["Idling"] = false
 #			target = Vector2(position.x,position.y)
 			return
-		velocity = newPos * speed
+		velocity = newPos * idleSpeed
 		
 	if states["Attacking"]:
-		pass # Shoot gunk out at the player in a straight line from its current y coord
-		# Then transition into either Idle or Swarm
+		print("Attacking")
+		states["Attacking"] = false
+		swarmTimes = snapped(randf_range(1,5),1)
+		idleTimes = snapped(randf_range(1,5),1)
+		Randomize_Next_State(2)
+		
+		
 	if states["Swarming"]:
-		pass # Spawn x number of poison mosquitos that will swarm towards the player
-		# Then transition into either Idle or Attack
+		print("Swarming")
+		var newPos = (target-position).normalized()
+		var distance = (target - position).length()
+		if distance < 10:
+			swarmTimes -= 1
+			if swarmTimes <= 0:
+				states["Swarming"] = false
+				idleTimes = snapped(randf_range(1,5),1)
+				Randomize_Next_State(3)
+				return
+			Spawn_Mossies()
+			target = Vector2(position.x,randf_range(50,1000))
+			return
+		velocity = newPos * swarmSpeed
+		
+		
+		states["Swarming"] = false
+		Randomize_Next_State(3)
 		
 	move_and_slide()
+	
+	
+func Spawn_Mossies():
+	var shape = $Shapes/SwarmShape1
+	var xPos = position.x
+	var yPos = position.y
+	var x = snapped(randf_range(5,10),1)
+	
+	for i in range(x):
+		var marker = Marker2D.new()
+		shape.add_child(marker)
+		marker.position.x = randf_range(-90,90)
+		marker.position.y = randf_range(-90,90)
+		
+	for p in shape.get_children():
+		var instance = poisonMossy.instantiate()
+		get_parent().add_child(instance)
+		instance.position.x = p.position.x + xPos
+		instance.position.y = p.position.y + yPos
+	
+	for p in shape.get_children():
+		p.queue_free()
+
+func Randomize_Next_State(x):
+	var r = randf()
+	if x == 1:
+		if r >= .5:
+			states["Attacking"] = true
+		else:
+			states["Swarming"] = true
+			target = position
+	if x == 2:
+		if r >= .5:
+			states["Idling"] = true
+		else:
+			states["Swarming"] = true
+			target = position
+	if x == 3:
+		if r >= .5:
+			states["Attacking"] = true
+		else:
+			states["Idling"] = true
 
 func _on_area_2d_mouse_entered():
 	isHovering = true

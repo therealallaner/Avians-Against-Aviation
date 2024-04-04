@@ -10,6 +10,7 @@ var offScreenDamage = .5
 
 
 
+
 func _ready():
 	Anim_Controller(animPlayer)
 	visibility.hide()
@@ -60,5 +61,14 @@ func _on_area_2d_area_entered(area):
 		player.HP += 1
 		if player.HP > 100:
 			player.HP = 100
+			
+			
+	if area.get_parent().is_in_group("Poison Mossy"):
+		Damage_Over_Time()
 
 
+func Damage_Over_Time():
+	for x in range(snapped(randf_range(5,10),1)):
+		if player.get_class() != "Container":
+			player.HP -= 1
+			await(get_tree().create_timer(1).timeout)

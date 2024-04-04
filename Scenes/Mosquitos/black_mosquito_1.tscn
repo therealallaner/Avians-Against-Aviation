@@ -1,73 +1,73 @@
-[gd_scene load_steps=20 format=3 uid="uid://ccgx811v86euk"]
+[gd_scene load_steps=20 format=3 uid="uid://buqigx0j2v0ei"]
 
-[ext_resource type="Script" path="res://Scripts/mosquito.gd" id="1_m3pks"]
-[ext_resource type="Texture2D" uid="uid://de4oq42aqykwl" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_000.png" id="1_wasg2"]
-[ext_resource type="Texture2D" uid="uid://py00n8r2km8h" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_001.png" id="2_tbfy0"]
-[ext_resource type="Texture2D" uid="uid://4vuwkdpb06kq" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_002.png" id="3_qyyl3"]
-[ext_resource type="Texture2D" uid="uid://5f0l3gldy4qh" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_003.png" id="4_o7e3k"]
-[ext_resource type="Texture2D" uid="uid://d05tgmv4dpax7" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_004.png" id="5_uueiv"]
-[ext_resource type="Texture2D" uid="uid://bfoa3d1mdt0vw" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_005.png" id="6_1iemr"]
-[ext_resource type="Texture2D" uid="uid://bh48pr3fifnw4" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_006.png" id="7_ox7ig"]
-[ext_resource type="Texture2D" uid="uid://dblv2ctt6ex10" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_007.png" id="8_80243"]
-[ext_resource type="Texture2D" uid="uid://dtf16tonj7t0k" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_008.png" id="9_okms6"]
-[ext_resource type="Texture2D" uid="uid://d0smvq5ji3fbm" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_009.png" id="10_sye0s"]
-[ext_resource type="Texture2D" uid="uid://saovkx8brhtg" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_010.png" id="11_7rryk"]
-[ext_resource type="Texture2D" uid="uid://c4odyrnfjqrpr" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_011.png" id="12_cscsi"]
-[ext_resource type="Texture2D" uid="uid://dxav5g301jgs2" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_012.png" id="13_8r6gu"]
-[ext_resource type="Texture2D" uid="uid://y0hshvowsp21" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_013.png" id="14_506k2"]
-[ext_resource type="Texture2D" uid="uid://efhke68p3wer" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_014.png" id="15_1mjkt"]
-[ext_resource type="Texture2D" uid="uid://cdgk01en3efna" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_015.png" id="16_7yau6"]
+[ext_resource type="Script" path="res://Scripts/mosquito.gd" id="1_0kr1i"]
+[ext_resource type="Texture2D" uid="uid://de4oq42aqykwl" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_000.png" id="2_d7y35"]
+[ext_resource type="Texture2D" uid="uid://py00n8r2km8h" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_001.png" id="3_u5pj6"]
+[ext_resource type="Texture2D" uid="uid://4vuwkdpb06kq" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_002.png" id="4_y0hmu"]
+[ext_resource type="Texture2D" uid="uid://5f0l3gldy4qh" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_003.png" id="5_k10je"]
+[ext_resource type="Texture2D" uid="uid://d05tgmv4dpax7" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_004.png" id="6_uugkb"]
+[ext_resource type="Texture2D" uid="uid://bfoa3d1mdt0vw" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_005.png" id="7_y1wcu"]
+[ext_resource type="Texture2D" uid="uid://bh48pr3fifnw4" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_006.png" id="8_2chuh"]
+[ext_resource type="Texture2D" uid="uid://dblv2ctt6ex10" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_007.png" id="9_dielw"]
+[ext_resource type="Texture2D" uid="uid://dtf16tonj7t0k" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_008.png" id="10_n4e40"]
+[ext_resource type="Texture2D" uid="uid://d0smvq5ji3fbm" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_009.png" id="11_4ufm6"]
+[ext_resource type="Texture2D" uid="uid://saovkx8brhtg" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_010.png" id="12_rrs7j"]
+[ext_resource type="Texture2D" uid="uid://c4odyrnfjqrpr" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_011.png" id="13_hwyk4"]
+[ext_resource type="Texture2D" uid="uid://dxav5g301jgs2" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_012.png" id="14_ewvsg"]
+[ext_resource type="Texture2D" uid="uid://y0hshvowsp21" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_013.png" id="15_e5y7v"]
+[ext_resource type="Texture2D" uid="uid://efhke68p3wer" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_014.png" id="16_5nd4s"]
+[ext_resource type="Texture2D" uid="uid://cdgk01en3efna" path="res://Assets/Mosquitos/keyframes/mosquito_07/__Mosquito_07_flying_015.png" id="17_pgon8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6law4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_wasg2")
+"texture": ExtResource("2_d7y35")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_tbfy0")
+"texture": ExtResource("3_u5pj6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qyyl3")
+"texture": ExtResource("4_y0hmu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_o7e3k")
+"texture": ExtResource("5_k10je")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_uueiv")
+"texture": ExtResource("6_uugkb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_1iemr")
+"texture": ExtResource("7_y1wcu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_ox7ig")
+"texture": ExtResource("8_2chuh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_80243")
+"texture": ExtResource("9_dielw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_okms6")
+"texture": ExtResource("10_n4e40")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_sye0s")
+"texture": ExtResource("11_4ufm6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_7rryk")
+"texture": ExtResource("12_rrs7j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_cscsi")
+"texture": ExtResource("13_hwyk4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_8r6gu")
+"texture": ExtResource("14_ewvsg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_506k2")
+"texture": ExtResource("15_e5y7v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_1mjkt")
+"texture": ExtResource("16_5nd4s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_7yau6")
+"texture": ExtResource("17_pgon8")
 }],
 "loop": true,
 "name": &"flying",
@@ -80,7 +80,7 @@ height = 192.0
 
 [node name="BlackMosquito1" type="Node2D" groups=["Mossy"]]
 scale = Vector2(0.1, 0.1)
-script = ExtResource("1_m3pks")
+script = ExtResource("1_0kr1i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6law4")
