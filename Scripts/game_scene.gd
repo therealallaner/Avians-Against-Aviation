@@ -5,6 +5,7 @@ extends Node2D
 @onready var player = $HappyBird
 @onready var gameOver = $Menus/GameOver
 @onready var saver = $Saver
+@onready var GUI = $Menus/GUI
 
 var test = "Test"
 

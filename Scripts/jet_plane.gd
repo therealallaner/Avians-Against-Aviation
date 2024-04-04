@@ -7,6 +7,7 @@ extends CharacterBody2D
 var target:Vector2
 var spawnSpeed = 400
 var attackSpeed = 1800
+var damage = 50
 
 var states = {
 	"Spawning": true,

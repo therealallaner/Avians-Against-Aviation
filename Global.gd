@@ -52,7 +52,7 @@ func Start_Game():
 	gameScene.mainMenu.hide()
 	gameScene.waveController.Next_Wave()
 	gameScene.waveController.mossyTimer.start()
-	
+	gameScene.GUI.show()
 
 func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")

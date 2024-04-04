@@ -11,6 +11,7 @@ extends CharacterBody2D
 
 var xSpeed = 350
 var ySpeed = randf_range(-60.0,60.0)
+var damage = 33
 
 func _ready():
 	var planeSkin = Global.Random_List(variations)

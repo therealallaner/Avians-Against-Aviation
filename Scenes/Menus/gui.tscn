@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b50pjyulm0n8w"]
+
+[ext_resource type="Script" path="res://Scripts/gui.gd" id="1_jmm2v"]
+[ext_resource type="PackedScene" uid="uid://cks1t8bw8ra2n" path="res://Scenes/Menus/texture_progress_bar.tscn" id="2_02i71"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jmm2v")
+
+[node name="PlayerHP" parent="." instance=ExtResource("2_02i71")]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 1
+anchors_preset = -1
+offset_top = 540.0
+offset_right = 540.0
+rotation = -1.5708
+value = 50.0
+
+[node name="BossHP" parent="." instance=ExtResource("2_02i71")]
+visible = false
+layout_mode = 0
