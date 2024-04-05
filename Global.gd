@@ -59,7 +59,6 @@ func Start_Game():
 	gameScene.player.visibility.show()
 	gameScene.mainMenu.hide()
 	gameScene.waveController.Next_Wave()
-	gameScene.waveController.mossyTimer.start()
 	gameScene.GUI.show()
 	gameScene.get_node("Menus/Aviary").hide()
 

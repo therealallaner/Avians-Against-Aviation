@@ -29,6 +29,7 @@ func _process(delta):
 		if isHovering:
 			if Input.is_action_just_pressed("Jump"):
 				Global.Deal_Damage(self)
+				Damage_Reaction()
 				
 	if HP <= 0:
 		if !states["Dead"]:
@@ -118,8 +119,8 @@ func Spawn_Mossies():
 	for i in range(x):
 		var marker = Marker2D.new()
 		shape.add_child(marker)
-		marker.position.x = randf_range(-90,90)
-		marker.position.y = randf_range(-90,90)
+		marker.position.x = randf_range(-120,120)
+		marker.position.y = randf_range(-120,120)
 		
 	for p in shape.get_children():
 		var instance = poisonMossy.instantiate()
@@ -149,6 +150,11 @@ func Randomize_Next_State(x):
 			states["Attacking"] = true
 		else:
 			states["Idling"] = true
+			
+func Damage_Reaction():
+	sprite.self_modulate = Color(1,0,.29,1)
+	await(get_tree().create_timer(.25).timeout)
+	sprite.self_modulate = Color(1,1,1,1)
 
 func _on_area_2d_mouse_entered():
 	isHovering = true

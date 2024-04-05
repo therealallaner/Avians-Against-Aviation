@@ -65,10 +65,14 @@ func _on_area_2d_area_entered(area):
 			
 	if area.get_parent().is_in_group("Poison Mossy"):
 		Damage_Over_Time()
+		area.get_parent().queue_free()
 
 
 func Damage_Over_Time():
 	for x in range(snapped(randf_range(5,10),1)):
 		if player.get_class() != "Container":
+			self.self_modulate = Color(.11,1,.15,1)
 			player.HP -= 1
-			await(get_tree().create_timer(1).timeout)
+			await(get_tree().create_timer(.75).timeout)
+			self.self_modulate = Color(1,1,1,1)
+			await(get_tree().create_timer(.25).timeout)

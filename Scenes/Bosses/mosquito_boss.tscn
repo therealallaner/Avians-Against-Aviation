@@ -130,9 +130,7 @@ script = ExtResource("1_hm6h2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgcwg")
-animation = &"dying"
-frame = 9
-frame_progress = 1.0
+animation = &"flying"
 
 [node name="Area2D" type="Area2D" parent="."]
 

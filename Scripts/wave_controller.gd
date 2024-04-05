@@ -13,7 +13,7 @@ var wave = 0
 var bossHPX = 1
 
 var jetWaves = [4,6,8,10,12,13,14,15,16]
-var bossWaves = [1]
+var bossWaves = []
 
 
 func _ready():
@@ -38,12 +38,13 @@ func Next_Wave():
 	print(wave)
 	wave += 1
 	if wave in bossWaves:
-		pass
 		bossController.Spawn_Boss(bossHPX)
 		bossWaves.erase(wave)
+		mossyTimer.stop()
 	else:
 		var propPlaneDifficulty = Wave_Difficulty()
 		propPlaneController.Spawn_Props(propPlaneDifficulty)
+		mossyTimer.start()
 		if wave in jetWaves:
 			jetController.Plane_Spawn()
 			if randf() < .25:
