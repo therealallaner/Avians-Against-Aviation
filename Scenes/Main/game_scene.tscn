@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d32354pptrddv" path="res://Scenes/Menus/menus.tscn" id="2_iisvx"]
 [ext_resource type="PackedScene" uid="uid://db0d57vohl7et" path="res://Scenes/Planes/wave_controller.tscn" id="4_iq5v4"]
 [ext_resource type="PackedScene" uid="uid://cljk5gar8kytv" path="res://Scenes/parallax_background.tscn" id="5_55r2v"]
-[ext_resource type="Script" path="res://SaverLoader.gd" id="6_wy4wq"]
+[ext_resource type="Script" path="res://SaverLoader.gd" id="6_5k4kn"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_lk65h")
@@ -22,6 +22,6 @@ autostart = true
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_55r2v")]
 
 [node name="Saver" type="Node" parent="."]
-script = ExtResource("6_wy4wq")
+script = ExtResource("6_5k4kn")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

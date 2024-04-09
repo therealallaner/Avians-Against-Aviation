@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://d1jqnj4rhvl2k"]
 
-[ext_resource type="Script" path="res://MosquitoBoss.gd" id="1_hm6h2"]
+[ext_resource type="Script" path="res://Scripts/MosquitoBoss.gd" id="1_3hncr"]
 [ext_resource type="Texture2D" uid="uid://bcryuvht3qfqw" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_000.png" id="2_bpdth"]
 [ext_resource type="Texture2D" uid="uid://bcd3wcjquau62" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_000.png" id="2_cvthe"]
 [ext_resource type="Texture2D" uid="uid://gqn7pqeovwak" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_001.png" id="3_6htd8"]
@@ -126,7 +126,7 @@ height = 216.0
 
 [node name="MosquitoBoss" type="CharacterBody2D"]
 scale = Vector2(0.75, 0.75)
-script = ExtResource("1_hm6h2")
+script = ExtResource("1_3hncr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgcwg")

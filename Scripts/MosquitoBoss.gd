@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var swarms = $Shapes.get_children()
 @onready var poisonMossy = preload("res://Scenes/Mosquitos/poison_mosquito.tscn")
 
-var HP = 20
+var HP = 5 #30
 var isHovering = false
 var spawnSpeed = 100
 var idleSpeed = 350
@@ -44,7 +44,6 @@ func _process(delta):
 		states["Dead"] = true
 			
 	if states["Dead"]:
-		print(sprite.is_playing())
 		if !sprite.is_playing():
 			get_parent().waveController.Next_Wave()
 			get_parent().bossHPBar.hide()
@@ -80,7 +79,6 @@ func _physics_process(delta):
 		velocity = newPos * idleSpeed
 		
 	if states["Attacking"]:
-		print("Attacking")
 		states["Attacking"] = false
 		swarmTimes = snapped(randf_range(1,5),1)
 		idleTimes = snapped(randf_range(1,5),1)

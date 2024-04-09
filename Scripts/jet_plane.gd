@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @onready var gameScene = get_parent().get_parent().get_parent()
+@onready var waveController = get_parent().get_parent()
 @onready var waitTimer = $Timer
 
 var target:Vector2
@@ -43,8 +44,8 @@ func _physics_process(delta):
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
-	gameScene.score += 25 * gameScene.scoreMultiplier
-
+	if waveController.wave not in waveController.bossWaves:
+		gameScene.score += 25 * gameScene.scoreMultiplier
 
 func _on_timer_timeout():
 	states["Waiting"] = false

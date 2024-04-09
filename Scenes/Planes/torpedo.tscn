@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy1ijrwqc1i7m"]
+
+[ext_resource type="Script" path="res://Scripts/Torpedo.gd" id="1_622uf"]
+[ext_resource type="Texture2D" uid="uid://c1eb08qvthn41" path="res://Assets/plane_pack/planes/torpedo/torpedo_black.png" id="1_ltfug"]
+[ext_resource type="Texture2D" uid="uid://crjkse3856sbr" path="res://Assets/plane_pack/planes/torpedo/torpedo_flame.png" id="3_vo5ft"]
+[ext_resource type="Texture2D" uid="uid://dypyn2pjd3qtp" path="res://Assets/plane_pack/planes/torpedo/torpedo_flame_1.png" id="4_3lfpn"]
+[ext_resource type="Texture2D" uid="uid://db3uuw6xasltp" path="res://Assets/plane_pack/planes/torpedo/torpedo_flame_2.png" id="5_kh0y4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_key8d"]
+radius = 70.0
+height = 450.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sicob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vo5ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3lfpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kh0y4")
+}],
+"loop": true,
+"name": &"flame",
+"speed": 30.0
+}]
+
+[node name="Torpedo" type="Sprite2D" groups=["Torpedo"]]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ltfug")
+flip_h = true
+script = ExtResource("1_622uf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, -10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_key8d")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(326.667, 2.66667)
+sprite_frames = SubResource("SpriteFrames_sicob")
+animation = &"flame"
+frame_progress = 0.170131
+flip_h = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

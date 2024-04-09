@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Splash.gd" id="1_icvs8"]
 [ext_resource type="Texture2D" uid="uid://bqlt46g18ml1j" path="res://Assets/SplashScreen/WechuwTest.jpg" id="2_m7bfa"]
-[ext_resource type="Script" path="res://SaverLoader.gd" id="3_4gku6"]
+[ext_resource type="Script" path="res://SaverLoader.gd" id="3_ki3ny"]
 
 [sub_resource type="Animation" id="Animation_fpaob"]
 resource_name = "Fade In"
@@ -95,4 +95,4 @@ libraries = {
 }
 
 [node name="Loader" type="Node" parent="."]
-script = ExtResource("3_4gku6")
+script = ExtResource("3_ki3ny")

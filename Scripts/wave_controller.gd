@@ -35,18 +35,17 @@ func Wave_Difficulty():
 		return randf_range(14,25)
 		
 func Next_Wave():
-	print(wave)
 	wave += 1
 	if wave in bossWaves:
 		bossController.Spawn_Boss(bossHPX)
-		bossWaves.erase(wave)
+#		bossWaves.erase(wave)
 		mossyTimer.stop()
 	else:
 		var propPlaneDifficulty = Wave_Difficulty()
 		propPlaneController.Spawn_Props(propPlaneDifficulty)
 		mossyTimer.start()
 		if wave in jetWaves:
-			jetController.Plane_Spawn()
+			Jet_Spawn()
 			if randf() < .25:
 				jetTimer.start()
 
@@ -54,6 +53,8 @@ func Next_Wave():
 func _on_timer_timeout():
 	Next_Wave()
 
+func Jet_Spawn():
+	jetController.Plane_Spawn()
 
 func _on_jet_timer_timeout():
 	jetController.Plane_Spawn()
