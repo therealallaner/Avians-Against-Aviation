@@ -52,7 +52,6 @@ func Add_Jet_Waves():
 		var j = snapped(randf_range(2,100),1)
 		if j not in jetWaves:
 			jetWaves.append(j)
-	print(jetWaves)
 	
 	
 func Add_Boss_Waves():

@@ -24,7 +24,7 @@ func _ready():
 func _process(delta):
 	if self.position.x == 0:
 		Global.mouseHovering = true
-
+		
 func Bird_Select(x):
 	if x == 1:
 		if Check_Unlocked(x):
@@ -106,5 +106,7 @@ func _on_select_3_pressed():
 
 func _on_back_pressed():
 	get_parent().Menu_Close(get_parent().aviary,get_parent().mainMenu)
+	await(get_tree().create_timer(.1).timeout)
+	Global.mouseHovering = false
 
 
