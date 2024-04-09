@@ -86,7 +86,6 @@ func _physics_process(delta):
 		
 		
 	if states["Swarming"]:
-		print("Swarming")
 		var newPos = (target-position).normalized()
 		var distance = (target - position).length()
 		if distance < 10:

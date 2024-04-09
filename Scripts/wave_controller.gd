@@ -12,15 +12,13 @@ extends Node
 var wave = 0
 var bossHPX = 1
 
-var jetWaves = [4,6,8,10,12,13,14,15,16]
+var jetWaves = []
 var bossWaves = []
 
 
 func _ready():
-	for x in range(snapped(randf_range(5,10),1)):
-		var w = snapped(randf_range(5,40),1)
-		if w not in bossWaves:
-			bossWaves.append(int(w))
+	Add_Jet_Waves()
+	Add_Boss_Waves()
 			
 func Wave_Difficulty():
 	if wave < 5:
@@ -48,8 +46,24 @@ func Next_Wave():
 			Jet_Spawn()
 			if randf() < .25:
 				jetTimer.start()
-
-
+func Add_Jet_Waves():
+	var x = snapped(randf_range(25,50),1)
+	for r in x:
+		var j = snapped(randf_range(2,100),1)
+		if j not in jetWaves:
+			jetWaves.append(j)
+	print(jetWaves)
+	
+	
+func Add_Boss_Waves():
+	var bossWavePossibilities = [[3,8],[13,18],[23,28],[33,38],[43,48]]
+	for p in bossWavePossibilities:
+		var p1 = p[0]
+		var p2 = p[1]
+		var w = snapped(randf_range(p1,p2),1)
+		bossWaves.append(w)
+	
+	
 func _on_timer_timeout():
 	Next_Wave()
 
