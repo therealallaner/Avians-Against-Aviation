@@ -181,12 +181,13 @@ position = Vector2(80, -86.6666)
 scale = Vector2(0.919847, 0.8125)
 sprite_frames = SubResource("SpriteFrames_10608")
 animation = &"smoke"
-frame_progress = 0.296435
+frame_progress = 0.120444
 
 [node name="PoisonTrail" type="AnimatedSprite2D" parent="."]
 position = Vector2(466.667, 6.66663)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_ti1m6")
 animation = &"trail"
+frame_progress = 0.319733
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

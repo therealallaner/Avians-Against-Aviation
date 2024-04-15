@@ -12,8 +12,9 @@ var flySpeed = 300
 
 func _ready():
 	sprite.play("flying")
-	poisonSmoke.play("smoke")
-	poisonTrail.play("trail")
+	if poisonSmoke:
+		poisonSmoke.play("smoke")
+		poisonTrail.play("trail")
 
 
 func _process(delta):

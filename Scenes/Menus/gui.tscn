@@ -15,19 +15,18 @@ script = ExtResource("1_jmm2v")
 [node name="PlayerHP" parent="." instance=ExtResource("2_02i71")]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 1
-anchors_preset = -1
-offset_top = 540.0
-offset_right = 540.0
-rotation = -1.5708
+offset_right = 640.0
 value = 50.0
 
 [node name="BossHP" parent="." instance=ExtResource("2_02i71")]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -600.0
-offset_right = 600.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -640.0
+offset_right = 0.0
 offset_bottom = 35.0
-grow_horizontal = 2
+grow_horizontal = 0
+rotation = 3.14159
+pivot_offset = Vector2(320, 18)
 value = 50.0

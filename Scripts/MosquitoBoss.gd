@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var cloud = $PoisonCloud
 @onready var poisonMossy = preload("res://Scenes/Mosquitos/poison_mosquito.tscn")
 
-var HP = 5 #30
+var HP = 30 #30
 var isHovering = false
 var spawnSpeed = 100
 var idleSpeed = 350
