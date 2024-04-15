@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ccgx811v86euk"]
+[gd_scene load_steps=37 format=3 uid="uid://ccgx811v86euk"]
 
 [ext_resource type="Script" path="res://Scripts/mosquito.gd" id="1_0kr1i"]
 [ext_resource type="Texture2D" uid="uid://bqyvb6k2hjuhc" path="res://Assets/Mosquitos/keyframes/mosquito_09/__Mosquito_09_flying_000.png" id="2_qira6"]
@@ -17,6 +17,21 @@
 [ext_resource type="Texture2D" uid="uid://b6d6xy3elp811" path="res://Assets/Mosquitos/keyframes/mosquito_09/__Mosquito_09_flying_013.png" id="15_h52f1"]
 [ext_resource type="Texture2D" uid="uid://dww6tqlrgjmuo" path="res://Assets/Mosquitos/keyframes/mosquito_09/__Mosquito_09_flying_014.png" id="16_nxwes"]
 [ext_resource type="Texture2D" uid="uid://bkycopyf76isr" path="res://Assets/Mosquitos/keyframes/mosquito_09/__Mosquito_09_flying_015.png" id="17_8es10"]
+[ext_resource type="Texture2D" uid="uid://b0xsssfpx2bi8" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke/animation/poison_smoke_01_10.png" id="18_41ku0"]
+[ext_resource type="Texture2D" uid="uid://kmk13657xe16" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke/animation/poison_smoke_01_11.png" id="19_h1nev"]
+[ext_resource type="Texture2D" uid="uid://7qnom44xiarf" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke/animation/poison_smoke_01_09.png" id="20_6a5bf"]
+[ext_resource type="Texture2D" uid="uid://ckmpbvnfnwk3f" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_01.png" id="21_esqu2"]
+[ext_resource type="Texture2D" uid="uid://cocbnc4ft8vj4" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_02.png" id="22_uokel"]
+[ext_resource type="Texture2D" uid="uid://2c5un81ftwx8" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_03.png" id="23_ilvi3"]
+[ext_resource type="Texture2D" uid="uid://bxet2i41byjwo" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_04.png" id="24_558rm"]
+[ext_resource type="Texture2D" uid="uid://cnlyej24khotj" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_05.png" id="25_lqd8g"]
+[ext_resource type="Texture2D" uid="uid://dnoua8ymgi3yc" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_06.png" id="26_sujvx"]
+[ext_resource type="Texture2D" uid="uid://cu3qy5cir7cp0" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_07.png" id="27_gsonp"]
+[ext_resource type="Texture2D" uid="uid://cy2h8wqdhxmal" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_08.png" id="28_2a4ot"]
+[ext_resource type="Texture2D" uid="uid://bs1aw07ux0ni8" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_09.png" id="29_rfm86"]
+[ext_resource type="Texture2D" uid="uid://diqlcljcdvava" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_10.png" id="30_x4idj"]
+[ext_resource type="Texture2D" uid="uid://cihxe8vgmg5y7" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_11.png" id="31_hn7nk"]
+[ext_resource type="Texture2D" uid="uid://b61xrwqea10or" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_12.png" id="32_xf4bj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6law4"]
 animations = [{
@@ -78,6 +93,67 @@ animations = [{
 radius = 61.0
 height = 192.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_10608"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_41ku0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_h1nev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6a5bf")
+}],
+"loop": true,
+"name": &"smoke",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ti1m6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_esqu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_uokel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ilvi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_558rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_lqd8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_sujvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gsonp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2a4ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_rfm86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_x4idj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_hn7nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_xf4bj")
+}],
+"loop": true,
+"name": &"trail",
+"speed": 15.0
+}]
+
 [node name="PoisonMosquito" type="Node2D" groups=["Poison Mossy"]]
 scale = Vector2(0.15, 0.15)
 script = ExtResource("1_0kr1i")
@@ -99,5 +175,20 @@ collision_mask = 0
 position = Vector2(37, 25)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_knbte")
+
+[node name="PoisonSmoke" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(80, -86.6666)
+scale = Vector2(0.919847, 0.8125)
+sprite_frames = SubResource("SpriteFrames_10608")
+animation = &"smoke"
+frame_progress = 0.544268
+
+[node name="PoisonTrail" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.635294)
+position = Vector2(466.667, 6.66663)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_ti1m6")
+animation = &"trail"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

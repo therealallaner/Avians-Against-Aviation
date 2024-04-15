@@ -13,7 +13,7 @@ var wave = 0
 var bossHPX = 1
 
 var jetWaves = []
-var bossWaves = []
+var bossWaves = [1,2]
 
 
 func _ready():
