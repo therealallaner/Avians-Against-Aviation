@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var swarms = $Shapes.get_children()
+@onready var cloud = $PoisonCloud
 @onready var poisonMossy = preload("res://Scenes/Mosquitos/poison_mosquito.tscn")
 
 var HP = 5 #30
@@ -108,6 +109,7 @@ func _physics_process(delta):
 	
 	
 func Spawn_Mossies():
+	cloud.play("cloud")
 	var shape = $Shapes/SwarmShape1
 	var xPos = position.x
 	var yPos = position.y

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d1jqnj4rhvl2k"]
+[gd_scene load_steps=42 format=3 uid="uid://d1jqnj4rhvl2k"]
 
 [ext_resource type="Script" path="res://Scripts/MosquitoBoss.gd" id="1_3hncr"]
 [ext_resource type="Texture2D" uid="uid://bcryuvht3qfqw" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_000.png" id="2_bpdth"]
@@ -28,6 +28,16 @@
 [ext_resource type="Texture2D" uid="uid://wbmaoe5r0uuv" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_014.png" id="16_efq0y"]
 [ext_resource type="Texture2D" uid="uid://dpvosjg82irfe" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_flying_015.png" id="17_quap7"]
 [ext_resource type="PackedScene" uid="uid://cjcbvtuk7lsi4" path="res://Scenes/Mosquitos/swarm_shape_1.tscn" id="28_wj8hs"]
+[ext_resource type="Texture2D" uid="uid://dhgo2kll4agir" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_01.png" id="29_qn21v"]
+[ext_resource type="Texture2D" uid="uid://bm2almcm5tolw" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_02.png" id="30_fpae1"]
+[ext_resource type="Texture2D" uid="uid://bq8ecqpdgk3ky" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_03.png" id="31_6xkb7"]
+[ext_resource type="Texture2D" uid="uid://bjg20moasce3j" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_04.png" id="32_kt36q"]
+[ext_resource type="Texture2D" uid="uid://bd8cyfk0cmppl" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_05.png" id="33_5a6h4"]
+[ext_resource type="Texture2D" uid="uid://cq6hkonkr87y6" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_06.png" id="34_p88pc"]
+[ext_resource type="Texture2D" uid="uid://cvujgli387q6v" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_07.png" id="35_mhp06"]
+[ext_resource type="Texture2D" uid="uid://ba7g1hhf33y01" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_08.png" id="36_pky1w"]
+[ext_resource type="Texture2D" uid="uid://dcf3ewskbualv" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_09.png" id="37_g4gkm"]
+[ext_resource type="Texture2D" uid="uid://blxdn0nwsjddw" path="res://Assets/Juice/Toxic and Dark Magic/poison_puff/animation/green/poison_puff_10.png" id="38_niy4g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bgcwg"]
 animations = [{
@@ -124,6 +134,47 @@ animations = [{
 radius = 61.3333
 height = 216.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hs6w0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_qn21v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_fpae1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6xkb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_kt36q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5a6h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_p88pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mhp06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pky1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_g4gkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_niy4g")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"cloud",
+"speed": 15.0
+}]
+
 [node name="MosquitoBoss" type="CharacterBody2D"]
 scale = Vector2(0.75, 0.75)
 script = ExtResource("1_3hncr")
@@ -142,6 +193,13 @@ shape = SubResource("CapsuleShape2D_beso0")
 [node name="Shapes" type="Node" parent="."]
 
 [node name="SwarmShape1" parent="Shapes" instance=ExtResource("28_wj8hs")]
+
+[node name="PoisonCloud" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 34.6667)
+sprite_frames = SubResource("SpriteFrames_hs6w0")
+animation = &"cloud"
+frame = 10
+frame_progress = 1.0
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

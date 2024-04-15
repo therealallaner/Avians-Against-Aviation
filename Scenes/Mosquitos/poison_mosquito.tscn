@@ -177,15 +177,13 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_knbte")
 
 [node name="PoisonSmoke" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.639216)
 position = Vector2(80, -86.6666)
 scale = Vector2(0.919847, 0.8125)
 sprite_frames = SubResource("SpriteFrames_10608")
 animation = &"smoke"
-frame_progress = 0.544268
+frame_progress = 0.296435
 
 [node name="PoisonTrail" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.635294)
 position = Vector2(466.667, 6.66663)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_ti1m6")
