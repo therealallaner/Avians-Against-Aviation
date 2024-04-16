@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var flySpeed = 1
-var damage = 20
+var damage = 40
 
 
 func _ready():
