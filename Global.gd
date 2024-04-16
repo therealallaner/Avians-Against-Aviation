@@ -47,7 +47,7 @@ var playerStats = {
 	"High Score": 0,
 	"Lifetime Score": 0,
 	"Lifetime Mosquitos": 0,
-	"Crit Chance": .01,
+	"Crit Chance": 0.01,
 }
 
 
@@ -60,6 +60,7 @@ func Start_Game():
 	gameScene.waveController.Next_Wave()
 	gameScene.GUI.show()
 	gameScene.get_node("Menus/Aviary").hide()
+	gameScene.get_node("Menus/Stats").hide()
 
 func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")
@@ -84,7 +85,7 @@ func Deal_Damage(b):
 	var gameScene = get_tree().root.get_node("GameScene")
 	var damage = currentDamage
 	var x = randf()
-	if x <= playerStats["CritChance"]:
+	if x <= playerStats["Crit Chance"]:
 		damage = currentDamage*2
 	b.HP -= damage
 	var hp = b.HP

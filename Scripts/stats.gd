@@ -8,7 +8,11 @@ func _ready():
 		var instance = statLine.instantiate()
 		stats.add_child(instance)
 		instance.statName.text = s
-		instance.statNumber.text = str(Global.playerStats[s])
+		if s == "Crit Chance":
+			instance.statNumber.text = str(snapped(Global.playerStats[s],.01))
+			print(s," ",Global.playerStats[s])
+		else:
+			instance.statNumber.text = str(Global.playerStats[s])
 
 
 func _process(delta):
