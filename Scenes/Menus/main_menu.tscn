@@ -138,6 +138,7 @@ one_shot = true
 [connection signal="pressed" from="VBoxContainer/Aviary" to="." method="_on_aviary_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Stats" to="." method="_on_stats_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/Stats" to="." method="_on_stats_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Stats" to="." method="_on_stats_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1p1mxgrt2ii"]
+
+[ext_resource type="Script" path="res://Scripts/stat_line.gd" id="1_sf31h"]
+
+[node name="Stat Line" type="HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_sf31h")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "Stat"
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 35
+text = "120"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2

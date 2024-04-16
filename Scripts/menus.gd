@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var aviary = $Aviary
 @onready var options = $Options
 @onready var GUI = $GUI
+@onready var stats = $Stats
 
 var isInMenu = false
 var menuTransitionTime := 0.25

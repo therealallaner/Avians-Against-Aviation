@@ -4,7 +4,6 @@ extends Node
 
 var gameMenu = true
 var mouseHovering = false
-var highScore = 0
 var currentDamage = 1
 var masterVolume: float = 1.0
 var musicVolume: float = 1.0
@@ -45,10 +44,10 @@ var birdUnlocks3 = {
 }
 
 var playerStats = {
-	"HighScore": 0,
-	"LifetimeScore": 0,
-	"LifetimeMossies": 0,
-	"CritChance": .01,
+	"High Score": 0,
+	"Lifetime Score": 0,
+	"Lifetime Mosquitos": 0,
+	"Crit Chance": .01,
 }
 
 
@@ -68,8 +67,10 @@ func Game_Over():
 	mossiesInStock1 += gameScene.bird1Mossies
 	mossiesInStock2 += gameScene.bird2Mossies
 	mossiesInStock3 += gameScene.bird3Mossies
-	if gameScene.score > highScore:
-		highScore = gameScene.score
+	playerStats["Lifetime Mosquitos"] += (gameScene.bird1Mossies+gameScene.bird2Mossies+gameScene.bird3Mossies)
+	playerStats["Lifetime Score"] += gameScene.score
+	if gameScene.score > playerStats["High Score"]:
+		playerStats["High Score"] = gameScene.score
 		
 	gameScene.player.visibility.hide()
 	gameScene.gameOver.Set_Game_Over_Screen()
