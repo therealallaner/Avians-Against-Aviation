@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=11 format=3 uid="uid://d12goax56bwxn"]
 
-[ext_resource type="FontFile" uid="uid://u28xhhe35i0q" path="res://Assets/UI/Fonts/Hey Comic.ttf" id="1_3sqsp"]
+[ext_resource type="FontFile" uid="uid://dnmloepvpyl77" path="res://Assets/UI/Fonts/Cute Dino.ttf" id="1_arjsj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4bdp"]
 bg_color = Color(0.298039, 0.258824, 0, 1)
@@ -85,13 +85,12 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [resource]
-default_font = ExtResource("1_3sqsp")
+default_font = ExtResource("1_arjsj")
 default_font_size = 50
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 10
 Button/font_sizes/font_size = 50
-Button/fonts/font = ExtResource("1_3sqsp")
 Button/styles/disabled = SubResource("StyleBoxFlat_l4bdp")
 Button/styles/focus = SubResource("StyleBoxEmpty_l32xh")
 Button/styles/hover = SubResource("StyleBoxFlat_xuqu0")
