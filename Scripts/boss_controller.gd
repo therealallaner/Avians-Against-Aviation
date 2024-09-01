@@ -5,10 +5,13 @@ extends Node
 @onready var bossHPBar = get_parent().get_parent().get_node("Menus").get_node("GUI").get_node("BossHP")
 @onready var mossyBoss = preload("res://Scenes/Bosses/mosquito_boss.tscn")
 @onready var stealthBoss = preload("res://Scenes/Bosses/stealth_bomber.tscn")
+@onready var heliBoss = preload("res://Scenes/Bosses/helicopter.tscn")
 
 @onready var bosses = [
+	heliBoss,
 	stealthBoss,
 	mossyBoss,
+	
 ]
 
 

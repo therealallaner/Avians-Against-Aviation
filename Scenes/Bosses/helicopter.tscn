@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhbwodpuuskr8"]
+
+[ext_resource type="Script" path="res://Scripts/helicopter.gd" id="1_k6yxu"]
+[ext_resource type="Texture2D" uid="uid://cl8c7b27vee7j" path="res://Assets/Helicopter/keyframes/__black_helicopter_flying_000.png" id="1_qaxfn"]
+[ext_resource type="Texture2D" uid="uid://d17678eu7rhrp" path="res://Assets/Helicopter/keyframes/__black_helicopter_flying_001.png" id="2_bet63"]
+[ext_resource type="Texture2D" uid="uid://cfg3ukqfyvjwj" path="res://Assets/Helicopter/keyframes/__black_helicopter_flying_002.png" id="3_dg182"]
+[ext_resource type="Texture2D" uid="uid://bv2fntihgjg7s" path="res://Assets/Helicopter/keyframes/__black_helicopter_flying_003.png" id="4_8tkxc"]
+[ext_resource type="Texture2D" uid="uid://bop12exgrn4hr" path="res://Assets/Helicopter/keyframes/__black_helicopter_flying_004.png" id="5_q4ksb"]
+[ext_resource type="Texture2D" uid="uid://b54qisiwm3cdu" path="res://Assets/Juice/muzzle flash.png" id="7_gh127"]
+[ext_resource type="Texture2D" uid="uid://0dd5var4yd2f" path="res://Assets/Juice/Muzzleflasheffects--136y560n4e4c4v6r1k/pngs/muzzle_flare_06.png" id="8_g33i3"]
+[ext_resource type="Texture2D" uid="uid://c5cjcoha0su5f" path="res://Assets/Juice/Muzzleflasheffects--136y560n4e4c4v6r1k/pngs/muzzle_flare_03.png" id="9_26m0q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_otcqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qaxfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bet63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dg182")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8tkxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q4ksb")
+}],
+"loop": true,
+"name": &"dying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qaxfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bet63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dg182")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8tkxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q4ksb")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 60.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0l41g"]
+radius = 129.0
+height = 460.067
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bvky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_g33i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_26m0q")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Helicopter" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_k6yxu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_otcqx")
+animation = &"dying"
+
+[node name="MuzzleMarker" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(-161, 157.5)
+
+[node name="MuzzleMarker2" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(-180, -26)
+
+[node name="MuzzleMarker3" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(-138, 232)
+
+[node name="HitBoxMarker" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(-51, 42.5)
+
+[node name="MuzzleFlash" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-164, 164)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_gh127")
+
+[node name="MuzzleFlashTimer" type="Timer" parent="MuzzleFlash"]
+wait_time = 0.02
+one_shot = true
+
+[node name="AttackingTimer" type="Timer" parent="MuzzleFlash"]
+one_shot = true
+
+[node name="MuzzleFlash2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-178, -26)
+rotation = 0.0712127
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_gh127")
+
+[node name="MuzzleFlash3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-136, 232)
+rotation = -0.439669
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_gh127")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-50, 42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.39626
+shape = SubResource("CapsuleShape2D_0l41g")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(492, 286)
+scale = Vector2(0.860515, 0.894203)
+sprite_frames = SubResource("SpriteFrames_5bvky")
+animation = &"new_animation"
+frame_progress = 0.4206
+
+[connection signal="timeout" from="MuzzleFlash/MuzzleFlashTimer" to="." method="_on_muzzle_flash_timer_timeout"]
+[connection signal="timeout" from="MuzzleFlash/AttackingTimer" to="." method="_on_attacking_timer_timeout"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -181,7 +181,7 @@ script = ExtResource("1_3hncr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bgcwg")
-animation = &"flying"
+animation = &"dying"
 
 [node name="Area2D" type="Area2D" parent="."]
 

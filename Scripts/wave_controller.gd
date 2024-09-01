@@ -13,7 +13,7 @@ var wave = 0
 var bossHPX = 1
 
 var jetWaves = []
-var bossWaves = []
+var bossWaves = [1,2]
 
 
 func _ready():
@@ -55,7 +55,7 @@ func Add_Jet_Waves():
 	
 	
 func Add_Boss_Waves():
-	var bossWavePossibilities = [[3,8],[13,18],[23,28],[33,38],[43,48]]
+	var bossWavePossibilities = [[3,6],[8,11],[14,17],[20,23],[27,30]]
 	for p in bossWavePossibilities:
 		var p1 = p[0]
 		var p2 = p[1]
