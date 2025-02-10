@@ -86,6 +86,8 @@ func _physics_process(delta):
 		muzzleFlash3.visible = false
 		muzzleFlash2.visible = false
 		muzzleFlash.visible = false
+		
+		
 		var newPos = (target-position).normalized()
 		var distance = (target - position).length()
 		sprite.rotation_degrees = 20
@@ -127,8 +129,10 @@ func Fire_Minigun():
 
 
 func _on_muzzle_flash_timer_timeout():
+		
 	muzzleFlash.global_position = muzzleMarker.global_position
 	muzzleFlash.visible = !muzzleFlash.visible
+	
 	if phase >= 2:
 		muzzleFlash2.global_position = muzzleMarker2.global_position
 		muzzleFlash2.rotation_degrees = 15
@@ -140,6 +144,7 @@ func _on_muzzle_flash_timer_timeout():
 		
 	if firing:
 		muzzleTimer.start()
+		
 	
 	
 func _on_attacking_timer_timeout():

@@ -8,9 +8,9 @@ extends Node
 @onready var heliBoss = preload("res://Scenes/Bosses/helicopter.tscn")
 
 @onready var bosses = [
-	heliBoss,
 	stealthBoss,
 	mossyBoss,
+	heliBoss,
 	
 ]
 

@@ -155,3 +155,4 @@ func _on_area_2d_mouse_entered():
 
 func _on_area_2d_mouse_exited():
 	isHovering = false
+

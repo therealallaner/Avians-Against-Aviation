@@ -1,0 +1,103 @@
+[gd_scene load_steps=20 format=3 uid="uid://ctnho1vmotdwd"]
+
+[ext_resource type="Script" path="res://Scripts/mosquito.gd" id="1_e01p6"]
+[ext_resource type="Texture2D" uid="uid://7o4lddbbrvx7" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_000.png" id="2_k2ued"]
+[ext_resource type="Texture2D" uid="uid://c55wdw25evdls" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_001.png" id="3_gjhvc"]
+[ext_resource type="Texture2D" uid="uid://blmft118m2wq3" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_002.png" id="4_v4dmm"]
+[ext_resource type="Texture2D" uid="uid://bcj747eqctv5e" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_003.png" id="5_f0o1k"]
+[ext_resource type="Texture2D" uid="uid://dsdbnpaorxb50" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_004.png" id="6_2y2pl"]
+[ext_resource type="Texture2D" uid="uid://dxtbqequm0hhp" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_005.png" id="7_8dhti"]
+[ext_resource type="Texture2D" uid="uid://b02qk60oauiqv" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_006.png" id="8_flcve"]
+[ext_resource type="Texture2D" uid="uid://b5xsn066x6tny" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_007.png" id="9_aqtwn"]
+[ext_resource type="Texture2D" uid="uid://dj084apruvmo5" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_008.png" id="10_iy4fy"]
+[ext_resource type="Texture2D" uid="uid://d1ms5ow2v14o0" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_009.png" id="11_1np8e"]
+[ext_resource type="Texture2D" uid="uid://cx87vk40k6gxr" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_010.png" id="12_nok6y"]
+[ext_resource type="Texture2D" uid="uid://dv1boiykkolbf" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_011.png" id="13_61gjj"]
+[ext_resource type="Texture2D" uid="uid://hpfacpsdcx5" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_012.png" id="14_lxe1v"]
+[ext_resource type="Texture2D" uid="uid://bjd0jxnl45b0k" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_013.png" id="15_pcqns"]
+[ext_resource type="Texture2D" uid="uid://cj14oy3tkaddj" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_014.png" id="16_fh1sw"]
+[ext_resource type="Texture2D" uid="uid://bu2d8k468o4po" path="res://Assets/Mosquitos/keyframes/mosquito_05/__Mosquito_05_flying_015.png" id="17_p3mq5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6law4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k2ued")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gjhvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v4dmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f0o1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2y2pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8dhti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_flcve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aqtwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iy4fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1np8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nok6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_61gjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lxe1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pcqns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fh1sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p3mq5")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 30.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_knbte"]
+radius = 64.0
+height = 242.0
+
+[node name="PurpleMosquito2" type="Node2D" groups=["Mossy"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_e01p6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6law4")
+animation = &"flying"
+frame_progress = 0.974172
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(71, 26)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_knbte")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

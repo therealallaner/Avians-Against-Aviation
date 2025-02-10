@@ -69,7 +69,8 @@ func _on_area_2d_area_entered(area):
 
 	if area.get_parent().is_in_group("Torpedo"):
 		player.HP -= area.get_parent().damage 
-
+		
+		
 
 func Damage_Over_Time():
 	for x in range(snapped(randf_range(5,10),1)):

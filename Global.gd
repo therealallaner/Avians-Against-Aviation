@@ -47,7 +47,7 @@ var playerStats = {
 	"High Score": 0,
 	"Lifetime Score": 0,
 	"Lifetime Mosquitos": 0,
-	"Crit Chance": 0.01,
+	#"Crit Chance": 0.01,
 }
 
 
@@ -84,9 +84,9 @@ func Game_Over():
 func Deal_Damage(b):
 	var gameScene = get_tree().root.get_node("GameScene")
 	var damage = currentDamage
-	var x = randf()
-	if x <= playerStats["Crit Chance"]:
-		damage = currentDamage*2
+#	var x = randf()
+#	if x <= playerStats["Crit Chance"]:
+#		damage = currentDamage*2
 	b.HP -= damage
 	var hp = b.HP
 	gameScene.GUI.Update_Boss_HP(hp)

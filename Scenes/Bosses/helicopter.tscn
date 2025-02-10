@@ -98,7 +98,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_gh127")
 
 [node name="MuzzleFlashTimer" type="Timer" parent="MuzzleFlash"]
-wait_time = 0.02
+wait_time = 0.005
 one_shot = true
 
 [node name="AttackingTimer" type="Timer" parent="MuzzleFlash"]
@@ -107,14 +107,14 @@ one_shot = true
 [node name="MuzzleFlash2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-178, -26)
-rotation = 0.0712127
+rotation = 0.261799
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_gh127")
 
 [node name="MuzzleFlash3" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-136, 232)
-rotation = -0.439669
+rotation = -0.261799
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_gh127")
 
