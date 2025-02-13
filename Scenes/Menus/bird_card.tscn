@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bakkpbtagnqag"]
 
-[ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="1_e07oo"]
+[ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_celds"]
 [ext_resource type="Script" path="res://Scripts/bird_card.gd" id="2_jle7d"]
 [ext_resource type="PackedScene" uid="uid://bfpuhrokdl0m6" path="res://Scenes/Players/Sprites/black_bird_1.tscn" id="3_dkf2q"]
 [ext_resource type="PackedScene" uid="uid://d1rupj28yxc28" path="res://Scenes/Players/Sprites/green_bird_1.tscn" id="4_ewsol"]
@@ -24,12 +24,22 @@ corner_radius_bottom_left = 18
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rr8h"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ermst"]
-bg_color = Color(0.752941, 0.662745, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4t4y"]
+bg_color = Color(0.917647, 0.945098, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+corner_detail = 10
+expand_margin_left = 18.0
+expand_margin_top = 3.0
+expand_margin_right = 18.0
+expand_margin_bottom = 3.0
 
 [node name="BirdCard" type="Control"]
 custom_minimum_size = Vector2(187, 328)
@@ -38,7 +48,7 @@ anchors_preset = 0
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_e07oo")
+theme = ExtResource("1_celds")
 script = ExtResource("2_jle7d")
 blackBird = ExtResource("3_dkf2q")
 greenBird = ExtResource("4_ewsol")
@@ -120,17 +130,8 @@ layout_mode = 2
 
 [node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 15
-theme_override_styles/focus = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_ermst")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ermst")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y4t4y")
 alignment = 1
 item_count = 6
 selected = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://by5143k4ej610"]
 
-[ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="1_q7m45"]
+[ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_g5j2s"]
 [ext_resource type="Script" path="res://Scripts/game_over.gd" id="2_6t2vk"]
 
 [node name="GameOver" type="Control"]
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme = ExtResource("1_q7m45")
+theme = ExtResource("1_g5j2s")
 script = ExtResource("2_6t2vk")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -40,6 +40,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Game Over Menu"
 horizontal_alignment = 1
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvxj8nkhy5ubp"]
 
 [ext_resource type="Script" path="res://Scripts/stats.gd" id="1_tcoak"]
-[ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="2_u8hxf"]
+[ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="2_pwhlf"]
 
 [node name="Stats" type="Control"]
 layout_mode = 3
@@ -25,7 +25,7 @@ offset_right = 265.0
 offset_bottom = 265.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_u8hxf")
+theme = ExtResource("2_pwhlf")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2

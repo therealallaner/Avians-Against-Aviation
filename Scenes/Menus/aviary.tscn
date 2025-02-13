@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://b5u1hjbp7bn4s"]
 
-[ext_resource type="Theme" uid="uid://d12goax56bwxn" path="res://Assets/UI/DefaultTheme.tres" id="1_xslha"]
+[ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_ki13j"]
 [ext_resource type="Script" path="res://Scenes/Menus/aviary.gd" id="2_2dda0"]
 [ext_resource type="PackedScene" uid="uid://bakkpbtagnqag" path="res://Scenes/Menus/bird_card.tscn" id="2_3uh0k"]
 [ext_resource type="PackedScene" uid="uid://c02qoobx6xabh" path="res://Scenes/Players/Sprites/black_bird_2.tscn" id="3_plegv"]
@@ -27,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_xslha")
+theme = ExtResource("1_ki13j")
 script = ExtResource("2_2dda0")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

@@ -13,6 +13,7 @@ extends Control
 @onready var start = $Start
 @onready var showTimer = $Start/ShowTimer
 @onready var hideTimer = $Start/HideTimer
+@onready var mainMenu = $VBoxContainer
 
 
 func _ready():
@@ -27,7 +28,11 @@ func _process(delta):
 
 
 func _on_quit_pressed():
+	mainMenu.hide()
 	quitMenu.show()
+	start.hide()
+	hideTimer.stop()
+	showTimer.stop()
 
 func _on_yes_pressed():
 	get_tree().quit()
@@ -35,6 +40,8 @@ func _on_yes_pressed():
 
 func _on_no_pressed():
 	quitMenu.hide()
+	mainMenu.show()
+	showTimer.start()
 	
 	
 func _on_aviary_pressed():
