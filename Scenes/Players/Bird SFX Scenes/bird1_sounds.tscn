@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhvdsr4dti7t"]
+
+[ext_resource type="Script" path="res://Scripts/bird1_sounds.gd" id="1_oflbw"]
+[ext_resource type="AudioStream" uid="uid://0l2x1l3xnthi" path="res://Assets/SFX/Bird 1/Great Tit 1.mp3" id="2_ce7a2"]
+[ext_resource type="AudioStream" uid="uid://bx2f8iov7el1w" path="res://Assets/SFX/Bird 1/Great Tit 2.mp3" id="3_y3hci"]
+[ext_resource type="AudioStream" uid="uid://idloyfaheasf" path="res://Assets/SFX/Bird 1/Great Tit 3.mp3" id="4_xn84o"]
+[ext_resource type="AudioStream" uid="uid://dx0cgx0kuo7pf" path="res://Assets/SFX/Bird 1/Great Tit 4.mp3" id="5_r63a2"]
+[ext_resource type="AudioStream" uid="uid://be583f0ddjsge" path="res://Assets/SFX/Bird 1/Great Tit 5.mp3" id="6_jxdjt"]
+
+[node name="Bird 1 Sounds" type="Node" groups=["SFX"]]
+script = ExtResource("1_oflbw")
+sound1 = ExtResource("2_ce7a2")
+sound2 = ExtResource("3_y3hci")
+sound3 = ExtResource("4_xn84o")
+sound4 = ExtResource("5_r63a2")
+sound5 = ExtResource("6_jxdjt")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 5.0
+panning_strength = 1.5
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -34,6 +34,7 @@ func Save_Game():
 			
 	savedGame.masterVolume = Global.masterVolume
 	savedGame.musicVolume = Global.musicVolume
+	savedGame.sfxVolume = Global.sfxVolume
 	
 	ResourceSaver.save(savedGame, "user://savegame.tres")
 	
@@ -79,3 +80,5 @@ func Load_Game():
 
 		Global.masterVolume = savedGame.masterVolume
 		Global.musicVolume = savedGame.musicVolume
+		Global.sfxVolume = savedGame.sfxVolume
+		print("This should happend first")

@@ -5,8 +5,9 @@ extends Node
 var gameMenu = true
 var mouseHovering = false
 var currentDamage = 1
-var masterVolume: float = 1.0
-var musicVolume: float = 1.0
+var masterVolume: float = 0.51
+var musicVolume: float = 0.51
+var sfxVolume: float = 0.51
 var mossiesInStock1 = 0
 var mossiesInStock2 = 0
 var mossiesInStock3 = 0

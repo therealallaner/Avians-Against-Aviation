@@ -9,9 +9,9 @@ func _ready():
 	busIndex = AudioServer.get_bus_index(busName)
 	value_changed.connect(On_Value_Changed)
 	
-	value = db_to_linear(
-		AudioServer.get_bus_volume_db(busIndex)
-	)
+	#value = db_to_linear(
+	#	AudioServer.get_bus_volume_db(busIndex)
+	#)
 	
 	
 func On_Value_Changed(value: float) -> void:
@@ -23,3 +23,5 @@ func On_Value_Changed(value: float) -> void:
 		Global.masterVolume = self.value
 	elif busName == "Music":
 		Global.musicVolume = self.value
+	elif busName == "SFX":
+		Global.sfxVolume = self.value

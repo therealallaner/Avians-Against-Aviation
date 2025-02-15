@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi2v4i1tenmi1"
+path="res://.godot/imported/Agapornis 3.mp3-03246d90290037c43609e8b119ac1b8a.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Bird 3/Agapornis 3.mp3"
+dest_files=["res://.godot/imported/Agapornis 3.mp3-03246d90290037c43609e8b119ac1b8a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

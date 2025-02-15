@@ -14,6 +14,7 @@ var offScreenDamage = .5
 func _ready():
 	Anim_Controller(animPlayer)
 	visibility.hide()
+	
 
 func _process(delta):
 	if get_parent().is_class("CharacterBody2D"):

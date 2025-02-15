@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b86mehuheuqxh"]
+
+[ext_resource type="Script" path="res://Scripts/bird2_sounds.gd" id="1_k1wem"]
+[ext_resource type="AudioStream" uid="uid://tliw57s3gf2d" path="res://Assets/SFX/Bird 2/Bird 1.mp3" id="2_rw4xk"]
+[ext_resource type="AudioStream" uid="uid://dkhrp8ha3jcc6" path="res://Assets/SFX/Bird 2/Bird 2.mp3" id="3_fr7m8"]
+
+[node name="Bird 2 Sounds" type="Node" groups=["SFX"]]
+script = ExtResource("1_k1wem")
+sound1 = ExtResource("2_rw4xk")
+sound2 = ExtResource("3_fr7m8")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 5.0
+panning_strength = 1.5
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

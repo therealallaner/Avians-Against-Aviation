@@ -30,6 +30,11 @@ class_name Player
 @onready var bird2 = [blackBird2,greenBird2,yellowBird2,pinkBird2,redBird2,blueBird2,purpleBird2]
 @onready var bird3 = [blackBird3,greenBird3,yellowBird3,pinkBird3,redBird3,blueBird3,purpleBird3]
 
+@onready var sounds1 = preload("res://Scenes/Players/Bird SFX Scenes/bird1_sounds.tscn")
+@onready var sounds2 = preload("res://Scenes/Players/Bird SFX Scenes/bird2_sounds.tscn")
+@onready var sounds3 = preload("res://Scenes/Players/Bird SFX Scenes/bird3_sounds.tscn")
+
+
 @onready var birddict = {
 	"blackBird1": blackBird1,
 	"greenBird1": greenBird1,
@@ -59,13 +64,16 @@ class_name Player
 var defaultPos = Vector2(384,540)
 
 
+
 func _ready():
 	Check_Global()
 		
 	Change_Bird(currentBird)
+	
 	for c in get_children():
 		if c.is_in_group("Bird"):
 			visibility = c.visibility
+	
 	
 func Check_Global():
 	if Global.currentBird:
@@ -83,3 +91,22 @@ func Change_Bird(bird):
 	instance.Anim_Controller(instance.animPlayer)
 	visibility = instance.visibility
 	Check_Global()
+	Bird_Sounds()
+
+func Bird_Sounds():
+	for c in get_children():
+		if c.is_in_group("SFX"):
+			c.timer.stop()
+			c.queue_free()
+			
+	for c in get_children():
+		if c.is_in_group("Bird1"):
+			add_child(sounds1.instantiate())
+		if c.is_in_group("Bird2"):
+			add_child(sounds2.instantiate())
+		if c.is_in_group("Bird3"):
+			add_child(sounds3.instantiate())
+			
+	for c in get_children():
+		if c.is_in_group("SFX"):
+			c.timer.start()

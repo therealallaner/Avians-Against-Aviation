@@ -19,5 +19,6 @@ extends Resource
 @export var birdUnlocks2: Dictionary
 @export var birdUnlocks3: Dictionary
 
-@export var masterVolume:float
-@export var musicVolume:float
+@export var masterVolume: float
+@export var musicVolume: float
+@export var sfxVolume: float

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx0cgx0kuo7pf"
+path="res://.godot/imported/Great Tit 4.mp3-cc8ecfdcc7f7b501a4f3c5b799f5a204.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Bird 1/Great Tit 4.mp3"
+dest_files=["res://.godot/imported/Great Tit 4.mp3-cc8ecfdcc7f7b501a4f3c5b799f5a204.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
