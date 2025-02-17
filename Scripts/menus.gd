@@ -36,3 +36,24 @@ func Menu_Close(menu1,menu2):
 #	tween.tween_property(hBox, "offset_right", -hBox.offset_right, menu_open_time)
 #	tween.set_ease(Tween.EASE_IN_OUT)
 #	tween.play()
+
+
+func Title_Screen(x,y,z,a=false):
+	if !a:
+		var tween = create_tween()
+		tween.parallel().tween_property(x, "position", Vector2(0,0), menuTransitionTime)
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.play()
+	else:
+		var tween = create_tween()
+		tween.parallel().tween_property(x, "position", Vector2(0,-1080), menuTransitionTime)
+		tween.parallel().tween_property(y, "position", Vector2(0,-1080), menuTransitionTime)
+		tween.parallel().tween_property(z, "position", Vector2(0,-1080), menuTransitionTime)
+		tween.parallel().tween_property(mainMenu, "position", Vector2(0,0), menuTransitionTime)
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.play()
+		mainMenu.hideTimer.start()
+		
+func Main_Menu():
+	var newPos = Vector2(0,0)
+	mainMenu.set_position(newPos)

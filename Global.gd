@@ -12,6 +12,8 @@ var mossiesInStock1 = 0
 var mossiesInStock2 = 0
 var mossiesInStock3 = 0
 
+var justOpened = true
+
 var currentBird = "blackBird1"
 var currentBird1 = "blackBird1"
 var currentBird2 = "blackBird2"

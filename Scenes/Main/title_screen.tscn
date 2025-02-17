@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6ap75cbpqa77"]
+
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_30org"]
+[ext_resource type="Texture2D" uid="uid://bckqvuvqs15p1" path="res://Assets/Graphics/Avians.png" id="1_qwe7n"]
+[ext_resource type="Texture2D" uid="uid://nfgmlwhnkumw" path="res://Assets/Graphics/Against.png" id="2_s7t5o"]
+[ext_resource type="Texture2D" uid="uid://dlnv4e5x8koa2" path="res://Assets/Graphics/Aviation.png" id="3_flqin"]
+
+[node name="Title Screen" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_30org")
+
+[node name="Avians" type="Sprite2D" parent="."]
+position = Vector2(0, 1080)
+texture = ExtResource("1_qwe7n")
+
+[node name="Against" type="Sprite2D" parent="."]
+position = Vector2(0, 1080)
+texture = ExtResource("2_s7t5o")
+
+[node name="Aviation" type="Sprite2D" parent="."]
+position = Vector2(0, 1080)
+texture = ExtResource("3_flqin")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

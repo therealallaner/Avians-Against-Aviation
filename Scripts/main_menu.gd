@@ -18,7 +18,6 @@ extends Control
 
 func _ready():
 	quitMenu.hide()
-	hideTimer.start()
 	
 	
 func _process(delta):
