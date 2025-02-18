@@ -20,8 +20,7 @@ offset_left = 1920.0
 offset_right = 1920.0
 
 [node name="MainMenu" parent="." instance=ExtResource("1_bodm1")]
-offset_top = 1080.0
-offset_bottom = 1080.0
+visible = false
 
 [node name="GUI" parent="." instance=ExtResource("7_3g8qh")]
 visible = false

@@ -14,7 +14,6 @@ var menuTransitionTime := 0.25
 
 func _ready():
 	score.show()
-	mainMenu.show()
 	gameOver.hide()
 
 
@@ -49,11 +48,13 @@ func Title_Screen(x,y,z,a=false):
 		tween.parallel().tween_property(x, "position", Vector2(0,-1080), menuTransitionTime)
 		tween.parallel().tween_property(y, "position", Vector2(0,-1080), menuTransitionTime)
 		tween.parallel().tween_property(z, "position", Vector2(0,-1080), menuTransitionTime)
-		tween.parallel().tween_property(mainMenu, "position", Vector2(0,0), menuTransitionTime)
+		#tween.parallel().tween_property(mainMenu, "position", Vector2(0,0), menuTransitionTime)
 		tween.set_ease(Tween.EASE_IN_OUT)
 		tween.play()
-		mainMenu.hideTimer.start()
+		await(get_tree().create_timer(.1).timeout)
+		mainMenu.show()
+		mainMenu.showTimer.start()
 		
 func Main_Menu():
-	var newPos = Vector2(0,0)
-	mainMenu.set_position(newPos)
+	$MainMenu.show()
+	$MainMenu.showTimer.start()
