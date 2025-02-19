@@ -8,10 +8,6 @@ func _ready():
 	master.value = Global.masterVolume
 	music.value = Global.musicVolume
 	sfx.value = Global.sfxVolume
-	print("This should happen second")
-	print(Global.masterVolume)
-	print(Global.musicVolume)
-	print(Global.sfxVolume)
 	
 func _process(delta):
 	if self.position.x == 0:

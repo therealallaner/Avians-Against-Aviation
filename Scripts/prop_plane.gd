@@ -16,6 +16,7 @@ var damage = 33
 func _ready():
 	var planeSkin = Global.Random_List(variations)
 	$Sprite2D.texture = planeSkin
+	$AudioStreamPlayer2D.play()
 
 
 func _physics_process(delta):

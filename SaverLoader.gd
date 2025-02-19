@@ -81,4 +81,3 @@ func Load_Game():
 		Global.masterVolume = savedGame.masterVolume
 		Global.musicVolume = savedGame.musicVolume
 		Global.sfxVolume = savedGame.sfxVolume
-		print("This should happend first")

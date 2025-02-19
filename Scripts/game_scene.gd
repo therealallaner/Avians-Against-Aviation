@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var menu = $Menus
 @onready var mainMenu = $Menus/MainMenu
 @onready var waveController = $WaveController
 @onready var player = $HappyBird

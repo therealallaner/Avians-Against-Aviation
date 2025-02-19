@@ -32,10 +32,10 @@ sound12 = ExtResource("13_an2s8")
 sound13 = ExtResource("14_vyio4")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
 one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = 5.0
 panning_strength = 1.5
 bus = &"SFX"
 

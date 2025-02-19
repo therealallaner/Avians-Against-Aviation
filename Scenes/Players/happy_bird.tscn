@@ -4,3 +4,9 @@
 
 [node name="HappyBird" type="CharacterBody2D"]
 script = ExtResource("1_le2on")
+
+[node name="MossyBite" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true

@@ -16,11 +16,10 @@ sound4 = ExtResource("5_r63a2")
 sound5 = ExtResource("6_jxdjt")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
 one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = 5.0
-panning_strength = 1.5
 bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

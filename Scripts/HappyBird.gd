@@ -62,11 +62,13 @@ func _on_area_2d_area_entered(area):
 		player.HP += 1
 		if player.HP > 100:
 			player.HP = 100
+		get_parent().Mossy_Bite()
 			
 			
 	if area.get_parent().is_in_group("Poison Mossy"):
 		Damage_Over_Time()
 		area.get_parent().queue_free()
+		get_parent().Mossy_Bite()
 
 	if area.get_parent().is_in_group("Torpedo"):
 		player.HP -= area.get_parent().damage 

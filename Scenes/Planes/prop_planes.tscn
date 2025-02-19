@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1jd63qw1koyf"]
+[gd_scene load_steps=8 format=3 uid="uid://b1jd63qw1koyf"]
 
 [ext_resource type="Script" path="res://Scripts/prop_plane.gd" id="1_cjbr6"]
 [ext_resource type="Texture2D" uid="uid://do0e04siawpem" path="res://Assets/plane_pack/planes/plane_1/plane_1_blue.png" id="2_a03b3"]
 [ext_resource type="Texture2D" uid="uid://cj0s6amupuub8" path="res://Assets/plane_pack/planes/plane_1/plane_1_pink.png" id="3_0g01n"]
 [ext_resource type="Texture2D" uid="uid://d27wa8gbb7uit" path="res://Assets/plane_pack/planes/plane_1/plane_1_red.png" id="4_qvgsh"]
 [ext_resource type="Texture2D" uid="uid://dtp5a2ed4df3r" path="res://Assets/plane_pack/planes/plane_1/plane_1_yellow.png" id="5_1xurs"]
+[ext_resource type="AudioStream" uid="uid://jcsmt2eslfy5" path="res://Assets/SFX/Plane Sound v1.mp3" id="6_i2s5g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2t2nk"]
 radius = 185.0
@@ -34,6 +35,10 @@ shape = SubResource("CapsuleShape2D_2t2nk")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(345, 45)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_i2s5g")
+bus = &"SFX"
 
 [connection signal="timeout" from="wobblyTimer" to="." method="_on_wobbly_timer_timeout"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

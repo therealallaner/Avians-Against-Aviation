@@ -9,7 +9,7 @@ script = ExtResource("1_ma3y0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_26iva")
-volume_db = -3.773
+volume_db = -10.0
 bus = &"Music"
 
 [node name="Timer" type="Timer" parent="."]
@@ -19,7 +19,6 @@ autostart = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_snyl0")
-volume_db = 5.622
-bus = &"SFX"
+bus = &"TestSFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

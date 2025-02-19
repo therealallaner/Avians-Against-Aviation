@@ -59,9 +59,10 @@ func Start_Game():
 	
 	gameMenu = false
 	gameScene.player.visibility.show()
+	gameScene.menu.Game_Start_Anim()
 	gameScene.mainMenu.hide()
 	gameScene.waveController.Next_Wave()
-	gameScene.GUI.show()
+	#gameScene.GUI.show()
 	gameScene.get_node("Menus/Aviary").hide()
 	gameScene.get_node("Menus/Stats").hide()
 

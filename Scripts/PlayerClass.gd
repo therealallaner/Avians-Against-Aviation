@@ -34,6 +34,19 @@ class_name Player
 @onready var sounds2 = preload("res://Scenes/Players/Bird SFX Scenes/bird2_sounds.tscn")
 @onready var sounds3 = preload("res://Scenes/Players/Bird SFX Scenes/bird3_sounds.tscn")
 
+@onready var mossySound1 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 1.mp3")
+@onready var mossySound2 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 2.mp3")
+@onready var mossySound3 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 3.mp3")
+@onready var mossySound4 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 4.mp3")
+@onready var mossySound5 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 5.mp3")
+
+@onready var mossyBites = [
+	mossySound1,
+	mossySound2,
+	mossySound3,
+	mossySound4,
+	mossySound5
+]
 
 @onready var birddict = {
 	"blackBird1": blackBird1,
@@ -110,3 +123,8 @@ func Bird_Sounds():
 	for c in get_children():
 		if c.is_in_group("SFX"):
 			c.timer.start()
+
+func Mossy_Bite():
+	var sound = Global.Random_List(mossyBites)
+	$MossyBite.stream = sound
+	$MossyBite.play()
