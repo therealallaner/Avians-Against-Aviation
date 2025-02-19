@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cik8ujooqud00"
+path="res://.godot/imported/Whoosh 9.mp3-4676a0cd6c276d23704e738ccff68b59.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Whooshes/Whoosh 9.mp3"
+dest_files=["res://.godot/imported/Whoosh 9.mp3-4676a0cd6c276d23704e738ccff68b59.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -40,3 +40,6 @@ offset_left = 1920.0
 offset_right = 1920.0
 
 [node name="Title Screen" parent="." instance=ExtResource("9_kv7tr")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

@@ -8,7 +8,7 @@ extends Control
 @onready var statsMenu = parent.get_node("Stats")
 @onready var options = $VBoxContainer/Options
 @onready var aviary = $VBoxContainer/Aviary
-@onready var stats = $VBoxContainer/HBoxContainer/Stats
+@onready var stats = $VBoxContainer/Stats
 @onready var quitMenu = $QuitMenu
 @onready var start = $Start
 @onready var showTimer = $Start/ShowTimer
