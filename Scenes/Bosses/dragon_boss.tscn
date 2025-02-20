@@ -1,0 +1,174 @@
+[gd_scene load_steps=38 format=3 uid="uid://cjg35gkd6c1on"]
+
+[ext_resource type="Script" path="res://Scripts/dragon_boss.gd" id="1_680qe"]
+[ext_resource type="Texture2D" uid="uid://b2jt0524p7k3w" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_000.png" id="2_qan51"]
+[ext_resource type="Texture2D" uid="uid://ccjpd1e5prep8" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_001.png" id="3_qedvx"]
+[ext_resource type="Texture2D" uid="uid://d32o8irfpjnef" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_002.png" id="4_d2o0d"]
+[ext_resource type="Texture2D" uid="uid://c02krjy8c0e6y" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_003.png" id="5_pl1hk"]
+[ext_resource type="Texture2D" uid="uid://cjm76pt1pghvp" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_004.png" id="6_ogb2x"]
+[ext_resource type="Texture2D" uid="uid://injytfjvf1xt" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_005.png" id="7_wuxwp"]
+[ext_resource type="Texture2D" uid="uid://dj08l2yayeu33" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_006.png" id="8_rargm"]
+[ext_resource type="Texture2D" uid="uid://iowmkx77glpc" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_007.png" id="9_uqs2l"]
+[ext_resource type="Texture2D" uid="uid://rhutpjh1062p" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_008.png" id="10_7qhaf"]
+[ext_resource type="Texture2D" uid="uid://b43jfu02hggl6" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_009.png" id="11_irso8"]
+[ext_resource type="Texture2D" uid="uid://dhwpuavy7q4yl" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_010.png" id="12_uflaf"]
+[ext_resource type="Texture2D" uid="uid://44h5m4atjadp" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_011.png" id="13_yjer0"]
+[ext_resource type="Texture2D" uid="uid://cpfls7l3br681" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_012.png" id="14_g0vud"]
+[ext_resource type="Texture2D" uid="uid://bylynsm4dyt6y" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_013.png" id="15_r26yv"]
+[ext_resource type="Texture2D" uid="uid://djvqt0jlgkhxc" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_014.png" id="16_406gc"]
+[ext_resource type="Texture2D" uid="uid://vifk1jr8ahnh" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_015.png" id="17_mupsm"]
+[ext_resource type="Texture2D" uid="uid://c5bhoovyo063t" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_016.png" id="18_037yk"]
+[ext_resource type="Texture2D" uid="uid://6yeyajpkyhrh" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_017.png" id="19_w0ygd"]
+[ext_resource type="Texture2D" uid="uid://h5staxjdox2k" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_018.png" id="20_ur5u6"]
+[ext_resource type="Texture2D" uid="uid://paklfiopcw2l" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_019.png" id="21_7drgu"]
+[ext_resource type="Texture2D" uid="uid://cjribssm7o40i" path="res://Assets/Dragon/keyframes/__dragon_02_red_die_standing_000.png" id="22_hlylo"]
+[ext_resource type="Texture2D" uid="uid://cj0stfmid3q2k" path="res://Assets/Dragon/keyframes/__dragon_02_red_die_standing_001.png" id="23_5dh7m"]
+[ext_resource type="Texture2D" uid="uid://b33o4n3lpedm6" path="res://Assets/Dragon/keyframes/__dragon_02_red_die_standing_002.png" id="24_fl74a"]
+[ext_resource type="Texture2D" uid="uid://dbur1qn302c3e" path="res://Assets/Dragon/keyframes/__dragon_02_red_die_standing_003.png" id="25_co23n"]
+[ext_resource type="Texture2D" uid="uid://dkwdtgl0bsetk" path="res://Assets/Dragon/keyframes/__dragon_02_red_die_standing_004.png" id="26_tkkd7"]
+[ext_resource type="Texture2D" uid="uid://b7va5bfhf880b" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_000.png" id="27_www18"]
+[ext_resource type="Texture2D" uid="uid://6p6yw1248ewg" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_001.png" id="28_hflnl"]
+[ext_resource type="Texture2D" uid="uid://rv64uo36kxoo" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_002.png" id="29_0teg4"]
+[ext_resource type="Texture2D" uid="uid://618aj3crvuqn" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_003.png" id="30_y6djn"]
+[ext_resource type="Texture2D" uid="uid://doroigkj54pue" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_004.png" id="31_kn5ik"]
+[ext_resource type="Texture2D" uid="uid://b6pb0yhd228ra" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_005.png" id="32_2rbhl"]
+[ext_resource type="Texture2D" uid="uid://bnuo6rge0xp63" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_006.png" id="33_27cfv"]
+[ext_resource type="Texture2D" uid="uid://critshfjpkj1q" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_007.png" id="34_7f5m5"]
+[ext_resource type="Texture2D" uid="uid://dvjek286thr0h" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_008.png" id="35_pkyan"]
+[ext_resource type="Texture2D" uid="uid://d4lit027ikyih" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_009.png" id="36_dlw81"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pp52"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qan51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qedvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d2o0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pl1hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ogb2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wuxwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rargm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uqs2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7qhaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_irso8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uflaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yjer0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_g0vud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r26yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_406gc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mupsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_037yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w0ygd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ur5u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7drgu")
+}],
+"loop": true,
+"name": &"breath fire",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_hlylo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5dh7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_fl74a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_co23n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tkkd7")
+}],
+"loop": false,
+"name": &"dying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_www18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_hflnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_0teg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_y6djn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kn5ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_2rbhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_27cfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7f5m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_pkyan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dlw81")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 15.0
+}]
+
+[node name="Dragon" type="CharacterBody2D"]
+script = ExtResource("1_680qe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4pp52")
+animation = &"dying"
+frame = 4
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
