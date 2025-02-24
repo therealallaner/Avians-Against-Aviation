@@ -3,6 +3,7 @@ extends Node
 
 @onready var waveController = get_parent()
 @onready var bossHPBar = get_parent().get_parent().get_node("Menus").get_node("GUI").get_node("BossHP")
+@onready var gui = get_parent().get_parent().get_node("Menus").get_node("GUI")
 @onready var mossyBoss = preload("res://Scenes/Bosses/mosquito_boss.tscn")
 @onready var stealthBoss = preload("res://Scenes/Bosses/stealth_bomber.tscn")
 @onready var heliBoss = preload("res://Scenes/Bosses/helicopter.tscn")
@@ -23,6 +24,7 @@ func Spawn_Boss(x):
 	instance.position = Vector2(2020,540)
 	instance.HP *= x
 	bossHPBar.show()
+	gui.Boss_HP_Bar()
 	bossHPBar.max_value = instance.HP
 	bossHPBar.value = instance.HP
 	var targetX = instance.position.x - 350

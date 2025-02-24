@@ -4,6 +4,8 @@ extends Control
 @onready var playerHP = $PlayerHP
 @onready var bossHP = $BossHP
 
+var transitionTime = 1
+
 
 func _ready():
 	bossHP.hide()
@@ -20,3 +22,7 @@ func Update_Player_HP():
 func Update_Boss_HP(hp):
 	var bossHPCurr = hp
 	bossHP.value = bossHPCurr
+
+func Boss_HP_Bar():
+	var tween = create_tween()
+	tween.parallel().tween_property(bossHP, "position", Vector2(1280,0), transitionTime)
