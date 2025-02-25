@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqoccsi4i1sg1"]
+
+[ext_resource type="Texture2D" uid="uid://cvv8escmbkc8g" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_01.png" id="1_cwwd1"]
+[ext_resource type="Texture2D" uid="uid://dflb58yy1npkr" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_02.png" id="2_thqsf"]
+[ext_resource type="Texture2D" uid="uid://d3on61koyunff" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_03.png" id="3_5d1w4"]
+[ext_resource type="Texture2D" uid="uid://bis57unbsuyt7" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_04.png" id="4_0y3kv"]
+[ext_resource type="Texture2D" uid="uid://dp2qdnbd0f87o" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_05.png" id="5_0kilm"]
+[ext_resource type="Texture2D" uid="uid://creaeoi1hol1i" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_06.png" id="6_ihltc"]
+[ext_resource type="Texture2D" uid="uid://cobf6ino0tgkg" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_07.png" id="7_ry56y"]
+[ext_resource type="Texture2D" uid="uid://7mfuyiieauwn" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_08.png" id="8_dhuot"]
+[ext_resource type="Texture2D" uid="uid://bmxv7jv3r0530" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_09.png" id="9_bir5h"]
+[ext_resource type="Texture2D" uid="uid://c3giiuljrys6q" path="res://Assets/Airship/pngs/animatable_parts/cannon_animation/canon_10.png" id="10_whdpx"]
+[ext_resource type="Texture2D" uid="uid://nwgrdnb8rgu2" path="res://Assets/Airship/pngs/cannon_animation/canon_01.png" id="11_0sv4p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lha63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cwwd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_thqsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5d1w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0y3kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0kilm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ihltc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ry56y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dhuot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bir5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_whdpx")
+}],
+"loop": true,
+"name": &"firing",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_0sv4p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}]
+
+[node name="Cannon" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lha63")
+animation = &"idle"
+offset = Vector2(-192, 0)

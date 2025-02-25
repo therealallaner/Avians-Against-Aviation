@@ -7,10 +7,15 @@ extends Node
 @onready var mossyBoss = preload("res://Scenes/Bosses/mosquito_boss.tscn")
 @onready var stealthBoss = preload("res://Scenes/Bosses/stealth_bomber.tscn")
 @onready var heliBoss = preload("res://Scenes/Bosses/helicopter.tscn")
+@onready var dragonBoss = preload("res://Scenes/Bosses/dragon_boss.tscn")
+@onready var airshipBoss = preload("res://Scenes/Bosses/airship_boss.tscn")
 
 @onready var bosses = [
+	airshipBoss,
+	dragonBoss,
 	stealthBoss,
 	mossyBoss,
+	heliBoss
 ]
 
 
