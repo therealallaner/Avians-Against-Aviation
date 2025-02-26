@@ -7,6 +7,7 @@ extends Node2D
 @onready var gameOver = $Menus/GameOver
 @onready var saver = $Saver
 @onready var GUI = $Menus/GUI
+@onready var wave = $WaveController.wave
 
 var test = "Test"
 

@@ -23,7 +23,6 @@ extends Node
 
 func Spawn_Mossies():
 	var shape = Global.Random_List(shapes.get_children())
-	print(shape)
 	#var list = Global.Random_List(mossyColors)
 	var yPos = randf_range(100,1000)
 	for p in shape.get_children():

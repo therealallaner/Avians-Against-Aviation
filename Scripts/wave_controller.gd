@@ -13,7 +13,7 @@ var wave = 0
 var bossHPX = 1
 
 var jetWaves = []
-var bossWaves = [1,2,3]
+var bossWaves = []
 
 
 func _ready():
@@ -34,6 +34,7 @@ func Wave_Difficulty():
 		
 func Next_Wave():
 	wave += 1
+	gameScene.GUI.Update_Wave_Counter(wave)
 	if wave in bossWaves:
 		bossController.Spawn_Boss(bossHPX)
 #		bossWaves.erase(wave)
@@ -46,16 +47,18 @@ func Next_Wave():
 			Jet_Spawn()
 			if randf() < .25:
 				jetTimer.start()
+				
 func Add_Jet_Waves():
-	var x = snapped(randf_range(25,50),1)
+	var x = snapped(randf_range(33,50),1)
 	for r in x:
 		var j = snapped(randf_range(2,100),1)
 		if j not in jetWaves:
+			print(j)
 			jetWaves.append(j)
 	
 	
 func Add_Boss_Waves():
-	var bossWavePossibilities = [[3,6],[8,11],[14,17],[20,23],[27,30]]
+	var bossWavePossibilities = [[5,8],[10,13],[15,18],[20,23],[25,28]]
 	for p in bossWavePossibilities:
 		var p1 = p[0]
 		var p2 = p[1]

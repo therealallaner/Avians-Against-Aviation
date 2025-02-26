@@ -26,3 +26,6 @@ func Update_Boss_HP(hp):
 func Boss_HP_Bar():
 	var tween = create_tween()
 	tween.parallel().tween_property(bossHP, "position", Vector2(1280,0), transitionTime)
+
+func Update_Wave_Counter(x):
+	$Wave.text = 'Wave: ' + str(x)
