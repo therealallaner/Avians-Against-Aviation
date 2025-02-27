@@ -12,6 +12,8 @@ var spawnSpeed = 100
 var attackSpeed = 600
 var idleSpeed = 450
 var idleTimes = 1
+var torpedoTimes = 5
+var tTimes = 0
 var recruitSpeed = 500
 var target: Vector2
 var states = {
@@ -76,10 +78,14 @@ func _physics_process(delta):
 		var newPos = (target-position).normalized()
 		var distance = (target - position).length()
 		if distance < 10:
+			tTimes -= 1
 			Launch_Torpedo()
-			states["Attacking"] = false
-			states["Retreating"] = true
-			Retreating_Target()
+			if tTimes <= 0:
+				states["Attacking"] = false
+				states["Retreating"] = true
+				Retreating_Target()
+			else:
+				target = Vector2(position.x,randf_range(50,1000))
 			return
 		velocity = newPos * attackSpeed
 			
@@ -115,9 +121,9 @@ func _physics_process(delta):
 func Randomize_Next_State():
 	target = Vector2(position.x,randf_range(50,1000))
 	var r = randf()
-	if r >= .4:
+	if r >= .45:
 		states["Attacking"] = true
-		Launch_Torpedo()
+		tTimes = randi_range(2,8)
 	else:
 		states["Recruiting"] = true
 		target = position

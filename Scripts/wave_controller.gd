@@ -53,7 +53,6 @@ func Add_Jet_Waves():
 	for r in x:
 		var j = snapped(randf_range(2,100),1)
 		if j not in jetWaves:
-			print(j)
 			jetWaves.append(j)
 	
 	
