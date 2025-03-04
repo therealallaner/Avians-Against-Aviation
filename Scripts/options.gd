@@ -17,3 +17,4 @@ func _on_back_pressed():
 	get_parent().Menu_Close(get_parent().options,get_parent().mainMenu)
 	await(get_tree().create_timer(.1).timeout)
 	Global.mouseHovering = false
+	Global.Save_Game()

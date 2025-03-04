@@ -6,6 +6,7 @@ extends Control
 @onready var aviaryMenu = parent.get_node("Aviary")
 @onready var optionsMenu = parent.get_node("Options")
 @onready var statsMenu = parent.get_node("Stats")
+@onready var upgradesMenu = parent.get_node("UpgradeMenu")
 @onready var options = $VBoxContainer/Options
 @onready var aviary = $VBoxContainer/Aviary
 @onready var stats = $VBoxContainer/Stats
@@ -53,6 +54,12 @@ func _on_options_pressed():
 	
 func _on_stats_pressed():
 	parent.Menu_Open(parent.mainMenu,statsMenu)
+	
+
+func _on_upgrades_pressed():
+	parent.Menu_Open(parent.mainMenu,upgradesMenu)
+	parent.get_parent().player.hide()
+
 
 
 
@@ -88,6 +95,15 @@ func _on_quit_mouse_exited():
 	Global.mouseHovering = false
 
 
+func _on_upgrades_mouse_entered():
+	Global.mouseHovering = true
+
+
+func _on_upgrades_mouse_exited():
+	Global.mouseHovering = false
+
+
+
 func _on_show_timer_timeout():
 	start.show()
 	hideTimer.start()
@@ -96,8 +112,4 @@ func _on_show_timer_timeout():
 func _on_hide_timer_timeout():
 	start.hide()
 	showTimer.start()
-
-
-
-
 

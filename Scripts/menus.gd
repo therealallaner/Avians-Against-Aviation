@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var options = $Options
 @onready var GUI = $GUI
 @onready var stats = $Stats
+@onready var upgradeMenu = $UpgradeMenu
 
 @onready var whoosh1 = preload("res://Assets/SFX/Whooshes/Whoosh 1.mp3")
 @onready var whoosh2 = preload("res://Assets/SFX/Whooshes/Whoosh 2.mp3")

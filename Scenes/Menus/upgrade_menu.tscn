@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0nsj0jr7xv3b"]
+
+[ext_resource type="PackedScene" uid="uid://dtybuqoci51ja" path="res://Scenes/Menus/upgrade.tscn" id="1_ogd8r"]
+[ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_ycx7o"]
+[ext_resource type="Script" path="res://Scripts/upgrade_menu.gd" id="2_ovqy8"]
+[ext_resource type="Texture2D" uid="uid://burpd2drb3g2x" path="res://Assets/Upgrade Assets/Upgrade 1 temp.png" id="3_eumuj"]
+[ext_resource type="Texture2D" uid="uid://d04mnjip31nck" path="res://Assets/Upgrade Assets/Upgrade 2 temp.png" id="4_q5pdu"]
+[ext_resource type="Texture2D" uid="uid://cuw8fqajiupc5" path="res://Assets/Upgrade Assets/Upgrade 3 temp.png" id="5_ab8xa"]
+[ext_resource type="Texture2D" uid="uid://k5hr7534ro5u" path="res://Assets/Upgrade Assets/Upgrade 4 Temp.png" id="6_tc0n4"]
+
+[node name="UpgradeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ycx7o")
+script = ExtResource("2_ovqy8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -125.0
+offset_right = 250.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Upgrades
+"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 600
+theme_override_constants/v_separation = 400
+columns = 3
+
+[node name="Upgrade" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+layout_mode = 2
+Icon = ExtResource("3_eumuj")
+Name = "Double Points"
+
+[node name="Upgrade2" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+layout_mode = 2
+Icon = ExtResource("4_q5pdu")
+Name = "Energy Shield"
+
+[node name="Upgrade3" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+layout_mode = 2
+Icon = ExtResource("5_ab8xa")
+Name = "Better Heals"
+
+[node name="Upgrade4" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+layout_mode = 2
+Icon = ExtResource("6_tc0n4")
+Name = "Vulture"
+
+[node name="Upgrade5" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+layout_mode = 2
+
+[node name="Upgrade6" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]

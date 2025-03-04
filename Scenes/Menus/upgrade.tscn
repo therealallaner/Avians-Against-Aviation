@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtybuqoci51ja"]
+
+[ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_7k4h2"]
+[ext_resource type="Script" path="res://Scripts/upgrade.gd" id="1_jum2r"]
+[ext_resource type="Texture2D" uid="uid://bl6gj3hfpi7xv" path="res://Assets/icon.svg" id="3_2elv0"]
+[ext_resource type="Texture2D" uid="uid://bcryuvht3qfqw" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_000.png" id="4_w2qrs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_espt5"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxnhk"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Upgrade" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_7k4h2")
+script = ExtResource("1_jum2r")
+Icon = ExtResource("3_2elv0")
+Name = "Coming Soon"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.5
+offset_top = -150.0
+offset_right = 143.5
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_espt5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fxnhk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Name"
+
+[node name="spacer2" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Info" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_2elv0")
+expand_mode = 3
+
+[node name="spacer3" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="spacer7" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+
+[node name="spacer4" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_2elv0")
+expand_mode = 3
+
+[node name="spacer5" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Level" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "0/20"
+horizontal_alignment = 1
+
+[node name="Buy" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "50"
+icon = ExtResource("4_w2qrs")
+icon_alignment = 2
+expand_icon = true
+
+[node name="spacer6" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="spacer8" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
