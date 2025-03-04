@@ -3,6 +3,18 @@ extends Control
 
 @onready var gameScene = get_parent().get_parent()
 
+@onready var doublePoints = $VBoxContainer/GridContainer/DoublePoints
+@onready var energyShield = $VBoxContainer/GridContainer/EnergyShield
+@onready var betterHeals = $VBoxContainer/GridContainer/BetterHeals
+@onready var vulture = $VBoxContainer/GridContainer/Vulture
+
+
+@onready var upgrades = [
+	doublePoints,
+	energyShield,
+	betterHeals,
+	vulture
+]
 
 func _ready():
 	pass
@@ -11,6 +23,11 @@ func _ready():
 func _process(delta):
 	if self.position.x == 0:
 		Global.mouseHovering = true
+		
+		
+func Update_Store():
+	pass
+		
 
 func _on_back_pressed():
 	get_parent().Menu_Close(get_parent().upgradeMenu,get_parent().mainMenu)
@@ -19,4 +36,5 @@ func _on_back_pressed():
 	Global.Save_Game()
 	await(get_tree().create_timer(.1).timeout)
 	gameScene.player.show()
-
+	
+	

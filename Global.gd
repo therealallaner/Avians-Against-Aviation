@@ -54,6 +54,15 @@ var playerStats = {
 }
 
 
+var upgrades = {
+	"Double Points": 1,
+	"Energy Shield": 5,
+	"Better Heals": 7,
+	"Vulture": 4
+}
+
+
+
 func Start_Game():
 	var gameScene = get_tree().root.get_node("GameScene")
 	

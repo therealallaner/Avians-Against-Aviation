@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtybuqoci51ja"]
+[gd_scene load_steps=6 format=3 uid="uid://dtybuqoci51ja"]
 
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_7k4h2"]
 [ext_resource type="Script" path="res://Scripts/upgrade.gd" id="1_jum2r"]
 [ext_resource type="Texture2D" uid="uid://bl6gj3hfpi7xv" path="res://Assets/icon.svg" id="3_2elv0"]
-[ext_resource type="Texture2D" uid="uid://bcryuvht3qfqw" path="res://Assets/Mosquitos/keyframes/Mosquito_01/__mosquito_01_die_000.png" id="4_w2qrs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_espt5"]
 content_margin_left = 10.0
@@ -17,6 +16,10 @@ content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
 bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Upgrade" type="Control"]
 layout_mode = 3
@@ -116,8 +119,8 @@ horizontal_alignment = 1
 
 [node name="Buy" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "50"
-icon = ExtResource("4_w2qrs")
+theme_override_font_sizes/font_size = 30
+text = "Cost 50"
 icon_alignment = 2
 expand_icon = true
 

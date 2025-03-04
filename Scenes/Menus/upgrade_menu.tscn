@@ -33,11 +33,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 200
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "Upgrades
 "
 horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -45,22 +58,22 @@ theme_override_constants/h_separation = 600
 theme_override_constants/v_separation = 400
 columns = 3
 
-[node name="Upgrade" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+[node name="DoublePoints" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
 Icon = ExtResource("3_eumuj")
 Name = "Double Points"
 
-[node name="Upgrade2" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+[node name="EnergyShield" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
 Icon = ExtResource("4_q5pdu")
 Name = "Energy Shield"
 
-[node name="Upgrade3" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+[node name="BetterHeals" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
 Icon = ExtResource("5_ab8xa")
 Name = "Better Heals"
 
-[node name="Upgrade4" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+[node name="Vulture" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
 Icon = ExtResource("6_tc0n4")
 Name = "Vulture"
@@ -74,6 +87,10 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
+[node name="Mossies" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Mosquitos: 100"
+
 [node name="spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -81,9 +98,5 @@ size_flags_horizontal = 3
 [node name="Back" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Back"
-
-[node name="spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
