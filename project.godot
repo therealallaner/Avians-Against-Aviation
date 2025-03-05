@@ -20,6 +20,7 @@ config/windows_native_icon="res://Assets/AAA Game Icon 1.ico"
 
 Global="*res://Global.gd"
 BgMusic="*res://Scenes/bg_music.tscn"
+UpgradeText="*res://UpgradeText.gd"
 
 [display]
 

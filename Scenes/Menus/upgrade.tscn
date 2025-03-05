@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtybuqoci51ja"]
+[gd_scene load_steps=7 format=3 uid="uid://dtybuqoci51ja"]
 
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_7k4h2"]
 [ext_resource type="Script" path="res://Scripts/upgrade.gd" id="1_jum2r"]
 [ext_resource type="Texture2D" uid="uid://bl6gj3hfpi7xv" path="res://Assets/icon.svg" id="3_2elv0"]
+[ext_resource type="Texture2D" uid="uid://cgjd2iq8aadtk" path="res://Assets/Upgrade Assets/Info Icon temp.png" id="4_4wkb2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_espt5"]
 content_margin_left = 10.0
@@ -75,7 +76,7 @@ size_flags_horizontal = 3
 
 [node name="Info" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_2elv0")
+texture = ExtResource("4_4wkb2")
 expand_mode = 3
 
 [node name="spacer3" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
@@ -103,7 +104,6 @@ texture = ExtResource("3_2elv0")
 expand_mode = 3
 
 [node name="spacer5" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2"]
-custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -125,9 +125,19 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="spacer6" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2"]
-custom_minimum_size = Vector2(10, 0)
+custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
 [node name="spacer8" type="Control" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Info" to="." method="_on_info_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Info" to="." method="_on_info_mouse_exited"]

@@ -8,6 +8,9 @@ extends Control
 @onready var betterHeals = $VBoxContainer/GridContainer/BetterHeals
 @onready var vulture = $VBoxContainer/GridContainer/Vulture
 
+@onready var info = $Info
+@onready var infoLabel = $Info/Label
+
 
 @onready var upgrades = [
 	doublePoints,

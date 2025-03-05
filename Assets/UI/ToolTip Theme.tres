@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://gmkgudu87lg5"]
+
+[ext_resource type="FontFile" uid="uid://u28xhhe35i0q" path="res://Assets/UI/Fonts/Hey Comic.ttf" id="1_awo7t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbwr5"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 0.721569)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+default_font = ExtResource("1_awo7t")
+default_font_size = 25
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_kbwr5")
