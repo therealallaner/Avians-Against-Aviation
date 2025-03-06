@@ -70,7 +70,6 @@ alignment = 1
 layout_mode = 2
 
 [node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -85,7 +84,6 @@ sprite6 = ExtResource("10_3iaxp")
 sprite7 = ExtResource("11_gqgwe")
 
 [node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
-visible = false
 layout_mode = 2
 cardNumber = 3
 cardName = "Sleezy"

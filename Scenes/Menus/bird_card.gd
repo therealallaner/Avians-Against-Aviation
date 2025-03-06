@@ -35,6 +35,7 @@ var birdNames = {
 
 
 var carouselOrient = {
+	'default': Vector2(2880,550),
 	0: Vector2(860,550),
 	1: Vector2(960,550),
 	2: Vector2(1060,550)
@@ -50,6 +51,7 @@ var spacerExpand = Vector2(57,0)
 
 func _ready():
 	Compensate_for_Control()
+	Default_Pos()
 	birdName.text = cardName
 	leftButt.hide()
 	spacerLeft.set_custom_minimum_size(spacerExpand)
@@ -57,12 +59,18 @@ func _ready():
 	Check_Sprite_Number()
 
 func Compensate_for_Control():
+	
+	if Global.demo:
+		return
+		
 	if cardNumber == 1:
+		carouselOrient['default'] = Vector2(2531,550)
 		carouselOrient[0] = Vector2(511,550)
 		carouselOrient[1] = Vector2(611,550)
 		carouselOrient[2] = Vector2(711,550)
 	
 	elif cardNumber == 3:
+		carouselOrient["default"] = Vector2(3229,550)
 		carouselOrient[0] = Vector2(1209,550)
 		carouselOrient[1] = Vector2(1309,550)
 		carouselOrient[2] = Vector2(1409,550)
@@ -77,7 +85,7 @@ func Check_Sprite_Number():
 func Default_Pos():
 	var i1 = sprite1.instantiate()
 	carousel.add_child(i1)
-	i1.position = carouselOrient[1]
+	i1.position = carouselOrient['default']
 	
 	
 func Carousel_Movement_R():

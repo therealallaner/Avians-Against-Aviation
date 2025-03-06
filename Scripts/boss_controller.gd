@@ -13,9 +13,12 @@ extends Node
 @onready var bosses = [
 	mossyBoss,
 	stealthBoss,
+	heliBoss
 ]
 
-
+func _ready():
+	if Global.demo:
+		bosses = [mossyBoss,stealthBoss]
 
 func Spawn_Boss(x):
 	var b = bosses[0]

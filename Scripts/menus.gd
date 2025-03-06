@@ -34,17 +34,29 @@ func Menu_Open(menu1,menu2):
 	var tween = create_tween()
 	tween.parallel().tween_property(menu1, "position", Vector2(-1920,0), menuTransitionTime)
 	tween.parallel().tween_property(menu2, "position", Vector2(0,0), menuTransitionTime)
+	
+	if menu2 == aviary:
+		for card in menu2.birdCards:
+			var bird = card.carousel.get_children()[0]
+			tween.parallel().tween_property(bird,"position",card.carouselOrient[1],menuTransitionTime)
+			
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.play()
 	var rando = Global.Random_List(lightWhooshes)
 	$AudioStreamPlayer.stream = rando
 	$AudioStreamPlayer.play()
-	
+
 	
 func Menu_Close(menu1,menu2):
 	var tween = create_tween()
 	tween.parallel().tween_property(menu1, "position", Vector2(1920,0), menuTransitionTime)
 	tween.parallel().tween_property(menu2, "position", Vector2(0,0), menuTransitionTime)
+	
+	if menu1 == aviary:
+		for card in menu1.birdCards:
+			var bird = card.carousel.get_children()[0]
+			tween.parallel().tween_property(bird,"position",card.carouselOrient["default"],menuTransitionTime)
+			
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.play()
 #	var tween = create_tween()

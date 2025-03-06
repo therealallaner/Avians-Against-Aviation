@@ -46,6 +46,7 @@ func _on_no_pressed():
 	
 func _on_aviary_pressed():
 	parent.Menu_Open(parent.mainMenu,aviaryMenu)
+	parent.get_parent().player.hide()
 	
 	
 func _on_options_pressed():

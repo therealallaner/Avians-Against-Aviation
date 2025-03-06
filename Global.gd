@@ -13,6 +13,7 @@ var mossiesInStock2 = 0
 var mossiesInStock3 = 0
 
 var justOpened = true
+var demo = false
 
 var currentBird = "blackBird1"
 var currentBird1 = "blackBird1"
