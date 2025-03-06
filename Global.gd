@@ -55,10 +55,12 @@ var playerStats = {
 
 
 var upgrades = {
-	"Score Multiplier": 2,
-	"Energy Shield": 15,
-	"Better Heals": 7,
-	"Vulture": 4
+	"Score Multiplier": 0,
+	"Energy Shield": 0,
+	"Better Heals": 0,
+	"Vulture": 0,
+	"Crit Chance": 0,
+	"Mossy Magnet": 0
 }
 
 

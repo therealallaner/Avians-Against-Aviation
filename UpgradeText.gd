@@ -6,6 +6,7 @@ var es = 25
 
 
 var scoreMultiplierLevels = {
+	0: 1,
 	1: 1,
 	2: 1.5,
 	3: 2
