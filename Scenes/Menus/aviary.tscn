@@ -91,23 +91,6 @@ yellowBird = ExtResource("9_14rck")
 blueBird = ExtResource("10_3iaxp")
 purpleBird = ExtResource("11_gqgwe")
 
-[node name="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3" index="0"]
-theme_override_constants/margin_left = 27
-theme_override_constants/margin_right = 27
-
-[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="0"]
-text = "Breezy"
-
-[node name="BlackBird1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/SpriteContainer" index="0"]
-position = Vector2(79.73, 38)
-
-[node name="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="4"]
-item_count = 8
-popup/item_6/text = "Blue"
-popup/item_6/id = 6
-popup/item_7/text = "Purple"
-popup/item_7/id = 7
-
 [node name="Select2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -128,23 +111,6 @@ redBird = ExtResource("16_6uj78")
 yellowBird = ExtResource("17_fpjo8")
 blueBird = ExtResource("18_3ax66")
 purpleBird = ExtResource("19_ne48y")
-
-[node name="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BirdCard3/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3" index="0"]
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_right = 30
-
-[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BirdCard3/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="0"]
-text = "Sleezy"
-
-[node name="BlackBird1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BirdCard3/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/SpriteContainer" index="0"]
-position = Vector2(61.645, 28)
-
-[node name="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BirdCard3/PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer" index="4"]
-item_count = 8
-popup/item_6/text = "Blue"
-popup/item_6/id = 6
-popup/item_7/text = "Purple"
-popup/item_7/id = 7
 
 [node name="Select3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2

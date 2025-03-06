@@ -1,152 +1,113 @@
-[gd_scene load_steps=12 format=3 uid="uid://bakkpbtagnqag"]
+[gd_scene load_steps=11 format=3 uid="uid://bakkpbtagnqag"]
 
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_celds"]
-[ext_resource type="Script" path="res://Scripts/bird_card.gd" id="2_jle7d"]
+[ext_resource type="Script" path="res://Scenes/Menus/bird_card.gd" id="2_fpcoy"]
 [ext_resource type="PackedScene" uid="uid://bfpuhrokdl0m6" path="res://Scenes/Players/Sprites/black_bird_1.tscn" id="3_dkf2q"]
 [ext_resource type="PackedScene" uid="uid://d1rupj28yxc28" path="res://Scenes/Players/Sprites/green_bird_1.tscn" id="4_ewsol"]
 [ext_resource type="PackedScene" uid="uid://bh44eil2rws31" path="res://Scenes/Players/Sprites/pink_bird_1.tscn" id="5_dt1bi"]
 [ext_resource type="PackedScene" uid="uid://ojgxktn5ttpy" path="res://Scenes/Players/Sprites/red_bird_1.tscn" id="6_8anry"]
 [ext_resource type="PackedScene" uid="uid://cgk24fuh2ypnf" path="res://Scenes/Players/Sprites/yellow_bird_1.tscn" id="7_hi8of"]
+[ext_resource type="PackedScene" uid="uid://b86yvplrteruo" path="res://Scenes/Players/Sprites/yellow_bird_2.tscn" id="8_lj1yt"]
+[ext_resource type="PackedScene" uid="uid://bctyk81dcxpeq" path="res://Scenes/Players/Sprites/yellow_bird_3.tscn" id="9_v50bl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bly7q"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o06i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pckjs"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rr8h"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4t4y"]
-bg_color = Color(0.917647, 0.945098, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 60
-corner_radius_top_right = 60
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-corner_detail = 10
-expand_margin_left = 18.0
-expand_margin_top = 3.0
-expand_margin_right = 18.0
-expand_margin_bottom = 3.0
-
-[node name="BirdCard" type="Control"]
-custom_minimum_size = Vector2(187, 328)
+[node name="Bird Card" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-scale = Vector2(1.5, 1.5)
-size_flags_horizontal = 3
-size_flags_vertical = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_celds")
-script = ExtResource("2_jle7d")
-blackBird = ExtResource("3_dkf2q")
-greenBird = ExtResource("4_ewsol")
-pinkBird = ExtResource("5_dt1bi")
-redBird = ExtResource("6_8anry")
-yellowBird = ExtResource("7_hi8of")
+script = ExtResource("2_fpcoy")
+sprite1 = ExtResource("3_dkf2q")
+sprite2 = ExtResource("6_8anry")
+sprite3 = ExtResource("5_dt1bi")
+sprite4 = ExtResource("4_ewsol")
+sprite5 = ExtResource("7_hi8of")
+sprite6 = ExtResource("8_lj1yt")
+sprite7 = ExtResource("9_v50bl")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = -48.0
+offset_right = 99.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 3
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 3
-theme_override_constants/margin_bottom = 3
-
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bly7q")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/PanelContainer2"]
-layout_mode = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
-
-[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4o06i")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 25
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pckjs")
+
+[node name="Name" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "Wheezy"
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+[node name="sapcer" type="Control" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1rr8h")
-text = "Mosquitos"
-horizontal_alignment = 2
-
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1rr8h")
-text = "52/100"
-horizontal_alignment = 2
-
-[node name="SpriteContainer" type="Container" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="BlackBird1" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/SpriteContainer" instance=ExtResource("3_dkf2q")]
-position = Vector2(81.885, 28)
-
-[node name="Spacer" type="Control" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+text = "<"
 
-[node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+[node name="spacer" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
-theme_override_styles/hover = SubResource("StyleBoxFlat_y4t4y")
-alignment = 1
-item_count = 6
-selected = 1
-popup/item_0/text = "Color"
-popup/item_0/id = 0
-popup/item_0/separator = true
-popup/item_1/text = "Black"
-popup/item_1/id = 1
-popup/item_2/text = "Green"
-popup/item_2/id = 2
-popup/item_3/text = "Pink"
-popup/item_3/id = 3
-popup/item_4/text = "Red"
-popup/item_4/id = 4
-popup/item_5/text = "Yellow"
-popup/item_5/id = 5
+size_flags_horizontal = 3
 
-[connection signal="item_selected" from="PanelContainer/MarginContainer/PanelContainer2/MarginContainer/PanelContainer3/MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Cost 100"
+
+[node name="spacer2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = ">"
+
+[node name="PinkBird1" parent="." instance=ExtResource("5_dt1bi")]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(1160, 540)
+
+[node name="GreenBird1" parent="." instance=ExtResource("4_ewsol")]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(1060, 540)
+
+[node name="YellowBird1" parent="." instance=ExtResource("7_hi8of")]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(760, 540)
+
+[node name="RedBird1" parent="." instance=ExtResource("6_8anry")]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(860, 540)
+
+[node name="BlackBird1" parent="." instance=ExtResource("3_dkf2q")]
+position = Vector2(960, 540)
