@@ -55,7 +55,7 @@ var playerStats = {
 
 
 var upgrades = {
-	"Double Points": 2,
+	"Score Multiplier": 2,
 	"Energy Shield": 15,
 	"Better Heals": 7,
 	"Vulture": 4

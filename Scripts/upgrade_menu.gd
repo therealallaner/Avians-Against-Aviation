@@ -3,7 +3,7 @@ extends Control
 
 @onready var gameScene = get_parent().get_parent()
 
-@onready var doublePoints = $VBoxContainer/GridContainer/DoublePoints
+@onready var scoreMultiplier = $VBoxContainer/GridContainer/ScoreMultiplier
 @onready var energyShield = $VBoxContainer/GridContainer/EnergyShield
 @onready var betterHeals = $VBoxContainer/GridContainer/BetterHeals
 @onready var vulture = $VBoxContainer/GridContainer/Vulture
@@ -13,7 +13,7 @@ extends Control
 
 
 @onready var upgrades = [
-	doublePoints,
+	scoreMultiplier,
 	energyShield,
 	betterHeals,
 	vulture
