@@ -94,20 +94,25 @@ layout_mode = 2
 text = ">"
 
 [node name="PinkBird1" parent="." instance=ExtResource("5_dt1bi")]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1160, 540)
 
 [node name="GreenBird1" parent="." instance=ExtResource("4_ewsol")]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(1060, 540)
 
 [node name="YellowBird1" parent="." instance=ExtResource("7_hi8of")]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(760, 540)
 
 [node name="RedBird1" parent="." instance=ExtResource("6_8anry")]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(860, 540)
 
 [node name="BlackBird1" parent="." instance=ExtResource("3_dkf2q")]
+visible = false
 position = Vector2(960, 540)
