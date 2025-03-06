@@ -1,18 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://b5u1hjbp7bn4s"]
+[gd_scene load_steps=18 format=3 uid="uid://b5u1hjbp7bn4s"]
 
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_ki13j"]
 [ext_resource type="Script" path="res://Scenes/Menus/aviary.gd" id="2_2dda0"]
 [ext_resource type="PackedScene" uid="uid://bakkpbtagnqag" path="res://Scenes/Menus/bird_card.tscn" id="2_3uh0k"]
 [ext_resource type="PackedScene" uid="uid://c02qoobx6xabh" path="res://Scenes/Players/Sprites/black_bird_2.tscn" id="3_plegv"]
 [ext_resource type="PackedScene" uid="uid://babi7iv3xtih8" path="res://Scenes/Players/Sprites/black_bird_3.tscn" id="4_axmj2"]
-[ext_resource type="Script" path="res://Scripts/bird_card2.gd" id="4_c1dld"]
 [ext_resource type="PackedScene" uid="uid://ckfjj73rf43oo" path="res://Scenes/Players/Sprites/green_bird_2.tscn" id="6_7xxu8"]
 [ext_resource type="PackedScene" uid="uid://wihvgsh20nue" path="res://Scenes/Players/Sprites/pink_bird_2.tscn" id="7_l1wmq"]
 [ext_resource type="PackedScene" uid="uid://fq7e25jia6li" path="res://Scenes/Players/Sprites/red_bird_2.tscn" id="8_vibo5"]
 [ext_resource type="PackedScene" uid="uid://b86yvplrteruo" path="res://Scenes/Players/Sprites/yellow_bird_2.tscn" id="9_14rck"]
 [ext_resource type="PackedScene" uid="uid://bl01apun6qnjd" path="res://Scenes/Players/Sprites/blue_bird_2.tscn" id="10_3iaxp"]
 [ext_resource type="PackedScene" uid="uid://bbcbyv4srpb34" path="res://Scenes/Players/Sprites/purple_bird_2.tscn" id="11_gqgwe"]
-[ext_resource type="Script" path="res://Scripts/bird_card3.gd" id="12_8ewsl"]
 [ext_resource type="PackedScene" uid="uid://cdbt4l2sxwpni" path="res://Scenes/Players/Sprites/green_bird_3.tscn" id="14_52id7"]
 [ext_resource type="PackedScene" uid="uid://dq6b6411i2wmc" path="res://Scenes/Players/Sprites/pink_bird_3.tscn" id="15_c0jqc"]
 [ext_resource type="PackedScene" uid="uid://cc2dvvwvqcvqw" path="res://Scenes/Players/Sprites/red_bird_3.tscn" id="16_6uj78"]
@@ -59,67 +57,48 @@ layout_mode = 2
 text = "The Aviary"
 horizontal_alignment = 1
 
+[node name="spacer2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 150
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="BirdCard" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
 
-[node name="BirdCard" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_3uh0k")]
-layout_mode = 2
-
-[node name="Select1" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
-text = "Select"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 visible = false
 layout_mode = 2
-
-[node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("2_3uh0k")]
-layout_mode = 2
-script = ExtResource("4_c1dld")
-blackBird = ExtResource("3_plegv")
-greenBird = ExtResource("6_7xxu8")
-pinkBird = ExtResource("7_l1wmq")
-redBird = ExtResource("8_vibo5")
-yellowBird = ExtResource("9_14rck")
-blueBird = ExtResource("10_3iaxp")
-purpleBird = ExtResource("11_gqgwe")
-
-[node name="Select2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
-text = "Select"
+size_flags_vertical = 4
+cardNumber = 2
+cardName = "Breezy"
+sprite1 = ExtResource("3_plegv")
+sprite2 = ExtResource("8_vibo5")
+sprite3 = ExtResource("6_7xxu8")
+sprite4 = ExtResource("7_l1wmq")
+sprite5 = ExtResource("9_14rck")
+sprite6 = ExtResource("10_3iaxp")
+sprite7 = ExtResource("11_gqgwe")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 visible = false
 layout_mode = 2
-
-[node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("2_3uh0k")]
-layout_mode = 2
-script = ExtResource("12_8ewsl")
-blackBird = ExtResource("4_axmj2")
-greenBird = ExtResource("14_52id7")
-pinkBird = ExtResource("15_c0jqc")
-redBird = ExtResource("16_6uj78")
-yellowBird = ExtResource("17_fpjo8")
-blueBird = ExtResource("18_3ax66")
-purpleBird = ExtResource("19_ne48y")
-
-[node name="Select3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
-text = "Select"
+cardNumber = 3
+cardName = "Sleezy"
+sprite1 = ExtResource("4_axmj2")
+sprite2 = ExtResource("16_6uj78")
+sprite3 = ExtResource("14_52id7")
+sprite4 = ExtResource("15_c0jqc")
+sprite5 = ExtResource("17_fpjo8")
+sprite6 = ExtResource("18_3ax66")
+sprite7 = ExtResource("19_ne48y")
 
 [node name="spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
@@ -138,10 +117,4 @@ text = "Back"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Select1" to="." method="_on_select_1_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Select2" to="." method="_on_select_2_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Select3" to="." method="_on_select_3_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Back" to="." method="_on_back_pressed"]
-
-[editable path="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BirdCard2"]
-[editable path="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3/BirdCard3"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bakkpbtagnqag"]
+[gd_scene load_steps=9 format=3 uid="uid://bakkpbtagnqag"]
 
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_celds"]
 [ext_resource type="Script" path="res://Scenes/Menus/bird_card.gd" id="2_fpcoy"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bh44eil2rws31" path="res://Scenes/Players/Sprites/pink_bird_1.tscn" id="5_dt1bi"]
 [ext_resource type="PackedScene" uid="uid://ojgxktn5ttpy" path="res://Scenes/Players/Sprites/red_bird_1.tscn" id="6_8anry"]
 [ext_resource type="PackedScene" uid="uid://cgk24fuh2ypnf" path="res://Scenes/Players/Sprites/yellow_bird_1.tscn" id="7_hi8of"]
-[ext_resource type="PackedScene" uid="uid://b86yvplrteruo" path="res://Scenes/Players/Sprites/yellow_bird_2.tscn" id="8_lj1yt"]
-[ext_resource type="PackedScene" uid="uid://bctyk81dcxpeq" path="res://Scenes/Players/Sprites/yellow_bird_3.tscn" id="9_v50bl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pckjs"]
 content_margin_left = 10.0
@@ -22,21 +20,24 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Bird Card" type="Control"]
+custom_minimum_size = Vector2(199, 281)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_celds")
 script = ExtResource("2_fpcoy")
+cardNumber = 1
+cardName = "Wheezy"
 sprite1 = ExtResource("3_dkf2q")
 sprite2 = ExtResource("6_8anry")
-sprite3 = ExtResource("5_dt1bi")
-sprite4 = ExtResource("4_ewsol")
+sprite3 = ExtResource("4_ewsol")
+sprite4 = ExtResource("5_dt1bi")
 sprite5 = ExtResource("7_hi8of")
-sprite6 = ExtResource("8_lj1yt")
-sprite7 = ExtResource("9_v50bl")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -71,48 +72,34 @@ layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="Left Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "<"
 
 [node name="spacer" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="Buy Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Cost 100"
+theme_override_font_sizes/font_size = 20
+text = "Select"
 
 [node name="spacer2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="RIght Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 8
 text = ">"
 
-[node name="PinkBird1" parent="." instance=ExtResource("5_dt1bi")]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1160, 540)
+[node name="Carousel" type="Node" parent="."]
 
-[node name="GreenBird1" parent="." instance=ExtResource("4_ewsol")]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(1060, 540)
-
-[node name="YellowBird1" parent="." instance=ExtResource("7_hi8of")]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(760, 540)
-
-[node name="RedBird1" parent="." instance=ExtResource("6_8anry")]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(860, 540)
-
-[node name="BlackBird1" parent="." instance=ExtResource("3_dkf2q")]
-visible = false
-position = Vector2(960, 540)
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Left Button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/RIght Button" to="." method="_on_r_ight_button_pressed"]
