@@ -31,8 +31,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_celds")
 script = ExtResource("2_fpcoy")
-cardNumber = 1
 cardName = "Wheezy"
+cardNumber = 1
 sprite1 = ExtResource("3_dkf2q")
 sprite2 = ExtResource("6_8anry")
 sprite3 = ExtResource("4_ewsol")
@@ -102,4 +102,5 @@ text = ">"
 [node name="Carousel" type="Node" parent="."]
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Left Button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Buy Button" to="." method="_on_buy_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/RIght Button" to="." method="_on_r_ight_button_pressed"]

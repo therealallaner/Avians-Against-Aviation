@@ -12,24 +12,30 @@ func Save_Game():
 	savedGame.lifetimeScore = Global.playerStats["Lifetime Score"]
 	savedGame.lifetimeMossies = Global.playerStats["Lifetime Mosquitos"]
 	#savedGame.critChance = Global.playerStats["Crit Chance"]
-	savedGame.mossiesInStock1 = Global.mossiesInStock1
-	savedGame.mossiesInStock2 = Global.mossiesInStock2
-	savedGame.mossiesInStock3 = Global.mossiesInStock3
+	
+	savedGame.mossiesInStock = Global.mossiesInStock
+#	savedGame.mossiesInStock1 = Global.mossiesInStock1
+#	savedGame.mossiesInStock2 = Global.mossiesInStock2
+#	savedGame.mossiesInStock3 = Global.mossiesInStock3
 	
 	savedGame.currentBird = Global.currentBird
 	savedGame.currentBird1 = Global.currentBird1
 	savedGame.currentBird2 = Global.currentBird2
 	savedGame.currentBird3 = Global.currentBird3
 
-	for s in Global.birdUnlocks1:
-		if Global.birdUnlocks1[s]:
-			savedGame.birdUnlocks1[s] = Global.birdUnlocks1[s]
-	for s in Global.birdUnlocks2:
-		if Global.birdUnlocks2[s]:
-			savedGame.birdUnlocks2[s] = Global.birdUnlocks2[s]
-	for s in Global.birdUnlocks3:
-		if Global.birdUnlocks3[s]:
-			savedGame.birdUnlocks3[s] = Global.birdUnlocks3[s]
+	for s in Global.birdUnlocks:
+		if Global.birdUnlocks[s]:
+			savedGame.birdUnlocks[s] = Global.birdUnlocks[s]
+
+#	for s in Global.birdUnlocks1:
+#		if Global.birdUnlocks1[s]:
+#			savedGame.birdUnlocks1[s] = Global.birdUnlocks1[s]
+#	for s in Global.birdUnlocks2:
+#		if Global.birdUnlocks2[s]:
+#			savedGame.birdUnlocks2[s] = Global.birdUnlocks2[s]
+#	for s in Global.birdUnlocks3:
+#		if Global.birdUnlocks3[s]:
+#			savedGame.birdUnlocks3[s] = Global.birdUnlocks3[s]
 			
 			
 	savedGame.masterVolume = Global.masterVolume
@@ -48,9 +54,10 @@ func Load_Game():
 		Global.playerStats["Lifetime Score"] = savedGame.lifetimeScore
 		Global.playerStats["Lifetime Mosquitos"] = savedGame.lifetimeMossies
 		#Global.playerStats["Crit Chance"] = savedGame.critChance
-		Global.mossiesInStock1 = savedGame.mossiesInStock1
-		Global.mossiesInStock2 = savedGame.mossiesInStock2
-		Global.mossiesInStock3 = savedGame.mossiesInStock3
+		Global.mossiesInStock = savedGame.mossiesInStock
+#		Global.mossiesInStock1 = savedGame.mossiesInStock1
+#		Global.mossiesInStock2 = savedGame.mossiesInStock2
+#		Global.mossiesInStock3 = savedGame.mossiesInStock3
 #@export var highScore: int
 #@export var mossiesInStock1: int
 #@export var mossiesInStock2: int
@@ -67,12 +74,14 @@ func Load_Game():
 #@export var currentBird3: String
 #
 
-		for s in savedGame.birdUnlocks1:
-			Global.birdUnlocks1[s] = savedGame.birdUnlocks1[s]
-		for s in savedGame.birdUnlocks2:
-			Global.birdUnlocks2[s] = savedGame.birdUnlocks2[s]
-		for s in savedGame.birdUnlocks3:
-			Global.birdUnlocks3[s] = savedGame.birdUnlocks3[s]
+		for s in savedGame.birdUnlocks:
+			Global.birdUnlocks[s] = savedGame.birdUnlocks[s]
+#		for s in savedGame.birdUnlocks1:
+#			Global.birdUnlocks1[s] = savedGame.birdUnlocks1[s]
+#		for s in savedGame.birdUnlocks2:
+#			Global.birdUnlocks2[s] = savedGame.birdUnlocks2[s]
+#		for s in savedGame.birdUnlocks3:
+#			Global.birdUnlocks3[s] = savedGame.birdUnlocks3[s]
 			
 #@export var birdUnlocks1: Dictionary
 #@export var birdUnlocks2: Dictionary

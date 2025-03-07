@@ -8,6 +8,7 @@ var currentDamage = 1
 var masterVolume: float = 0.51
 var musicVolume: float = 0.51
 var sfxVolume: float = 0.51
+var mossiesInStock = 1000
 var mossiesInStock1 = 0
 var mossiesInStock2 = 0
 var mossiesInStock3 = 0
@@ -20,24 +21,21 @@ var currentBird1 = "blackBird1"
 var currentBird2 = "blackBird2"
 var currentBird3 = "blackBird3"
 
-var birdUnlocks1 = {
+var birdUnlocks = {
 	"blackBird1": true,
 	"greenBird1": false,
 	"redBird1": false,
 	"pinkBird1": false,
-	"yellowBird1": false
-}
-var birdUnlocks2 = {
+	"yellowBird1": false,
+	
 	"blackBird2": true,
 	"greenBird2": false,
 	"redBird2": false,
 	"pinkBird2": false,
 	"yellowBird2": false,
 	"blueBird2": false,
-	"purpleBird2": false
-}
-
-var birdUnlocks3 = {
+	"purpleBird2": false,
+	
 	"blackBird3": true,
 	"greenBird3": false,
 	"redBird3": false,

@@ -1,7 +1,8 @@
 extends Control
 
-@export var cardNumber : int
 @export var cardName : String
+@export var cardNumber : int
+@export var cost : int
 @export var sprite1 : PackedScene
 @export var sprite2 : PackedScene
 @export var sprite3 : PackedScene
@@ -10,6 +11,7 @@ extends Control
 @export var sprite6 : PackedScene
 @export var sprite7 : PackedScene
 
+@onready var aviary = get_parent().get_parent().get_parent().get_parent().get_parent()
 @onready var birdName = $PanelContainer/VBoxContainer/PanelContainer/Name
 @onready var carousel = $"Carousel"
 @onready var rightButt = $"PanelContainer/VBoxContainer/HBoxContainer2/RIght Button"
@@ -147,37 +149,47 @@ func Carousel_Movement_L():
 	await(get_tree().create_timer(transitionTime).timeout)
 	carousel.get_children()[0].queue_free()
 
-func Check_If_Owned():
+
+func Update_Buttons():
 	var currentBird = str(birdNames[carouselPos]) + str(cardNumber)
 	
-	if cardNumber == 1:
-		if Global.birdUnlocks1[currentBird]:
-			buyButt.text = 'Select'
-			if currentBird == Global.currentBird:
-				buyButt.text = 'Selected'
-		else:
-			buyButt.text = 'Cost 100'
-			
-	elif cardNumber == 2:
-		if Global.birdUnlocks2[currentBird]:
-			buyButt.text = 'Select'
-			if currentBird == Global.currentBird:
-				buyButt.text = 'Selected'
-		else:
-			buyButt.text = 'Cost 250'
-			
-	elif cardNumber == 3:
-		if Global.birdUnlocks3[currentBird]:
-			buyButt.text = 'Select'
-			if currentBird == Global.currentBird:
-				buyButt.text = 'Selected'
-		else:
-			buyButt.text = 'Cost 675'
+	buyButt.text = 'Cost ' + str(cost)
+	
+	if Global.birdUnlocks[currentBird]:
+		buyButt.text = 'Select'
+	
+	if Global.currentBird == currentBird:
+		buyButt.text = 'Selected'
+		
+	
+#	if cardNumber == 1:
+#		if Global.birdUnlocks1[currentBird]:
+#			buyButt.text = 'Select'
+#			if currentBird == Global.currentBird:
+#				buyButt.text = 'Selected'
+#		else:
+#			buyButt.text = 'Cost 100'
+#
+#	elif cardNumber == 2:
+#		if Global.birdUnlocks2[currentBird]:
+#			buyButt.text = 'Select'
+#			if currentBird == Global.currentBird:
+#				buyButt.text = 'Selected'
+#		else:
+#			buyButt.text = 'Cost 250'
+#
+#	elif cardNumber == 3:
+#		if Global.birdUnlocks3[currentBird]:
+#			buyButt.text = 'Select'
+#			if currentBird == Global.currentBird:
+#				buyButt.text = 'Selected'
+#		else:
+#			buyButt.text = 'Cost 675'
 			
 
 func _on_r_ight_button_pressed():
 	Carousel_Movement_R()
-	Check_If_Owned()
+	Update_Buttons()
 	
 	if !leftButt.visible:
 		leftButt.show()
@@ -194,7 +206,7 @@ func _on_r_ight_button_pressed():
 
 func _on_left_button_pressed():
 	Carousel_Movement_L()
-	Check_If_Owned()
+	Update_Buttons()
 	
 	if !rightButt.visible:
 		rightButt.show()
@@ -209,3 +221,20 @@ func _on_left_button_pressed():
 	leftButt.disabled = true
 	await(get_tree().create_timer(transitionTime).timeout)
 	leftButt.disabled = false
+
+
+func _on_buy_button_pressed():
+	var currentBird = str(birdNames[carouselPos]) + str(cardNumber)
+	
+	if buyButt.text == 'Selected':
+		pass
+	elif buyButt.text == 'Select':
+		Global.currentBird = currentBird
+	else:
+		aviary.buyText.text = 'Do you want to buy this\ncolor for ' + str(cost) + ' Mosquitos?'
+		aviary.buyWindow.show()
+		aviary.cost = cost
+		aviary.birdForSale = currentBird
+		
+	for c in get_parent().get_children():
+		c.Update_Buttons()

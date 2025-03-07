@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b5u1hjbp7bn4s"]
+[gd_scene load_steps=19 format=3 uid="uid://b5u1hjbp7bn4s"]
 
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_ki13j"]
 [ext_resource type="Script" path="res://Scenes/Menus/aviary.gd" id="2_2dda0"]
@@ -17,6 +17,22 @@
 [ext_resource type="PackedScene" uid="uid://bctyk81dcxpeq" path="res://Scenes/Players/Sprites/yellow_bird_3.tscn" id="17_fpjo8"]
 [ext_resource type="PackedScene" uid="uid://csbgvnxgxrg74" path="res://Scenes/Players/Sprites/blue_bird_3.tscn" id="18_3ax66"]
 [ext_resource type="PackedScene" uid="uid://dk8o64gbsml2p" path="res://Scenes/Players/Sprites/purple_bird_3.tscn" id="19_ne48y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ipbm"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [node name="Aviary" type="Control"]
 layout_mode = 3
@@ -68,13 +84,15 @@ alignment = 1
 
 [node name="BirdCard" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
+cost = 100
 
 [node name="BirdCard2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-cardNumber = 2
 cardName = "Breezy"
+cardNumber = 2
+cost = 250
 sprite1 = ExtResource("3_plegv")
 sprite2 = ExtResource("8_vibo5")
 sprite3 = ExtResource("6_7xxu8")
@@ -85,8 +103,9 @@ sprite7 = ExtResource("11_gqgwe")
 
 [node name="BirdCard3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_3uh0k")]
 layout_mode = 2
-cardNumber = 3
 cardName = "Sleezy"
+cardNumber = 3
+cost = 675
 sprite1 = ExtResource("4_axmj2")
 sprite2 = ExtResource("16_6uj78")
 sprite3 = ExtResource("14_52id7")
@@ -103,7 +122,11 @@ layout_mode = 2
 layout_mode = 2
 alignment = 2
 
-[node name="spacer" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Mossies" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Mosquitos: 100"
+
+[node name="spacer3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -111,8 +134,60 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "Back"
 
-[node name="spacer2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="BuyWindow" type="PanelContainer" parent="."]
+visible = false
+z_index = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -67.0
+offset_right = 71.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ipbm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuyWindow"]
+layout_mode = 2
+
+[node name="BuyText" type="Label" parent="BuyWindow/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Do you want to buy this
+color for x Mosquitos?"
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="BuyWindow/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BuyWindow/VBoxContainer"]
+layout_mode = 2
+
+[node name="spacer" type="Control" parent="BuyWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Yes" type="Button" parent="BuyWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="spacer2" type="Control" parent="BuyWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="No" type="Button" parent="BuyWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "No"
+
+[node name="spacer3" type="Control" parent="BuyWindow/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BuyWindow/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="BuyWindow/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]

@@ -10,6 +10,7 @@ extends Control
 
 @onready var info = $Info
 @onready var infoLabel = $Info/Label
+@onready var mossyLabel = $VBoxContainer/HBoxContainer/Mossies
 
 
 @onready var upgrades = [
@@ -20,7 +21,7 @@ extends Control
 ]
 
 func _ready():
-	pass
+	mossyLabel.text = 'Mosquitos: ' + str(Global.mossiesInStock)
 
 
 func _process(delta):
