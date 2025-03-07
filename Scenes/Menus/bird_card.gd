@@ -23,6 +23,7 @@ extends Control
 ]
 
 
+
 var birdNames = {
 	1: 'blackBird',
 	2: 'redBird',
@@ -53,8 +54,6 @@ func _ready():
 	Compensate_for_Control()
 	Default_Pos()
 	birdName.text = cardName
-	leftButt.hide()
-	spacerLeft.set_custom_minimum_size(spacerExpand)
 	
 	Check_Sprite_Number()
 
@@ -83,9 +82,26 @@ func Check_Sprite_Number():
 	
 
 func Default_Pos():
-	var i1 = sprite1.instantiate()
+	var currentBird = sprite1
+	var i1
+	for bird in birdNames:
+		var b = (str(birdNames[bird]) + str(cardNumber))
+		if b == Global.currentBird:
+			currentBird = sprites[bird - 1]
+			carouselPos = bird
+			buyButt.text = 'Selected'
+			
+	if carouselPos > 1:
+		leftButt.show()
+		spacerLeft.set_custom_minimum_size(spacerDefault)
+	else:
+		leftButt.hide()
+		spacerLeft.set_custom_minimum_size(spacerExpand)
+	
+	i1 = currentBird.instantiate()
 	carousel.add_child(i1)
 	i1.position = carouselOrient['default']
+
 	
 	
 func Carousel_Movement_R():
@@ -137,18 +153,24 @@ func Check_If_Owned():
 	if cardNumber == 1:
 		if Global.birdUnlocks1[currentBird]:
 			buyButt.text = 'Select'
+			if currentBird == Global.currentBird:
+				buyButt.text = 'Selected'
 		else:
 			buyButt.text = 'Cost 100'
 			
 	elif cardNumber == 2:
 		if Global.birdUnlocks2[currentBird]:
 			buyButt.text = 'Select'
+			if currentBird == Global.currentBird:
+				buyButt.text = 'Selected'
 		else:
 			buyButt.text = 'Cost 250'
 			
 	elif cardNumber == 3:
 		if Global.birdUnlocks3[currentBird]:
 			buyButt.text = 'Select'
+			if currentBird == Global.currentBird:
+				buyButt.text = 'Selected'
 		else:
 			buyButt.text = 'Cost 675'
 			
