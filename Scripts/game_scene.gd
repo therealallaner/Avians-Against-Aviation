@@ -13,9 +13,7 @@ var test = "Test"
 
 var score = 0
 var scoreMultiplier = 1
-var bird1Mossies = 0
-var bird2Mossies = 0
-var bird3Mossies = 0
+var mossies = 0
 
 
 func _ready():

@@ -9,9 +9,6 @@ var masterVolume: float = 0.51
 var musicVolume: float = 0.51
 var sfxVolume: float = 0.51
 var mossiesInStock = 1000
-var mossiesInStock1 = 0
-var mossiesInStock2 = 0
-var mossiesInStock3 = 0
 
 var justOpened = true
 var demo = false
@@ -79,10 +76,8 @@ func Start_Game():
 func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")
 	
-	mossiesInStock1 += gameScene.bird1Mossies
-	mossiesInStock2 += gameScene.bird2Mossies
-	mossiesInStock3 += gameScene.bird3Mossies
-	playerStats["Lifetime Mosquitos"] += (gameScene.bird1Mossies+gameScene.bird2Mossies+gameScene.bird3Mossies)
+	mossiesInStock += gameScene.mossies
+	playerStats["Lifetime Mosquitos"] += (gameScene.mossies)
 	playerStats["Lifetime Score"] += gameScene.score
 	if gameScene.score > playerStats["High Score"]:
 		playerStats["High Score"] = gameScene.score

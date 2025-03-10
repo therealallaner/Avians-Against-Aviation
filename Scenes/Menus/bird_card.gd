@@ -153,7 +153,7 @@ func Carousel_Movement_L():
 func Update_Buttons():
 	var currentBird = str(birdNames[carouselPos]) + str(cardNumber)
 	
-	buyButt.text = 'Cost ' + str(cost)
+	buyButt.text = 'Cost ' + str(cost) + 'm'
 	
 	if Global.birdUnlocks[currentBird]:
 		buyButt.text = 'Select'
@@ -231,7 +231,7 @@ func _on_buy_button_pressed():
 	elif buyButt.text == 'Select':
 		Global.currentBird = currentBird
 	else:
-		aviary.buyText.text = 'Do you want to buy this\ncolor for ' + str(cost) + ' Mosquitos?'
+		aviary.buyText.text = 'Do you want to buy this\ncolor for ' + str(cost) + ' mosquitos?'
 		aviary.buyWindow.show()
 		aviary.cost = cost
 		aviary.birdForSale = currentBird
