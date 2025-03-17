@@ -56,7 +56,8 @@ var upgrades = {
 	"Better Heals": 0,
 	"Vulture": 0,
 	"Crit Chance": 0,
-	"Mossy Magnet": 0
+	"Mossy Magnet": 0,
+	'Coming Soon':  0
 }
 
 

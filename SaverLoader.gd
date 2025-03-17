@@ -26,6 +26,9 @@ func Save_Game():
 	for s in Global.birdUnlocks:
 		if Global.birdUnlocks[s]:
 			savedGame.birdUnlocks[s] = Global.birdUnlocks[s]
+			
+	for s in Global.upgrades:
+		savedGame.upgrades[s] = Global.upgrades[s]
 
 #	for s in Global.birdUnlocks1:
 #		if Global.birdUnlocks1[s]:
@@ -82,6 +85,9 @@ func Load_Game():
 #			Global.birdUnlocks2[s] = savedGame.birdUnlocks2[s]
 #		for s in savedGame.birdUnlocks3:
 #			Global.birdUnlocks3[s] = savedGame.birdUnlocks3[s]
+
+		for s in savedGame.upgrades:
+			Global.upgrades[s] = savedGame.upgrades[s]
 			
 #@export var birdUnlocks1: Dictionary
 #@export var birdUnlocks2: Dictionary

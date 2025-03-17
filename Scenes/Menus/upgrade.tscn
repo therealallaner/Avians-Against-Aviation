@@ -141,3 +141,4 @@ layout_mode = 2
 
 [connection signal="mouse_entered" from="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Info" to="." method="_on_info_mouse_entered"]
 [connection signal="mouse_exited" from="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Info" to="." method="_on_info_mouse_exited"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer3/HBoxContainer2/VBoxContainer/Buy" to="." method="_on_buy_pressed"]

@@ -12,6 +12,9 @@ extends Control
 @onready var infoLabel = $Info/Label
 @onready var mossyLabel = $VBoxContainer/HBoxContainer/Mossies
 
+@onready var buyWindow = $BuyWindow
+@onready var buyLabel = $BuyWindow/VBoxContainer/BuyLabel
+
 
 @onready var upgrades = [
 	scoreMultiplier,
@@ -19,6 +22,8 @@ extends Control
 	betterHeals,
 	vulture
 ]
+
+var upgradeNumber : int
 
 func _ready():
 	mossyLabel.text = 'Mosquitos: ' + str(Global.mossiesInStock)
@@ -41,4 +46,15 @@ func _on_back_pressed():
 	await(get_tree().create_timer(.1).timeout)
 	gameScene.player.show()
 	
+	
+
+
+func _on_no_pressed():
+	buyWindow.hide()
+
+
+func _on_yes_pressed():
+	var number = upgradeNumber - 1
+	upgrades[number].upgrade()
+	buyWindow.hide()
 	
