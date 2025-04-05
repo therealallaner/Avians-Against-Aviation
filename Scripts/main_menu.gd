@@ -10,6 +10,7 @@ extends Control
 @onready var options = $VBoxContainer/Options
 @onready var aviary = $VBoxContainer/Aviary
 @onready var stats = $VBoxContainer/Stats
+@onready var upgrades = $VBoxContainer/Upgrades
 @onready var quitMenu = $QuitMenu
 @onready var start = $Start
 @onready var showTimer = $Start/ShowTimer
@@ -20,6 +21,9 @@ extends Control
 func _ready():
 	quitMenu.hide()
 	
+	if Global.demo:
+		upgrades.hide()
+		$VBoxContainer/Spacer8.hide()
 	
 func _process(delta):
 	if quitMenu.visible:

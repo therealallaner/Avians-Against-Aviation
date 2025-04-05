@@ -8,6 +8,7 @@ extends Node
 @onready var mossyController = $MosquitoController
 @onready var mossyTimer = $MossyTimer
 @onready var bossController = $BossController
+@onready var cursorController = gameScene.cursorController
 
 var wave = 0
 var bossHPX = 1
@@ -36,10 +37,12 @@ func Next_Wave():
 	wave += 1
 	gameScene.GUI.Update_Wave_Counter(wave)
 	if wave in bossWaves:
+		get_parent().cursorController.SetBossWave(true)
 		bossController.Spawn_Boss(bossHPX)
 #		bossWaves.erase(wave)
 		mossyTimer.stop()
 	else:
+		get_parent().cursorController.SetBossWave(false)
 		var propPlaneDifficulty = Wave_Difficulty()
 		propPlaneController.Spawn_Props(propPlaneDifficulty)
 		mossyTimer.start()

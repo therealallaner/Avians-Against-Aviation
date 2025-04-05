@@ -7,6 +7,8 @@ extends Control
 @onready var energyShield = $VBoxContainer/GridContainer/EnergyShield
 @onready var betterHeals = $VBoxContainer/GridContainer/BetterHeals
 @onready var vulture = $VBoxContainer/GridContainer/Vulture
+@onready var critHit = $VBoxContainer/GridContainer/CriticalHits
+@onready var mossyMagnet = $VBoxContainer/GridContainer/MossyMagnet
 
 @onready var info = $Info
 @onready var infoLabel = $Info/Label
@@ -20,13 +22,31 @@ extends Control
 	scoreMultiplier,
 	energyShield,
 	betterHeals,
-	vulture
+	vulture,
+	critHit,
+	mossyMagnet
 ]
+
+@onready var demoUpgrades = [
+	scoreMultiplier,
+	energyShield,
+	betterHeals
+]
+
+@onready var testList = $VBoxContainer/GridContainer.get_children()
 
 var upgradeNumber : int
 
 func _ready():
 	mossyLabel.text = 'Mosquitos: ' + str(Global.mossiesInStock)
+	if Global.demo:
+		upgrades = demoUpgrades
+		var upgradeCards = $VBoxContainer/GridContainer.get_children()
+		for c in upgradeCards:
+			if c in upgrades:
+				pass
+			else:
+				c.Name = 'Coming Soon'
 
 
 func _process(delta):

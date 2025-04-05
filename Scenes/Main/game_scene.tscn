@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dapn7yvhrb4ec"]
+[gd_scene load_steps=8 format=3 uid="uid://dapn7yvhrb4ec"]
 
 [ext_resource type="Script" path="res://Scripts/game_scene.gd" id="1_lk65h"]
 [ext_resource type="PackedScene" uid="uid://c2mes8qqface8" path="res://Scenes/Players/happy_bird.tscn" id="1_wnxrt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://db0d57vohl7et" path="res://Scenes/Planes/wave_controller.tscn" id="4_iq5v4"]
 [ext_resource type="PackedScene" uid="uid://cljk5gar8kytv" path="res://Scenes/parallax_background.tscn" id="5_55r2v"]
 [ext_resource type="Script" path="res://SaverLoader.gd" id="6_5k4kn"]
+[ext_resource type="PackedScene" uid="uid://v3rc12myw5am" path="res://Scenes/Menus/cursor_controller.tscn" id="7_gfjba"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_lk65h")
@@ -23,5 +24,7 @@ autostart = true
 
 [node name="Saver" type="Node" parent="."]
 script = ExtResource("6_5k4kn")
+
+[node name="CursorController" parent="." instance=ExtResource("7_gfjba")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -80,11 +80,11 @@ Number = 3
 layout_mode = 2
 Number = 4
 
-[node name="Upgrade5" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+[node name="CriticalHits" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
 Number = 5
 
-[node name="Upgrade6" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+[node name="MossyMagnet" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
 Number = 6
 

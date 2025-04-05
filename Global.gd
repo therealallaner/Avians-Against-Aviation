@@ -11,7 +11,7 @@ var sfxVolume: float = 0.51
 var mossiesInStock = 1000
 
 var justOpened = true
-var demo = false
+var demo = true
 
 var currentBird = "blackBird1"
 var currentBird1 = "blackBird1"
@@ -55,7 +55,7 @@ var upgrades = {
 	"Energy Shield": 0,
 	"Better Heals": 0,
 	"Vulture": 0,
-	"Crit Chance": 0,
+	"Crit Hit": 0,
 	"Mossy Magnet": 0,
 	'Coming Soon':  0
 }

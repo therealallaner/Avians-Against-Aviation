@@ -28,7 +28,8 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
-mouse_cursor/custom_image="res://Assets/UI/AAA Custom Mouse 4.png"
+mouse_cursor/custom_image="res://Assets/UI/Cursors/CurrentCursors/AAA Finger Up.png"
+mouse_cursor/tooltip_position_offset=Vector2(20, 0)
 
 [input]
 

@@ -21,13 +21,16 @@ var maxLevel = 20
 
 func _ready():
 	
+	
 	if Global.demo:
 		maxLevel = 5
 		if currentLevel > maxLevel:
 			currentLevel = 5
-		
+			
+			
 	upgradeName.text = Name
 	upgradeIcon.texture = Icon
+		
 	
 	if Name == 'Coming Soon':
 		upgradeLevel.text = 'N/A'
