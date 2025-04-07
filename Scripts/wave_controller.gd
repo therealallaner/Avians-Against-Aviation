@@ -14,8 +14,8 @@ var wave = 0
 var bossHPX = 1
 
 var jetWaves = []
-var bossWaves = []
-
+var bossWaves = [1,2,3,4,5]
+var bossWaveCycle = 0
 
 func _ready():
 	Add_Jet_Waves()
@@ -51,6 +51,10 @@ func Next_Wave():
 			if randf() < .25:
 				jetTimer.start()
 				
+	if (wave%25) == 0:
+		var x = (bossWaveCycle*25)
+		Add_Boss_Waves(x)
+				
 func Add_Jet_Waves():
 	var x = snapped(randf_range(33,50),1)
 	for r in x:
@@ -59,12 +63,12 @@ func Add_Jet_Waves():
 			jetWaves.append(j)
 	
 	
-func Add_Boss_Waves():
+func Add_Boss_Waves(x=0):
 	var bossWavePossibilities = [[5,8],[10,13],[15,18],[20,23],[25,28]]
 	for p in bossWavePossibilities:
 		var p1 = p[0]
 		var p2 = p[1]
-		var w = snapped(randf_range(p1,p2),1)
+		var w = (snapped(randf_range(p1,p2),1) + x)
 		bossWaves.append(w)
 	
 	
