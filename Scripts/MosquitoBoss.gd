@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var swarms = $Shapes.get_children()
 @onready var cloud = $PoisonCloud
+@onready var gameScene = get_parent().get_parent().get_parent()
 @onready var poisonMossy = preload("res://Scenes/Mosquitos/poison_mosquito.tscn")
 
 var HP = 30 #30
@@ -13,6 +14,7 @@ var idleTimes = 1
 var swarmSpeed = 200
 var swarmTimes = 1
 var target: Vector2
+var bossReward = 25
 var states = {
 	"Spawning": true,
 	"Attacking": false,
@@ -21,6 +23,7 @@ var states = {
 	"Dying": false,
 	"Dead": false
 }
+
 
 func _ready():
 	sprite.play("flying")
@@ -31,7 +34,7 @@ func _process(delta):
 			if Input.is_action_just_pressed("Jump"):
 				Global.Deal_Damage(self)
 				Damage_Reaction()
-				
+			
 	if HP <= 0:
 		if !states["Dead"]:
 			for s in states:
@@ -48,6 +51,8 @@ func _process(delta):
 		if !sprite.is_playing():
 			get_parent().waveController.Next_Wave()
 			get_parent().bossHPBar.hide()
+			gameScene.mossies += bossReward
+			
 			queue_free()
 			
 

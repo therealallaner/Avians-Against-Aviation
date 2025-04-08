@@ -2,6 +2,7 @@ extends Node
 
 @onready var waveController = get_parent().waveController
 @onready var bossWave : bool = false
+@onready var isOnBoss: bool = false
 
 var mainCursor = load("res://Assets/UI/Cursors/CurrentCursors/AAA Finger Up.png")
 var mainCursorClick = load("res://Assets/UI/Cursors/CurrentCursors/AAA Finger Down.png")
@@ -20,8 +21,8 @@ func _process(delta):
 			DefaultCursorClick()
 		else:
 			DefaultCursor()
-	else:
-		BossFightCursor()
+#	else:
+#		BossFightCursor()
 	
 
 #	if Input.is_action_just_pressed("Jump"):
@@ -45,3 +46,13 @@ func DefaultCursorClick():
 	
 func BossFightCursor():
 	Input.set_custom_mouse_cursor(crosshair,0,crosshairVector)
+
+
+func _on_area_2d_mouse_entered():
+	if bossWave:
+		BossFightCursor()
+
+
+func _on_area_2d_mouse_exited():
+	if bossWave:
+		DefaultCursor()

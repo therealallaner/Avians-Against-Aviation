@@ -21,6 +21,7 @@ var idleSpeed = 200
 var idleTimes = 1
 var target: Vector2
 var defaultXPos = 1670
+var bossReward = 100
 
 var miniGunDMG = 1
 var firing = false

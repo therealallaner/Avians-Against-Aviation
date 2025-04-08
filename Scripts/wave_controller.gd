@@ -14,7 +14,7 @@ var wave = 0
 var bossHPX = 1
 
 var jetWaves = []
-var bossWaves = [1,2,3,4,5]
+var bossWaves = [1]
 var bossWaveCycle = 0
 
 func _ready():
@@ -37,12 +37,12 @@ func Next_Wave():
 	wave += 1
 	gameScene.GUI.Update_Wave_Counter(wave)
 	if wave in bossWaves:
-		get_parent().cursorController.SetBossWave(true)
+		gameScene.cursorController.SetBossWave(true)
 		bossController.Spawn_Boss(bossHPX)
 #		bossWaves.erase(wave)
 		mossyTimer.stop()
 	else:
-		get_parent().cursorController.SetBossWave(false)
+		gameScene.cursorController.SetBossWave(false)
 		var propPlaneDifficulty = Wave_Difficulty()
 		propPlaneController.Spawn_Props(propPlaneDifficulty)
 		mossyTimer.start()

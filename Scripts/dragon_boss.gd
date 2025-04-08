@@ -8,6 +8,7 @@ var spawnSpeed = 100
 var idleSpeed = 350
 var idleTimes = 1
 var target: Vector2
+var bossReward = 150
 var states = {
 	"Spawning": true,
 	"Attacking": false,

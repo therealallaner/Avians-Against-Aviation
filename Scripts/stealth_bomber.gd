@@ -16,6 +16,7 @@ var torpedoTimes = 5
 var tTimes = 0
 var recruitSpeed = 500
 var target: Vector2
+var bossReward = 50
 var states = {
 	"Spawning": true,
 	"Attacking": false,
