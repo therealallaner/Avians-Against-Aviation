@@ -30,6 +30,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 			var damageX: float = 1.0
 			while offScreen:
 				player.HP -= offScreenDamage*damageX
+				First_Time_Damage()
 				damageX += .5
 				await(get_tree().create_timer(.05).timeout)
 		
@@ -48,6 +49,7 @@ func _on_area_2d_body_entered(body):
 		if Engine.time_scale == 1:
 			player.HP -= body.damage
 			Damage_Reaction()
+			First_Time_Damage()
 
 
 func _on_area_2d_area_entered(area):
@@ -67,6 +69,7 @@ func _on_area_2d_area_entered(area):
 
 	if area.get_parent().is_in_group("Torpedo"):
 		player.HP -= area.get_parent().damage 
+		First_Time_Damage()
 		
 		
 
@@ -75,6 +78,11 @@ func Damage_Over_Time():
 		if player.get_class() != "Container":
 			self.self_modulate = Color(.11,1,.15,1)
 			player.HP -= 2
+			First_Time_Damage()
 			await(get_tree().create_timer(.75).timeout)
 			self.self_modulate = Color(1,1,1,1)
 			await(get_tree().create_timer(.25).timeout)
+			
+func First_Time_Damage():
+	if !Global.tipTriggers['hasTakenDamage']:
+		player.get_parent().tipController.Damage_Taken_Tip()

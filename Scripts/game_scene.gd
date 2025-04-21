@@ -9,6 +9,7 @@ extends Node2D
 @onready var GUI = $Menus/GUI
 @onready var wave = $WaveController.wave
 @onready var cursorController = $CursorController
+@onready var tipController = $TipController
 
 var test = "Test"
 

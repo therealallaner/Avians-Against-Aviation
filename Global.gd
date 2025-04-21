@@ -60,6 +60,11 @@ var upgrades = {
 	'Coming Soon':  0
 }
 
+var tipTriggers = {
+	'hasTakenDamage': false,
+	'hasDamagedBoss': false,
+	'testTip': false
+}
 
 
 func Start_Game():

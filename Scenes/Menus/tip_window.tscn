@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://6q0dachkupsv"]
+
+[ext_resource type="Theme" uid="uid://bi3edysh6v10c" path="res://Assets/UI/TipWindow.tres" id="1_ocqhy"]
+[ext_resource type="Script" path="res://Scripts/tip_window.gd" id="2_f6qny"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v086x"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.796078, 0.921569, 0.984314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="TipWindow" type="PanelContainer"]
+offset_right = 336.0
+offset_bottom = 70.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_ocqhy")
+script = ExtResource("2_f6qny")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("1_ocqhy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_v086x")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+text = "This is a super helpful tip!"
+horizontal_alignment = 1

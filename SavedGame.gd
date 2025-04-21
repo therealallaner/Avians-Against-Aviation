@@ -22,6 +22,7 @@ extends Resource
 @export var birdUnlocks3: Dictionary
 
 @export var upgrades: Dictionary
+@export var tips: Dictionary
 
 @export var masterVolume: float
 @export var musicVolume: float
