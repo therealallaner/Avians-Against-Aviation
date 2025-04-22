@@ -54,6 +54,9 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_area_entered(area):
 	if area.get_parent().is_in_group("Mossy"):
+		if self.position.x >= 1920:
+			print("Bird Card did not eat Mossies")
+			return
 		get_parent().get_parent().mossies += 1
 		area.get_parent().queue_free()
 		player.HP += 1

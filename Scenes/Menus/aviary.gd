@@ -80,3 +80,4 @@ func _on_yes_pressed():
 		#Close buy window
 		buyWindow.hide()
 		
+

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://clis2s7qehwbb"]
+
+[node name="BossReward1" type="Node2D"]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(30, -60)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(90, -90)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(150, -60)
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+position = Vector2(180, 0)
+
+[node name="Marker2D6" type="Marker2D" parent="."]
+position = Vector2(210, 60)
+
+[node name="Marker2D7" type="Marker2D" parent="."]
+position = Vector2(270, 90)
+
+[node name="Marker2D8" type="Marker2D" parent="."]
+position = Vector2(330, 60)
+
+[node name="Marker2D9" type="Marker2D" parent="."]
+position = Vector2(360, 0)
+
+[node name="Marker2D10" type="Marker2D" parent="."]
+position = Vector2(390, -60)
+
+[node name="Marker2D11" type="Marker2D" parent="."]
+position = Vector2(450, -90)
+
+[node name="Marker2D12" type="Marker2D" parent="."]
+position = Vector2(510, -60)
+
+[node name="Marker2D13" type="Marker2D" parent="."]
+position = Vector2(540, 0)
+
+[node name="Marker2D14" type="Marker2D" parent="."]
+position = Vector2(570, 60)
+
+[node name="Marker2D15" type="Marker2D" parent="."]
+position = Vector2(630, 90)
+
+[node name="Marker2D16" type="Marker2D" parent="."]
+position = Vector2(690, 60)
+
+[node name="Marker2D17" type="Marker2D" parent="."]
+position = Vector2(720, 0)
+
+[node name="Marker2D18" type="Marker2D" parent="."]
+position = Vector2(750, -60)
+
+[node name="Marker2D19" type="Marker2D" parent="."]
+position = Vector2(810, -90)
+
+[node name="Marker2D20" type="Marker2D" parent="."]
+position = Vector2(870, -60)
+
+[node name="Marker2D21" type="Marker2D" parent="."]
+position = Vector2(900, 0)
+
+[node name="Marker2D22" type="Marker2D" parent="."]
+position = Vector2(930, 60)
+
+[node name="Marker2D23" type="Marker2D" parent="."]
+position = Vector2(990, 90)
+
+[node name="Marker2D24" type="Marker2D" parent="."]
+position = Vector2(1050, 60)
+
+[node name="Marker2D25" type="Marker2D" parent="."]
+position = Vector2(1080, 0)

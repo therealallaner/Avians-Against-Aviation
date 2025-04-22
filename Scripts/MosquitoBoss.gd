@@ -49,11 +49,10 @@ func _process(delta):
 			
 	if states["Dead"]:
 		if !sprite.is_playing():
-			get_parent().waveController.Next_Wave()
+			get_parent().waveController.mossyController.Spawn_Boss_Rewards()
 			get_parent().bossHPBar.hide()
-			gameScene.mossies += bossReward
-			
 			queue_free()
+			
 			
 
 func _physics_process(delta):

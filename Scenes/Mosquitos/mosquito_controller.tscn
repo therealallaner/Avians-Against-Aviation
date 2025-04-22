@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjnt4fuf7q4pu"]
+[gd_scene load_steps=8 format=3 uid="uid://bjnt4fuf7q4pu"]
 
 [ext_resource type="Script" path="res://Scripts/MosquitoController.gd" id="1_u6l70"]
 [ext_resource type="PackedScene" uid="uid://dl1opuykfkvqs" path="res://Scenes/Mosquitos/+_shape.tscn" id="2_4h57r"]
 [ext_resource type="PackedScene" uid="uid://8sq75e1dhq65" path="res://Scenes/Mosquitos/u_shape.tscn" id="3_rfih2"]
 [ext_resource type="PackedScene" uid="uid://b5bsiqj0lol1e" path="res://Scenes/Mosquitos/n_shape.tscn" id="4_dvenn"]
 [ext_resource type="PackedScene" uid="uid://c6sjfx3mkeoeb" path="res://Scenes/Mosquitos/box_shape.tscn" id="5_iq48r"]
+[ext_resource type="PackedScene" uid="uid://clis2s7qehwbb" path="res://Scenes/Mosquitos/boss_reward_1.tscn" id="6_yhogg"]
+[ext_resource type="PackedScene" uid="uid://bcb7t2ofoj86r" path="res://Scenes/Mosquitos/boss_reward_2.tscn" id="7_67yow"]
 
 [node name="MosquitoController" type="Node"]
 script = ExtResource("1_u6l70")
@@ -18,3 +20,9 @@ script = ExtResource("1_u6l70")
 [node name="NShape" parent="Shapes" instance=ExtResource("4_dvenn")]
 
 [node name="BoxShape" parent="Shapes" instance=ExtResource("5_iq48r")]
+
+[node name="BossRewards" type="Node" parent="."]
+
+[node name="BossReward1" parent="BossRewards" instance=ExtResource("6_yhogg")]
+
+[node name="BossReward2" parent="BossRewards" instance=ExtResource("7_67yow")]

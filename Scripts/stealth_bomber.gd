@@ -46,7 +46,8 @@ func _process(delta):
 
 			
 	if states["Dead"]:
-		get_parent().waveController.Next_Wave()
+#		get_parent().waveController.Next_Wave()
+		get_parent().waveController.mossyController.Spawn_Boss_Rewards(1)
 		get_parent().bossHPBar.hide()
 		queue_free()
 	

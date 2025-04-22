@@ -8,6 +8,9 @@ var mainCursor = load("res://Assets/UI/Cursors/CurrentCursors/AAA Finger Up.png"
 var mainCursorClick = load("res://Assets/UI/Cursors/CurrentCursors/AAA Finger Down.png")
 var crosshair = load("res://Assets/UI/Cursors/CurrentCursors/AAA Crosshair.png")
 
+var mainCursorOn = true
+var bossCursorOn = false
+
 var mainCursorVector = Vector2(20,0)
 var crosshairVector = Vector2(32,32)
 
@@ -16,7 +19,7 @@ func _ready():
 	
 	
 func _process(delta):
-	if !bossWave:
+	if !bossCursorOn:
 		if Input.is_action_pressed("Jump"):
 			DefaultCursorClick()
 		else:
@@ -38,6 +41,8 @@ func SetBossWave(x):
 		
 		
 func DefaultCursor():
+	mainCursorOn = true
+	bossCursorOn = false
 	Input.set_custom_mouse_cursor(mainCursor,0,mainCursorVector)
 	
 func DefaultCursorClick():
@@ -45,6 +50,8 @@ func DefaultCursorClick():
 	
 	
 func BossFightCursor():
+	mainCursorOn = false
+	bossCursorOn = true
 	Input.set_custom_mouse_cursor(crosshair,0,crosshairVector)
 
 
