@@ -12,10 +12,10 @@ extends Node
 
 var wave = 0
 var bossHPX = 1
+var bossesSpawned = 0
 
 var jetWaves = []
-var bossWaves = [1,3]
-var bossWaveCycle = 0
+var bossWaves = [1,3,5,7,9,11]
 
 func _ready():
 	Add_Jet_Waves()
@@ -39,7 +39,8 @@ func Next_Wave():
 	if wave in bossWaves:
 		gameScene.cursorController.SetBossWave(true)
 		gameScene.tipController.Boss_Wave_Tip()
-		bossController.Spawn_Boss(bossHPX)
+		bossesSpawned += 1
+		bossController.Spawn_Boss(bossHPX,bossesSpawned)
 #		bossWaves.erase(wave)
 		mossyTimer.stop()
 	else:
@@ -52,9 +53,6 @@ func Next_Wave():
 			if randf() < .25:
 				jetTimer.start()
 				
-	if (wave%25) == 0:
-		var x = (bossWaveCycle*25)
-		Add_Boss_Waves(x)
 				
 func Add_Jet_Waves():
 	var x = snapped(randf_range(33,50),1)

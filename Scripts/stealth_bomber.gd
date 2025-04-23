@@ -16,7 +16,7 @@ var torpedoTimes = 5
 var tTimes = 0
 var recruitSpeed = 500
 var target: Vector2
-var bossReward = 50
+var bossReward = 0
 var states = {
 	"Spawning": true,
 	"Attacking": false,
@@ -47,7 +47,7 @@ func _process(delta):
 			
 	if states["Dead"]:
 #		get_parent().waveController.Next_Wave()
-		get_parent().waveController.mossyController.Spawn_Boss_Rewards(1)
+		get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
 		get_parent().bossHPBar.hide()
 		queue_free()
 	

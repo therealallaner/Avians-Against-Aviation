@@ -38,6 +38,7 @@ func SetBossWave(x):
 		bossWave = true
 	else:
 		bossWave = false
+		DefaultCursor()
 		
 		
 func DefaultCursor():

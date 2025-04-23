@@ -11,6 +11,7 @@ extends Node
 
 @onready var blackMossies = [blackMossy1, blackMossy2]
 @onready var redMossies = [redMossy]
+@onready var bossRewardStep = 5
 
 @onready var mossyColors = [
 	blackMossy1, 
@@ -20,7 +21,7 @@ extends Node
 	purpleMossy,
 	purpleMossy2
 	]
-
+	
 
 func Spawn_Mossies():
 	var shape = Global.Random_List(shapes.get_children())
@@ -33,11 +34,9 @@ func Spawn_Mossies():
 		instance.position.y = p.position.y + yPos
 		
 		
-func Spawn_Boss_Rewards(x=0,nextWave=true):
+func Spawn_Boss_Rewards_Test(x=0,nextWave=true):
 	var shape = Global.Random_List(bossRewards.get_children())
 	var yPos = randf_range(100,980)
-	var yPosVariation = [30,-30,60,-60]
-	var yPos2 = yPos + Global.Random_List(yPosVariation)
 	
 	for p in shape.get_children():
 		var instance = Global.Random_List(mossyColors).instantiate()
@@ -50,5 +49,42 @@ func Spawn_Boss_Rewards(x=0,nextWave=true):
 		
 	await(get_tree().create_timer(7).timeout)
 
+	if nextWave:
+		get_parent().Next_Wave()
+		
+		
+func Spawn_Boss_Rewards(x,nextWave=true):
+	print('boss reward step: ',bossRewardStep)
+	var y = ((x-1)%bossRewardStep)+1
+	var z = ceil((x-1)/bossRewardStep)+1
+	print(x)
+	print(y)
+	print(z)
+	print('')
+	
+	var yPos = randf_range(100,980)
+	var yPosVar = Global.Random_List([30,-30])
+	
+	
+#	for i in range(y):
+#		var shape = Global.Random_List(bossRewards.get_children())
+#		for p in shape.get_children():
+#			var instance = Global.Random_List(mossyColors).instantiate()
+#			add_child(instance)
+#			instance.position.x = p.position.x + (1920+(1080*i))
+#			instance.position.y = p.position.y + yPos
+			
+	for o in range(z):
+		for i in range(y):
+			var shape = Global.Random_List(bossRewards.get_children())
+			for p in shape.get_children():
+				var instance = Global.Random_List(mossyColors).instantiate()
+				add_child(instance)
+				instance.position.x = p.position.x + (1920+(1080*i))
+				instance.position.y = p.position.y + yPos + (yPosVar*o)
+		
+	var awaitTime = 5*x
+	await(get_tree().create_timer(awaitTime).timeout)
+	
 	if nextWave:
 		get_parent().Next_Wave()

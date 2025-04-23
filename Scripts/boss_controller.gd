@@ -16,20 +16,18 @@ extends Node
 	heliBoss
 ]
 
-var bossCycle = 0
 
 func _ready():
 	if Global.demo:
 		bosses = [mossyBoss,stealthBoss]
 
-func Spawn_Boss(x):
+func Spawn_Boss(x,y):
 	var b = bosses[0]
 	var instance = b.instantiate()
 	bosses.erase(b)
 	bosses.append(b)
 	add_child(instance)
 	instance.position = Vector2(2020,540)
-	'This part for some reason doesnt work and wont scale up the HP'
 	instance.HP = snapped((instance.HP * x),1)
 	bossHPBar.show()
 	gui.Boss_HP_Bar()
@@ -38,12 +36,5 @@ func Spawn_Boss(x):
 	var targetX = instance.position.x - 350
 	var targetY = instance.position.y
 	instance.target = Vector2(targetX,targetY)
+	instance.bossReward = y
 	
-	'This is trying to add a cycle counter to the boss waves so I can add multiplicative
-	or exponential rewards and scaling for cycling through the bosses each more than once.'
-	
-	bossCycle += 1
-	if bossCycle >= len(bosses):
-		bossCycle = 0
-		waveController.bossWaveCycle += 1
-		waveController.bossHPX *= 1.25

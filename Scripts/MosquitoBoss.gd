@@ -14,7 +14,7 @@ var idleTimes = 1
 var swarmSpeed = 200
 var swarmTimes = 1
 var target: Vector2
-var bossReward = 25
+var bossReward = 0
 var states = {
 	"Spawning": true,
 	"Attacking": false,
@@ -49,7 +49,7 @@ func _process(delta):
 			
 	if states["Dead"]:
 		if !sprite.is_playing():
-			get_parent().waveController.mossyController.Spawn_Boss_Rewards()
+			get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
 			get_parent().bossHPBar.hide()
 			queue_free()
 			
