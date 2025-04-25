@@ -15,7 +15,7 @@ var bossHPX = 1
 var bossesSpawned = 0
 
 var jetWaves = []
-var bossWaves = [1,3,5,7,9,11]
+var bossWaves = []
 
 func _ready():
 	Add_Jet_Waves()

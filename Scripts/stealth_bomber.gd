@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var torpedo = preload("res://Scenes/Planes/torpedo.tscn")
 @onready var torpedoSpawn = $Marker2D
 
-var HP = 10 #20
+var HP = 10 #10
 var isHovering = false
 var spawnSpeed = 100
 var attackSpeed = 600

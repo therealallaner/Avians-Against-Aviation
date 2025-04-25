@@ -21,7 +21,10 @@ extends Node
 	purpleMossy,
 	purpleMossy2
 	]
-	
+
+func _ready():
+	if Global.demo:
+		bossRewardStep = 2
 
 func Spawn_Mossies():
 	var shape = Global.Random_List(shapes.get_children())
@@ -62,28 +65,23 @@ func Spawn_Boss_Rewards(x,nextWave=true):
 	print(z)
 	print('')
 	
-	var yPos = randf_range(100,980)
+	var yPos = randf_range(150,930)
 	var yPosVar = Global.Random_List([30,-30])
 	
-	
-#	for i in range(y):
-#		var shape = Global.Random_List(bossRewards.get_children())
-#		for p in shape.get_children():
-#			var instance = Global.Random_List(mossyColors).instantiate()
-#			add_child(instance)
-#			instance.position.x = p.position.x + (1920+(1080*i))
-#			instance.position.y = p.position.y + yPos
+	var shapeList = []
 			
 	for o in range(z):
 		for i in range(y):
-			var shape = Global.Random_List(bossRewards.get_children())
-			for p in shape.get_children():
+			if o <= 0:
+				var shape = Global.Random_List(bossRewards.get_children())
+				shapeList.append(shape)
+			for p in shapeList[i].get_children():
 				var instance = Global.Random_List(mossyColors).instantiate()
 				add_child(instance)
 				instance.position.x = p.position.x + (1920+(1080*i))
 				instance.position.y = p.position.y + yPos + (yPosVar*o)
 		
-	var awaitTime = 5*x
+	var awaitTime = 5*y
 	await(get_tree().create_timer(awaitTime).timeout)
 	
 	if nextWave:
