@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=12 format=3 uid="uid://cfldkix8shrqm"]
 
-[ext_resource type="FontFile" uid="uid://u28xhhe35i0q" path="res://Assets/UI/Fonts/Hey Comic.ttf" id="1_ltvv8"]
+[ext_resource type="FontFile" uid="uid://b0bxixiebpmlh" path="res://Assets/UI/Fonts/Cute Dino.ttf" id="2_u4vgp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4c7h6"]
 
@@ -19,6 +19,7 @@ corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 corner_detail = 10
 expand_margin_left = 18.0
+expand_margin_top = 7.0
 expand_margin_right = 18.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k7bs3"]
@@ -72,13 +73,13 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8x5q6"]
 
 [resource]
-default_font = ExtResource("1_ltvv8")
+default_font = ExtResource("2_u4vgp")
 default_font_size = 50
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 10
 Button/font_sizes/font_size = 50
-Button/fonts/font = ExtResource("1_ltvv8")
+Button/fonts/font = ExtResource("2_u4vgp")
 Button/styles/disabled = SubResource("StyleBoxEmpty_4c7h6")
 Button/styles/focus = SubResource("StyleBoxEmpty_urqlv")
 Button/styles/hover = SubResource("StyleBoxFlat_xuqu0")

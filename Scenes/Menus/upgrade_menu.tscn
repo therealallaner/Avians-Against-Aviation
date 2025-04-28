@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0nsj0jr7xv3b"]
+[gd_scene load_steps=11 format=3 uid="uid://b0nsj0jr7xv3b"]
 
 [ext_resource type="PackedScene" uid="uid://dtybuqoci51ja" path="res://Scenes/Menus/upgrade.tscn" id="1_ogd8r"]
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_ycx7o"]
 [ext_resource type="Script" path="res://Scripts/upgrade_menu.gd" id="2_ovqy8"]
+[ext_resource type="Texture2D" uid="uid://dl013uxd1tmo" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 1 v3.png" id="4_4ebev"]
 [ext_resource type="Texture2D" uid="uid://d2p5s2mwkrm5w" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 1 v2.png" id="4_w1hfl"]
+[ext_resource type="Texture2D" uid="uid://bgq1dwhgfel0q" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 2 v5.png" id="5_3ylit"]
 [ext_resource type="Texture2D" uid="uid://crxfff5bu6o6a" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 2 v2.png" id="5_4qgf5"]
 [ext_resource type="Texture2D" uid="uid://dxa76mlr2j4m7" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 3 v2.png" id="6_ahg4i"]
+[ext_resource type="Texture2D" uid="uid://db51yp3hn5c3s" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 3 v4.png" id="6_md541"]
 [ext_resource type="Theme" uid="uid://gmkgudu87lg5" path="res://Assets/UI/ToolTip Theme.tres" id="8_lryim"]
 
 [node name="UpgradeMenu" type="Control"]
@@ -60,32 +63,35 @@ columns = 3
 
 [node name="ScoreMultiplier" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
-Icon = ExtResource("4_w1hfl")
+Icon = ExtResource("4_4ebev")
 Name = "Score Multiplier"
 Number = 1
 
 [node name="EnergyShield" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
-Icon = ExtResource("5_4qgf5")
+Icon = ExtResource("5_3ylit")
 Name = "Energy Shield"
 Number = 2
 
 [node name="BetterHeals" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
-Icon = ExtResource("6_ahg4i")
+Icon = ExtResource("6_md541")
 Name = "Better Heals"
 Number = 3
 
 [node name="Vulture" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
+Icon = ExtResource("4_w1hfl")
 Number = 4
 
 [node name="CriticalHits" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
+Icon = ExtResource("5_4qgf5")
 Number = 5
 
 [node name="MossyMagnet" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
+Icon = ExtResource("6_ahg4i")
 Number = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]

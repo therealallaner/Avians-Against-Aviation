@@ -99,6 +99,10 @@ func Default_Pos():
 	else:
 		leftButt.hide()
 		spacerLeft.set_custom_minimum_size(spacerExpand)
+		
+	if carouselPos == len(sprites):
+		rightButt.hide()
+		spacerRight.set_custom_minimum_size(spacerExpand)
 	
 	i1 = currentBird.instantiate()
 	carousel.add_child(i1)
