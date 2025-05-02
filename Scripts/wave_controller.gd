@@ -9,6 +9,8 @@ extends Node
 @onready var mossyTimer = $MossyTimer
 @onready var bossController = $BossController
 @onready var cursorController = gameScene.cursorController
+@onready var upgradeController = $UpgradeController
+@onready var upgradeTimer = $UpgradeTimer
 
 var wave = 0
 var bossHPX = 1
@@ -43,11 +45,13 @@ func Next_Wave():
 		bossController.Spawn_Boss(bossHPX,bossesSpawned)
 #		bossWaves.erase(wave)
 		mossyTimer.stop()
+		upgradeTimer.stop()
 	else:
 		gameScene.cursorController.SetBossWave(false)
 		var propPlaneDifficulty = Wave_Difficulty()
 		propPlaneController.Spawn_Props(propPlaneDifficulty)
 		mossyTimer.start()
+		upgradeTimer.start()
 		if wave in jetWaves:
 			Jet_Spawn()
 			if randf() < .25:
@@ -84,3 +88,8 @@ func _on_jet_timer_timeout():
 func _on_mossy_timer_timeout():
 	mossyController.Spawn_Mossies()
 	mossyTimer.wait_time = randf_range(3.0,8.0)
+
+
+func _on_upgrade_timer_timeout():
+	upgradeController.Spawn_Upgrade()
+#	upgradeTimer.wait_time = randf_range(5,10)

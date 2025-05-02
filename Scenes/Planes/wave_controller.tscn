@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://db0d57vohl7et"]
+[gd_scene load_steps=7 format=3 uid="uid://db0d57vohl7et"]
 
 [ext_resource type="Script" path="res://Scripts/wave_controller.gd" id="1_45rjs"]
 [ext_resource type="PackedScene" uid="uid://jn5gkucvyv4s" path="res://Scenes/Planes/prop_plane_controller.tscn" id="1_dxihx"]
 [ext_resource type="PackedScene" uid="uid://btpp5cbpv4u8" path="res://Scenes/Planes/jet_controller.tscn" id="3_dk5a6"]
 [ext_resource type="PackedScene" uid="uid://bjnt4fuf7q4pu" path="res://Scenes/Mosquitos/mosquito_controller.tscn" id="4_cw0jl"]
 [ext_resource type="PackedScene" uid="uid://2q62urerre4j" path="res://Scenes/Bosses/boss_controller.tscn" id="5_764ws"]
+[ext_resource type="PackedScene" uid="uid://d3eyjtajvele6" path="res://Scenes/Main/upgrade_controller.tscn" id="6_rykp1"]
 
 [node name="WaveController" type="Node"]
 script = ExtResource("1_45rjs")
@@ -28,6 +29,11 @@ wait_time = 4.0
 
 [node name="BossController" parent="." instance=ExtResource("5_764ws")]
 
+[node name="UpgradeController" parent="." instance=ExtResource("6_rykp1")]
+
+[node name="UpgradeTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="JetTimer" to="." method="_on_jet_timer_timeout"]
 [connection signal="timeout" from="MossyTimer" to="." method="_on_mossy_timer_timeout"]
+[connection signal="timeout" from="UpgradeTimer" to="." method="_on_upgrade_timer_timeout"]
