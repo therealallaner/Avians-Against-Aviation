@@ -4,6 +4,7 @@ extends Player
 const jumpVelocity = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var HP = 100
+var ES = 0
 var damage = 1
 
 func _physics_process(delta):

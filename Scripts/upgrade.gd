@@ -29,7 +29,6 @@ func _ready():
 			
 			
 	upgradeName.text = Name
-	upgradeIcon.texture = Icon
 		
 	
 	if Name == 'Coming Soon':
@@ -37,6 +36,7 @@ func _ready():
 		upgradeCost.text = 'N/A'
 		upgradeCost.disabled = true
 	else:
+		upgradeIcon.texture = Icon
 		currentLevel = Global.upgrades[Name]
 		upgradeLevel.text = str(currentLevel) + '/' + str(maxLevel)
 		if currentLevel < maxLevel:

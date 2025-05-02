@@ -1,15 +1,20 @@
 extends Node
 
 @onready var upgrade1 = preload("res://Scenes/Main/score_multiplier.tscn")
+@onready var upgrade2 = preload("res://Scenes/Main/energy_shield.tscn")
+@onready var upgrade3 = preload("res://Scenes/Main/better_heals.tscn")
 
 
-
-@onready var upgrades = [upgrade1]
+@onready var upgrades = [
+	upgrade1,
+	upgrade2,
+	upgrade3
+	]
 
 
 func _ready():
 	if Global.demo:
-		#upgrades = [upgrade1, upgrade2, upgrade3]
+		upgrades = [upgrade1, upgrade2, upgrade3]
 		pass
 
 

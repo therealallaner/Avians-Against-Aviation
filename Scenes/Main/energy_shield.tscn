@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl58jqefts8e5"]
+[gd_scene load_steps=4 format=3 uid="uid://b24al6h85jkef"]
 
-[ext_resource type="Texture2D" uid="uid://dl013uxd1tmo" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 1 v3.png" id="1_j7nay"]
-[ext_resource type="Script" path="res://Scripts/score_multiplier.gd" id="2_he43m"]
+[ext_resource type="Texture2D" uid="uid://bgq1dwhgfel0q" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 2 v5.png" id="1_jp628"]
+[ext_resource type="Script" path="res://Scripts/score_multiplier.gd" id="2_m515i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fwt8"]
 size = Vector2(770, 850)
 
-[node name="ScoreMultiplier" type="Sprite2D" groups=["Score Multiplier", "Upgrades"]]
+[node name="EnergyShield" type="Sprite2D" groups=["Energy Shield", "Upgrades"]]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_j7nay")
-script = ExtResource("2_he43m")
-upgradeNumber = 1
+texture = ExtResource("1_jp628")
+script = ExtResource("2_m515i")
+upgradeNumber = 2
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

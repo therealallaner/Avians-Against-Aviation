@@ -45,9 +45,17 @@ func Damage_Reaction():
 	
 
 func _on_area_2d_body_entered(body):
+	var dmg = 0
 	if body.is_in_group("Plane"):
 		if Engine.time_scale == 1:
-			player.HP -= body.damage
+			dmg = body.damage
+			if dmg <= player.ES:
+				player.ES -= dmg
+			elif dmg > player.ES:
+				dmg -= player.ES
+				player.ES = 0
+				player.HP -= dmg
+			
 			Damage_Reaction()
 			First_Time_Damage()
 
@@ -71,7 +79,16 @@ func _on_area_2d_area_entered(area):
 		get_parent().Mossy_Bite()
 
 	if area.get_parent().is_in_group("Torpedo"):
-		player.HP -= area.get_parent().damage 
+		var dmg = 0
+		dmg = area.get_parent().damage 
+		if dmg <= player.ES:
+			player.ES -= dmg
+		elif dmg > player.ES:
+			dmg -= player.ES
+			player.ES = 0
+			player.HP -= dmg
+				
+				
 		First_Time_Damage()
 		
 	if area.get_parent().is_in_group('Upgrades'):

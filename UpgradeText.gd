@@ -92,21 +92,36 @@ var upgradeText = {
 
 func Upgrade_Activator(x):
 	var y = x.upgradeNumber
+	
 	if y == 1:
 		Score_Multiplier()
+		
 	elif y == 2:
 		Energy_Shield()
+		
+	elif y == 3:
+		Better_Heals()
+		
 	else:
 		pass
 		
 	x.queue_free()
 	
 func Score_Multiplier():
-	scoreMultiplier = UpgradeText.scoreMultiplierLevels[Global.upgrades['Score Multiplier']]
-	print('score is times whatever the score multi is right now')
+	scoreMultiplier = scoreMultiplierLevels[Global.upgrades['Score Multiplier']]
+	print('New High Score!')
 	await(get_tree().create_timer(15).timeout)
-	print('score multi is reset to 1 now')
 	scoreMultiplier = 1
 	
+	
 func Energy_Shield():
+	print('Gained ES')
+	pass
+	# Give player ES equal to what the level says
+	
+	var gameScene = get_tree().root.get_node("GameScene")
+	gameScene.player.ES = energyShieldLevels[Global.upgrades['Energy Shield']]
+	
+func Better_Heals():
+	print('Heals Over Time')
 	pass

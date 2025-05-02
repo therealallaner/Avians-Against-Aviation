@@ -21,9 +21,9 @@ extends Control
 func _ready():
 	quitMenu.hide()
 	
-	if Global.demo:
-		upgrades.hide()
-		$VBoxContainer/Spacer8.hide()
+#	if Global.demo:
+#		upgrades.hide()
+#		$VBoxContainer/Spacer8.hide()
 	
 func _process(delta):
 	if quitMenu.visible:
