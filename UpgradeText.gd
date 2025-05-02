@@ -1,8 +1,6 @@
 extends Node
 
-var x = 1.4
-var level = 13
-var es = 25
+var scoreMultiplier = 1
 
 var upgradeCost = {
 	1: 50,
@@ -81,7 +79,8 @@ var upgradeText = {
 	by ' + str(scoreMultiplierLevels[int(Global.upgrades['Score Multiplier'])]) + 
 	' at level ' + str(Global.upgrades['Score Multiplier']) + '.',
 	
-'Energy Shield': 'You have an Energy Shield
+'Energy Shield': 
+	'You have an Energy Shield
 	that gives you an extra ' + str(energyShieldLevels[int(Global.upgrades['Energy Shield'])]) + ' HP
 	at level ' + str(Global.upgrades['Energy Shield']) + '.',
 	
@@ -91,3 +90,23 @@ var upgradeText = {
 }
 
 
+func Upgrade_Activator(x):
+	var y = x.upgradeNumber
+	if y == 1:
+		Score_Multiplier()
+	elif y == 2:
+		Energy_Shield()
+	else:
+		pass
+		
+	x.queue_free()
+	
+func Score_Multiplier():
+	scoreMultiplier = UpgradeText.scoreMultiplierLevels[Global.upgrades['Score Multiplier']]
+	print('score is times whatever the score multi is right now')
+	await(get_tree().create_timer(15).timeout)
+	print('score multi is reset to 1 now')
+	scoreMultiplier = 1
+	
+func Energy_Shield():
+	pass

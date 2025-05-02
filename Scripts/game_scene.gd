@@ -11,13 +11,15 @@ extends Node2D
 @onready var cursorController = $CursorController
 @onready var tipController = $TipController
 
+
+
 var test = "Test"
 
 var score = 0
-var scoreMultiplier = 1
 var mossies = 0
 
 
 func _ready():
 	Engine.time_scale = 1
 	gameOver.hide()
+	

@@ -45,7 +45,7 @@ func _physics_process(delta):
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 	if waveController.wave not in waveController.bossWaves:
-		gameScene.score += 25 * gameScene.scoreMultiplier
+		gameScene.score += 25 * UpgradeText.scoreMultiplier
 
 func _on_timer_timeout():
 	states["Waiting"] = false

@@ -32,6 +32,7 @@ wait_time = 4.0
 [node name="UpgradeController" parent="." instance=ExtResource("6_rykp1")]
 
 [node name="UpgradeTimer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="JetTimer" to="." method="_on_jet_timer_timeout"]

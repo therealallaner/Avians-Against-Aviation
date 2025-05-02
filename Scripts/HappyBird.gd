@@ -74,6 +74,10 @@ func _on_area_2d_area_entered(area):
 		player.HP -= area.get_parent().damage 
 		First_Time_Damage()
 		
+	if area.get_parent().is_in_group('Upgrades'):
+		var parent = area.get_parent()
+		UpgradeText.Upgrade_Activator(parent)
+		
 		
 
 func Damage_Over_Time():

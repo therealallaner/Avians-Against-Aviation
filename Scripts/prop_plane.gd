@@ -37,4 +37,4 @@ func _on_wobbly_timer_timeout():
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
-	gameScene.score += 10 * gameScene.scoreMultiplier
+	gameScene.score += 10 * UpgradeText.scoreMultiplier

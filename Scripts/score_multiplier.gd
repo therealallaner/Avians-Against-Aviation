@@ -4,6 +4,8 @@ extends Sprite2D
 @onready var juiceTimer = $JuiceTimer
 @onready var juice = preload("res://Scenes/Main/juice.tscn")
 
+var upgradeNumber = 1
+
 var xSpeed = randf_range(300,400)
 var ySpeed = Random_Y_Speed()
 
