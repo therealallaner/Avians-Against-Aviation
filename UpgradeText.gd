@@ -166,13 +166,11 @@ func Upgrade_Activator(x):
 	
 func Score_Multiplier():
 	scoreMultiplier = scoreMultiplierLevels[Global.upgrades['Score Multiplier']]
-	print('New High Score!')
 	await(get_tree().create_timer(15).timeout)
 	scoreMultiplier = 1
 	
 	
 func Energy_Shield():
-	print('Gained ES')
 	pass
 	# Give player ES equal to what the level says
 	

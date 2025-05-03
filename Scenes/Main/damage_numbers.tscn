@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp1pyllpxrtd8"]
+
+[ext_resource type="Script" path="res://Scripts/damage_numbers.gd" id="1_b2wxr"]
+[ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="2_afsqu"]
+
+[node name="Damage Numbers" type="Node"]
+script = ExtResource("1_b2wxr")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_afsqu")
+text = "25"

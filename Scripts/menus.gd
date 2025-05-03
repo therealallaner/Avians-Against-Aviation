@@ -102,4 +102,5 @@ func Game_Start_Anim():
 	var tween = create_tween()
 	tween.parallel().tween_property(score, "position", Vector2(0,0), menuTransitionTime)
 	tween.parallel().tween_property(GUI, "position", Vector2(0,0), menuTransitionTime)
-	
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.play()

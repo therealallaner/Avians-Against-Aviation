@@ -3,6 +3,7 @@ extends Happy_Birds
 @onready var animPlayer = $AnimationPlayer
 @onready var visibility = $VisibleOnScreenNotifier2D
 @onready var player = get_parent()
+@onready var damageNumberText = preload("res://Scenes/Main/damage_numbers.tscn")
 
 
 var offScreen = false
@@ -51,10 +52,15 @@ func _on_area_2d_body_entered(body):
 			dmg = body.damage
 			if dmg <= player.ES:
 				player.ES -= dmg
+				Damage_Numbers(dmg,3)
 			elif dmg > player.ES:
 				dmg -= player.ES
+				if player.ES > 0:
+					Damage_Numbers(player.ES,3,Vector2(0,-50))
 				player.ES = 0
 				player.HP -= dmg
+				Damage_Numbers(dmg)
+			body.queue_free()
 			
 			Damage_Reaction()
 			First_Time_Damage()
@@ -81,10 +87,14 @@ func _on_area_2d_area_entered(area):
 		dmg = area.get_parent().damage 
 		if dmg <= player.ES:
 			player.ES -= dmg
+			Damage_Numbers(dmg,3)
 		elif dmg > player.ES:
 			dmg -= player.ES
+			if player.ES > 0:
+				Damage_Numbers(player.ES,3,Vector2(0,-50))
 			player.ES = 0
 			player.HP -= dmg
+			Damage_Numbers(dmg)
 				
 				
 		First_Time_Damage()
@@ -99,14 +109,15 @@ func Heals_Over_Time():
 	var betterHealsHP = UpgradeText.betterHealsLevels[int(Global.upgrades['Better Heals'])]
 	if UpgradeText.healsOverTime:
 		for x in range(betterHealsTime):
-			print('time')
 			player.HP += betterHealsHP
+			Damage_Numbers(betterHealsHP,2)
 			if player.HP > 100:
 				player.HP = 100
 			await(get_tree().create_timer(1).timeout)
 			
 	else:
 		player.HP += 1
+		Damage_Numbers(1,2)
 		if player.HP > 100:
 			player.HP = 100
 
@@ -118,11 +129,19 @@ func Damage_Over_Time():
 		if player.get_class() != "Container":
 			self.self_modulate = Color(.11,1,.15,1)
 			player.HP -= 2
+			Damage_Numbers(2)
 			First_Time_Damage()
 			await(get_tree().create_timer(.75).timeout)
 			self.self_modulate = Color(1,1,1,1)
 			await(get_tree().create_timer(.25).timeout)
 			
+
+func Damage_Numbers(x,dmg=1,offset=Vector2(0,0)):
+	var instance = damageNumberText.instantiate()
+	add_child(instance)
+	instance.label.position = self.global_position + offset
+	instance.Damage_Text(x,dmg)
+
 func First_Time_Damage():
 	if !Global.tipTriggers['hasTakenDamage']:
 		player.get_parent().tipController.Damage_Taken_Tip()

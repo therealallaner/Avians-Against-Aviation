@@ -6,6 +6,7 @@ extends Node
 
 
 @onready var upgrades = [
+	upgrade2,
 	upgrade3
 	]
 
