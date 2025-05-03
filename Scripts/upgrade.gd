@@ -53,7 +53,7 @@ func _ready():
 
 
 func _on_info_mouse_entered():
-	upgradeMenu.infoLabel.text = UpgradeText.upgradeText[Name]
+	upgradeMenu.infoLabel.text = UpgradeText.Upgrade_Text(Name)
 	upgradeMenu.info.show()
 
 

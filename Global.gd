@@ -11,7 +11,7 @@ var sfxVolume: float = 0.51
 var mossiesInStock = 1000
 
 var justOpened = true
-var demo = true
+var demo = false
 
 var currentBird = "blackBird1"
 var currentBird1 = "blackBird1"

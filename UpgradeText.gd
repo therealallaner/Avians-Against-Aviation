@@ -1,6 +1,7 @@
 extends Node
 
 var scoreMultiplier = 1
+var healsOverTime = false
 
 var upgradeCost = {
 	1: 50,
@@ -73,22 +74,78 @@ var energyShieldLevels = {
 	20: 100
 }
 
-var upgradeText = {
-'Score Multiplier': 
-	'Your points are multiplied
-	by ' + str(scoreMultiplierLevels[int(Global.upgrades['Score Multiplier'])]) + 
-	' at level ' + str(Global.upgrades['Score Multiplier']) + '.',
-	
-'Energy Shield': 
-	'You have an Energy Shield
-	that gives you an extra ' + str(energyShieldLevels[int(Global.upgrades['Energy Shield'])]) + ' HP
-	at level ' + str(Global.upgrades['Energy Shield']) + '.',
-	
-'Better Heals': 'Blank',
-'Vulture': 'Blank',
-'Coming Soon': 'This upgrade will be unlocked in the full game.'
+var betterHealsLevels = {
+	0: 1.0,
+	1: 1.5,
+	2: 2.0,
+	3: 2.5,
+	4: 3.0,
+	5: 3.0,
+	6: 3.5,
+	7: 4.0,
+	8: 4.5,
+	9: 4.5,
+	10: 5.0,
+	11: 5.5,
+	12: 6.0,
+	13: 6.0,
+	14: 6.5,
+	15: 7.0,
+	16: 7.5,
+	17: 7.5,
+	18: 8.0,
+	19: 9.0,
+	20: 10.0
 }
 
+var betterHealsLevelsTime = {
+	0: 1,
+	1: 1,
+	2: 1,
+	3: 1,
+	4: 1,
+	5: 2,
+	6: 2,
+	7: 2,
+	8: 2,
+	9: 3,
+	10: 3,
+	11: 3,
+	12: 3,
+	13: 4,
+	14: 4,
+	15: 4,
+	16: 4,
+	17: 5,
+	18: 5,
+	19: 5,
+	20: 5
+}
+
+func Upgrade_Text(Name):
+	
+	var upgradeText = {
+	'Score Multiplier': 
+		'Your points are multiplied
+		by ' + str(scoreMultiplierLevels[int(Global.upgrades['Score Multiplier'])]) + 
+		' at level ' + str(Global.upgrades['Score Multiplier']) + '.',
+		
+	'Energy Shield': 
+		'You have an Energy Shield
+		that gives you an extra ' + str(energyShieldLevels[int(Global.upgrades['Energy Shield'])]) + ' HP
+		at level ' + str(Global.upgrades['Energy Shield']) + '.',
+		
+	'Better Heals': 
+		'Whenever you eat a mosquito,
+		you gain ' + str(betterHealsLevels[int(Global.upgrades['Better Heals'])]) + ' HP
+		per second for ' + str(betterHealsLevelsTime[int(Global.upgrades['Better Heals'])]) + ' second(s)
+		per mosquito at level ' + str(Global.upgrades['Better Heals']) + '.',
+
+	'Vulture': 'Blank',
+	'Coming Soon': 'This upgrade will be unlocked in the full game.'
+	}
+	
+	return upgradeText[Name]
 
 func Upgrade_Activator(x):
 	var y = x.upgradeNumber
@@ -123,5 +180,7 @@ func Energy_Shield():
 	gameScene.player.ES = energyShieldLevels[Global.upgrades['Energy Shield']]
 	
 func Better_Heals():
-	print('Heals Over Time')
-	pass
+	healsOverTime = true
+	await(get_tree().create_timer(15).timeout)
+	healsOverTime = false
+	

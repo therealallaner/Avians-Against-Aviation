@@ -67,9 +67,7 @@ func _on_area_2d_area_entered(area):
 			return
 		get_parent().get_parent().mossies += 1
 		area.get_parent().queue_free()
-		player.HP += 1
-		if player.HP > 100:
-			player.HP = 100
+		Heals_Over_Time()
 		get_parent().Mossy_Bite()
 			
 			
@@ -96,6 +94,24 @@ func _on_area_2d_area_entered(area):
 		UpgradeText.Upgrade_Activator(parent)
 		
 		
+func Heals_Over_Time():
+	var betterHealsTime = UpgradeText.betterHealsLevelsTime[int(Global.upgrades['Better Heals'])]
+	var betterHealsHP = UpgradeText.betterHealsLevels[int(Global.upgrades['Better Heals'])]
+	if UpgradeText.healsOverTime:
+		for x in range(betterHealsTime):
+			print('time')
+			player.HP += betterHealsHP
+			if player.HP > 100:
+				player.HP = 100
+			await(get_tree().create_timer(1).timeout)
+			
+	else:
+		player.HP += 1
+		if player.HP > 100:
+			player.HP = 100
+
+
+
 
 func Damage_Over_Time():
 	for x in range(snapped(randf_range(5,10),1)):
