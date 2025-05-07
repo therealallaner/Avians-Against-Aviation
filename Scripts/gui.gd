@@ -5,6 +5,8 @@ extends Control
 @onready var bossHP = $BossHP
 @onready var playerES = $PlayerES
 
+@onready var upgradeVisual = preload("res://Scenes/Menus/upgrade_visual.tscn")
+
 var transitionTime = 1
 
 

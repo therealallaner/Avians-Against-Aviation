@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbifylhlntvo2"]
+
+[ext_resource type="Texture2D" uid="uid://c442ebbkevfm8" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade Outline v5.png" id="1_j2h6m"]
+[ext_resource type="Script" path="res://Scripts/upgrade_visual.gd" id="1_vr1bv"]
+[ext_resource type="Texture2D" uid="uid://duuy77fmw4vqh" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 1 v4.png" id="3_lwlkp"]
+
+[node name="UpgradeVisual" type="TextureProgressBar"]
+offset_right = 1280.0
+offset_bottom = 1280.0
+scale = Vector2(0.05, 0.05)
+max_value = 1500.0
+value = 1250.0
+fill_mode = 5
+texture_progress = ExtResource("1_j2h6m")
+script = ExtResource("1_vr1bv")
+upgradeImage = ExtResource("3_lwlkp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
