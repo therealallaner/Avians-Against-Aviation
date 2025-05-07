@@ -170,10 +170,8 @@ func Upgrade_Activator(x):
 	
 func Score_Multiplier():
 	scoreMultiplier = scoreMultiplierLevels[Global.upgrades['Score Multiplier']]
-	var gameScene = get_tree().root.get_node("GameScene")
-	gameScene.GUI.Update_Upgrade_Visuals(upgradeImage1)
-	await(get_tree().create_timer(15).timeout)
-	scoreMultiplier = 1
+	Visualiser_Checker(1)
+	GUI_Visualizer(upgradeImage1,1)
 	
 	
 func Energy_Shield():
@@ -185,8 +183,19 @@ func Energy_Shield():
 	
 func Better_Heals():
 	healsOverTime = true
-	var gameScene = get_tree().root.get_node("GameScene")
-	gameScene.GUI.Update_Upgrade_Visuals(upgradeImage3)
-	await(get_tree().create_timer(15).timeout)
-	healsOverTime = false
+	Visualiser_Checker(3)
+	GUI_Visualizer(upgradeImage3,3)
 	
+	
+	
+func Visualiser_Checker(x):
+	var GUI = get_tree().root.get_node("GameScene").GUI
+	var children = GUI.upgradeCont.get_children()
+	for child in children:
+		if child.upgradeNumber == x:
+			child.queue_free()
+	
+	
+func GUI_Visualizer(pic,num):
+	var gameScene = get_tree().root.get_node("GameScene")
+	gameScene.GUI.Update_Upgrade_Visuals(pic,num)

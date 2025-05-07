@@ -84,3 +84,5 @@ func upgrade():
 	upgradeMenu.mossyLabel.text = 'Mosquitos: ' + str(Global.mossiesInStock)
 	upgradeLevel.text = str(currentLevel) + '/' + str(maxLevel)
 	
+	var gameScene = get_tree().root.get_node("GameScene")
+	gameScene.waveController.upgradeController.Upgrade_Availability()
