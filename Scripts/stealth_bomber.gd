@@ -49,6 +49,7 @@ func _process(delta):
 #		get_parent().waveController.Next_Wave()
 		get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
 		get_parent().bossHPBar.hide()
+		Global.playerStats['Bosses Defeated'] += 1
 		queue_free()
 	
 func _physics_process(delta):

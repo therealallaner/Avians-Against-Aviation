@@ -51,6 +51,7 @@ func _process(delta):
 		if !sprite.is_playing():
 			get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
 			get_parent().bossHPBar.hide()
+			Global.playerStats['Bosses Defeated'] += 1
 			queue_free()
 			
 			

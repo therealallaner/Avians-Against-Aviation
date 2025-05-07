@@ -8,9 +8,12 @@ func Save_Game():
 	
 	var savedGame:SavedGame = SavedGame.new()
 	
-	savedGame.highScore = Global.playerStats["High Score"]
-	savedGame.lifetimeScore = Global.playerStats["Lifetime Score"]
-	savedGame.lifetimeMossies = Global.playerStats["Lifetime Mosquitos"]
+	for s in Global.playerStats:
+		savedGame.playerStats[s] = Global.playerStats[s]
+		
+#	savedGame.highScore = Global.playerStats["High Score"]
+#	savedGame.lifetimeScore = Global.playerStats["Lifetime Score"]
+#	savedGame.lifetimeMossies = Global.playerStats["Mosquitos Eaten"]
 	#savedGame.critChance = Global.playerStats["Crit Chance"]
 	
 	savedGame.mossiesInStock = Global.mossiesInStock
@@ -43,10 +46,14 @@ func Load_Game():
 
 
 	if ResourceLoader.exists(savePath):
-		Global.playerStats["High Score"] = savedGame.highScore
-		Global.playerStats["Lifetime Score"] = savedGame.lifetimeScore
-		Global.playerStats["Lifetime Mosquitos"] = savedGame.lifetimeMossies
-		#Global.playerStats["Crit Chance"] = savedGame.critChance
+		
+		for s in savedGame.playerStats:
+			Global.playerStats[s] = savedGame.playerStats[s]
+			
+#		Global.playerStats["High Score"] = savedGame.highScore
+#		Global.playerStats["Lifetime Score"] = savedGame.lifetimeScore
+#		Global.playerStats["Mosquitos Eaten"] = savedGame.lifetimeMossies
+#		#Global.playerStats["Crit Chance"] = savedGame.critChance
 		
 		Global.mossiesInStock = savedGame.mossiesInStock
 #

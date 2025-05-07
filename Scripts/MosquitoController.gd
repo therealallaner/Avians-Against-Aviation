@@ -57,13 +57,8 @@ func Spawn_Boss_Rewards_Test(x=0,nextWave=true):
 		
 		
 func Spawn_Boss_Rewards(x,nextWave=true):
-	print('boss reward step: ',bossRewardStep)
 	var y = ((x-1)%bossRewardStep)+1
 	var z = ceil((x-1)/bossRewardStep)+1
-	print(x)
-	print(y)
-	print(z)
-	print('')
 	
 	var yPos = randf_range(150,930)
 	var yPosVar = Global.Random_List([30,-30])

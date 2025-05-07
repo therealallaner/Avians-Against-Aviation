@@ -40,7 +40,7 @@ size_flags_horizontal = 3
 
 [node name="Upgrades" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Upgrades"
+text = "Power-Ups"
 
 [node name="Spacer8" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)

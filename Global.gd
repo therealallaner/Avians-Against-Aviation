@@ -8,7 +8,7 @@ var currentDamage = 1
 var masterVolume: float = 0.51
 var musicVolume: float = 0.51
 var sfxVolume: float = 0.51
-var mossiesInStock = 0
+var mossiesInStock = 500
 
 var justOpened = true
 var demo = true
@@ -45,8 +45,10 @@ var birdUnlocks = {
 var playerStats = {
 	"High Score": 0,
 	"Lifetime Score": 0,
-	"Lifetime Mosquitos": 0,
-	#"Crit Chance": 0.01,
+	"Mosquitos Eaten": 0,
+	"Planes Hit": 0,
+	"Power-Ups Collected": 0,
+	"Bosses Defeated": 0
 }
 
 
@@ -83,7 +85,7 @@ func Game_Over():
 	var gameScene = get_tree().root.get_node("GameScene")
 	
 	mossiesInStock += gameScene.mossies
-	playerStats["Lifetime Mosquitos"] += (gameScene.mossies)
+	playerStats["Mosquitos Eaten"] += (gameScene.mossies)
 	playerStats["Lifetime Score"] += gameScene.score
 	if gameScene.score > playerStats["High Score"]:
 		playerStats["High Score"] = gameScene.score
@@ -95,6 +97,8 @@ func Game_Over():
 	gameScene.waveController.mossyTimer.stop()
 	Save_Game()
 	Engine.time_scale = .15
+	UpgradeText.scoreMultiplier = 1
+	UpgradeText.healsOverTime = false
 	
 func Deal_Damage(b):
 	var gameScene = get_tree().root.get_node("GameScene")

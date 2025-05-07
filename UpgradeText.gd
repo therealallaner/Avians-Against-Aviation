@@ -146,7 +146,7 @@ func Upgrade_Text(Name):
 		per mosquito at level ' + str(Global.upgrades['Better Heals']) + '.',
 
 	'Vulture': 'Blank',
-	'Coming Soon': 'This upgrade will be unlocked in the full game.'
+	'Coming Soon': 'This power-up will be unlocked in the full game.'
 	}
 	
 	return upgradeText[Name]
@@ -180,6 +180,7 @@ func Energy_Shield():
 	
 	var gameScene = get_tree().root.get_node("GameScene")
 	gameScene.player.ES = energyShieldLevels[Global.upgrades['Energy Shield']]
+	
 	
 func Better_Heals():
 	healsOverTime = true

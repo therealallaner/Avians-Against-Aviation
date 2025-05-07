@@ -60,6 +60,7 @@ func _on_area_2d_body_entered(body):
 				player.ES = 0
 				player.HP -= dmg
 				Damage_Numbers(dmg)
+			Global.playerStats['Planes Hit'] += 1
 			body.queue_free()
 			
 			Damage_Reaction()
@@ -102,6 +103,9 @@ func _on_area_2d_area_entered(area):
 	if area.get_parent().is_in_group('Upgrades'):
 		var parent = area.get_parent()
 		UpgradeText.Upgrade_Activator(parent)
+		Global.playerStats['Power-Ups Collected'] += 1
+		if parent.upgradeNumber == 2:
+			Damage_Numbers(UpgradeText.energyShieldLevels[Global.upgrades['Energy Shield']],3)
 		
 		
 func Heals_Over_Time():

@@ -16,6 +16,8 @@ extends Resource
 @export var currentBird2: String
 @export var currentBird3: String
 
+@export var playerStats: Dictionary
+
 @export var birdUnlocks: Dictionary
 @export var birdUnlocks1: Dictionary
 @export var birdUnlocks2: Dictionary

@@ -19,6 +19,9 @@ func _ready():
 
 
 func Spawn_Upgrade():
+#	if randf() >= 0.75:
+#		print('This spawn failed')
+#		return
 	if upgrades:
 		var upgrade = Global.Random_List(upgrades)
 		var instance = upgrade.instantiate()

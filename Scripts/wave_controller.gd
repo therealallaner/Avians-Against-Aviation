@@ -45,6 +45,7 @@ func Next_Wave():
 		bossController.Spawn_Boss(bossHPX,bossesSpawned)
 #		bossWaves.erase(wave)
 		mossyTimer.stop()
+		mossyTimer.wait_time = randf_range(5,10)
 		upgradeTimer.stop()
 	else:
 		gameScene.cursorController.SetBossWave(false)
@@ -92,4 +93,4 @@ func _on_mossy_timer_timeout():
 
 func _on_upgrade_timer_timeout():
 	upgradeController.Spawn_Upgrade()
-	upgradeTimer.wait_time = randf_range(5,10)
+	upgradeTimer.wait_time = randf_range(10,20)
