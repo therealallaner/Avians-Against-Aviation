@@ -6,6 +6,7 @@ extends Control
 @onready var playerES = $PlayerES
 
 @onready var upgradeVisual = preload("res://Scenes/Menus/upgrade_visual.tscn")
+@onready var upgradeCont = $MarginContainer/UpgradeContainer
 
 var transitionTime = 1
 
@@ -37,3 +38,10 @@ func Boss_HP_Bar():
 
 func Update_Wave_Counter(x):
 	$Wave.text = 'Wave: ' + str(x)
+
+func Update_Upgrade_Visuals(pic,timed=true):
+	pass
+	var instance = upgradeVisual.instantiate()
+	upgradeCont.add_child(instance)
+	instance.texture_over = pic
+	instance.timer.autostart = timed

@@ -1,5 +1,9 @@
 extends Node
 
+@onready var upgradeImage1 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 1 v4.png")
+@onready var upgradeImage2 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 2 v5.png")
+@onready var upgradeImage3 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 3 v4.png")
+
 var scoreMultiplier = 1
 var healsOverTime = false
 
@@ -166,6 +170,8 @@ func Upgrade_Activator(x):
 	
 func Score_Multiplier():
 	scoreMultiplier = scoreMultiplierLevels[Global.upgrades['Score Multiplier']]
+	var gameScene = get_tree().root.get_node("GameScene")
+	gameScene.GUI.Update_Upgrade_Visuals(upgradeImage1)
 	await(get_tree().create_timer(15).timeout)
 	scoreMultiplier = 1
 	
@@ -179,6 +185,8 @@ func Energy_Shield():
 	
 func Better_Heals():
 	healsOverTime = true
+	var gameScene = get_tree().root.get_node("GameScene")
+	gameScene.GUI.Update_Upgrade_Visuals(upgradeImage3)
 	await(get_tree().create_timer(15).timeout)
 	healsOverTime = false
 	
