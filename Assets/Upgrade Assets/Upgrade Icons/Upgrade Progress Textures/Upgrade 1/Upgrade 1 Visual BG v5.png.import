@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7ofdn8ji7xtn"
-path="res://.godot/imported/Upgrade 1 Visual BG v5.png-7ea0319ede94f239073796e9e0bf03ee.ctex"
+path="res://.godot/imported/Upgrade 1 Visual BG v5.png-e90487267d51a4ab37e5495546421e57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 1 Visual BG v5.png"
-dest_files=["res://.godot/imported/Upgrade 1 Visual BG v5.png-7ea0319ede94f239073796e9e0bf03ee.ctex"]
+source_file="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 1/Upgrade 1 Visual BG v5.png"
+dest_files=["res://.godot/imported/Upgrade 1 Visual BG v5.png-e90487267d51a4ab37e5495546421e57.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wdfmpr7jcpau"
-path="res://.godot/imported/Upgrade 1 Visual Progress v5.png-29606e6a39e4886df5efa88b175c4ee6.ctex"
+uid="uid://54d6skfldhkt"
+path="res://.godot/imported/Upgrade 3 Visual v1.png-a49e9b13f419f09bd130b698a8b009ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 1 Visual Progress v5.png"
-dest_files=["res://.godot/imported/Upgrade 1 Visual Progress v5.png-29606e6a39e4886df5efa88b175c4ee6.ctex"]
+source_file="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 3/Upgrade 3 Visual v1.png"
+dest_files=["res://.godot/imported/Upgrade 3 Visual v1.png-a49e9b13f419f09bd130b698a8b009ff.ctex"]
 
 [params]
 

@@ -39,10 +39,12 @@ func Boss_HP_Bar():
 func Update_Wave_Counter(x):
 	$Wave.text = 'Wave: ' + str(x)
 
-func Update_Upgrade_Visuals(pic,number,timed=true):
+func Update_Upgrade_Visuals(pic,pro,bg,number,timed=true):
 	pass
 	var instance = upgradeVisual.instantiate()
 	upgradeCont.add_child(instance)
 	instance.texture_over = pic
+	instance.texture_progress = pro
+	instance.texture_under = bg
 	instance.upgradeNumber = number
 	instance.timer.autostart = timed

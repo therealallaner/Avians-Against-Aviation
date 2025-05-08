@@ -93,4 +93,4 @@ func _on_mossy_timer_timeout():
 
 func _on_upgrade_timer_timeout():
 	upgradeController.Spawn_Upgrade()
-	upgradeTimer.wait_time = randf_range(10,20)
+	upgradeTimer.wait_time = randf_range(10,15)
