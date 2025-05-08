@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbifylhlntvo2"]
+[gd_scene load_steps=5 format=3 uid="uid://cbifylhlntvo2"]
 
-[ext_resource type="Texture2D" uid="uid://c442ebbkevfm8" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade Outline v5.png" id="1_j2h6m"]
+[ext_resource type="Texture2D" uid="uid://7ofdn8ji7xtn" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 1 Visual BG v5.png" id="1_60ktu"]
 [ext_resource type="Script" path="res://Scripts/upgrade_visual.gd" id="1_vr1bv"]
+[ext_resource type="Texture2D" uid="uid://o424xhsau7by" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 1 Visual v5.png" id="2_c2i3m"]
+[ext_resource type="Texture2D" uid="uid://wdfmpr7jcpau" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 1 Visual Progress v5.png" id="2_w6s0b"]
 
 [node name="UpgradeVisual" type="TextureProgressBar"]
 offset_right = 1280.0
@@ -10,7 +12,9 @@ scale = Vector2(0.05, 0.05)
 max_value = 1500.0
 value = 1250.0
 fill_mode = 5
-texture_progress = ExtResource("1_j2h6m")
+texture_under = ExtResource("1_60ktu")
+texture_over = ExtResource("2_c2i3m")
+texture_progress = ExtResource("2_w6s0b")
 script = ExtResource("1_vr1bv")
 
 [node name="Timer" type="Timer" parent="."]

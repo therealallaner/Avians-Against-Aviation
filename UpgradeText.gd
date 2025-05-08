@@ -1,6 +1,6 @@
 extends Node
 
-@onready var upgradeImage1 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 1 v4.png")
+@onready var upgradeImage1 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 1 Visual v5.png")
 @onready var upgradeImage2 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 2 v5.png")
 @onready var upgradeImage3 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 3 v4.png")
 
