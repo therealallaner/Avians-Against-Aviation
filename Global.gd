@@ -8,7 +8,7 @@ var currentDamage = 1
 var masterVolume: float = 0.51
 var musicVolume: float = 0.51
 var sfxVolume: float = 0.51
-var mossiesInStock = 500
+var mossiesInStock = 0
 
 var justOpened = true
 var demo = true

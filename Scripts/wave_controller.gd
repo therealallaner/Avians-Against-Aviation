@@ -22,7 +22,8 @@ var bossWaves = []
 func _ready():
 	Add_Jet_Waves()
 	Add_Boss_Waves()
-			
+
+
 func Wave_Difficulty():
 	if wave < 5:
 		return randf_range(4,7)
@@ -34,7 +35,8 @@ func Wave_Difficulty():
 		return randf_range(9,15)
 	else:
 		return randf_range(14,25)
-		
+
+
 func Next_Wave():
 	wave += 1
 	gameScene.GUI.Update_Wave_Counter(wave)
@@ -57,8 +59,8 @@ func Next_Wave():
 			Jet_Spawn()
 			if randf() < .25:
 				jetTimer.start()
-				
-				
+
+
 func Add_Jet_Waves():
 	var x = snapped(randf_range(33,50),1)
 	for r in x:
@@ -74,13 +76,16 @@ func Add_Boss_Waves(x=0):
 		var p2 = p[1]
 		var w = (snapped(randf_range(p1,p2),1) + x)
 		bossWaves.append(w)
-	
-	
+
+
+
 func _on_timer_timeout():
 	Next_Wave()
 
+
 func Jet_Spawn():
 	jetController.Plane_Spawn()
+
 
 func _on_jet_timer_timeout():
 	jetController.Plane_Spawn()
@@ -93,4 +98,10 @@ func _on_mossy_timer_timeout():
 
 func _on_upgrade_timer_timeout():
 	upgradeController.Spawn_Upgrade()
-	upgradeTimer.wait_time = randf_range(10,15)
+	if wave <= 10:
+		upgradeTimer.wait_time = randf_range(7,12)
+	elif wave <= 20:
+		upgradeTimer.wait_time = randf_range(10,15)
+	elif wave <= 30:
+		upgradeTimer.wait_time = randf_range(12,18)
+

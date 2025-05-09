@@ -91,13 +91,13 @@ func Randomize_Next_State(x):
 		if r >= .5:
 			states["Attacking"] = true
 		else:
-			states["Swarming"] = true
+			states["Attacking"] = true
 			target = position
 	if x == 2:
 		if r >= .5:
 			states["Idling"] = true
 		else:
-			states["Swarming"] = true
+			states["Idling"] = true
 			target = position
 	if x == 3:
 		if r >= .5:
@@ -107,9 +107,9 @@ func Randomize_Next_State(x):
 			
 			
 func Damage_Reaction():
-	sprite.self_modulate = Color(1,0,.29,1)
+	$Airship.self_modulate = Color(1,0,.29,1)
 	await(get_tree().create_timer(.25).timeout)
-	sprite.self_modulate = Color(1,1,1,1)
+	$Airship.self_modulate = Color(1,1,1,1)
 
 func _on_area_2d_mouse_entered():
 	isHovering = true

@@ -91,13 +91,13 @@ func Randomize_Next_State(x):
 		if r >= .5:
 			states["Attacking"] = true
 		else:
-			states["Swarming"] = true
+			states["Attacking"] = true
 			target = position
 	if x == 2:
 		if r >= .5:
 			states["Idling"] = true
 		else:
-			states["Swarming"] = true
+			states["Idling"] = true
 			target = position
 	if x == 3:
 		if r >= .5:

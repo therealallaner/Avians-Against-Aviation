@@ -55,6 +55,8 @@ func _on_back_pressed():
 	Global.Save_Game()
 	await(get_tree().create_timer(.1).timeout)
 	gameScene.player.show()
+	
+	gameScene.menu.upgradeMenu.mossyLabel.text = 'Mosquitos: ' + str(Global.mossiesInStock)
 
 
 func Test():

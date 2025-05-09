@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dit2kakqh2b8h"]
+[gd_scene load_steps=8 format=3 uid="uid://dit2kakqh2b8h"]
 
 [ext_resource type="Texture2D" uid="uid://dwnjofpbl2ie4" path="res://Assets/Airship/pngs/spritesheets/__airship_1_cannon_and_canopy_flying.png" id="1_llu6k"]
 [ext_resource type="Script" path="res://Scripts/airship_boss.gd" id="1_qa1sw"]
@@ -42,6 +42,10 @@ _data = {
 "flying": SubResource("Animation_tb7ww")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvsx6"]
+radius = 141.429
+height = 637.143
+
 [node name="Airship Boss" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_qa1sw")
@@ -64,3 +68,9 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-21.4286, 117.143)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lvsx6")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

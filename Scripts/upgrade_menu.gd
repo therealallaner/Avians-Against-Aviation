@@ -67,6 +67,9 @@ func _on_back_pressed():
 	gameScene.player.show()
 	
 	
+	gameScene.menu.aviary.mossyLabel.text = 'Mosquitos: ' + str(Global.mossiesInStock)
+	
+	
 
 
 func _on_no_pressed():

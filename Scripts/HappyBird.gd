@@ -72,7 +72,8 @@ func _on_area_2d_area_entered(area):
 		if self.position.x >= 1920:
 			print("Bird Card did not eat Mossies")
 			return
-		get_parent().get_parent().mossies += 1
+		if Engine.time_scale == 1:
+			get_parent().get_parent().mossies += 1
 		area.get_parent().queue_free()
 		Heals_Over_Time()
 		get_parent().Mossy_Bite()
