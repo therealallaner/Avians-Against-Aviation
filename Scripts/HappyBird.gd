@@ -98,8 +98,9 @@ func _on_area_2d_area_entered(area):
 			player.HP -= dmg
 			Damage_Numbers(dmg)
 				
-				
+		Damage_Reaction()
 		First_Time_Damage()
+		
 		
 	if area.get_parent().is_in_group('Upgrades'):
 		var parent = area.get_parent()
@@ -150,3 +151,9 @@ func Damage_Numbers(x,dmg=1,offset=Vector2(0,0)):
 func First_Time_Damage():
 	if !Global.tipTriggers['hasTakenDamage']:
 		player.get_parent().tipController.Damage_Taken_Tip()
+
+func Take_Heli_Damage(dmg):
+	player.HP -= dmg
+	Damage_Numbers(dmg)
+	Damage_Reaction()
+	First_Time_Damage()

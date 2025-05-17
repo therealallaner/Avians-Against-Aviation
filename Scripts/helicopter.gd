@@ -25,6 +25,7 @@ var bossReward = 100
 
 var miniGunDMG = 1
 var firing = false
+var birdLoS = false
 var phase = 1
 
 var states = {
@@ -50,9 +51,11 @@ func _process(delta):
 				
 	if HP <= (maxHP*.67):
 		phase = 2
+		$MuzzleArea2.show()
 		
 	if HP <= (maxHP*.33):
 		phase = 3
+		$MuzzleArea3.show()
 				
 	if HP <= 0:
 		for s in states:
@@ -135,14 +138,17 @@ func _on_muzzle_flash_timer_timeout():
 		
 	muzzleFlash.global_position = muzzleMarker.global_position
 	muzzleFlash.visible = !muzzleFlash.visible
+	print(birdLoS)
+	if birdLoS:
+		birdLoS.Take_Heli_Damage(miniGunDMG)
 	
 	if phase >= 2:
 		muzzleFlash2.global_position = muzzleMarker2.global_position
-		muzzleFlash2.rotation_degrees = 15
+		muzzleFlash2.rotation_degrees = 10
 		muzzleFlash2.visible = !muzzleFlash2.visible
 	if phase == 3:
 		muzzleFlash3.global_position = muzzleMarker3.global_position
-		muzzleFlash3.rotation_degrees = -15
+		muzzleFlash3.rotation_degrees = -10
 		muzzleFlash3.visible = !muzzleFlash3.visible
 		
 	if firing:
@@ -172,3 +178,37 @@ func _on_area_2d_mouse_entered():
 func _on_area_2d_mouse_exited():
 	isHovering = false
 
+
+
+func _on_muzzle_area_1_area_entered(area):
+	if area.get_parent().is_in_group('Bird'):
+		birdLoS = area.get_parent()
+
+
+func _on_muzzle_area_1_area_exited(area):
+	if area.get_parent().is_in_group('Bird'):
+		birdLoS = null
+
+
+func _on_muzzle_area_2_area_entered(area):
+	if phase >= 2:
+		if area.get_parent().is_in_group('Bird'):
+			birdLoS = area.get_parent()
+
+
+func _on_muzzle_area_2_area_exited(area):
+	if phase >= 2:
+		if area.get_parent().is_in_group('Bird'):
+			birdLoS = null
+
+
+func _on_muzzle_area_3_area_entered(area):
+	if phase == 3:
+		if area.get_parent().is_in_group('Bird'):
+			birdLoS = area.get_parent()
+
+
+func _on_muzzle_area_3_area_exited(area):
+	if phase == 3:
+		if area.get_parent().is_in_group('Bird'):
+			birdLoS = null

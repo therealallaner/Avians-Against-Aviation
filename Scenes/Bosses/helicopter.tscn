@@ -133,7 +133,38 @@ sprite_frames = SubResource("SpriteFrames_5bvky")
 animation = &"new_animation"
 frame_progress = 0.4206
 
+[node name="MuzzleArea1" type="Area2D" parent="."]
+position = Vector2(-1992, 144)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MuzzleArea1"]
+position = Vector2(1900.86, -22.6736)
+polygon = PackedVector2Array(0, 0, -4000, 150, -4200, 50, -4200, -50, -4000, -150)
+
+[node name="MuzzleArea2" type="Area2D" parent="."]
+visible = false
+position = Vector2(-1986, -368)
+rotation = 0.174533
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MuzzleArea2"]
+position = Vector2(1900.86, -22.6736)
+polygon = PackedVector2Array(0, 0, -4000, 150, -4200, 50, -4200, -50, -4000, -150)
+
+[node name="MuzzleArea3" type="Area2D" parent="."]
+visible = false
+position = Vector2(-1962, 530)
+rotation = -0.174533
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MuzzleArea3"]
+position = Vector2(1900.86, -22.6736)
+polygon = PackedVector2Array(0, 0, -4000, 150, -4200, 50, -4200, -50, -4000, -150)
+
 [connection signal="timeout" from="MuzzleFlash/MuzzleFlashTimer" to="." method="_on_muzzle_flash_timer_timeout"]
 [connection signal="timeout" from="MuzzleFlash/AttackingTimer" to="." method="_on_attacking_timer_timeout"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="area_entered" from="MuzzleArea1" to="." method="_on_muzzle_area_1_area_entered"]
+[connection signal="area_exited" from="MuzzleArea1" to="." method="_on_muzzle_area_1_area_exited"]
+[connection signal="area_entered" from="MuzzleArea2" to="." method="_on_muzzle_area_2_area_entered"]
+[connection signal="area_exited" from="MuzzleArea2" to="." method="_on_muzzle_area_2_area_exited"]
+[connection signal="area_entered" from="MuzzleArea3" to="." method="_on_muzzle_area_3_area_entered"]
+[connection signal="area_exited" from="MuzzleArea3" to="." method="_on_muzzle_area_3_area_exited"]
