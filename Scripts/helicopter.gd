@@ -12,9 +12,10 @@ extends CharacterBody2D
 @onready var muzzleMarker3 = $AnimatedSprite2D/MuzzleMarker3
 @onready var HBMarker = $AnimatedSprite2D/HitBoxMarker
 
-var HP = 50 #50
+var HP = 20 #50
 var maxHP: int
 var isHovering = false
+var dyingSpeed = 0
 var spawnSpeed = 100
 var attackSpeed = 50
 var idleSpeed = 200
@@ -60,9 +61,16 @@ func _process(delta):
 	if HP <= 0:
 		for s in states:
 			states[s] = false
-		states["Dead"] = true
 		
-
+		states["Dying"] = true
+		
+	if states["Dying"]:
+		sprite.play("explosion")
+		attackTimer.stop()
+		muzzleTimer.stop()
+		await(get_tree().create_timer(.5).timeout)
+		states["Dying"] = false
+		states["Dead"] = true
 			
 	if states["Dead"]:
 #		get_parent().waveController.Next_Wave()
@@ -112,7 +120,7 @@ func _physics_process(delta):
 		
 	
 	if states["Attacking"]:
-		var newPos = (target-position).normalized()
+		var newPos = (target - position).normalized()
 		var distance = (target - position).length()
 		sprite.rotation_degrees = 10
 		$Area2D.rotation_degrees = 10
@@ -121,6 +129,12 @@ func _physics_process(delta):
 			Fire_Minigun()
 			return
 		velocity = newPos * attackSpeed
+		
+		
+	if states["Dying"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * dyingSpeed
 		
 	move_and_slide()
 
@@ -212,3 +226,6 @@ func _on_muzzle_area_3_area_exited(area):
 	if phase == 3:
 		if area.get_parent().is_in_group('Bird'):
 			birdLoS = null
+
+
+
