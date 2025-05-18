@@ -1,11 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0sd251mibjun"]
+[gd_scene load_steps=15 format=3 uid="uid://c0sd251mibjun"]
 
 [ext_resource type="Script" path="res://Scripts/stealth_bomber.gd" id="1_imxjm"]
 [ext_resource type="Texture2D" uid="uid://bjc2ghfqjf8bw" path="res://Assets/PlanesExpansion/pngs/stealth_dark.png" id="2_35vyc"]
+[ext_resource type="Texture2D" uid="uid://chu8q5b54lc3g" path="res://Assets/Juice/EXPLOSION_ANIMATION/1.png" id="3_7y3r4"]
+[ext_resource type="Texture2D" uid="uid://cj6nov3dsuvuu" path="res://Assets/Juice/EXPLOSION_ANIMATION/2.png" id="4_x7an6"]
+[ext_resource type="Texture2D" uid="uid://cww0ggsm2a1qh" path="res://Assets/Juice/EXPLOSION_ANIMATION/3.png" id="5_liocf"]
+[ext_resource type="Texture2D" uid="uid://er511lp6w4bh" path="res://Assets/Juice/EXPLOSION_ANIMATION/4.png" id="6_fj2js"]
+[ext_resource type="Texture2D" uid="uid://cawmyk6mjoacb" path="res://Assets/Juice/EXPLOSION_ANIMATION/5.png" id="7_554aw"]
+[ext_resource type="Texture2D" uid="uid://beevlm7w645po" path="res://Assets/Juice/EXPLOSION_ANIMATION/6.png" id="8_foch3"]
+[ext_resource type="Texture2D" uid="uid://dmt4o2vyskicj" path="res://Assets/Juice/EXPLOSION_ANIMATION/7.png" id="9_6y10s"]
+[ext_resource type="Texture2D" uid="uid://otejgi7o17o1" path="res://Assets/Juice/EXPLOSION_ANIMATION/8.png" id="10_0qdhe"]
+[ext_resource type="Texture2D" uid="uid://cgj40776u04xd" path="res://Assets/Juice/EXPLOSION_ANIMATION/9.png" id="11_shmx2"]
+[ext_resource type="Texture2D" uid="uid://cg2srm7p2tjgr" path="res://Assets/Juice/EXPLOSION_ANIMATION/10.png" id="12_24nh8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3a1s"]
 radius = 120.0
 height = 840.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpvlc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7y3r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x7an6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_liocf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fj2js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_554aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_foch3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6y10s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0qdhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_shmx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_24nh8")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 18.0
+}]
 
 [node name="StealthBomber" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -24,6 +72,14 @@ shape = SubResource("CapsuleShape2D_n3a1s")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-488, -48)
+
+[node name="DeathAnim" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fpvlc")
+animation = &"explosion"
+frame = 9
+frame_progress = 1.0
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

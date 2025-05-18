@@ -15,7 +15,6 @@ extends CharacterBody2D
 var HP = 20 #50
 var maxHP: int
 var isHovering = false
-var dyingSpeed = 0
 var spawnSpeed = 100
 var attackSpeed = 50
 var idleSpeed = 200
@@ -134,7 +133,7 @@ func _physics_process(delta):
 	if states["Dying"]:
 		target = Vector2(position.x,position.y) 
 		var newPos = (target - position).normalized()
-		velocity = newPos * dyingSpeed
+		velocity = newPos * 0
 		
 	move_and_slide()
 

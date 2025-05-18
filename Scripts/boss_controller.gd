@@ -11,6 +11,7 @@ extends Node
 @onready var airshipBoss = preload("res://Scenes/Bosses/airship_boss.tscn")
 
 @onready var bosses = [
+	stealthBoss,
 	heliBoss
 ]
 

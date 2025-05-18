@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var torpedo = preload("res://Scenes/Planes/torpedo.tscn")
 @onready var torpedoSpawn = $Marker2D
+@onready var deathSprite = $DeathAnim
 
 var HP = 10 #10
 var isHovering = false
@@ -23,6 +24,7 @@ var states = {
 	"Recruiting": false,
 	"Idling": false,
 	"Retreating": false,
+	"Dying": false,
 	"Dead": false
 }
 
@@ -41,10 +43,17 @@ func _process(delta):
 	if HP <= 0:
 		for s in states:
 			states[s] = false
-		states["Dead"] = true
+		states["Dying"] = true
 		
+	if states["Dying"]:
+		sprite.hide()
+		deathSprite.show()
+		deathSprite.play("explosion")
+		await(get_tree().create_timer(.5).timeout)
+		states["Dying"] = false
+		states["Dead"] = true
 
-			
+
 	if states["Dead"]:
 #		get_parent().waveController.Next_Wave()
 		get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
@@ -117,6 +126,12 @@ func _physics_process(delta):
 			states["Spawning"] = true
 			return
 		velocity = newPos * idleSpeed
+		
+		
+	if states["Dying"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * 0
 		
 	move_and_slide()
 	
