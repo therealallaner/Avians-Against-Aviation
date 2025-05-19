@@ -32,7 +32,7 @@ func _process(delta):
 			for s in states:
 				states[s] = false
 			states["Dying"] = true
-		
+	
 
 	if states["Dying"]:
 		sprite.play("dying")
@@ -74,11 +74,33 @@ func _physics_process(delta):
 		velocity = newPos * idleSpeed
 		
 	if states["Attacking"]:
-		states["Attacking"] = false
-		idleTimes = snapped(randf_range(1,5),1)
-		Randomize_Next_State(2)
-		states["Swarming"] = false
-		Randomize_Next_State(3)
+		
+		if sprite.animation == 'breath fire':
+			if !sprite.is_playing():
+				states["Attacking"] = false
+				sprite.play("flying")
+				sprite.offset.x = 0
+				idleTimes = snapped(randf_range(1,5),1)
+				Randomize_Next_State(2)
+			else:
+				return
+				
+		else:
+			Fireball_Attack()
+		
+		velocity = Vector2(0,0)
+		
+		
+		
+	if states["Dying"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * 0
+		
+	if states["Dead"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * 0
 		
 	move_and_slide()
 	
@@ -110,6 +132,11 @@ func Damage_Reaction():
 	sprite.self_modulate = Color(1,0,.29,1)
 	await(get_tree().create_timer(.25).timeout)
 	sprite.self_modulate = Color(1,1,1,1)
+	
+func Fireball_Attack():
+	sprite.play("breath fire")
+	sprite.offset.x = -100
+
 
 func _on_area_2d_mouse_entered():
 	isHovering = true
