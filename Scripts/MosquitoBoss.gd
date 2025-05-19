@@ -110,6 +110,17 @@ func _physics_process(delta):
 		states["Swarming"] = false
 		Randomize_Next_State(3)
 		
+		
+	if states["Dying"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * 0
+		
+	if states["Dead"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * 0
+		
 	move_and_slide()
 	
 	

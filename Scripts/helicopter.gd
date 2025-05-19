@@ -12,7 +12,7 @@ extends CharacterBody2D
 @onready var muzzleMarker3 = $AnimatedSprite2D/MuzzleMarker3
 @onready var HBMarker = $AnimatedSprite2D/HitBoxMarker
 
-var HP = 20 #50
+var HP = 50 #50
 var maxHP: int
 var isHovering = false
 var spawnSpeed = 100
@@ -58,25 +58,26 @@ func _process(delta):
 		$MuzzleArea3.show()
 				
 	if HP <= 0:
-		for s in states:
-			states[s] = false
-		
-		states["Dying"] = true
+		if !states["Dead"]:
+			for s in states:
+				states[s] = false
+			
+			states["Dying"] = true
 		
 	if states["Dying"]:
 		sprite.play("explosion")
 		attackTimer.stop()
 		muzzleTimer.stop()
-		await(get_tree().create_timer(.5).timeout)
 		states["Dying"] = false
 		states["Dead"] = true
 			
 	if states["Dead"]:
+		if !sprite.is_playing():
 #		get_parent().waveController.Next_Wave()
-		get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
-		get_parent().bossHPBar.hide()
-		Global.playerStats['Bosses Defeated'] += 1
-		queue_free()
+			get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
+			get_parent().bossHPBar.hide()
+			Global.playerStats['Bosses Defeated'] += 1
+			queue_free()
 	
 	
 func _physics_process(delta):
@@ -131,6 +132,11 @@ func _physics_process(delta):
 		
 		
 	if states["Dying"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * 0
+		
+	if states["Dead"]:
 		target = Vector2(position.x,position.y) 
 		var newPos = (target - position).normalized()
 		velocity = newPos * 0

@@ -41,25 +41,26 @@ func _process(delta):
 				Damage_Reaction()
 				
 	if HP <= 0:
-		for s in states:
-			states[s] = false
-		states["Dying"] = true
+		if !states["Dead"]:
+			for s in states:
+				states[s] = false
+			states["Dying"] = true
 		
 	if states["Dying"]:
 		sprite.hide()
 		deathSprite.show()
 		deathSprite.play("explosion")
-		await(get_tree().create_timer(.5).timeout)
 		states["Dying"] = false
 		states["Dead"] = true
 
 
 	if states["Dead"]:
+		if !deathSprite.is_playing():
 #		get_parent().waveController.Next_Wave()
-		get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
-		get_parent().bossHPBar.hide()
-		Global.playerStats['Bosses Defeated'] += 1
-		queue_free()
+			get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
+			get_parent().bossHPBar.hide()
+			Global.playerStats['Bosses Defeated'] += 1
+			queue_free()
 	
 func _physics_process(delta):
 	if states["Spawning"]:
@@ -129,6 +130,11 @@ func _physics_process(delta):
 		
 		
 	if states["Dying"]:
+		target = Vector2(position.x,position.y) 
+		var newPos = (target - position).normalized()
+		velocity = newPos * 0
+		
+	if states["Dead"]:
 		target = Vector2(position.x,position.y) 
 		var newPos = (target - position).normalized()
 		velocity = newPos * 0
