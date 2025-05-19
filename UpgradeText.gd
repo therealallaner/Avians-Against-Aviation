@@ -150,6 +150,9 @@ func Upgrade_Text(Name):
 		per mosquito at level ' + str(Global.upgrades['Better Heals']) + '.',
 
 	'Vulture': 'Blank',
+	'Crit Hit': 'Blank',
+	'Mossy Magnet': 'Blank',
+	
 	'Coming Soon': 'This power-up will be unlocked in the full game.'
 	}
 	
