@@ -74,7 +74,9 @@ func _physics_process(delta):
 		velocity = newPos * idleSpeed
 		
 	if states["Attacking"]:
+		velocity = Vector2(0,0)
 		states["Attacking"] = false
+		await(get_tree().create_timer(3).timeout)
 		idleTimes = snapped(randf_range(1,5),1)
 		Randomize_Next_State(2)
 		states["Swarming"] = false

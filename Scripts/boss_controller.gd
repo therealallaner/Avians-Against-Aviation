@@ -14,7 +14,7 @@ extends Node
 #	mossyBoss,
 #	stealthBoss,
 #	heliBoss,
-	dragonBoss,
+#	dragonBoss,
 	airshipBoss
 ]
 
