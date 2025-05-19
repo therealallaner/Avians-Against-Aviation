@@ -103,6 +103,9 @@ func _on_area_2d_area_entered(area):
 		
 		
 	if area.get_parent().is_in_group('Upgrades'):
+#		get_parent().get_parent().camera.Camera_Shake()
+		player.sparkle.show()
+		player.sparkleAnim.play('Sparkle')
 		var parent = area.get_parent()
 		UpgradeText.Upgrade_Activator(parent)
 		Global.playerStats['Power-Ups Collected'] += 1
@@ -147,6 +150,8 @@ func Damage_Numbers(x,dmg=1,offset=Vector2(0,0)):
 	add_child(instance)
 	instance.label.position = self.global_position + offset
 	instance.Damage_Text(x,dmg)
+	if dmg == 1:
+		get_parent().get_parent().camera.Camera_Shake()
 
 func First_Time_Damage():
 	if !Global.tipTriggers['hasTakenDamage']:

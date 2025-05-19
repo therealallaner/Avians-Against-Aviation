@@ -10,7 +10,7 @@ extends Node2D
 @onready var wave = $WaveController.wave
 @onready var cursorController = $CursorController
 @onready var tipController = $TipController
-
+@onready var camera = $CameraShake
 
 
 var test = "Test"
