@@ -235,6 +235,7 @@ func _on_buy_button_pressed():
 		pass
 	elif buyButt.text == 'Select':
 		Global.currentBird = currentBird
+		aviary.gameScene.player.Bird_Sounds()
 	else:
 		aviary.buyText.text = 'Do you want to buy this\ncolor for ' + str(cost) + ' mosquitos?'
 		aviary.buyWindow.show()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bnwn6p8a3hjab"
+path="res://.godot/imported/ES_Chime, Crystal, Glint, Twinkle, Fantasy 01 - Epidemic Sound - 3336-4323.wav-9ccc90c3961b88262a33f98c0a5996cd.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Upgrades/ES_Chime, Crystal, Glint, Twinkle, Fantasy 01 - Epidemic Sound - 3336-4323.wav"
+dest_files=["res://.godot/imported/ES_Chime, Crystal, Glint, Twinkle, Fantasy 01 - Epidemic Sound - 3336-4323.wav-9ccc90c3961b88262a33f98c0a5996cd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

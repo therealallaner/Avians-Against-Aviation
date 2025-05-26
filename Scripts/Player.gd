@@ -26,6 +26,8 @@ func _physics_process(delta):
 	if !Global.mouseHovering:
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = jumpVelocity
+			Flap_Sound()
+			
 		
 		
 	if velocity.y > 0:

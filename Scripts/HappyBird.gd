@@ -40,6 +40,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 	offScreen = false
 
 func Damage_Reaction():
+	get_parent().Bird_Sounds()
 	self.self_modulate = Color(1,0,.29,1)
 	await(get_tree().create_timer(.5).timeout)
 	self.self_modulate = Color(1,1,1,1)
@@ -106,6 +107,7 @@ func _on_area_2d_area_entered(area):
 #		get_parent().get_parent().camera.Camera_Shake()
 		player.sparkle.show()
 		player.sparkleAnim.play('Sparkle')
+		get_parent().Upgrade_Chime()
 		var parent = area.get_parent()
 		UpgradeText.Upgrade_Activator(parent)
 		Global.playerStats['Power-Ups Collected'] += 1

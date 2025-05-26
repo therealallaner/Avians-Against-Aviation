@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2mes8qqface8"]
+[gd_scene load_steps=7 format=3 uid="uid://c2mes8qqface8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_le2on"]
 [ext_resource type="Texture2D" uid="uid://y0vor8yc26s0" path="res://Assets/Juice/sparkleeffect--1b4c772c813q8c4g8v/spritesheets/sparkle_spritesheet_256px_by_256px_per_frame.png" id="2_eeq00"]
+[ext_resource type="AudioStream" uid="uid://b6kisim1hsla8" path="res://Assets/SFX/Upgrades/Chime Base.wav" id="3_k0ooh"]
 
 [sub_resource type="Animation" id="Animation_jipvm"]
 length = 0.001
@@ -60,3 +61,12 @@ speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_lgx4m")
 }
+
+[node name="UpgradeChimeBase" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k0ooh")
+
+[node name="UpgradeChimeLayer" type="AudioStreamPlayer" parent="."]
+
+[node name="FlappySound" type="AudioStreamPlayer" parent="."]
+
+[node name="TweetPlayer" type="AudioStreamPlayer" parent="."]

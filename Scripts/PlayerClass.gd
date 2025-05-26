@@ -30,22 +30,45 @@ class_name Player
 @onready var bird2 = [blackBird2,greenBird2,yellowBird2,pinkBird2,redBird2,blueBird2,purpleBird2]
 @onready var bird3 = [blackBird3,greenBird3,yellowBird3,pinkBird3,redBird3,blueBird3,purpleBird3]
 
-@onready var sounds1 = preload("res://Scenes/Players/Bird SFX Scenes/bird1_sounds.tscn")
-@onready var sounds2 = preload("res://Scenes/Players/Bird SFX Scenes/bird2_sounds.tscn")
-@onready var sounds3 = preload("res://Scenes/Players/Bird SFX Scenes/bird3_sounds.tscn")
+@onready var tweet1 = preload("res://Assets/SFX/Bird Tweets/Tweet 1.wav")
+@onready var tweet2 = preload("res://Assets/SFX/Bird Tweets/Tweet 2.wav")
+@onready var tweet3 = preload("res://Assets/SFX/Bird Tweets/Tweet 3.wav")
+@onready var tweet4 = preload("res://Assets/SFX/Bird Tweets/Tweet 4.wav")
 
-@onready var mossySound1 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 1.mp3")
-@onready var mossySound2 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 2.mp3")
-@onready var mossySound3 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 3.mp3")
-@onready var mossySound4 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 4.mp3")
-@onready var mossySound5 = preload("res://Assets/SFX/Eating Mossies/Eating Mossy 5.mp3")
+@onready var mossySound1 = preload("res://Assets/SFX/Eating Mossies/Mossy Munch 1.wav")
+@onready var mossySound2 = preload("res://Assets/SFX/Eating Mossies/Mossy Munch 2.wav")
+@onready var mossySound3 = preload("res://Assets/SFX/Eating Mossies/Mossy Munch 3.wav")
+
+@onready var chimeSound1 = preload("res://Assets/SFX/Upgrades/ES_Chime, Crystal, Glint, Twinkle, Fantasy 01 - Epidemic Sound - 0000-0716.wav")
+@onready var chimeSound2 = preload("res://Assets/SFX/Upgrades/ES_Chime, Crystal, Glint, Twinkle, Fantasy 01 - Epidemic Sound - 3336-4323.wav")
+@onready var chimeSound3 = preload("res://Assets/SFX/Upgrades/ES_Chime, Crystal, Glint, Twinkle, Fantasy 01 - Epidemic Sound - 6665-7404.wav")
+
+@onready var flap1 = preload("res://Assets/SFX/Bird Flap/Bird Flap 1.wav")
+@onready var flap2 = preload("res://Assets/SFX/Bird Flap/Bird Flap 2.wav")
+
+
+@onready var tweets = [
+	tweet1,
+	tweet2,
+	tweet3,
+	tweet4
+]
 
 @onready var mossyBites = [
 	mossySound1,
 	mossySound2,
-	mossySound3,
-	mossySound4,
-	mossySound5
+	mossySound3
+]
+
+@onready var chimes = [
+	chimeSound1,
+	chimeSound2,
+	chimeSound3
+]
+
+@onready var flaps = [
+	flap1,
+	flap2
 ]
 
 @onready var birddict = {
@@ -104,27 +127,26 @@ func Change_Bird(bird):
 	instance.Anim_Controller(instance.animPlayer)
 	visibility = instance.visibility
 	Check_Global()
-	Bird_Sounds()
 
 func Bird_Sounds():
-	for c in get_children():
-		if c.is_in_group("SFX"):
-			c.timer.stop()
-			c.queue_free()
-			
-	for c in get_children():
-		if c.is_in_group("Bird1"):
-			add_child(sounds1.instantiate())
-		if c.is_in_group("Bird2"):
-			add_child(sounds2.instantiate())
-		if c.is_in_group("Bird3"):
-			add_child(sounds3.instantiate())
-			
-	for c in get_children():
-		if c.is_in_group("SFX"):
-			c.timer.start()
+	var sound = Global.Random_List(tweets)
+	$TweetPlayer.stream = sound
+	$TweetPlayer.play()
 
 func Mossy_Bite():
 	var sound = Global.Random_List(mossyBites)
 	$MossyBite.stream = sound
 	$MossyBite.play()
+
+
+func Upgrade_Chime():
+	var sound = Global.Random_List(chimes)
+	$UpgradeChimeLayer.stream = sound
+	$UpgradeChimeBase.play()
+	$UpgradeChimeLayer.play()
+	
+	
+func Flap_Sound():
+	var sound = Global.Random_List(flaps)
+	$FlappySound.stream = sound
+	$FlappySound.play()

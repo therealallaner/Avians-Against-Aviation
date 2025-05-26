@@ -35,7 +35,7 @@ func _process(delta):
 	
 func SetBossWave(x):
 	if x:
-		bossWave = true
+		bossWave = false
 	else:
 		bossWave = false
 		DefaultCursor()
@@ -51,6 +51,8 @@ func DefaultCursorClick():
 	
 	
 func BossFightCursor():
+	pass
+	return
 	mainCursorOn = false
 	bossCursorOn = true
 	Input.set_custom_mouse_cursor(crosshair,0,crosshairVector)
