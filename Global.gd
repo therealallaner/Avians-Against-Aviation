@@ -5,13 +5,15 @@ extends Node
 var gameMenu = true
 var mouseHovering = false
 var currentDamage = 1
+var mossiesInStock = 0
+
 var masterVolume: float = 0.51
 var musicVolume: float = 0.51
 var sfxVolume: float = 0.51
-var mossiesInStock = 0
+var windVolume: float = 0.51
 
 var justOpened = true
-var demo = false
+var demo = true
 
 var currentBird = "blackBird1"
 var currentBird1 = "blackBird1"

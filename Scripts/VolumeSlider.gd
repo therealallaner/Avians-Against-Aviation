@@ -25,3 +25,5 @@ func On_Value_Changed(value: float) -> void:
 		Global.musicVolume = self.value
 	elif busName == "SFX":
 		Global.sfxVolume = self.value
+	elif busName == "Wind":
+		Global.windVolume = self.value

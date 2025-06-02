@@ -29,3 +29,4 @@ extends Resource
 @export var masterVolume: float
 @export var musicVolume: float
 @export var sfxVolume: float
+@export var windVolume: float

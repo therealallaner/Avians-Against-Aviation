@@ -3,11 +3,13 @@ extends Control
 @onready var master = $VBoxContainer/VBoxContainer2/Master
 @onready var music = $VBoxContainer/VBoxContainer/Music
 @onready var sfx = $VBoxContainer/VBoxContainer3/SFX
+@onready var wind = $VBoxContainer/VBoxContainer4/Wind
 
 func _ready():
 	master.value = Global.masterVolume
 	music.value = Global.musicVolume
 	sfx.value = Global.sfxVolume
+	wind.value = Global.windVolume
 	
 func _process(delta):
 	if self.position.x == 0:

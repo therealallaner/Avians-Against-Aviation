@@ -64,9 +64,13 @@ libraries = {
 
 [node name="UpgradeChimeBase" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_k0ooh")
+bus = &"SFX"
 
 [node name="UpgradeChimeLayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [node name="FlappySound" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [node name="TweetPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

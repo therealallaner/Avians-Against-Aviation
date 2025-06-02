@@ -75,6 +75,23 @@ layout_mode = 2
 value = 0.5
 busName = "SFX"
 
+[node name="spacer4" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Wind"
+horizontal_alignment = 1
+
+[node name="Wind" parent="VBoxContainer/VBoxContainer4" instance=ExtResource("2_3bu70")]
+layout_mode = 2
+value = 0.5
+busName = "Wind"
+
 [node name="spacer3" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
