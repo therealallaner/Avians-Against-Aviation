@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var flameAttack = preload("res://Scenes/Bosses/flame_attack.tscn")
+@onready var fireballMarker = $AnimatedSprite2D/FireballMarker
 
 var HP = 30 #30
 var isHovering = false
@@ -136,6 +138,12 @@ func Damage_Reaction():
 func Fireball_Attack():
 	sprite.play("breath fire")
 	sprite.offset.x = -100
+	Spawn_Fireball()
+	
+func Spawn_Fireball():
+	var fireball = flameAttack.instantiate()
+	get_parent().add_child(fireball)
+	fireball.position = fireballMarker.position
 
 
 func _on_area_2d_mouse_entered():
