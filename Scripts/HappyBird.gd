@@ -154,13 +154,26 @@ func Damage_Numbers(x,dmg=1,offset=Vector2(0,0)):
 	instance.Damage_Text(x,dmg)
 	if dmg == 1:
 		get_parent().get_parent().camera.Camera_Shake()
+	elif dmg == 3:
+		get_parent().get_parent().camera.Camera_Shake(true)
 
 func First_Time_Damage():
 	if !Global.tipTriggers['hasTakenDamage']:
 		player.get_parent().tipController.Damage_Taken_Tip()
 
 func Take_Heli_Damage(dmg):
-	player.HP -= dmg
-	Damage_Numbers(dmg)
+	if dmg <= player.ES:
+		player.ES -= dmg
+		Damage_Numbers(dmg,3)
+	elif dmg > player.ES:
+		dmg -= player.ES
+		if player.ES > 0:
+			Damage_Numbers(player.ES,3,Vector2(0,-50))
+		player.ES = 0
+		player.HP -= dmg
+		Damage_Numbers(dmg)
+		
 	Damage_Reaction()
 	First_Time_Damage()
+	
+	

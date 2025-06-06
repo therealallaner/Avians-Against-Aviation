@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0nsj0jr7xv3b"]
+[gd_scene load_steps=11 format=3 uid="uid://b0nsj0jr7xv3b"]
 
 [ext_resource type="PackedScene" uid="uid://dtybuqoci51ja" path="res://Scenes/Menus/upgrade.tscn" id="1_ogd8r"]
 [ext_resource type="Theme" uid="uid://cfldkix8shrqm" path="res://Assets/UI/UpdatedTheme.tres" id="1_ycx7o"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dl013uxd1tmo" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 1 v3.png" id="4_4ebev"]
 [ext_resource type="Texture2D" uid="uid://bgq1dwhgfel0q" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 2 v5.png" id="5_3ylit"]
 [ext_resource type="Texture2D" uid="uid://db51yp3hn5c3s" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 3 v4.png" id="6_md541"]
+[ext_resource type="Texture2D" uid="uid://ckydndo6fyt66" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 4 v1.png" id="7_47c1d"]
+[ext_resource type="Texture2D" uid="uid://dulntcqcuy07f" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 5 v1.png" id="8_7iwsp"]
 [ext_resource type="Theme" uid="uid://gmkgudu87lg5" path="res://Assets/UI/ToolTip Theme.tres" id="8_lryim"]
+[ext_resource type="Texture2D" uid="uid://dydkgjgloyyg5" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 6 v1.png" id="9_d2cgk"]
 
 [node name="UpgradeMenu" type="Control"]
 layout_mode = 3
@@ -78,14 +81,20 @@ Number = 3
 
 [node name="Vulture" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
+Icon = ExtResource("7_47c1d")
+Name = "Vulture"
 Number = 4
 
 [node name="CriticalHits" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
+Icon = ExtResource("8_7iwsp")
+Name = "Crit Hit"
 Number = 5
 
 [node name="MossyMagnet" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
+Icon = ExtResource("9_d2cgk")
+Name = "Mossy Magnet"
 Number = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]

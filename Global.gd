@@ -13,7 +13,7 @@ var sfxVolume: float = 0.51
 var windVolume: float = 0.51
 
 var justOpened = true
-var demo = true
+var demo = false
 
 var currentBird = "blackBird1"
 var currentBird1 = "blackBird1"

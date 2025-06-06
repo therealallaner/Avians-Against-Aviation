@@ -2,13 +2,18 @@ extends Camera2D
 
 
 @export var maxShake : float = 10.0
+@export var halfShake : float = 10.0
 @export var shakeFade : float = 10.0
 
 var shakeStrength : float = 0.0
 
 
-func Camera_Shake() -> void:
-	shakeStrength = maxShake
+func Camera_Shake(ES=false) -> void:
+	if ES:
+		shakeStrength = halfShake
+	else:
+		shakeStrength = maxShake
+	
 	
 	
 func _process(delta: float) -> void:
