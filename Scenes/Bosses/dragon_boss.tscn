@@ -53,10 +53,10 @@ animations = [{
 "texture": ExtResource("5_pl1hk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_wuxwp")
+"texture": ExtResource("6_ogb2x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ogb2x")
+"texture": ExtResource("7_wuxwp")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_rargm")
@@ -170,9 +170,7 @@ script = ExtResource("1_680qe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4pp52")
 animation = &"breath fire"
-
-[node name="FireballMarker" type="Marker2D" parent="AnimatedSprite2D"]
-position = Vector2(-269, 71)
+frame = 6
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -181,5 +179,9 @@ position = Vector2(-33, 50)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_cfxuu")
 
+[node name="FireballMarker" type="Marker2D" parent="."]
+position = Vector2(-273, 70)
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

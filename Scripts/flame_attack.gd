@@ -4,9 +4,10 @@ extends Node2D
 @onready var fireball = $Fireball
 @onready var explosion = $Explosion
 @onready var eShape = $Explosion/eArea/eCollision.shape
-var speed = -500
-var target : Vector2
 
+@export var speed = -500
+
+var target : float = 0.0
 
 var states = {
 	'flying': true,
@@ -24,49 +25,42 @@ var explosionAreaSize = {
 	7:0.0
 }
 
+
 func _ready():
-	fireball.show()
-	fireball.play("fireball")
-	explosion.hide()
-	
-	target = Vector2(384,position.y)
+	Ready_Up()
 
 
 func _process(delta):
-	
 	position.x += speed * delta
 	
 	Check_Target()
-	
+	Check_Anim()
 	Explosion_Size()
-	
-	Check_Explosion()
-	
-	
+
+func Ready_Up():
+	target = 384.0
+	fireball.show()
+	fireball.play("fireball")
+
 func Check_Target():
-	print('Checkig for Target')
 	if states['flying']:
-		print('flying')
-		if position <= target:
-			print('we have reached the target!')
-			speed = 0
+		if position.x <= target:
+			
 			fireball.hide()
+			speed = 0
 			explosion.show()
 			explosion.play("explosion")
+			
 			states['flying'] = false
 			states['exploding'] = true
-		
-		
-func Check_Explosion():
-	print('Checking for Explosion')
-	if states['exploding']:
-		print('It should be exploding rn.')
-		if explosion.animation == 'explosion':
-			if !explosion.is_playing():
-				print('explosion anim should be done now')
-				queue_free()
-			
-			
+
+func Check_Anim():
+	if !states['exploding']:
+		return
+	else:
+		if !explosion.is_playing():
+			queue_free()
+
 func Explosion_Size():
 	eShape.set_radius(explosionAreaSize[explosion.frame])
 
