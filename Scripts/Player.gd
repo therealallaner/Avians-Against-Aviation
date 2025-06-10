@@ -22,10 +22,6 @@ func _physics_process(delta):
 	
 	else:
 		velocity.y += gravity * delta
-		var children = get_children()
-		for b in children:
-			if b.is_in_group('Bird'):
-				b.Anim_Controller(b.animPlayer)
 
 	if !Global.mouseHovering:
 		if Input.is_action_just_pressed("Jump"):
