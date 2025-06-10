@@ -5,9 +5,11 @@ extends Node2D
 @onready var explosion = $Explosion
 @onready var eShape = $Explosion/eArea/eCollision.shape
 
-@export var speed = -500
+@export var speed = -1000
 
 var target : float = 0.0
+var fireBallDmg : int
+var explosionDmg : int
 
 var states = {
 	'flying': true,
@@ -41,6 +43,7 @@ func Ready_Up():
 	target = 384.0
 	fireball.show()
 	fireball.play("fireball")
+	explosion.hide()
 
 func Check_Target():
 	if states['flying']:

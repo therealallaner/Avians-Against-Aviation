@@ -9,6 +9,7 @@ var isHovering = false
 var spawnSpeed = 100
 var idleSpeed = 350
 var idleTimes = 1
+var attackDmg = 20
 var target: Vector2
 var bossReward = 150
 var states = {
@@ -42,9 +43,11 @@ func _process(delta):
 		states["Dead"] = true
 			
 	if states["Dead"]:
+			
 		if !sprite.is_playing():
-			get_parent().waveController.Next_Wave()
+			get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
 			get_parent().bossHPBar.hide()
+			Global.playerStats['Bosses Defeated'] += 1
 			queue_free()
 			
 
@@ -143,6 +146,8 @@ func Spawn_Fireball():
 	var instance = flameAttack.instantiate()
 	get_parent().add_child(instance)
 	instance.position = fireballMarker.global_position
+	instance.fireBallDmg = attackDmg
+	instance.explosionDmg = attackDmg/2
 
 
 func _on_area_2d_mouse_entered():

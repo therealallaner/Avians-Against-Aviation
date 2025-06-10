@@ -76,7 +76,7 @@ radius = 180.011
 [node name="FlameAttack" type="Node2D"]
 script = ExtResource("1_gqw20")
 
-[node name="Fireball" type="AnimatedSprite2D" parent="." groups=["Fireball"]]
+[node name="Fireball" type="AnimatedSprite2D" parent="." groups=["Fire", "Fireball"]]
 position = Vector2(62.71, 0)
 sprite_frames = SubResource("SpriteFrames_d2mrc")
 animation = &"fireball"
@@ -90,9 +90,10 @@ rotation = 1.5708
 [node name="fCollision" type="CollisionShape2D" parent="Fireball/fArea"]
 shape = SubResource("CapsuleShape2D_jwxe0")
 
-[node name="Explosion" type="AnimatedSprite2D" parent="." groups=["Explosion"]]
+[node name="Explosion" type="AnimatedSprite2D" parent="." groups=["Explosion", "Fire"]]
 visible = false
-scale = Vector2(0.5, 0.5)
+position = Vector2(3, -14)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_sv853")
 animation = &"explosion"
 

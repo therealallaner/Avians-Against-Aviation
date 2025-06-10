@@ -102,6 +102,39 @@ func _on_area_2d_area_entered(area):
 		Damage_Reaction()
 		First_Time_Damage()
 		
+	if area.get_parent().is_in_group('Fireball'):
+		var dmg = 0
+		dmg = area.get_parent().get_parent().fireBallDmg
+		if dmg <= player.ES:
+			player.ES -= dmg
+			Damage_Numbers(dmg,3)
+		elif dmg > player.ES:
+			dmg -= player.ES
+			if player.ES > 0:
+				Damage_Numbers(player.ES,3,Vector2(0,-50))
+			player.ES = 0
+			player.HP -= dmg
+			Damage_Numbers(dmg)
+				
+		Damage_Reaction()
+		First_Time_Damage()
+		
+	if area.get_parent().is_in_group('Explosion'):
+		var dmg = 0
+		dmg = area.get_parent().get_parent().explosionDmg
+		if dmg <= player.ES:
+			player.ES -= dmg
+			Damage_Numbers(dmg,3)
+		elif dmg > player.ES:
+			dmg -= player.ES
+			if player.ES > 0:
+				Damage_Numbers(player.ES,3,Vector2(0,-50))
+			player.ES = 0
+			player.HP -= dmg
+			Damage_Numbers(dmg)
+				
+		Damage_Reaction()
+		First_Time_Damage()
 		
 	if area.get_parent().is_in_group('Upgrades'):
 #		get_parent().get_parent().camera.Camera_Shake()

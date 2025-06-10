@@ -102,7 +102,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"breath fire",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -170,7 +170,8 @@ script = ExtResource("1_680qe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4pp52")
 animation = &"breath fire"
-frame = 6
+frame = 19
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
