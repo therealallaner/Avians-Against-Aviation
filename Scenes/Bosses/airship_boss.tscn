@@ -1,8 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://dit2kakqh2b8h"]
+[gd_scene load_steps=36 format=3 uid="uid://dit2kakqh2b8h"]
 
 [ext_resource type="Texture2D" uid="uid://dwnjofpbl2ie4" path="res://Assets/Airship/pngs/spritesheets/__airship_1_cannon_and_canopy_flying.png" id="1_llu6k"]
 [ext_resource type="Script" path="res://Scripts/airship_boss.gd" id="1_qa1sw"]
 [ext_resource type="PackedScene" uid="uid://dqoccsi4i1sg1" path="res://Scenes/Bosses/cannon.tscn" id="2_86ann"]
+[ext_resource type="Texture2D" uid="uid://bemrskxfpa07r" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_01.png" id="4_t48bo"]
+[ext_resource type="Texture2D" uid="uid://bu2ky8f14vh27" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_02.png" id="5_dfth3"]
+[ext_resource type="Texture2D" uid="uid://cmcr0g3nnxxrx" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_03.png" id="6_hftgl"]
+[ext_resource type="Texture2D" uid="uid://dygw1mrguk0ju" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_04.png" id="7_mh7fo"]
+[ext_resource type="Texture2D" uid="uid://do1544808abqy" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_05.png" id="8_tud8s"]
+[ext_resource type="Texture2D" uid="uid://dtkwrfjlg8fcy" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_06.png" id="9_olwjg"]
+[ext_resource type="Texture2D" uid="uid://ccgtjrgta4oe3" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_07.png" id="10_hrkp2"]
+[ext_resource type="Texture2D" uid="uid://csbjiigb336vk" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_08.png" id="11_jdgeq"]
+[ext_resource type="Texture2D" uid="uid://b7ngh37dcrno8" path="res://Assets/Dragon/Attacks/flame_wall_2/red/flame_02_red_05.png" id="12_a15em"]
+[ext_resource type="Texture2D" uid="uid://dqhj4k2l2fman" path="res://Assets/Dragon/Attacks/flame_wall_2/red/flame_02_red_06.png" id="13_jicf8"]
+[ext_resource type="Texture2D" uid="uid://bakov67lp872c" path="res://Assets/Dragon/Attacks/flame_wall_2/red/flame_02_red_07.png" id="14_gy1fs"]
+[ext_resource type="Texture2D" uid="uid://ceuxng5kun2cl" path="res://Assets/Dragon/Attacks/flame_wall_2/red/flame_02_red_08.png" id="15_5j6lq"]
+[ext_resource type="Texture2D" uid="uid://dbcboblkwllmu" path="res://Assets/Dragon/Attacks/flame_wall_2/red/flame_02_red_09.png" id="16_4xaif"]
+[ext_resource type="Texture2D" uid="uid://485d6pclghjh" path="res://Assets/Dragon/Attacks/flame_wall_2/red/flame_02_red_10.png" id="17_5yw2p"]
+[ext_resource type="Texture2D" uid="uid://be4pbis17b87k" path="res://Assets/Dragon/Attacks/flame_wall_2/red/flame_02_red_11.png" id="18_hnoci"]
+[ext_resource type="Texture2D" uid="uid://chu8q5b54lc3g" path="res://Assets/Juice/EXPLOSION_ANIMATION/1.png" id="19_3hm8s"]
+[ext_resource type="Texture2D" uid="uid://cj6nov3dsuvuu" path="res://Assets/Juice/EXPLOSION_ANIMATION/2.png" id="20_vu1hx"]
+[ext_resource type="Texture2D" uid="uid://cww0ggsm2a1qh" path="res://Assets/Juice/EXPLOSION_ANIMATION/3.png" id="21_j7nm5"]
+[ext_resource type="Texture2D" uid="uid://er511lp6w4bh" path="res://Assets/Juice/EXPLOSION_ANIMATION/4.png" id="22_bbo35"]
+[ext_resource type="Texture2D" uid="uid://cawmyk6mjoacb" path="res://Assets/Juice/EXPLOSION_ANIMATION/5.png" id="23_n50vk"]
+[ext_resource type="Texture2D" uid="uid://beevlm7w645po" path="res://Assets/Juice/EXPLOSION_ANIMATION/6.png" id="24_ds6k7"]
+[ext_resource type="Texture2D" uid="uid://dmt4o2vyskicj" path="res://Assets/Juice/EXPLOSION_ANIMATION/7.png" id="25_pyllx"]
+[ext_resource type="Texture2D" uid="uid://otejgi7o17o1" path="res://Assets/Juice/EXPLOSION_ANIMATION/8.png" id="26_5ngs0"]
+[ext_resource type="Texture2D" uid="uid://cgj40776u04xd" path="res://Assets/Juice/EXPLOSION_ANIMATION/9.png" id="27_prvgx"]
+[ext_resource type="Texture2D" uid="uid://cg2srm7p2tjgr" path="res://Assets/Juice/EXPLOSION_ANIMATION/10.png" id="28_o6yd5"]
 
 [sub_resource type="Animation" id="Animation_3ooqu"]
 length = 0.001
@@ -46,6 +71,105 @@ _data = {
 radius = 141.429
 height = 637.143
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_lahr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_t48bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dfth3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hftgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mh7fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tud8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_olwjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hrkp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jdgeq")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b3wnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_a15em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jicf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gy1fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5j6lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4xaif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5yw2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hnoci")
+}],
+"loop": true,
+"name": &"explosion",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qa1ej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_3hm8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vu1hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_j7nm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_bbo35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_n50vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ds6k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pyllx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5ngs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_prvgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_o6yd5")
+}],
+"loop": false,
+"name": &"deathExplosion",
+"speed": 10.0
+}]
+
 [node name="Airship Boss" type="CharacterBody2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_qa1sw")
@@ -54,6 +178,9 @@ script = ExtResource("1_qa1sw")
 position = Vector2(-211.429, 210)
 rotation = -1.58127
 scale = Vector2(0.35, 0.35)
+animation = &"firing"
+frame = 7
+frame_progress = 0.0220077
 
 [node name="Airship" type="Sprite2D" parent="."]
 texture = ExtResource("1_llu6k")
@@ -71,6 +198,68 @@ libraries = {
 position = Vector2(-21.4286, 117.143)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lvsx6")
+
+[node name="DeathAnimController" type="Node2D" parent="."]
+
+[node name="FireExplosion" type="AnimatedSprite2D" parent="DeathAnimController" groups=["Explosion1"]]
+visible = false
+position = Vector2(-108, 82)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lahr0")
+animation = &"explosion"
+frame = 7
+frame_progress = 1.0
+
+[node name="Flames" type="AnimatedSprite2D" parent="DeathAnimController" groups=["Explosion1", "Flames"]]
+visible = false
+z_index = -1
+position = Vector2(-178.571, 1.42857)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_b3wnf")
+animation = &"explosion"
+
+[node name="FireExplosion2" type="AnimatedSprite2D" parent="DeathAnimController" groups=["Explosion2"]]
+visible = false
+position = Vector2(74, 146)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lahr0")
+animation = &"explosion"
+frame = 7
+frame_progress = 1.0
+
+[node name="Flames2" type="AnimatedSprite2D" parent="DeathAnimController" groups=["Explosion2", "Flames"]]
+visible = false
+z_index = -1
+position = Vector2(116, -30)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_b3wnf")
+animation = &"explosion"
+
+[node name="FireExplosion3" type="AnimatedSprite2D" parent="DeathAnimController" groups=["Explosion3"]]
+visible = false
+position = Vector2(2, 52)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lahr0")
+animation = &"explosion"
+frame = 7
+frame_progress = 1.0
+
+[node name="Flames3" type="AnimatedSprite2D" parent="DeathAnimController" groups=["Explosion3", "Flames"]]
+visible = false
+z_index = -1
+position = Vector2(1, -33)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_b3wnf")
+animation = &"explosion"
+
+[node name="FullExplosion" type="AnimatedSprite2D" parent="DeathAnimController" groups=["FinalExplosion"]]
+visible = false
+position = Vector2(14, 88)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qa1ej")
+animation = &"deathExplosion"
+frame = 9
+frame_progress = 1.0
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

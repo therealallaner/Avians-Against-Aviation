@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 @onready var sprite = $"Airship Anim"
+@onready var deathController = $DeathAnimController
 
-var HP = 30 #30
+var HP = 40 #40
 var isHovering = false
 var spawnSpeed = 100
 var idleSpeed = 350
@@ -14,11 +15,19 @@ var states = {
 	"Attacking": false,
 	"Idling": false,
 	"Dying": false,
-	"Dead": false
+	"ExOne": false,
+	"ExTwo": false,
+	"ExThree": false,
+	"Final": false,
+	"Dead": false,
+	"Delete": false
 }
 
 func _ready():
 	sprite.play("flying")
+	$Cannon.play("firing")
+	for c in deathController.get_children():
+		c.hide()
 
 func _process(delta):
 	if !states["Spawning"]:
@@ -26,7 +35,17 @@ func _process(delta):
 			if Input.is_action_just_pressed("Jump"):
 				Global.Deal_Damage(self)
 				Damage_Reaction()
-				
+	
+	if HP <= 30:
+		$DeathAnimController/Flames.play("explosion")
+		$DeathAnimController/Flames.show()
+	if HP <= 20:
+		$DeathAnimController/Flames2.play("explosion")
+		$DeathAnimController/Flames2.show()
+	if HP <= 10:
+		$DeathAnimController/Flames3.play("explosion")
+		$DeathAnimController/Flames3.show()
+		
 	if HP <= 0:
 		if !states["Dead"]:
 			for s in states:
@@ -35,14 +54,63 @@ func _process(delta):
 		
 
 	if states["Dying"]:
-		sprite.play("dying")
+		print("It is reaching the dying state")
 		states["Dying"] = false
+		states["ExOne"] = true
 		states["Dead"] = true
-			
-	if states["Dead"]:
-		if !sprite.is_playing():
-			get_parent().waveController.Next_Wave()
+		
+	if states["ExOne"]:
+		print('It should be showing the first explosion')
+		$DeathAnimController/FireExplosion.play("explosion")
+		$DeathAnimController/FireExplosion.show()
+		get_tree().root.get_node("GameScene").camera.Boss_Shake()
+		$Cannon.stop()
+		states["ExOne"] = false
+		states["ExTwo"] = true
+	
+	
+	if states["ExTwo"]:
+		if !$DeathAnimController/FireExplosion.is_playing():
+			$DeathAnimController/FireExplosion.hide()
+			$DeathAnimController/FireExplosion2.play("explosion")
+			$DeathAnimController/FireExplosion2.show()
+			get_tree().root.get_node("GameScene").camera.Boss_Shake()
+			states["ExTwo"] = false
+			states["ExThree"] = true
+	
+	
+	if states["ExThree"]:
+		if !$DeathAnimController/FireExplosion2.is_playing():
+			$DeathAnimController/FireExplosion2.hide()
+			states["ExThree"] = false
+			states["Final"] = true
+			$DeathAnimController/FireExplosion3.play("explosion")
+			$DeathAnimController/FireExplosion3.show()
+			get_tree().root.get_node("GameScene").camera.Boss_Shake()
+		
+		
+	if states["Final"]:
+		if !$DeathAnimController/FireExplosion3.is_playing():
+			$DeathAnimController/FireExplosion3.hide()
+			$DeathAnimController/FullExplosion.play("deathExplosion")
+			$DeathAnimController/FullExplosion.show()
+			$Airship.hide()
+			$Cannon.hide()
+			HP = 100
+			$DeathAnimController/Flames.hide()
+			$DeathAnimController/Flames2.hide()
+			$DeathAnimController/Flames3.hide()
+			get_tree().root.get_node("GameScene").camera.Boss_Shake()
+			get_tree().root.get_node("GameScene").camera.Boss_Shake()
+			states["Final"] = false
+			states["Delete"] = true
+	
+	
+	if states["Delete"]:
+		if !$DeathAnimController/FullExplosion.is_playing():
+			get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
 			get_parent().bossHPBar.hide()
+			Global.playerStats['Bosses Defeated'] += 1
 			queue_free()
 			
 
@@ -58,7 +126,7 @@ func _physics_process(delta):
 			return
 		velocity = newPos * spawnSpeed
 		
-	if states["Idling"]:
+	elif states["Idling"]:
 		var newPos = (target-position).normalized()
 		var distance = (target - position).length()
 		if distance < 10:
@@ -73,7 +141,7 @@ func _physics_process(delta):
 			return
 		velocity = newPos * idleSpeed
 		
-	if states["Attacking"]:
+	elif states["Attacking"]:
 		velocity = Vector2(0,0)
 		states["Attacking"] = false
 		await(get_tree().create_timer(3).timeout)
@@ -82,6 +150,10 @@ func _physics_process(delta):
 		states["Swarming"] = false
 		Randomize_Next_State(3)
 		
+	
+	else:
+		velocity = Vector2(0,0) * 0
+	
 	move_and_slide()
 	
 	

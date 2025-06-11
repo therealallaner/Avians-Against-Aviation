@@ -62,3 +62,6 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_lha63")
 animation = &"idle"
 offset = Vector2(-192, 0)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-237.875, 3.535)
