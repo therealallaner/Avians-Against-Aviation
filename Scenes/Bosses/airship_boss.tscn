@@ -176,13 +176,18 @@ script = ExtResource("1_qa1sw")
 
 [node name="Cannon" parent="." instance=ExtResource("2_86ann")]
 position = Vector2(-211.429, 210)
-rotation = 2.47837
+rotation = 3.14159
 scale = Vector2(0.35, 0.35)
 animation = &"firing"
-frame = 7
-frame_progress = 0.0220077
+frame_progress = 0.606312
 offset = Vector2(192, 0)
 flip_h = true
+
+[node name="CannonBallMarker" type="Marker2D" parent="Cannon"]
+position = Vector2(238.217, 5.34)
+
+[node name="TargetMarker" type="Marker2D" parent="Cannon"]
+position = Vector2(10000, 44.415)
 
 [node name="Airship" type="Sprite2D" parent="."]
 texture = ExtResource("1_llu6k")
@@ -263,5 +268,6 @@ animation = &"deathExplosion"
 frame = 9
 frame_progress = 1.0
 
+[connection signal="animation_finished" from="Cannon" to="." method="_on_cannon_animation_finished"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

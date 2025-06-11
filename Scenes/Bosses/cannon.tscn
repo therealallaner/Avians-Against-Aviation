@@ -45,7 +45,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_whdpx")
 }],
-"loop": true,
+"loop": false,
 "name": &"firing",
 "speed": 15.0
 }, {
@@ -62,6 +62,3 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_lha63")
 animation = &"idle"
 offset = Vector2(-192, 0)
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(-237.875, 3.535)

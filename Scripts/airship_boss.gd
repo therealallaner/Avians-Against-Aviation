@@ -1,8 +1,16 @@
 extends CharacterBody2D
 
+
 @onready var sprite = $"Airship Anim"
 @onready var deathController = $DeathAnimController
+@onready var cannon = $Cannon
+@onready var cannonBallMarker = $Cannon/CannonBallMarker
+@onready var cannonBallTarget = $Cannon/TargetMarker
+@onready var cannonBall = preload("res://Scenes/Bosses/cannon_ball.tscn")
 
+
+var gameScene : Node2D
+var cannonTarget : Vector2
 var HP = 40 #40
 var isHovering = false
 var spawnSpeed = 100
@@ -25,14 +33,16 @@ var states = {
 
 func _ready():
 	sprite.play("flying")
-	$Cannon.play("firing")
+	cannon.play("idle")
 	for c in deathController.get_children():
 		c.hide()
+	
+	
+	gameScene = get_tree().root.get_node("GameScene")
 
 func _process(delta):
 	
-	var gameScene = get_tree().root.get_node("GameScene")
-	var cannonTarget = gameScene.player.position
+	cannonTarget = gameScene.player.position
 	$Cannon.look_at(cannonTarget)
 	
 	if !states["Spawning"]:
@@ -195,7 +205,12 @@ func Damage_Reaction():
 func Cannon_Attack():
 	pass
 #	Fire the Cannon
-#	Maybe add different things the airship can shoot out?
+	cannon.play("firing")
+	await(get_tree().create_timer(.25).timeout)
+	var instance = cannonBall.instantiate()
+	get_parent().add_child(instance)
+	instance.position = cannonBallMarker.global_position
+	instance.target = cannonBallTarget.global_position
 
 
 
@@ -205,3 +220,8 @@ func _on_area_2d_mouse_entered():
 
 func _on_area_2d_mouse_exited():
 	isHovering = false
+
+
+func _on_cannon_animation_finished():
+	if cannon.animation == "firing":
+		cannon.play("idle")

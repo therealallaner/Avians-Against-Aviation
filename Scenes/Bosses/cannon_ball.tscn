@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhu3c87l0r1gh"]
+
+[ext_resource type="Script" path="res://Scripts/cannon_ball.gd" id="1_uhate"]
+[ext_resource type="Texture2D" uid="uid://dr6ao04eq6yh6" path="res://Assets/Airship/pngs/animatable_parts/cannon_ball.png" id="2_xsf6a"]
+
+[node name="CannonBall" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_uhate")
+speed = 2500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xsf6a")
