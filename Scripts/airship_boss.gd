@@ -30,11 +30,17 @@ func _ready():
 		c.hide()
 
 func _process(delta):
+	
+	var gameScene = get_tree().root.get_node("GameScene")
+	var cannonTarget = gameScene.player.position
+	$Cannon.look_at(cannonTarget)
+	
 	if !states["Spawning"]:
 		if isHovering:
 			if Input.is_action_just_pressed("Jump"):
 				Global.Deal_Damage(self)
 				Damage_Reaction()
+				
 	
 	if HP <= 30:
 		$DeathAnimController/Flames.play("explosion")
@@ -74,7 +80,7 @@ func _process(delta):
 			$DeathAnimController/FireExplosion.hide()
 			$DeathAnimController/FireExplosion2.play("explosion")
 			$DeathAnimController/FireExplosion2.show()
-			get_tree().root.get_node("GameScene").camera.Boss_Shake()
+			gameScene.camera.Boss_Shake()
 			states["ExTwo"] = false
 			states["ExThree"] = true
 	
@@ -86,7 +92,7 @@ func _process(delta):
 			states["Final"] = true
 			$DeathAnimController/FireExplosion3.play("explosion")
 			$DeathAnimController/FireExplosion3.show()
-			get_tree().root.get_node("GameScene").camera.Boss_Shake()
+			gameScene.camera.Boss_Shake()
 		
 		
 	if states["Final"]:
@@ -100,8 +106,8 @@ func _process(delta):
 			$DeathAnimController/Flames.hide()
 			$DeathAnimController/Flames2.hide()
 			$DeathAnimController/Flames3.hide()
-			get_tree().root.get_node("GameScene").camera.Boss_Shake()
-			get_tree().root.get_node("GameScene").camera.Boss_Shake()
+			gameScene.camera.Boss_Shake()
+			gameScene.camera.Boss_Shake()
 			states["Final"] = false
 			states["Delete"] = true
 	
@@ -112,7 +118,7 @@ func _process(delta):
 			get_parent().bossHPBar.hide()
 			Global.playerStats['Bosses Defeated'] += 1
 			queue_free()
-			
+	
 
 func _physics_process(delta):
 	if states["Spawning"]:
@@ -121,7 +127,7 @@ func _physics_process(delta):
 		if distance < 10:
 			states["Spawning"] = false
 			states["Idling"] = true
-			target = Vector2(position.x,randf_range(50,1000))
+			target = Vector2(position.x,randf_range(100,900))
 			idleTimes = snapped(randf_range(1,5),1)
 			return
 		velocity = newPos * spawnSpeed
@@ -135,7 +141,7 @@ func _physics_process(delta):
 				states["Idling"] = false
 				Randomize_Next_State(1)
 				return
-			target = Vector2(position.x,randf_range(50,1000))
+			target = Vector2(position.x,randf_range(100,900))
 #			states["Idling"] = false
 #			target = Vector2(position.x,position.y)
 			return
@@ -144,6 +150,7 @@ func _physics_process(delta):
 	elif states["Attacking"]:
 		velocity = Vector2(0,0)
 		states["Attacking"] = false
+		Cannon_Attack()
 		await(get_tree().create_timer(3).timeout)
 		idleTimes = snapped(randf_range(1,5),1)
 		Randomize_Next_State(2)
@@ -184,6 +191,13 @@ func Damage_Reaction():
 	$Airship.self_modulate = Color(1,0,.29,1)
 	await(get_tree().create_timer(.25).timeout)
 	$Airship.self_modulate = Color(1,1,1,1)
+
+func Cannon_Attack():
+	pass
+#	Fire the Cannon
+#	Maybe add different things the airship can shoot out?
+
+
 
 func _on_area_2d_mouse_entered():
 	isHovering = true

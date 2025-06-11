@@ -176,11 +176,13 @@ script = ExtResource("1_qa1sw")
 
 [node name="Cannon" parent="." instance=ExtResource("2_86ann")]
 position = Vector2(-211.429, 210)
-rotation = -1.58127
+rotation = 2.47837
 scale = Vector2(0.35, 0.35)
 animation = &"firing"
 frame = 7
 frame_progress = 0.0220077
+offset = Vector2(192, 0)
+flip_h = true
 
 [node name="Airship" type="Sprite2D" parent="."]
 texture = ExtResource("1_llu6k")
