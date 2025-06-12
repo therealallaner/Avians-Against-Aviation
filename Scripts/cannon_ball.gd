@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed : int = 500
+@export var damage : int = 10
 
 var target : Vector2 = Vector2(384,500)
 

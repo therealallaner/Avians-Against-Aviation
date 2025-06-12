@@ -186,8 +186,27 @@ flip_h = true
 [node name="CannonBallMarker" type="Marker2D" parent="Cannon"]
 position = Vector2(238.217, 5.34)
 
-[node name="TargetMarker" type="Marker2D" parent="Cannon"]
+[node name="TargetContainer" type="Node2D" parent="Cannon"]
+
+[node name="TargetMarker" type="Marker2D" parent="Cannon/TargetContainer"]
 position = Vector2(10000, 44.415)
+scale = Vector2(1, 1)
+
+[node name="TargetMarker2" type="Marker2D" parent="Cannon/TargetContainer"]
+position = Vector2(10000, 244.415)
+scale = Vector2(1, 1)
+
+[node name="TargetMarker3" type="Marker2D" parent="Cannon/TargetContainer"]
+position = Vector2(10000, -156)
+scale = Vector2(1, 1)
+
+[node name="TargetMarker4" type="Marker2D" parent="Cannon/TargetContainer"]
+position = Vector2(10000, 444.415)
+scale = Vector2(1, 1)
+
+[node name="TargetMarker5" type="Marker2D" parent="Cannon/TargetContainer"]
+position = Vector2(10000, -356)
+scale = Vector2(1, 1)
 
 [node name="Airship" type="Sprite2D" parent="."]
 texture = ExtResource("1_llu6k")

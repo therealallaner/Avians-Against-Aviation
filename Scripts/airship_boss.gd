@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var deathController = $DeathAnimController
 @onready var cannon = $Cannon
 @onready var cannonBallMarker = $Cannon/CannonBallMarker
-@onready var cannonBallTarget = $Cannon/TargetMarker
+@onready var cannonBallTarget = $Cannon/TargetContainer.get_children()
 @onready var cannonBall = preload("res://Scenes/Bosses/cannon_ball.tscn")
 
 
@@ -149,7 +149,7 @@ func _physics_process(delta):
 			idleTimes -= 1
 			if idleTimes <= 0:
 				states["Idling"] = false
-				Randomize_Next_State(1)
+				Randomize_Next_State()
 				return
 			target = Vector2(position.x,randf_range(100,900))
 #			states["Idling"] = false
@@ -161,12 +161,10 @@ func _physics_process(delta):
 		velocity = Vector2(0,0)
 		states["Attacking"] = false
 		Cannon_Attack()
-		await(get_tree().create_timer(3).timeout)
+		await(get_tree().create_timer(.25).timeout)
 		idleTimes = snapped(randf_range(1,5),1)
-		Randomize_Next_State(2)
-		states["Swarming"] = false
-		Randomize_Next_State(3)
-		
+		Randomize_Next_State()
+	
 	
 	else:
 		velocity = Vector2(0,0) * 0
@@ -176,7 +174,7 @@ func _physics_process(delta):
 	
 
 
-func Randomize_Next_State(x):
+func Randomize_Next_State(x=3):
 	var r = randf()
 	if x == 1:
 		if r >= .5:
@@ -203,14 +201,13 @@ func Damage_Reaction():
 	$Airship.self_modulate = Color(1,1,1,1)
 
 func Cannon_Attack():
-	pass
-#	Fire the Cannon
 	cannon.play("firing")
 	await(get_tree().create_timer(.25).timeout)
 	var instance = cannonBall.instantiate()
 	get_parent().add_child(instance)
 	instance.position = cannonBallMarker.global_position
-	instance.target = cannonBallTarget.global_position
+	instance.target = Global.Random_List(cannonBallTarget).global_position
+#	instance.target = cannonBallTarget.global_position
 
 
 
