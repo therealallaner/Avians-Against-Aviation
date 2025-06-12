@@ -6,7 +6,7 @@ extends Happy_Birds
 @onready var damageNumberText = preload("res://Scenes/Main/damage_numbers.tscn")
 
 
-var offScreen = false
+var offScreen = true
 var offScreenDamage = .5
 
 
@@ -51,6 +51,8 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("Plane"):
 		if Engine.time_scale == 1:
 			dmg = body.damage
+			if UpgradeText.vultureActive:
+				dmg = 0
 			if dmg <= player.ES:
 				player.ES -= dmg
 				Damage_Numbers(dmg,3)
@@ -81,13 +83,16 @@ func _on_area_2d_area_entered(area):
 			
 			
 	if area.get_parent().is_in_group("Poison Mossy"):
-		Damage_Over_Time()
+		if !UpgradeText.vultureActive:
+			Damage_Over_Time()
 		area.get_parent().queue_free()
 		get_parent().Mossy_Bite()
 
 	if area.get_parent().is_in_group("Torpedo"):
 		var dmg = 0
-		dmg = area.get_parent().damage 
+		dmg = area.get_parent().damage
+		if UpgradeText.vultureActive:
+			dmg = 0
 		if dmg <= player.ES:
 			player.ES -= dmg
 			Damage_Numbers(dmg,3)
@@ -105,6 +110,8 @@ func _on_area_2d_area_entered(area):
 	if area.get_parent().is_in_group('Fireball'):
 		var dmg = 0
 		dmg = area.get_parent().get_parent().fireBallDmg
+		if UpgradeText.vultureActive:
+			dmg = 0
 		if dmg <= player.ES:
 			player.ES -= dmg
 			Damage_Numbers(dmg,3)
@@ -122,6 +129,8 @@ func _on_area_2d_area_entered(area):
 	if area.get_parent().is_in_group('Explosion'):
 		var dmg = 0
 		dmg = area.get_parent().get_parent().explosionDmg
+		if UpgradeText.vultureActive:
+			dmg = 0
 		if dmg <= player.ES:
 			player.ES -= dmg
 			Damage_Numbers(dmg,3)
@@ -139,6 +148,8 @@ func _on_area_2d_area_entered(area):
 	if area.get_parent().is_in_group('cannonball'):
 		var dmg = 0
 		dmg = area.get_parent().damage
+		if UpgradeText.vultureActive:
+			dmg = 0
 		if dmg <= player.ES:
 			player.ES -= dmg
 			Damage_Numbers(dmg,3)

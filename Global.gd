@@ -102,6 +102,7 @@ func Game_Over():
 	Engine.time_scale = .15
 	UpgradeText.scoreMultiplier = 1
 	UpgradeText.healsOverTime = false
+	UpgradeText.vultureActive = false
 	
 func Deal_Damage(b):
 	var gameScene = get_tree().root.get_node("GameScene")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://g4hhy281c64l"]
 
-[ext_resource type="Texture2D" uid="uid://dda5rqx03bg5a" path="res://Assets/BirdSprites/Vulture/spritesheets/__vulture_face_two_flying.png" id="1_sjlfm"]
+[ext_resource type="Texture2D" uid="uid://bgtpujgccbo2d" path="res://Assets/BirdSprites/Vulture/spritesheets/__vulture_face_three_flying.png" id="1_sf0eh"]
 [ext_resource type="Script" path="res://Scripts/HappyBird.gd" id="2_1abjo"]
 
 [sub_resource type="Animation" id="Animation_xqdg0"]
@@ -43,11 +43,12 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bdnc"]
 radius = 69.0139
-height = 281.586
+height = 464.155
 
 [node name="Vulture" type="Sprite2D" groups=["Bird", "Vulture"]]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_sjlfm")
+rotation = -0.23911
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_sf0eh")
 flip_h = true
 hframes = 4
 vframes = 4
@@ -63,8 +64,8 @@ libraries = {
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(35, 10)
-rotation = 1.4748
+position = Vector2(32.559, 9.9956)
+rotation = 1.83434
 shape = SubResource("CapsuleShape2D_4bdnc")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

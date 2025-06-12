@@ -14,5 +14,5 @@ func _on_timer_timeout():
 	if upgradeNumber == 3:
 		UpgradeText.healsOverTime = false
 	if upgradeNumber == 4:
-		UpgradeText.Vulture()
+		UpgradeText.Vulture(true)
 	queue_free()

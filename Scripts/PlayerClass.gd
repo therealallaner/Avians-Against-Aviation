@@ -125,11 +125,15 @@ func Change_Bird(bird,vulture=false):
 			c.queue_free()
 	var instance = bird.instantiate()
 	add_child(instance)
-	self.global_position = defaultPos
 	instance.Anim_Controller(instance.animPlayer)
 	visibility = instance.visibility
+	visibility.show()
 	if !vulture:
 		Check_Global()
+		self.global_position = defaultPos
+		visibility.hide()
+	
+	
 
 func Bird_Sounds():
 	var sound = Global.Random_List(tweets)

@@ -209,17 +209,17 @@ func Better_Heals():
 	GUI_Visualizer(upgradeImage3,upgradeProgress3,upgradeBG3,3)
 	
 	
-func Vulture():
-	if vultureActive:
+func Vulture(timeout=false):
+	if timeout:
 		var gameScene = get_tree().root.get_node("GameScene")
-		gameScene.player.Change_Bird(gameScene.player.currentBird)
+		gameScene.player.Change_Bird(gameScene.player.currentBird,true)
 		vultureActive = false
 	else:
 		var gameScene = get_tree().root.get_node("GameScene")
 		gameScene.player.Change_Bird(gameScene.player.vulture,true)
-		vultureActive = true
 		Visualiser_Checker(4)
 		GUI_Visualizer(upgradeImage4,upgradeProgress4,upgradeBG4,4)
+		vultureActive = true
 	
 func Crit_Hit():
 	Global.currentCrit += .05
