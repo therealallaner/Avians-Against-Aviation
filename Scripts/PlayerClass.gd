@@ -30,6 +30,8 @@ class_name Player
 @onready var bird2 = [blackBird2,greenBird2,yellowBird2,pinkBird2,redBird2,blueBird2,purpleBird2]
 @onready var bird3 = [blackBird3,greenBird3,yellowBird3,pinkBird3,redBird3,blueBird3,purpleBird3]
 
+@onready var vulture = preload("res://Scenes/Players/Sprites/vulture.tscn")
+
 @onready var tweet1 = preload("res://Assets/SFX/Bird Tweets/Tweet 1.wav")
 @onready var tweet2 = preload("res://Assets/SFX/Bird Tweets/Tweet 2.wav")
 @onready var tweet3 = preload("res://Assets/SFX/Bird Tweets/Tweet 3.wav")
@@ -117,7 +119,7 @@ func Check_Global():
 	else:
 		currentBird = birddict["blackBird1"]
 	
-func Change_Bird(bird):
+func Change_Bird(bird,vulture=false):
 	for c in get_children():
 		if c.is_in_group("Bird"):
 			c.queue_free()
@@ -126,7 +128,8 @@ func Change_Bird(bird):
 	self.global_position = defaultPos
 	instance.Anim_Controller(instance.animPlayer)
 	visibility = instance.visibility
-	Check_Global()
+	if !vulture:
+		Check_Global()
 
 func Bird_Sounds():
 	var sound = Global.Random_List(tweets)
@@ -150,3 +153,4 @@ func Flap_Sound():
 	var sound = Global.Random_List(flaps)
 	$FlappySound.stream = sound
 	$FlappySound.play()
+	

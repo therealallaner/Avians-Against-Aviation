@@ -7,8 +7,7 @@ const jumpVelocity = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var HP : float = 100.0
 var ES = 0
-var damage = 1
-var critChance : float = 0.05
+var vultureActive : bool = false
 
 
 func _process(delta):

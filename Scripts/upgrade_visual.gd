@@ -13,4 +13,6 @@ func _on_timer_timeout():
 		UpgradeText.scoreMultiplier = 1
 	if upgradeNumber == 3:
 		UpgradeText.healsOverTime = false
+	if upgradeNumber == 4:
+		UpgradeText.Vulture()
 	queue_free()

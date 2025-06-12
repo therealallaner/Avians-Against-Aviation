@@ -8,8 +8,13 @@ extends Node
 @onready var upgradeProgress3 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 3/Upgrade 3 Progress v1.png")
 @onready var upgradeBG3 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 3/Upgrade 3 BG v1.png")
 
+@onready var upgradeImage4 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 4/Upgrade 4 Visual.png")
+@onready var upgradeProgress4 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 4/Upgrade 4 Progress.png")
+@onready var upgradeBG4 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 4/Upgrade 4 BG.png")
+
 var scoreMultiplier = 1
 var healsOverTime = false
+var vultureActive = false
 
 var upgradeCost = {
 	1: 50,
@@ -205,7 +210,16 @@ func Better_Heals():
 	
 	
 func Vulture():
-	print('Vulture Upgrade Working')
+	if vultureActive:
+		var gameScene = get_tree().root.get_node("GameScene")
+		gameScene.player.Change_Bird(gameScene.player.currentBird)
+		vultureActive = false
+	else:
+		var gameScene = get_tree().root.get_node("GameScene")
+		gameScene.player.Change_Bird(gameScene.player.vulture,true)
+		vultureActive = true
+		Visualiser_Checker(4)
+		GUI_Visualizer(upgradeImage4,upgradeProgress4,upgradeBG4,4)
 	
 func Crit_Hit():
 	Global.currentCrit += .05
