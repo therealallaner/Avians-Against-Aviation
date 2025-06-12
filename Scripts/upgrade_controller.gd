@@ -3,6 +3,9 @@ extends Node
 @onready var upgrade1 = preload("res://Scenes/Main/score_multiplier.tscn")
 @onready var upgrade2 = preload("res://Scenes/Main/energy_shield.tscn")
 @onready var upgrade3 = preload("res://Scenes/Main/better_heals.tscn")
+@onready var upgrade4 = preload("res://Scenes/Main/vulture.tscn")
+@onready var upgrade5 = preload("res://Scenes/Main/crit_hit.tscn")
+@onready var upgrade6 = preload("res://Scenes/Main/mossy_magnet.tscn")
 
 
 @onready var upgrades = [
@@ -45,8 +48,8 @@ func Upgrade_Availability():
 		return
 		
 	if Global.upgrades['Vulture'] >= 1:
-		pass
+		upgrades.append(upgrade4)
 	if Global.upgrades['Crit Hit'] >= 1:
-		pass
+		upgrades.append(upgrade5)
 	if Global.upgrades['Mossy Magnet'] >= 1:
-		pass
+		upgrades.append(upgrade6)

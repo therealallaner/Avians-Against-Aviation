@@ -170,6 +170,15 @@ func Upgrade_Activator(x):
 	elif y == 3:
 		Better_Heals()
 		
+	elif y == 4:
+		Vulture()
+		
+	elif y == 5:
+		Crit_Hit()
+		
+	elif y == 6:
+		Mossy_Magnet()
+		
 	else:
 		pass
 		
@@ -194,6 +203,15 @@ func Better_Heals():
 	Visualiser_Checker(3)
 	GUI_Visualizer(upgradeImage3,upgradeProgress3,upgradeBG3,3)
 	
+	
+func Vulture():
+	print('Vulture Upgrade Working')
+	
+func Crit_Hit():
+	Global.currentCrit += .05
+	
+func Mossy_Magnet():
+	print('Magnet Upgrade Working')
 	
 	
 func Visualiser_Checker(x):

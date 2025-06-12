@@ -7,8 +7,6 @@ extends CharacterBody2D
 var target : Vector2 = Vector2(384,500)
 
 
-func _ready():
-	print(target)
 
 func _physics_process(delta):
 	var newPos = (target-position).normalized()

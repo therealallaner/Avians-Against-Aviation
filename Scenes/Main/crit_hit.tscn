@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cucl5whnbhxbo"]
+
+[ext_resource type="Texture2D" uid="uid://dulntcqcuy07f" path="res://Assets/Upgrade Assets/Upgrade Icons/Upgrade 5 v1.png" id="1_yt8j5"]
+[ext_resource type="Script" path="res://Scripts/score_multiplier.gd" id="2_f5ju6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fwt8"]
+size = Vector2(700, 810)
+
+[node name="EnergyShield" type="Sprite2D" groups=["Energy Shield", "Upgrades"]]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_yt8j5")
+script = ExtResource("2_f5ju6")
+upgradeNumber = 5
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="JuiceTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.66893e-05, 4.99998)
+shape = SubResource("RectangleShape2D_7fwt8")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="JuiceTimer" to="." method="_on_juice_timer_timeout"]

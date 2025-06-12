@@ -70,13 +70,11 @@ func _process(delta):
 		
 
 	if states["Dying"]:
-		print("It is reaching the dying state")
 		states["Dying"] = false
 		states["ExOne"] = true
 		states["Dead"] = true
 		
 	if states["ExOne"]:
-		print('It should be showing the first explosion')
 		$DeathAnimController/FireExplosion.play("explosion")
 		$DeathAnimController/FireExplosion.show()
 		get_tree().root.get_node("GameScene").camera.Boss_Shake()
