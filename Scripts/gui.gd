@@ -47,4 +47,8 @@ func Update_Upgrade_Visuals(pic,pro,bg,number,timed=true):
 	instance.texture_progress = pro
 	instance.texture_under = bg
 	instance.upgradeNumber = number
-	instance.timer.autostart = timed
+	if number == 4:
+		instance.timer.start(UpgradeText.vultureTime[Global.upgrades['Vulture']])
+		instance.max_value = UpgradeText.vultureTime[Global.upgrades['Vulture']] * 100
+	else:
+		instance.timer.start()

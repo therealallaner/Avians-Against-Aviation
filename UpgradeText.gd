@@ -135,6 +135,30 @@ var betterHealsLevelsTime = {
 	20: 5
 }
 
+var vultureTime = {
+	0: 0.0,
+	1: 5.0,
+	2: 5.5,
+	3: 6.0,
+	4: 6.5,
+	5: 7.0,
+	6: 8.0,
+	7: 8.5,
+	8: 9.0,
+	9: 9.5,
+	10: 10.0,
+	11: 10.5,
+	12: 11.0,
+	13: 11.5,
+	14: 12.0,
+	15: 12.5,
+	16: 13.0,
+	17: 13.5,
+	18: 14.0,
+	19: 14.5,
+	20: 15.0
+}
+
 func Upgrade_Text(Name):
 	
 	var upgradeText = {
@@ -154,10 +178,14 @@ func Upgrade_Text(Name):
 		per second for ' + str(betterHealsLevelsTime[int(Global.upgrades['Better Heals'])]) + ' second(s)
 		per mosquito at level ' + str(Global.upgrades['Better Heals']) + '.',
 
-	'Vulture': 'Blank',
-	'Crit Hit': 'Blank',
+	'Vulture': 
+		'You become an invincible Vulture 
+		for ' + str(vultureTime[int(Global.upgrades['Vulture'])]) + ' seconds at level ' + str(Global.upgrades['Vulture']) + '.',
+
+	'Crit Hit': 'Your critical hit chance is ',
+
 	'Mossy Magnet': 'Blank',
-	
+
 	'Coming Soon': 'This power-up will be unlocked in the full game.'
 	}
 	
