@@ -5,7 +5,7 @@ extends Resource
 @export var highScore: int
 @export var lifetimeScore: int
 @export var lifetimeMossies: int
-#@export var critChance: float
+@export var critChance: float
 @export var mossiesInStock: int
 @export var mossiesInStock1: int
 @export var mossiesInStock2: int

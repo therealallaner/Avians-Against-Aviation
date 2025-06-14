@@ -5,7 +5,7 @@ extends Node
 var gameMenu = true
 var mouseHovering = false
 var currentDamage = 1
-var currentCrit : float = 0.05
+var critChance : float = 0.00
 var mossiesInStock = 0
 
 var masterVolume: float = 0.51
@@ -108,8 +108,11 @@ func Deal_Damage(b):
 	var gameScene = get_tree().root.get_node("GameScene")
 	var damage = currentDamage
 	var x = randf()
-	if x <= currentCrit:
+	if x <= critChance:
 		damage = currentDamage*2
+		print('Critical Hit!')
+	else:
+		print('Normal Hit...')
 	b.HP -= damage
 	var hp = b.HP
 	gameScene.GUI.Update_Boss_HP(hp)

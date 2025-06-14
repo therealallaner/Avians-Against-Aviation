@@ -49,7 +49,5 @@ func Upgrade_Availability():
 		
 	if Global.upgrades['Vulture'] >= 1:
 		upgrades.append(upgrade4)
-	if Global.upgrades['Crit Hit'] >= 1:
-		upgrades.append(upgrade5)
 	if Global.upgrades['Mossy Magnet'] >= 1:
 		upgrades.append(upgrade6)

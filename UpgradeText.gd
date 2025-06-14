@@ -159,6 +159,30 @@ var vultureTime = {
 	20: 15.0
 }
 
+var critChance = {
+	0: 0.0,
+	1: 0.01,
+	2: 0.02,
+	3: 0.03,
+	4: 0.04,
+	5: 0.05,
+	6: 0.06,
+	7: 0.07,
+	8: 0.08,
+	9: 0.09,
+	10: 0.11,
+	11: 0.11,
+	12: 0.12,
+	13: 0.13,
+	14: 0.14,
+	15: 0.15,
+	16: 0.16,
+	17: 0.17,
+	18: 0.18,
+	19: 0.19,
+	20: 0.20
+}
+
 func Upgrade_Text(Name):
 	
 	var upgradeText = {
@@ -206,9 +230,6 @@ func Upgrade_Activator(x):
 	elif y == 4:
 		Vulture()
 		
-	elif y == 5:
-		Crit_Hit()
-		
 	elif y == 6:
 		Mossy_Magnet()
 		
@@ -249,8 +270,6 @@ func Vulture(timeout=false):
 		GUI_Visualizer(upgradeImage4,upgradeProgress4,upgradeBG4,4)
 		vultureActive = true
 	
-func Crit_Hit():
-	Global.currentCrit += .05
 	
 func Mossy_Magnet():
 	print('Magnet Upgrade Working')

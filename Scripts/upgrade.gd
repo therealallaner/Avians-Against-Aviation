@@ -86,3 +86,5 @@ func upgrade():
 	
 	var gameScene = get_tree().root.get_node("GameScene")
 	gameScene.waveController.upgradeController.Upgrade_Availability()
+	if Number == 5:
+		Global.critChance += .01

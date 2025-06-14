@@ -13,6 +13,7 @@ extends Node2D
 @onready var camera = $CameraShake
 
 
+
 var test = "Test"
 
 var score = 0
@@ -22,4 +23,5 @@ var mossies = 0
 func _ready():
 	Engine.time_scale = 1
 	gameOver.hide()
+	
 	

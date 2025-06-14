@@ -14,7 +14,7 @@ func Save_Game():
 #	savedGame.highScore = Global.playerStats["High Score"]
 #	savedGame.lifetimeScore = Global.playerStats["Lifetime Score"]
 #	savedGame.lifetimeMossies = Global.playerStats["Mosquitos Eaten"]
-	#savedGame.critChance = Global.playerStats["Crit Chance"]
+	
 	
 	savedGame.mossiesInStock = Global.mossiesInStock
 	
@@ -56,8 +56,9 @@ func Load_Game():
 #		Global.playerStats["Mosquitos Eaten"] = savedGame.lifetimeMossies
 #		#Global.playerStats["Crit Chance"] = savedGame.critChance
 		
+		Global.critChance = UpgradeText.critChance[savedGame.upgrades['Crit Hit']]
 		Global.mossiesInStock = savedGame.mossiesInStock
-#
+
 
 		Global.currentBird = savedGame.currentBird
 		Global.currentBird1 = savedGame.currentBird1
