@@ -3,12 +3,15 @@ extends Player
 @onready var sparkle = $Sparkle
 @onready var sparkleAnim = $Sparkle/AnimationPlayer
 @onready var magnet = $Magnet
+@onready var magnetShape = $Magnet/CollisionShape2D
+@onready var magnetAnim = $MagnetEffect
 
 const jumpVelocity = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var HP : float = 100.0
 var ES = 0
 var vultureActive : bool = false
+
 
 
 func _process(delta):
@@ -39,7 +42,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-
+	
 
 func _on_magnet_area_entered(area):
 	if UpgradeText.magnetActive:

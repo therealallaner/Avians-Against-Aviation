@@ -12,10 +12,13 @@ extends Node
 @onready var upgradeProgress4 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 4/Upgrade 4 Progress.png")
 @onready var upgradeBG4 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 4/Upgrade 4 BG.png")
 
+@onready var upgradeImage6 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 6/Upgrade 6 Visual.png")
+@onready var upgradeProgress6 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 3/Upgrade 3 Progress v1.png")
+@onready var upgradeBG6 = preload("res://Assets/Upgrade Assets/Upgrade Icons/Upgrade Progress Textures/Upgrade 3/Upgrade 3 BG v1.png")
 var scoreMultiplier = 1
 var healsOverTime = false
 var vultureActive = false
-var magnetActive = true
+var magnetActive = false
 
 var upgradeCost = {
 	1: 50,
@@ -184,6 +187,29 @@ var critChance = {
 	20: 0.20
 }
 
+var mossyMagnetSize = {
+	0: 0.0,
+	1: 100.0,
+	2: 105.0,
+	3: 110.735,
+	4: 117.301,
+	5: 124.790,
+	6: 133.303,
+	7: 142.950,
+	8: 153.852,
+	9: 166.140,
+	10: 179.960,
+	11: 195.473,
+	12: 212.857,
+	13: 232.310,
+	14: 254.057,
+	15: 278.345,
+	16: 305.443,
+	17: 335.647,
+	18: 369.280,
+	19: 406.697,
+	20: 445.0
+}
 func Upgrade_Text(Name):
 	
 	var upgradeText = {
@@ -272,8 +298,22 @@ func Vulture(timeout=false):
 		vultureActive = true
 	
 	
-func Mossy_Magnet():
-	print('Magnet Upgrade Working')
+func Mossy_Magnet(timeout=false):
+	if timeout:
+		var gameScene = get_tree().root.get_node("GameScene")
+		gameScene.player.magnet.hide()
+		gameScene.player.magnetAnim.hide()
+		magnetActive = false
+	else:
+		var gameScene = get_tree().root.get_node("GameScene")
+		Visualiser_Checker(6)
+		GUI_Visualizer(upgradeImage6,upgradeProgress6,upgradeBG6,6)
+		gameScene.player.magnet.show()
+		gameScene.player.magnetShape.shape.radius = mossyMagnetSize[Global.upgrades['Mossy Magnet']]
+		gameScene.player.magnetAnim.play("magnetized")
+		gameScene.player.magnetAnim.show()
+		magnetActive = true
+	
 	
 	
 func Visualiser_Checker(x):

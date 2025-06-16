@@ -57,6 +57,7 @@ func Load_Game():
 #		#Global.playerStats["Crit Chance"] = savedGame.critChance
 		
 		Global.critChance = UpgradeText.critChance[savedGame.upgrades['Crit Hit']]
+		
 		Global.mossiesInStock = savedGame.mossiesInStock
 
 

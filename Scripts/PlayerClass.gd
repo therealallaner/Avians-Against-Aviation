@@ -104,7 +104,6 @@ var defaultPos = Vector2(384,540)
 
 
 func _ready():
-	$MagnetEffect.play('magnetized')
 	Check_Global()
 		
 	Change_Bird(currentBird)

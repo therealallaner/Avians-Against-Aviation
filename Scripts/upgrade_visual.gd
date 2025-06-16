@@ -15,4 +15,6 @@ func _on_timer_timeout():
 		UpgradeText.healsOverTime = false
 	if upgradeNumber == 4:
 		UpgradeText.Vulture(true)
+	if upgradeNumber == 6:
+		UpgradeText.Mossy_Magnet(true)
 	queue_free()

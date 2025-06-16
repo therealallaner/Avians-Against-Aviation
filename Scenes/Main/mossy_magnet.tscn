@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fwt8"]
 size = Vector2(700, 810)
 
-[node name="EnergyShield" type="Sprite2D" groups=["Energy Shield", "Upgrades"]]
+[node name="MossyMagnet" type="Sprite2D" groups=["Energy Shield", "Upgrades"]]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_eu64a")
 script = ExtResource("2_sc1yh")
