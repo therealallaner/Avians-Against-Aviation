@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Plane Sound v2.mp3-bc983816d6f547c55edd9a0d61
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0.0
 bpm=0.0
 beat_count=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwk7wd3bbqeff"
+path="res://.godot/imported/ES_Pass By, Designed, Long & Short, Small, Fast 01 - Epidemic Sound - 4835-8028.wav-5dca8ccdc3e09e58dd7b3ce7e6f69001.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/ES_Pass By, Designed, Long & Short, Small, Fast 01 - Epidemic Sound - 4835-8028.wav"
+dest_files=["res://.godot/imported/ES_Pass By, Designed, Long & Short, Small, Fast 01 - Epidemic Sound - 4835-8028.wav-5dca8ccdc3e09e58dd7b3ce7e6f69001.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://m2mcjrkiost8"
+path="res://.godot/imported/ES_Rocket, Launch, Pass By, Fast 01 - Epidemic Sound - 3112-4506.wav-0e55610c416ffe5db13b1f5dea1f66fd.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Torpedo Sounds/ES_Rocket, Launch, Pass By, Fast 01 - Epidemic Sound - 3112-4506.wav"
+dest_files=["res://.godot/imported/ES_Rocket, Launch, Pass By, Fast 01 - Epidemic Sound - 3112-4506.wav-0e55610c416ffe5db13b1f5dea1f66fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

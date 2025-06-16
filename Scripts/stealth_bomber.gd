@@ -29,11 +29,10 @@ var states = {
 }
 
 
-func _ready():
-	pass
-	
-
 func _process(delta):
+	if $AudioStreamPlayer2D.volume_db <= 8:
+		$AudioStreamPlayer2D.volume_db += .5
+		
 	if !states["Spawning"]:
 		if isHovering:
 			if Input.is_action_just_pressed("Jump"):

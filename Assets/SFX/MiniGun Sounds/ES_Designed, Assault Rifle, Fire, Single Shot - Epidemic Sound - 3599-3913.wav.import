@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl42w1im0o3dk"
+path="res://.godot/imported/ES_Designed, Assault Rifle, Fire, Single Shot - Epidemic Sound - 3599-3913.wav-090bccc75dbd30121f3a38b87a79a153.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/MiniGun Sounds/ES_Designed, Assault Rifle, Fire, Single Shot - Epidemic Sound - 3599-3913.wav"
+dest_files=["res://.godot/imported/ES_Designed, Assault Rifle, Fire, Single Shot - Epidemic Sound - 3599-3913.wav-090bccc75dbd30121f3a38b87a79a153.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

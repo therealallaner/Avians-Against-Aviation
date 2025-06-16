@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://r57352tji1to"]
+
+[ext_resource type="Script" path="res://Scripts/mini_gun.gd" id="1_vtjej"]
+
+[node name="MiniGun" type="AudioStreamPlayer2D"]
+volume_db = 5.0
+bus = &"SFX"
+script = ExtResource("1_vtjej")

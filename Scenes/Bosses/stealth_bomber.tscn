@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0sd251mibjun"]
+[gd_scene load_steps=16 format=3 uid="uid://c0sd251mibjun"]
 
 [ext_resource type="Script" path="res://Scripts/stealth_bomber.gd" id="1_imxjm"]
 [ext_resource type="Texture2D" uid="uid://bjc2ghfqjf8bw" path="res://Assets/PlanesExpansion/pngs/stealth_dark.png" id="2_35vyc"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://otejgi7o17o1" path="res://Assets/Juice/EXPLOSION_ANIMATION/8.png" id="10_0qdhe"]
 [ext_resource type="Texture2D" uid="uid://cgj40776u04xd" path="res://Assets/Juice/EXPLOSION_ANIMATION/9.png" id="11_shmx2"]
 [ext_resource type="Texture2D" uid="uid://cg2srm7p2tjgr" path="res://Assets/Juice/EXPLOSION_ANIMATION/10.png" id="12_24nh8"]
+[ext_resource type="AudioStream" uid="uid://p1jsgc6c8ybc" path="res://Assets/SFX/Boss Sounds/ES_Speeder, Engine Idle, Spinning Motor, Turbine - Epidemic Sound - 1632-21788.wav" id="13_s76sj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3a1s"]
 radius = 120.0
@@ -80,6 +81,12 @@ sprite_frames = SubResource("SpriteFrames_fpvlc")
 animation = &"explosion"
 frame = 9
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_s76sj")
+pitch_scale = 0.5
+autoplay = true
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -12,6 +12,9 @@ extends CharacterBody2D
 @onready var muzzleMarker3 = $AnimatedSprite2D/MuzzleMarker3
 @onready var HBMarker = $AnimatedSprite2D/HitBoxMarker
 
+@onready var miniGunPlayer = preload("res://Scenes/Bosses/mini_gun.tscn")
+var shotSound = 0
+
 var HP = 50 #50
 var maxHP: int
 var isHovering = false
@@ -42,6 +45,10 @@ func _ready():
 	
 	
 func _process(delta):
+	if $AudioStreamPlayer2D.volume_db <= 7:
+		$AudioStreamPlayer2D.volume_db += .5
+		
+		
 	if !states["Spawning"]:
 		if isHovering:
 			if Input.is_action_just_pressed("Jump"):
@@ -154,6 +161,7 @@ func Fire_Minigun():
 
 
 func _on_muzzle_flash_timer_timeout():
+	
 		
 	muzzleFlash.global_position = muzzleMarker.global_position
 	muzzleFlash.visible = !muzzleFlash.visible
@@ -162,10 +170,16 @@ func _on_muzzle_flash_timer_timeout():
 		birdLoS.Take_Heli_Damage(miniGunDMG)
 	
 	if phase >= 2:
+		if shotSound == 1:
+			var instance = miniGunPlayer.instantiate()
+			get_parent().add_child(instance)
 		muzzleFlash2.global_position = muzzleMarker2.global_position
 		muzzleFlash2.rotation_degrees = 10
 		muzzleFlash2.visible = !muzzleFlash2.visible
 	if phase == 3:
+		if shotSound == 3:
+			var instance = miniGunPlayer.instantiate()
+			get_parent().add_child(instance)
 		muzzleFlash3.global_position = muzzleMarker3.global_position
 		muzzleFlash3.rotation_degrees = -10
 		muzzleFlash3.visible = !muzzleFlash3.visible
@@ -173,7 +187,13 @@ func _on_muzzle_flash_timer_timeout():
 	if firing:
 		muzzleTimer.start()
 		
-	
+		
+	if shotSound == 5:
+		var instance = miniGunPlayer.instantiate()
+		get_parent().add_child(instance)
+		shotSound = 0
+		
+	shotSound += 1
 	
 func _on_attacking_timer_timeout():
 	firing = false

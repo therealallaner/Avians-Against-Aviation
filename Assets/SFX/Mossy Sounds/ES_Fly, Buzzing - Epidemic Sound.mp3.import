@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t0s7ic6cnaf"
+path="res://.godot/imported/ES_Fly, Buzzing - Epidemic Sound.mp3-2766f137005da932292a58c5c8dcda46.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Mossy Sounds/ES_Fly, Buzzing - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Fly, Buzzing - Epidemic Sound.mp3-2766f137005da932292a58c5c8dcda46.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
