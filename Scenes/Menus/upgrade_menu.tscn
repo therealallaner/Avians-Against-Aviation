@@ -85,10 +85,10 @@ Icon = ExtResource("7_47c1d")
 Name = "Vulture"
 Number = 4
 
-[node name="CriticalHits" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
+[node name="CriticalChance" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]
 layout_mode = 2
 Icon = ExtResource("8_7iwsp")
-Name = "Crit Hit"
+Name = "Crit Chance"
 Number = 5
 
 [node name="MossyMagnet" parent="VBoxContainer/GridContainer" instance=ExtResource("1_ogd8r")]

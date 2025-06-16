@@ -7,7 +7,7 @@ extends Control
 @onready var energyShield = $VBoxContainer/GridContainer/EnergyShield
 @onready var betterHeals = $VBoxContainer/GridContainer/BetterHeals
 @onready var vulture = $VBoxContainer/GridContainer/Vulture
-@onready var critHit = $VBoxContainer/GridContainer/CriticalHits
+@onready var critChance = $VBoxContainer/GridContainer/CriticalChance
 @onready var mossyMagnet = $VBoxContainer/GridContainer/MossyMagnet
 
 @onready var info = $Info
@@ -23,7 +23,7 @@ extends Control
 	energyShield,
 	betterHeals,
 	vulture,
-	critHit,
+	critChance,
 	mossyMagnet
 ]
 

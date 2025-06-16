@@ -56,7 +56,7 @@ func Load_Game():
 #		Global.playerStats["Mosquitos Eaten"] = savedGame.lifetimeMossies
 #		#Global.playerStats["Crit Chance"] = savedGame.critChance
 		
-		Global.critChance = UpgradeText.critChance[savedGame.upgrades['Crit Hit']]
+#		Global.critChance = UpgradeText.critChance[savedGame.upgrades['Crit Chance']]
 		
 		Global.mossiesInStock = savedGame.mossiesInStock
 

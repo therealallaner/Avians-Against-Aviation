@@ -60,7 +60,7 @@ var upgrades = {
 	"Energy Shield": 0,
 	"Better Heals": 0,
 	"Vulture": 0,
-	"Crit Hit": 0,
+	"Crit Chance": 0,
 	"Mossy Magnet": 0,
 	'Coming Soon':  0
 }

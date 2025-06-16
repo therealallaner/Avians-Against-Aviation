@@ -21,6 +21,7 @@ var mossies = 0
 
 
 func _ready():
+	Global.critChance = UpgradeText.critChance[Global.upgrades['Crit Chance']]
 	Engine.time_scale = 1
 	gameOver.hide()
 	

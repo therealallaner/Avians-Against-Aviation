@@ -233,9 +233,15 @@ func Upgrade_Text(Name):
 		'You become an invincible Vulture 
 		for ' + str(vultureTime[int(Global.upgrades['Vulture'])]) + ' seconds at level ' + str(Global.upgrades['Vulture']) + '.',
 
-	'Crit Hit': 'Your critical hit chance is ',
+	'Crit Chance': 
+		'Your critical hit chance is '
+		+ str((Global.critChance) * 100) + '% at level ' + str(Global.upgrades['Crit Chance']),
 
-	'Mossy Magnet': 'Blank',
+	'Mossy Magnet': 
+		'You gain a magnetic field around you
+		that pulls mosquitos towards you.
+		This magnetic field becomes larger
+		as you level it up.',
 
 	'Coming Soon': 'This power-up will be unlocked in the full game.'
 	}
