@@ -2,6 +2,7 @@ extends Player
 
 @onready var sparkle = $Sparkle
 @onready var sparkleAnim = $Sparkle/AnimationPlayer
+@onready var magnet = $Magnet
 
 const jumpVelocity = -500.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -38,3 +39,25 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+
+
+func _on_magnet_area_entered(area):
+	if UpgradeText.magnetActive:
+		if area.get_parent().is_in_group("Mossy"):
+			var mossy = area.get_parent()
+			mossy.target = self
+			mossy.states['flying'] = false
+			mossy.states['magnetized'] = true
+#			var tween = create_tween()
+#			tween.parallel().tween_property(x, "position", Vector2(0,-1080), menuTransitionTime)
+#			tween.set_ease(Tween.EASE_IN_OUT)
+#			tween.play()
+
+
+func _on_magnet_area_exited(area):
+	if UpgradeText.magnetActive:
+		if area.get_parent().is_in_group("Mossy"):
+			var mossy = area.get_parent()
+			mossy.target = null
+			mossy.states['flying'] = true
+			mossy.states['magnetized'] = false

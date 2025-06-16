@@ -15,6 +15,7 @@ extends Node
 var scoreMultiplier = 1
 var healsOverTime = false
 var vultureActive = false
+var magnetActive = true
 
 var upgradeCost = {
 	1: 50,

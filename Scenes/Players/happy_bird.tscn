@@ -1,8 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2mes8qqface8"]
+[gd_scene load_steps=19 format=3 uid="uid://c2mes8qqface8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_le2on"]
 [ext_resource type="Texture2D" uid="uid://y0vor8yc26s0" path="res://Assets/Juice/sparkleeffect--1b4c772c813q8c4g8v/spritesheets/sparkle_spritesheet_256px_by_256px_per_frame.png" id="2_eeq00"]
 [ext_resource type="AudioStream" uid="uid://b6kisim1hsla8" path="res://Assets/SFX/Upgrades/Chime Base.wav" id="3_k0ooh"]
+[ext_resource type="Texture2D" uid="uid://3yfd7xwwpcxp" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_01.png" id="4_rb8gu"]
+[ext_resource type="Texture2D" uid="uid://dc33ixa00nclb" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_02.png" id="5_vob12"]
+[ext_resource type="Texture2D" uid="uid://dx55fnb06kcyv" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_03.png" id="6_w86lv"]
+[ext_resource type="Texture2D" uid="uid://6gpimu8gncdc" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_04.png" id="7_0exnb"]
+[ext_resource type="Texture2D" uid="uid://d1fnvnwoci74m" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_05.png" id="8_6vwxa"]
+[ext_resource type="Texture2D" uid="uid://c5uk4twxnpgj" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_06.png" id="9_fwq5x"]
+[ext_resource type="Texture2D" uid="uid://cy0qhmrdbfjmg" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_07.png" id="10_s0oef"]
+[ext_resource type="Texture2D" uid="uid://b02fljarbw7lf" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_08.png" id="11_i5van"]
+[ext_resource type="Texture2D" uid="uid://jib0c0tv1lxl" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_09.png" id="12_awuwj"]
+[ext_resource type="Texture2D" uid="uid://cqx1o8hvpglsl" path="res://Assets/Juice/Animatedchargeeffect_aGcCYQZ86S/PNGS/charge_effect_10.png" id="13_3wf2w"]
 
 [sub_resource type="Animation" id="Animation_jipvm"]
 length = 0.001
@@ -41,6 +51,47 @@ _data = {
 "Sparkle": SubResource("Animation_yvr7w")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7lyq"]
+radius = 226.497
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v822q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rb8gu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vob12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w86lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0exnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6vwxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fwq5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s0oef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i5van")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_awuwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3wf2w")
+}],
+"loop": true,
+"name": &"magnetized",
+"speed": 30.0
+}]
+
 [node name="HappyBird" type="CharacterBody2D"]
 script = ExtResource("1_le2on")
 
@@ -74,3 +125,19 @@ bus = &"SFX"
 
 [node name="TweetPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
+
+[node name="Magnet" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
+shape = SubResource("CircleShape2D_v7lyq")
+
+[node name="MagnetEffect" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_v822q")
+animation = &"magnetized"
+frame_progress = 0.419856
+
+[connection signal="area_entered" from="Magnet" to="." method="_on_magnet_area_entered"]
+[connection signal="area_exited" from="Magnet" to="." method="_on_magnet_area_exited"]

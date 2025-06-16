@@ -9,6 +9,14 @@ extends Node2D
 var hoverSpeed = 50
 var flySpeed = 300
 
+var target = null
+var magnetSpeed = 1
+
+var states = {
+	'flying': true,
+	'magnetized': false
+}
+
 
 func _ready():
 	if self.is_in_group('Poison Mossy'):
@@ -25,9 +33,15 @@ func _ready():
 
 
 func _process(delta):
-	position.y += hoverSpeed * delta
-	position.x += -flySpeed * delta
-
+	if states['flying']:
+		position.y += hoverSpeed * delta
+		position.x += -flySpeed * delta
+		
+	if states['magnetized']:
+		var direction = target.global_position - global_position
+		direction.normalized()
+		position += direction * magnetSpeed * delta
+		magnetSpeed *= 1.2
 
 func _on_timer_timeout():
 	
