@@ -6,6 +6,7 @@ var speed = 100
 var red = Color(1,0,0,1)
 var green = Color(0,1,0,1)
 var blue = Color(0,1,1,1)
+var gold = Color(1,0.843137,0,1)
 
 func _ready():
 	pass
@@ -20,7 +21,8 @@ func Damage_Text(x,dmgType):
 		label.add_theme_color_override("font_color",green)
 	elif dmgType == 3:
 		label.add_theme_color_override("font_color",blue)
-		
+	elif dmgType == 4:
+		label.add_theme_color_override("font_color",gold)
 	
 	var newPos = Vector2(label.position.x + 50, label.position.y - 50)
 	var tween = create_tween()

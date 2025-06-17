@@ -11,13 +11,14 @@ extends Node
 @onready var cursorController = gameScene.cursorController
 @onready var upgradeController = $UpgradeController
 @onready var upgradeTimer = $UpgradeTimer
+@onready var damageNumberText = preload("res://Scenes/Main/damage_numbers.tscn")
 
 var wave = 0
 var bossHPX = 1
 var bossesSpawned = 0
 
 var jetWaves = []
-var bossWaves = [1]
+var bossWaves = []
 
 func _ready():
 	Add_Jet_Waves()
@@ -104,4 +105,12 @@ func _on_upgrade_timer_timeout():
 		upgradeTimer.wait_time = randf_range(10,15)
 	elif wave <= 30:
 		upgradeTimer.wait_time = randf_range(12,18)
+		
 
+func Damage_Numbers(x,boss,dmg=1,offset=Vector2(0,0)):
+	var instance = damageNumberText.instantiate()
+	bossController.add_child(instance)
+	instance.label.position = boss.global_position + offset
+	instance.Damage_Text(x,dmg)
+	if dmg == 1:
+		get_parent().camera.Camera_Shake()

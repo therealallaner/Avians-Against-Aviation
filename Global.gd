@@ -110,9 +110,9 @@ func Deal_Damage(b):
 	var x = randf()
 	if x <= critChance:
 		damage = currentDamage*2
-		print('Critical Hit!')
+		gameScene.waveController.Damage_Numbers(damage,b,4)
 	else:
-		print('Normal Hit...')
+		gameScene.waveController.Damage_Numbers(damage,b)
 	b.HP -= damage
 	var hp = b.HP
 	gameScene.GUI.Update_Boss_HP(hp)
