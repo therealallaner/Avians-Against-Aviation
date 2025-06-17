@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ccgx811v86euk"]
+[gd_scene load_steps=38 format=3 uid="uid://ccgx811v86euk"]
 
 [ext_resource type="Script" path="res://Scripts/mosquito.gd" id="1_0kr1i"]
 [ext_resource type="Texture2D" uid="uid://bqyvb6k2hjuhc" path="res://Assets/Mosquitos/keyframes/mosquito_09/__Mosquito_09_flying_000.png" id="2_qira6"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://diqlcljcdvava" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_10.png" id="30_x4idj"]
 [ext_resource type="Texture2D" uid="uid://cihxe8vgmg5y7" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_11.png" id="31_hn7nk"]
 [ext_resource type="Texture2D" uid="uid://b61xrwqea10or" path="res://Assets/Juice/Toxic and Dark Magic/poison_smoke_2/toxic/looping/toxic_smoke_2_looping_12.png" id="32_xf4bj"]
+[ext_resource type="AudioStream" uid="uid://t0s7ic6cnaf" path="res://Assets/SFX/Mossy Sounds/ES_Fly, Buzzing - Epidemic Sound.mp3" id="33_sgqft"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6law4"]
 animations = [{
@@ -189,5 +190,12 @@ rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_ti1m6")
 animation = &"trail"
 frame_progress = 0.319733
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_sgqft")
+volume_db = -20.0
+pitch_scale = 0.45
+autoplay = true
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

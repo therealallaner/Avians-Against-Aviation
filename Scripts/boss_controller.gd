@@ -13,9 +13,9 @@ extends Node
 @onready var bosses = [
 #	mossyBoss,
 #	stealthBoss,
-	heliBoss,
-#	dragonBoss,
-#	airshipBoss
+#	heliBoss,
+	dragonBoss,
+	airshipBoss
 ]
 
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2stbi70qutcg"
+path="res://.godot/imported/ES_Horror, Guts, Flesh, Blood, Squelch, Splat - Epidemic Sound.mp3-91811c5634e06386a05d432611bcaa26.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Boss Sounds/ES_Horror, Guts, Flesh, Blood, Squelch, Splat - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Horror, Guts, Flesh, Blood, Squelch, Splat - Epidemic Sound.mp3-91811c5634e06386a05d432611bcaa26.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

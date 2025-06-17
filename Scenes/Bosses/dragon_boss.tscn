@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cjg35gkd6c1on"]
+[gd_scene load_steps=40 format=3 uid="uid://cjg35gkd6c1on"]
 
 [ext_resource type="Script" path="res://Scripts/dragon_boss.gd" id="1_680qe"]
 [ext_resource type="Texture2D" uid="uid://b2jt0524p7k3w" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying__flame_000.png" id="2_qan51"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://critshfjpkj1q" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_007.png" id="34_7f5m5"]
 [ext_resource type="Texture2D" uid="uid://dvjek286thr0h" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_008.png" id="35_pkyan"]
 [ext_resource type="Texture2D" uid="uid://d4lit027ikyih" path="res://Assets/Dragon/keyframes/__dragon_02_red_flying_009.png" id="36_dlw81"]
+[ext_resource type="AudioStream" uid="uid://b755ijuvdmq6v" path="res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonFlying.wav" id="37_wdgpj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4pp52"]
 animations = [{
@@ -182,6 +183,17 @@ shape = SubResource("CapsuleShape2D_cfxuu")
 
 [node name="FireballMarker" type="Marker2D" parent="."]
 position = Vector2(-273, 70)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("37_wdgpj")
+pitch_scale = 2.0
+autoplay = true
+bus = &"SFX"
+
+[node name="FireBreath" type="AudioStreamPlayer2D" parent="."]
+volume_db = 24.0
+panning_strength = 2.0
+bus = &"SFX"
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

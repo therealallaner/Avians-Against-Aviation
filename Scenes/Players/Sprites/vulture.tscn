@@ -43,7 +43,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bdnc"]
 radius = 69.0139
-height = 464.155
+height = 323.903
 
 [node name="Vulture" type="Sprite2D" groups=["Bird", "Vulture"]]
 rotation = -0.23911
@@ -64,7 +64,7 @@ libraries = {
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(32.559, 9.9956)
+position = Vector2(-0.94735, 3.88619)
 rotation = 1.83434
 shape = SubResource("CapsuleShape2D_4bdnc")
 

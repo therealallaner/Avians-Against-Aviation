@@ -6,6 +6,10 @@ extends CharacterBody2D
 @onready var torpedo = preload("res://Scenes/Planes/torpedo.tscn")
 @onready var torpedoSpawn = $Marker2D
 @onready var deathSprite = $DeathAnim
+@onready var deathExplosion1 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion1.wav")
+@onready var deathExplosion2 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion2.wav")
+@onready var deathExplosion3 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion3.wav")
+@onready var deathSounds = [deathExplosion1,deathExplosion2,deathExplosion3]
 
 var HP = 10 #10
 var isHovering = false
@@ -49,6 +53,8 @@ func _process(delta):
 		sprite.hide()
 		deathSprite.show()
 		deathSprite.play("explosion")
+		$AudioStreamPlayer2D.stream = Global.Random_List(deathSounds)
+		$AudioStreamPlayer2D.play()
 		states["Dying"] = false
 		states["Dead"] = true
 

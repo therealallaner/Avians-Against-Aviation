@@ -12,6 +12,11 @@ extends CharacterBody2D
 @onready var muzzleMarker3 = $AnimatedSprite2D/MuzzleMarker3
 @onready var HBMarker = $AnimatedSprite2D/HitBoxMarker
 
+@onready var deathExplosion1 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion1.wav")
+@onready var deathExplosion2 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion2.wav")
+@onready var deathExplosion3 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion3.wav")
+@onready var deathSounds = [deathExplosion1,deathExplosion2,deathExplosion3]
+
 @onready var miniGunPlayer = preload("res://Scenes/Bosses/mini_gun.tscn")
 var shotSound = 0
 
@@ -73,6 +78,8 @@ func _process(delta):
 		
 	if states["Dying"]:
 		sprite.play("explosion")
+		$AudioStreamPlayer2D.stream = Global.Random_List(deathSounds)
+		$AudioStreamPlayer2D.play()
 		attackTimer.stop()
 		muzzleTimer.stop()
 		states["Dying"] = false

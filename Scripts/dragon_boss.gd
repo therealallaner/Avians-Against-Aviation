@@ -3,6 +3,16 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var flameAttack = preload("res://Scenes/Bosses/flame_attack.tscn")
 @onready var fireballMarker = $FireballMarker
+@onready var fireBreath = $FireBreath
+
+@onready var fireBreathSound1 = preload("res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonBreath1.wav")
+@onready var fireBreathSound2 = preload("res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonBreath2.wav")
+@onready var fireBreathSound3 = preload("res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonBreath3.wav")
+@onready var fireBreathSound4 = preload("res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonBreath4.wav")
+@onready var fireBreathSound5 = preload("res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonBreath5.wav")
+@onready var sounds = [fireBreathSound1,fireBreathSound2,fireBreathSound3,fireBreathSound4,fireBreathSound5]
+
+@onready var deathSound = preload("res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonDying.mp3")
 
 var HP = 30 #30
 var isHovering = false
@@ -24,6 +34,9 @@ func _ready():
 	sprite.play("flying")
 
 func _process(delta):
+	if $AudioStreamPlayer2D.volume_db <= 7:
+		$AudioStreamPlayer2D.volume_db += .5
+		
 	if !states["Spawning"]:
 		if isHovering:
 			if Input.is_action_just_pressed("Jump"):
@@ -39,12 +52,14 @@ func _process(delta):
 
 	if states["Dying"]:
 		sprite.play("dying")
+		$AudioStreamPlayer2D.stream = deathSound
+		$AudioStreamPlayer2D.play()
 		states["Dying"] = false
 		states["Dead"] = true
 			
 	if states["Dead"]:
 			
-		if !sprite.is_playing():
+		if !$AudioStreamPlayer2D.is_playing():
 			get_parent().waveController.mossyController.Spawn_Boss_Rewards(bossReward)
 			get_parent().bossHPBar.hide()
 			Global.playerStats['Bosses Defeated'] += 1
@@ -141,6 +156,8 @@ func Damage_Reaction():
 func Fireball_Attack():
 	sprite.play("breath fire")
 	sprite.offset.x = -100
+	fireBreath.stream = Global.Random_List(sounds)
+	fireBreath.play()
 	
 func Spawn_Fireball():
 	var instance = flameAttack.instantiate()

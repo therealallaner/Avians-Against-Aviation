@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var cloud = $PoisonCloud
 @onready var gameScene = get_parent().get_parent().get_parent()
 @onready var poisonMossy = preload("res://Scenes/Mosquitos/poison_mosquito.tscn")
+@onready var deathSplat = preload("res://Assets/SFX/Boss Sounds/ES_Horror, Guts, Flesh, Blood, Squelch, Splat - Epidemic Sound.mp3")
 
 var HP = 30 #30
 var isHovering = false
@@ -29,6 +30,8 @@ func _ready():
 	sprite.play("flying")
 
 func _process(delta):
+	if $AudioStreamPlayer2D.volume_db <= 7:
+		$AudioStreamPlayer2D.volume_db += .5
 	if !states["Spawning"]:
 		if isHovering:
 			if Input.is_action_just_pressed("Jump"):
@@ -44,6 +47,9 @@ func _process(delta):
 
 	if states["Dying"]:
 		sprite.play("dying")
+		$AudioStreamPlayer2D.stream = deathSplat
+		$AudioStreamPlayer2D.pitch_scale = 1
+		$AudioStreamPlayer2D.play()
 		states["Dying"] = false
 		states["Dead"] = true
 			

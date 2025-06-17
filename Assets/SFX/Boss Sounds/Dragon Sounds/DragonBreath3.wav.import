@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://birkd06qvjrb7"
+path="res://.godot/imported/DragonBreath3.wav-650904420aa683ea85d08e793324428d.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Boss Sounds/Dragon Sounds/DragonBreath3.wav"
+dest_files=["res://.godot/imported/DragonBreath3.wav-650904420aa683ea85d08e793324428d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

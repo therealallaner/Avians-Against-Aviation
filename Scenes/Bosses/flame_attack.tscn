@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://br0k1aaqmk7tu"]
+[gd_scene load_steps=19 format=3 uid="uid://br0k1aaqmk7tu"]
 
 [ext_resource type="Texture2D" uid="uid://bu3dyayqreqhd" path="res://Assets/Dragon/Attacks/fire_ball/red/fireball_red_01.png" id="1_cii7a"]
 [ext_resource type="Script" path="res://Scripts/flame_attack.gd" id="1_gqw20"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dtkwrfjlg8fcy" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_06.png" id="10_svww2"]
 [ext_resource type="Texture2D" uid="uid://ccgtjrgta4oe3" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_07.png" id="11_id30l"]
 [ext_resource type="Texture2D" uid="uid://csbjiigb336vk" path="res://Assets/Dragon/Attacks/flame_explode/red/flame_explode_08.png" id="12_eso3r"]
+[ext_resource type="AudioStream" uid="uid://dqgoblnjglpd" path="res://Assets/SFX/Boss Sounds/Dragon Sounds/Fire/FireIgnition.mp3" id="14_44bk2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d2mrc"]
 animations = [{
@@ -90,6 +91,8 @@ rotation = 1.5708
 [node name="fCollision" type="CollisionShape2D" parent="Fireball/fArea"]
 shape = SubResource("CapsuleShape2D_jwxe0")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Fireball"]
+
 [node name="Explosion" type="AnimatedSprite2D" parent="." groups=["Explosion", "Fire"]]
 visible = false
 position = Vector2(3, -14)
@@ -102,3 +105,8 @@ position = Vector2(6, 22)
 
 [node name="eCollision" type="CollisionShape2D" parent="Explosion/eArea"]
 shape = SubResource("CircleShape2D_cvk6l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Explosion"]
+stream = ExtResource("14_44bk2")
+volume_db = -5.0
+pitch_scale = 0.71

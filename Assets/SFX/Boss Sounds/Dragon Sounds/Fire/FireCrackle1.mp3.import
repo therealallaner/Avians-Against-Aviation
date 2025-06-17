@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bn41ioj1ou6ub"
+path="res://.godot/imported/FireCrackle1.mp3-65507ff06357713a4a89c8ab1736d038.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Boss Sounds/Dragon Sounds/Fire/FireCrackle1.mp3"
+dest_files=["res://.godot/imported/FireCrackle1.mp3-65507ff06357713a4a89c8ab1736d038.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

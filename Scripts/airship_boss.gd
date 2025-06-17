@@ -8,6 +8,17 @@ extends CharacterBody2D
 @onready var cannonBallTarget = $Cannon/TargetContainer.get_children()
 @onready var cannonBall = preload("res://Scenes/Bosses/cannon_ball.tscn")
 
+@onready var cannonSound1 = preload("res://Assets/SFX/Boss Sounds/Airship/Cannon1.wav")
+@onready var cannonSound2 = preload("res://Assets/SFX/Boss Sounds/Airship/Cannon2.wav")
+@onready var cannonSound3 = preload("res://Assets/SFX/Boss Sounds/Airship/Cannon3.wav")
+@onready var cannonSound4 = preload("res://Assets/SFX/Boss Sounds/Airship/Cannon4.wav")
+
+@onready var explosionSound1 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion1.wav")
+@onready var explosionSound2 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion2.wav")
+@onready var explosionSound3 = preload("res://Assets/SFX/Boss Sounds/Airship/Explosion3.wav")
+
+@onready var cannonsSounds = [cannonSound1,cannonSound2,cannonSound3,cannonSound4]
+@onready var explosionSounds = [explosionSound1,explosionSound2,explosionSound3]
 
 var gameScene : Node2D
 var cannonTarget : Vector2
@@ -75,6 +86,8 @@ func _process(delta):
 		states["Dead"] = true
 		
 	if states["ExOne"]:
+		$ExplosionSounds.stream = Global.Random_List(explosionSounds)
+		$ExplosionSounds.play()
 		$DeathAnimController/FireExplosion.play("explosion")
 		$DeathAnimController/FireExplosion.show()
 		get_tree().root.get_node("GameScene").camera.Boss_Shake()
@@ -85,6 +98,9 @@ func _process(delta):
 	
 	if states["ExTwo"]:
 		if !$DeathAnimController/FireExplosion.is_playing():
+			$ExplosionSounds.volume_db += 5
+			$ExplosionSounds.stream = Global.Random_List(explosionSounds)
+			$ExplosionSounds.play()
 			$DeathAnimController/FireExplosion.hide()
 			$DeathAnimController/FireExplosion2.play("explosion")
 			$DeathAnimController/FireExplosion2.show()
@@ -95,6 +111,9 @@ func _process(delta):
 	
 	if states["ExThree"]:
 		if !$DeathAnimController/FireExplosion2.is_playing():
+			$ExplosionSounds.volume_db += 5
+			$ExplosionSounds.stream = Global.Random_List(explosionSounds)
+			$ExplosionSounds.play()
 			$DeathAnimController/FireExplosion2.hide()
 			states["ExThree"] = false
 			states["Final"] = true
@@ -105,6 +124,9 @@ func _process(delta):
 		
 	if states["Final"]:
 		if !$DeathAnimController/FireExplosion3.is_playing():
+			$ExplosionSounds.volume_db += 5
+			$ExplosionSounds.stream = Global.Random_List(explosionSounds)
+			$ExplosionSounds.play()
 			$DeathAnimController/FireExplosion3.hide()
 			$DeathAnimController/FullExplosion.play("deathExplosion")
 			$DeathAnimController/FullExplosion.show()
@@ -200,6 +222,8 @@ func Damage_Reaction():
 
 func Cannon_Attack():
 	cannon.play("firing")
+	$Cannon/CannonSounds.stream = Global.Random_List(cannonsSounds)
+	$Cannon/CannonSounds.play()
 	await(get_tree().create_timer(.25).timeout)
 	var instance = cannonBall.instantiate()
 	get_parent().add_child(instance)
